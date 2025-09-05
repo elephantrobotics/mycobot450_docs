@@ -3,8 +3,8 @@
 * [Introduction](README.md)
 
 * 产品信息
-    * [1 产品介绍](1-ProductInformation\1-ProductIntroduction\1-ProductIntroduction.md)
-    * [2 产品特性](1-ProductInformation\2-ProductFeature\2-ProductFeature.md)
+  * [1 产品介绍](1-ProductInformation\1-ProductIntroduction\1-ProductIntroduction.md)
+  * [2 产品特性](1-ProductInformation\2-ProductFeature\2-ProductFeature.md)
 
 * 基础设施
   * [3 用户须知](2-BasicSettings\3-UserNotes\README.md)
@@ -21,11 +21,16 @@
     * [4.3 开机检测指南](2-BasicSettings\4-FirstInstallAndUse\4.3-PowerOnDetectionGuide.md)
 
 * 功能与应用
-  * [5 基础功能](5-BasicApplication/README.md)
-    * [5.1 myBlockly]()
-    * [5.2 机器人控制端口]()
-    * [5.3 系统与固件更新]()
-  * [6 软件开发指南](6-SoftwareDevelopment/README.md)
+  * [5 基础功能](3-FunctionsAndApplications\5-BasicApplication\README.md)
+    * [5.1 myBlockly](3-FunctionsAndApplications\5-BasicApplication\5.1-5.1-myBlockly\README.md)
+      * [5.1.1 首次使用 mblockly](3-FunctionsAndApplications\5-BasicApplication\5.1-5.1-myBlockly\5.1.1-myBlocklyFirstUse.md)
+      * [5.1.2 下载和卸载](3-FunctionsAndApplications\5-BasicApplication\5.1-5.1-myBlockly\5.1.2-install_uninstall.md)
+      * [5.1.3 接口描述](3-FunctionsAndApplications\5-BasicApplication\5.1-5.1-myBlockly\5.1.3-interface_description.md)
+      * [5.1.4 常见问题解答](3-FunctionsAndApplications\5-BasicApplication\5.1-5.1-myBlockly\5.1.4-Q&A.md)
+    * [5.2 机器人控制端口](3-FunctionsAndApplications\5-BasicApplication\5.2-RobotControlPort.md)
+    * [5.3 系统使用](3-FunctionsAndApplications\5-BasicApplication\5.3-SystemUsageInstructions.md)
+    * [5.4 固件更新](3-FunctionsAndApplications\5-BasicApplication\5.4-FirmwareUpdateInfo.md)
+  * [6 软件开发指南](3-FunctionsAndApplications\6-SoftwareDevelopment\README.md)
     * [6.1 基于python 开发使用]()
       * [6.1.1 环境搭建]()
       * [6.1.2 api说明]()
@@ -40,12 +45,12 @@
       * [6.3.2 api说明]()
       * [6.3.3 使用案例]()
     * [6.4 基于通信协议包开发]()
-  * [7 成功案例](7-ExamplesRobotsUsing/README.md)
+  * [7 成功案例](3-FunctionsAndApplications\7-ExamplesRobotsUsing\README.md)
     * [7.1 机器人复合案例]()
     * [7.2 3D视觉无序分拣]()
     * [7.3 Lerobot ACT模仿学习]()
     * [7.4 DeepSeek 语音控制]()
-  * [8 配套资源](8-FilesDownload/README.md)
+  * [8 配套资源](3-FunctionsAndApplications\8-FilesDownload\README.md)
     * [8.1 产品资料]()
     * [8.2 产品图纸]()
     * [8.3 软件资料及源码]()
@@ -53,10 +58,10 @@
     * [8.5 宣传资料]()
 
 * 支持与服务
-  * [9 关于我们](9-AboutUs/README.md)
+  * [9 关于我们](4-SupportAndService\9-AboutUs\README.md)
     * [9.1 大象机器人]()
     * [9.2 联系我们]()
-  * [10 周边配件](10-Accessories/README.md)
+  * [10 周边配件](4-SupportAndService\10-Accessories\README.md)
     * [10.1 力控夹爪]()
     * [10.2 气动夹爪]()
     * [10.3 自适应夹爪]()
@@ -68,7 +73,7 @@
     * [10.9 笔夹]()
 
 * 致谢
-  * [11 致谢](10-Acknowledgements/README.md)
+  * [11 致谢](5-Acknowledgments\11-Acknowledgements.md)
 
 
      
