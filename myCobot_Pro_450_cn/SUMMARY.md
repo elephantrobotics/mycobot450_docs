@@ -15,10 +15,10 @@
       * [3.4.1 软件](2-BasicSettings\3-UserNotes\3.4.1-software.md)
       * [3.4.2 硬件](2-BasicSettings\3-UserNotes\3.4.2-hardware.md)
       * [3.4.3 其他](2-BasicSettings\3-UserNotes\3.4.3-other.md)
-  * [4 首次安装](4-FirstInstallAndUse/README.md)
-    * [4.1 产品标准清单]()
-    * [4.2 产品开箱指南]()
-    * [4.3 首次使用自查]()
+  * [4 首次安装](2-BasicSettings\4-FirstInstallAndUse\README.md)
+    * [4.1 产品标准清单](2-BasicSettings\4-FirstInstallAndUse\4.1-ProductStandardList.md)
+    * [4.2 产品开箱指南](2-BasicSettings\4-FirstInstallAndUse\4.2-ProductUnboxingGuide.md)
+    * [4.3 开机检测指南](2-BasicSettings\4-FirstInstallAndUse\4.3-PowerOnDetectionGuide.md)
 
 * 功能与应用
   * [5 基础功能](5-BasicApplication/README.md)
