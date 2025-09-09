@@ -5,7 +5,7 @@
 
 
 - [5.1 myBlockly](./5.1-5.1-myBlockly/README.md)
- myBlockly 是一款完全可视化的模块化编程软件，是一种图形化编程语言。myBlockly 界面简洁，编程功能全面。它的可视化编程方法适合初次接触机器人产品的用户。
+myBlockly 是一款完全可视化的模块化编程软件，是一种图形化编程语言。myBlockly 界面简洁，编程功能全面。它的可视化编程方法适合初次接触机器人产品的用户。
 
 - [5.2 机器人控制端口](./5.2-RobotControlPort.md)
 
