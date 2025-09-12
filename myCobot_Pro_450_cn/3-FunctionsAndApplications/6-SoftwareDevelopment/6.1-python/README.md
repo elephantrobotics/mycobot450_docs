@@ -4,7 +4,7 @@
 
 
 
-## ![README1](../../../resources/3-FunctionsAndApplications/6.developmentGuide/python/python.jpg)
+![README1](../../../resources/3-FunctionsAndApplications/6.developmentGuide/python/python.jpg)
 
 **Python** 由荷兰数学和计算机科学研究学会的 Guido van Rossum 于1990 年代初设计，作为一门叫做 ABC 语言的替代品。
 
@@ -32,7 +32,7 @@
 
 6.[夹爪控制](6_gripper.md)
 
-7.[演示代码与视频](7_example.md)
+7.[机器人异常处理](./7_exception_description.md)
 
 ---
 
