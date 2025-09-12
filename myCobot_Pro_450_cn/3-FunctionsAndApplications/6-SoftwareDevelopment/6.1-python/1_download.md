@@ -4,19 +4,26 @@ pymycobot 是一个和 myCobot 进行串口通讯的 Python 包，支持 Python3
 
 在使用 pymycobot控制机械臂之前需要搭建Python环境，下面就对Python的下载安装做出详细说明。
 
+## Linux系统
 
+在控制台终端安装pymycobot库即可：
 
-## Python下载和安装
+```python
+pip install pymycobot --upgrade --user
+```
 
-**适用设备：**
-  * **myCobot Pro 450**
+## Windows 系统
+
+### Python下载和安装
+
+**适用设备：** **myCobot Pro 450**
 
 
 目前，Python有两个版本，一个是`2.x`版，一个是`3.x`版，这两个版本是不兼容的。由于`3.x`版越来越普及，我们的教程将以最新的`3.10.7`版本为例进行说明。
 
 
 
-### 安装Python
+#### 安装Python
 
 > **注意：**安装之前，请先确认您的电脑是64位还是32位。右键点击`我的电脑`，选择`属性`。如下图显示是64位的操作系统，所以选择64位的Python安装包。
 >
@@ -44,7 +51,8 @@ pymycobot 是一个和 myCobot 进行串口通讯的 Python 包，支持 Python3
 
 
 
-### 运行Python
+#### 运行Python
+
 安装成功后，打开命令提示符窗口（Win+R，输入cmd回车），敲入`python`后，会出现两种情况。
 
 **情况一：**
@@ -65,7 +73,8 @@ pymycobot 是一个和 myCobot 进行串口通讯的 Python 包，支持 Python3
 
 
 
-### 配置环境变量
+#### 配置环境变量
+
 由于Windows会根据一个Path的环境变量设定的路径去查找python.exe，如果没找到，就会报错。因此，如果安装时漏掉了勾选`Add Python 3.10 to PATH`，则需要手动把python.exe所在的路径添加到Path中，或者重新安装一遍Python，记得勾选上`Add Python 3.10 to PATH`选项即可。
 
 以下是手动添加python.exe所在的路径步骤。
@@ -98,13 +107,13 @@ pymycobot 是一个和 myCobot 进行串口通讯的 Python 包，支持 Python3
 
 
 
-## PyCharm安装和使用
+### PyCharm安装和使用
 
 PyCharm是一款功能强大的Python编辑器，具有跨平台性。首先介绍PyCharm在Windows系统中的安装步骤。
 
 **下载地址：** **https://www.jetbrains.com/pycharm/download/#section=windows**
 
-### 下载安装
+#### 下载安装
 
 * 进入该网站后，我们会看到如下界面：
 
@@ -130,7 +139,7 @@ PyCharm是一款功能强大的Python编辑器，具有跨平台性。首先介�
 
 
 
-### 创建项目
+#### 创建项目
 
 PyCharm安装完成之后进入该软件，创建第一个程序。
 
@@ -168,7 +177,7 @@ PyCharm安装完成之后进入该软件，创建第一个程序。
 
 
 
-### 使用之前
+#### 使用之前
 
 * 固件烧录。固件是指设备内部保存的设备“驱动程序”。操作系统只有通过固件才能按照标准的设备驱动实现特定机器的运行动作。不同版本的机械臂需要烧录不同的固件（可以参考 [**MyStudio**]()章节）。
 * pymycobot安装。打开一个控制台终端(快捷键Win+R,输入cmd进入终端)，输入以下命令：
@@ -186,7 +195,7 @@ pip install pymycobot --upgrade --user
 * 源码安装。打开一个控制台终端(快捷键Win+R,输入cmd进入终端)，输入以下命令即可安装：
 
 ```python
-git clone https://github.com/elephantrobotics/pymycobot.git <your-path>   
+git clone -b develop https://github.com/elephantrobotics/pymycobot.git <your-path>   
 #其中<your-path>填写你的安装地址，不填默认在当前路径
 								
 cd <your-path>/pymycobot	
@@ -215,15 +224,25 @@ from pymycobot import Pro450Client
 
 2. 如果不想通过上述命令安装API库，可以通过以下github下载项目到本地。 
 
-   首先，进入项目地址：**https://github.com/elephantrobotics/pymycobot** 。然后点击网页右边Code按钮，再点击Download ZIP下载到本地，将压缩包pymycobot文件项目中的 pymycobot文件夹放入你python依赖库目录中，就可以直接导入使用。
+   首先，进入项目地址：**https://github.com/elephantrobotics/pymycobot/tree/develop** 。然后点击网页右边Code按钮，再点击Download ZIP下载到本地，将压缩包pymycobot文件项目中的 pymycobot文件夹放入你python依赖库目录中，就可以直接导入使用。
 
    <img src="../../../resources\3-FunctionsAndApplications\6.developmentGuide\python\build/pymycobotgithub.jpg" style="zoom: 33%;" />
 
 
 
-### 简单演示
+## 简单演示
 
+```python
+import time
+from pymycobot import Pro450Client
 
+pro450 = Pro450Client('192.168.0.232', 4500)  # 客户端连接通信
+
+print(pro450.get_angles())  # 读取全关节角度信息
+
+pro450.send_angle(1, 90, 50)  # 控制J1关节运动至90度，速度为50
+
+```
 
 ---
 

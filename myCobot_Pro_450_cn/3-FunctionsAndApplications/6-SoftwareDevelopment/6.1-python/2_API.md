@@ -1,18 +1,16 @@
-# Pro 450 Python API
+# Pro 450 Python Socket API
 [toc]
 ## API 使用介绍
 
 API（Application Programming Interface），又称应用程序编程接口函数，是预先定义好的函数。使用以下函数接口时，请在一开始就导入我们的API库，导入方式为输入如下代码，否则将无法成功运行：
 
-**注意：** 使用前需确保MyCobot Pro 450已开启服务端
-
 ```python
 # Example
 from pymycobot import Pro450Client
 
-mc = Pro450Client('192.168.0.232', 4500)
+pro450 = Pro450Client('192.168.0.232', 4500)
 
-print(mc.get_angles())
+print(pro450.get_angles())
 ```
 
 ### 1. 系统状态
@@ -83,16 +81,49 @@ print(mc.get_angles())
 - **功能:** 查询运动模式
 
 - **返回值:** 
-- `0`: 插补模式
-- `1`: 刷新模式
+  - `0`: 插补模式
+  - `1`: 刷新模式
 
 #### `set_fresh_mode()`
 
 - **功能:** 设置刷新模式
   
 - **参数:**
-- `1`: 总是首先执行最新的命令。
-- `0`: 以队列的形式按顺序执行指令。
+  - `1`: 总是首先执行最新的命令。
+  - `0`: 以队列的形式按顺序执行指令。
+
+#### `get_debug_state()`
+
+- **功能:** 获取当前机器人的调试日志模式。
+
+- **返回值:** `int`: 当前调试日志状态。
+  - `0`: 不记录任何调试日志 
+  - `1`: 仅常规调试日志 (_debug.log)
+  - `2`: 仅运动相关日志 (_move.log)
+  - `3`: 常规 + 运动相关日志 (_debug.log + _move.log)
+  - `4`: 仅电机读/控制频率日志 (_clock_rate_debug.log)
+  - `5`: 常规 + 电机频率日志 (_debug.log + _clock_rate_debug.log)
+  - `6`: 运动 + 电机频率日志 (_move.log + _clock_rate_debug.log)
+  - `7`: 记录全部日志
+
+#### `set_debug_state(log_state)`
+
+- **功能:** 设置当前机器人的调试日志模式。
+  
+- **参数:** 
+  - `log_state`: `int`, 调试日志状态（0 ~ 7）
+    - `0`: 不记录任何调试日志 
+    - `1`: 仅常规调试日志 (_debug.log)
+    - `2`: 仅运动相关日志 (_move.log)
+    - `3`: 常规 + 运动相关日志 (_debug.log + _move.log)
+    - `4`: 仅电机读/控制频率日志 (_clock_rate_debug.log)
+    - `5`: 常规 + 电机频率日志 (_debug.log + _clock_rate_debug.log)
+    - `6`: 运动 + 电机频率日志 (_move.log + _clock_rate_debug.log)
+    - `7`: 记录全部日志
+- **返回值**：`int`
+  - 1-成功
+  - 0-失败
+  - -1-错误
 
 ### 3. 机器人异常检测
 
@@ -850,7 +881,3 @@ print(mc.get_angles())
 - **参数**：
   - `gripper_id` (`int`) 夹爪ID，默认14，取值范围 1 ~ 254。
 - **返回值**：(`int`) 夹持电流值，范围 100 ~ 300。
-
----
-
-[← 上一章](./1_download.md) | [下一章 →](./3_angle.md)
