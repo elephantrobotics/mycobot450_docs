@@ -1,22 +1,28 @@
 # Environment setup
 
-pymycobot is a Python package for serial communication with myCobot, supporting Python2, Python3.5 and later versions.
+pymycobot is a Python package for serial communication with myCobot, supporting Python3.5 and later versions.
 
 Before using pymycobot to control the robot arm, you need to build a Python environment. The following is a detailed description of Python download and installation.
 
-## Download and install Python
+## Linux System
 
-**Applicable devices:**
+Install the pymycobot library in the console terminal:
 
-* myCobot 280:
-* **myCobot 280 M5**
-* myCobot 280 PI
-* myCobot 280 Jetson Nano
-* myCobot 280 for Arduino
+```python
+pip install pymycobot --upgrade --user
+```
+
+## Windows System
+
+### Download and install Python
+
+**Applicable devices:** 
+
+- **myCobot Pro 450**
 
 Currently, there are two versions of Python, one is `2.x` version and the other is `3.x` version. These two versions are incompatible. As `3.x` version is becoming more and more popular, our tutorial will take the latest `3.10.7` version as an example.
 
-###  Install Python
+####  Install Python
 
 > **Note: **Before installing, please confirm whether your computer is 64-bit or 32-bit. Right-click `My Computer` and select `Properties`. As shown in the figure below, it is a 64-bit operating system, so select the 64-bit Python installation package.
 >
@@ -32,7 +38,7 @@ Currently, there are two versions of Python, one is `2.x` version and the other 
 
 * **The prompt "Setup was successful" appears, indicating that the installation is complete** <img src="../../../resources\3-FunctionsAndApplications\6.developmentGuide\python\build/pythondownload4.jpg" style="zoom: 50%;" />
 
-### Run Python
+#### Run Python
 After successful installation, open the command prompt window (Win+R, enter cmd and press Enter), and type `python`. Two situations will occur.
 
 **Situation 1:**
@@ -51,7 +57,7 @@ If the input is wrong (for example, enter pythonn), an error message will appear
 
 > **Note:** The error message is generally caused by not configuring the environment variables. You can refer to **1.3 Configure environment variables** to modify the environment variables.
 
-### Configure environment variables
+#### Configure environment variables
 Since Windows will search for python.exe according to the path set by a Path environment variable, if it is not found, an error will be reported. Therefore, if you miss checking `Add Python 3.10 to PATH` during installation, you need to manually add the path where python.exe is located to Path, or reinstall Python and remember to check the `Add Python 3.10 to PATH` option.
 
 The following are the steps to manually add the path where python.exe is located.
@@ -72,13 +78,13 @@ The following are the steps to manually add the path where python.exe is located
 
 <img src="../../../resources\3-FunctionsAndApplications\6.developmentGuide\python\build/user variable3.jpg" style="zoom: 50%;" />
 
-## PyCharm installation and use
+### PyCharm installation and use
 
 PyCharm is a powerful Python editor with cross-platform capabilities. First, let's introduce the installation steps of PyCharm in Windows system.
 
 **Download address:** **https://www.jetbrains.com/pycharm/download/#section=windows**
 
-### Download and install
+#### Download and install
 
 * After entering the website, we will see the following interface:
 
@@ -102,7 +108,7 @@ Download the file according to the interface introduction. Professional means pr
 
 <img src="../../../resources\3-FunctionsAndApplications\6.developmentGuide\python\build/pycharm下载4.jpg" style="zoom: 50%;" />
 
-### Create a project
+#### Create a project
 
 After PyCharm is installed, enter the software and create the first program.
 
@@ -134,10 +140,10 @@ After PyCharm is installed, enter the software and create the first program.
 
 <img src="../../../resources\3-FunctionsAndApplications\6.developmentGuide\python\build/createproject2.jpg" style="zoom: 33%;" />
 
-### Before use
+#### Before use
 
 * Firmware burning. Firmware refers to the device "driver" stored inside the device. Only through firmware can the operating system implement the operation of a specific machine according to the standard device driver. Different versions of the robot arm need to burn different firmware (refer to the **MyStudio** chapter).
-* **M5 version** The Basic at the bottom needs to burn minirobot. After the burning is completed, select the **Transponder** function (this function is used to receive and forward the instructions sent by the Basic at the bottom to perform the target action), click `Press A`, and the **Atom: OK** prompt message appears, which means success. In addition, the latest version of atomMain is burned in the Atom at the end of the M5 version. It is burned by default at the factory, and there is no need to burn it yourself.
+
 * pymycobot installation. Open a console terminal (shortcut Win+R, enter cmd to enter the terminal), and enter the following command:
 
 ```python
@@ -153,7 +159,7 @@ The following words appear, indicating that the pymycobot package has been succe
 * Source code installation. Open a console terminal (shortcut Win+R, enter cmd to enter the terminal), enter the following command to install:
 
 ```python
-git clone https://github.com/elephantrobotics/pymycobot.git <your-path>
+git clone -b develop https://github.com/elephantrobotics/pymycobot.git <your-path>
 #Where <your-path> fills in your installation address, if not filled in, the current path is used by default
 
 cd <your-path>/pymycobot
@@ -168,17 +174,17 @@ python3 setup.py install
 
 ## Simple use of Python
 
-After the above preparations are completed, start to control the robot arm through Python code. Here, the MyCobot 280 M5 version is used as an example for demonstration.
+After the above preparations are completed, start to control the robot arm through Python code. Here, the MyCobot Pro 450 version is used as an example for demonstration.
 
 First, open the PyCharm you installed, create a new Python file, enter the following code, and import our library:
 
 ```python
-from pymycobot.mycobot280 import MyCobot280
+from pymycobot import Pro450Client
 ```
 
 **Note:**
 
-1. If you enter `from pymycobot.mycobot280 import MyCobot280`, there is no red wavy line under the font, which proves that it has been successfully installed and can be used. If a red wavy line appears, you can refer to [**How ​​to install the API library** ](https://www.cnblogs.com/xiaoguan-bky/p/11184740.html), [**How ​​to call the API library**](https://jingyan.baidu.com/article/25648fc1e86917d191fd009d.html).
+1. If you enter `from pymycobot import Pro450Client`, there is no red wavy line under the font, which proves that it has been successfully installed and can be used. If a red wavy line appears, you can refer to [**How ​​to install the API library** ](https://www.cnblogs.com/xiaoguan-bky/p/11184740.html), [**How ​​to call the API library**](https://jingyan.baidu.com/article/25648fc1e86917d191fd009d.html).
 
 2. If you do not want to install the API library through the above command, you can download the project to your local computer through the following github.
 
@@ -186,61 +192,20 @@ First, go to the project address: **https://github.com/elephantrobotics/pymycobo
 
 <img src="../../../resources\3-FunctionsAndApplications\6.developmentGuide\python\build/pymycobotdownload.jpg" style="zoom: 33%;" />
 
-### Simple Demonstration
-
-Create a new Python file in PyCharm and enter the following code to execute the LED flashing (myCobot 280-M5, myCobot 320-M5 and myPalletizer 260 can refer to the following code).
-
-> **Note:** The corresponding baud rates of various devices are different. Please refer to the information to understand their baud rates when using them. The serial port number can be viewed through **[Calculator Device Manager](https://docs.elephantrobotics.com/docs/gitbook/4-BasicApplication/4.1-myStudio/4.1.1-myStudio_download_driverinstalled.html#4113-%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%86cp210x%E5%92%8Ccp34x%E8%8A%AF%E7%89%87)** or the serial port assistant.
-
-The following are the corresponding codes for myCobot.
-
-* **myCobot**
+## Simple Demonstration
 
 ```python
-# demo.py
-from pymycobot.mycobot280 import MyCobot280
-
 import time
-#The above codes are required to be written, which means importing the project package
+from pymycobot import Pro450Client
 
-# MyCobot280 class initialization requires two parameters:
-#   The first is the serial port string, such as:
-#       linux:  "/dev/ttyUSB0"
-#       windows: "COM3"
-#   The second is the baud rate:: 
-#       M5 version is:  115200
-#
-#    Example:
-#       mycobot-M5:
-#           linux:
-#              mc = MyCobot280("/dev/ttyUSB0", 115200)
-#           windows:
-#              mc = MyCobot280("COM3", 115200)
+pro450 = Pro450Client('192.168.0.232', 4500) # Client connection communication
 
-# Initiate MyCobot280
-# Create object code here for windows version
-mc = MyCobot280("COM3", 115200)
+print(pro450.get_angles()) # Read all joint angles
 
-i = 7
-#loop 7 times
-while i > 0:                            
-    mc.set_color(0,0,255) #blue light on
-    time.sleep(2)    #wait for 2 seconds                
-    mc.set_color(255,0,0) #red light on
-    time.sleep(2)    #wait for 2 seconds
-    mc.set_color(0,255,0) #green light on
-    time.sleep(2)    #wait for 2 seconds
-    i -= 1
+pro450.send_angle(1, 90, 50) # Control J1 joint movement to 90 degrees at a speed of 50
+
 ```
 
-If the following error message appears when executing the code, please check carefully whether the serial port number in the program is correct. You can solve this error message by checking the serial port number of your computer and changing it to the serial port number you found in the program. If the program runs normally but the robot arm does not respond, please check whether the baud rate is entered correctly.
-```
-Traceback (most recent call last):
-  File "D:/python/Tms-GCN-edit/Tms-GCN-PyTorch/JointControl.py", line 24, in <module>
-    mc = MyCobot("COM7", 115200)
-  File "C:\Users\Lenovo\AppData\Roaming\Python\Python38\site-packages\pymycobot\mycobot.py", line 69, in __init__
-    self._serial_port.open()
-  File "C:\Users\Lenovo\AppData\Roaming\Python\Python38\site-packages\serial\serialwin32.py", line 64, in open
-    raise SerialException("could not open port {!r}: {!r}".format(self.portstr, ctypes.WinError()))
-serial.serialutil.SerialException: could not open port 'COM7': FileNotFoundError(2, 'The system cannot find the file specified。', None, 2)
-```
+---
+
+[← Previous Page](./README.md) | [Next Page →](./2_API.md)

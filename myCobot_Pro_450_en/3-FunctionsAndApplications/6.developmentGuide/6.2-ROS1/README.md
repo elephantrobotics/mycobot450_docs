@@ -1,71 +1,72 @@
-# Introduction to ROS/ROS2
+# ROS
 
-**ROS** is the abbreviation of Robot Operating System.
-**ROS** is a highly flexible software architecture used to write robot software programs.
+ROS is an open-source, post-operating system (ROS), or secondary operating system, for robotic control. It provides operating system-like functionality, including hardware abstraction, low-level driver management, execution of shared functions, inter-program messaging, and package management. It also provides tools and libraries for acquiring, building, writing, and running multi-machine integrated programs.
 
-**Note**:
+The ROS runtime "graph" is a network of loosely coupled peer-to-peer processes based on the ROS communication infrastructure. ROS implements several different communication methods, including a service mechanism for synchronous RPC-style communication, a topic mechanism for asynchronous streaming data, and a parameter server for data storage.
 
-- At present, **myCobot 280 series**, **myCobot 320 series**, **myPalletizer260 series**, **mechArm270 series** all support the use of **ROS**. For the specific development of various devices, please refer to [**Device Development**](../4-BasicApplication/README.md).
-- Use [**mystudio**](../4-BasicApplication/4.1-myStudio/README.md) to burn the corresponding firmware. Among them, burn minirobot in basic, select the transponder function, and burn the latest version of atomMain in atom.
+ROS is not a real-time framework, but it can be embedded in real-time programs. Willow Garage's PR2 robot uses a system called pr2_etherCAT to send and receive ROS messages in real time. ROS also integrates seamlessly with the Orocos Real-Time Toolkit.
 
-**ROS Icon** :
+**ROS Logo**:
 
 ![ROS Icon](../../../resources/3-FunctionsAndApplications/6.developmentGuide/ROS/ROSicon.png)
 
-**ROS** is open source and is a post-operating system, or secondary operating system, for robot control. It provides functions similar to those provided by an operating system, including hardware abstraction description, low-level driver management, execution of common functions, message passing between programs, and program distribution package management. It also provides some tool programs and libraries for obtaining, building, writing and running multi-machine integrated programs.
+## 1 Design Goals and Features of ROS
 
-**ROS**'s primary design goal is to increase code reuse in the field of robotics research and development. **ROS** is a distributed process (that is, "node") framework that is encapsulated in program packages and function packages that are easy to share and publish. **ROS** also supports a federated system similar to a code repository, which can also realize project collaboration and release. This design allows the development of a project to achieve completely independent decisions from the file system to the user interface (not limited by **ROS**). At the same time, all projects can be integrated with the basic tools of **ROS**.
+Many people ask, "What's the difference between ROS and other robotics software platforms?" This question is difficult to answer. ROS isn't a framework that integrates most functions or features. In fact, its primary goal is to support code reuse in robotics development. ROS is a framework for distributed processes (i.e., nodes), which are encapsulated in programs and function packages and can be easily shared and distributed. ROS also supports a federated system similar to a code repository, which facilitates collaboration and distribution of projects. This design allows for complete independence in project development and implementation, from file systems to user interfaces (ROS has no limitations). Furthermore, all projects can be integrated with ROS's basic tools.
 
-Due to the following shortcomings of ROS:
+To support its primary goals of sharing and collaboration, the ROS framework also has several other features:
 
-- Limited real-time communication
-- System stability has not yet reached industrial-grade requirements
-- No security measures
-- Only supports Linux (ubuntu)
-- Core mechanism performance is not optimized and occupies resources
+- Streamlined: ROS is designed to be as streamlined as possible, which makes it easier for ROS to The code written can be used with other robotics software frameworks. Consequently, ROS can be easily integrated into other robotics software platforms: ROS has already been integrated with OpenRAVE, Orocos, and Player.
+- ROS-independent libraries: The preferred development model for ROS is to write concise library functions that do not depend on ROS.
+- Language independence: The ROS framework can be easily implemented in any modern programming language. ROS has been implemented in Python, C++, and Lisp. Experimental libraries are also available in Java and Lua.
+- Loose coupling: Functional modules in ROS are encapsulated in independent packages or metapackages, making them easy to share. Modules in a package run on a per-node basis. Using ROS standard IO as an interface, developers do not need to worry about the internal implementation of modules. As long as they understand the interface rules, they can reuse modules and achieve point-to-point loose coupling.
+- Convenient testing: ROS has a built-in unit/integration testing framework called rostest, which makes it easy to install and uninstall test modules.
+- Extensible: ROS Suitable for large-scale operating systems and development processes.
+- Free and open source: It has many developers and feature packages.
 
-Therefore, **ROS** cannot really enter the industry, and naturally cannot be commercialized. To solve this problem, the community proposed **ROS 2**. It makes **ROS** have product characteristics, including real-time, full-platform adaptability, suitable for low-performance hardware (MCU+RTOS), distributed, data encryption and support for modern programming languages.
+## 2 Why use ROS?
 
-**ROS2** first removes the master node existing in **ROS**. After removing the master node, each node can discover each other through the DDS node, and each node is equal, and one-to-one, one-to-many, and many-to-many communication can be achieved. After using DDS for communication, reliability and stability are enhanced.
+ROS allows us to simulate and control a robotic arm in a virtual environment.
 
-Compared with **ROS** that only supports Linux systems, **ROS2** also supports windows, mac and even RTOS platforms.
+We will use **rviz** to visualize the robotic arm, manipulate it in various ways, and **MoveIt** to plan and execute its motion paths, achieving free control of the robotic arm.
 
-**[ROS1 Development Guide](./12.1-ROS1/12.1.1-Introduction.md)**
+In the following chapters, we will learn how to control our product using the ROS platform.
 
-**[ROS2 Development Guide](./12.2-ROS2/12.2.3-ROS2Introduction.md)**
+# MoveIt
 
-**ROS Applicable Devices:**
+**MoveIt** is currently the most advanced robotic arm motion manipulation software, used in over 100 robots. It integrates the latest advances in motion planning, control, 3D perception, motion control, control, and navigation, providing an easy-to-use platform for developing advanced robotic applications and an integrated software platform for the design, integration, and evaluation of new robotics products in industry, commerce, R&D, and other fields.
 
-- myCobot 280
-- myCobot 280 M5
-- myCobot 280 PI
-- myCobot 280 Jetson Nano
-- myCobot 280 for Arduino <br>
+**MoveIt Logo** :
 
-**Prerequisites:**
+![moveit icon](../../../resources/3-FunctionsAndApplications/6.developmentGuide/ROS/moveiticon.png)
 
-- **M5** series version, **M5Stack-basic** burn **miniRobot** at the bottom, select **Transponder** function, **ATOM** burn the latest version of **atomMain** at the end (factory default burned)
+## 1 Description
 
-**Device description:**
+MoveIt is a ROS integrated development platform consisting of various functional packages for manipulating robotic arms, including motion planning, manipulation, control, inverse kinematics, 3D perception, collision detection, and more.
 
-- myCobot 280-M5, myCobot 320-M5, myCobot 280-Arduino, myPalletizer 260, mechArm-270-M5 and other versions need to build an environment for use, but in ROS/ROS2, you only need to build a ROS environment or a ROS2 environment.
+The following figure shows the high-level structure of the main node **move_group** provided by MoveIt. It acts as a combiner: it brings together all the individual components to provide users with a range of operations and services.
 
-# MoveIt Introduction
+<img src =../../../resources/3-FunctionsAndApplications/6.developmentGuide/ROS/ROS1/moveit/moveit-1.png
+width ="500"  align = "center">
 
-**MoveIt** is currently the most advanced software for robot arm mobile operations and has been used on more than 100 robots. It integrates the latest achievements in motion planning, control, 3D perception, control science, control and navigation, and provides an easy-to-use platform for developing advanced robot applications. It provides an integrated software platform for the design and integrated use evaluation of new robot products in the fields of industry, commerce and R&D.
+## 2 User Interface
 
-**MoveIt Icon** :
+Users can access the operations and services provided by move_group in three ways:
 
-![moveit Icon](../../../resources/3-FunctionsAndApplications/6.developmentGuide/ROS/moveiticon.png)
+- In C++, using the move_group_interface package makes it easy to use move_group.
+- In Python, using the moveit_commander package.
+- Through a graphical user interface: using Rviz (a ROS visualization tool) with Motion-commander.
 
-**Applicable devices:**
+move_group can be configured through the ROS parameter server and can also retrieve the robot's URDF and SRDF from the server.
 
-- myCobot 280
-- myCobot 280 M5
-- myCobot 280 PI
-- myCobot 280 Jetson Nano
-- myCobot 280 for Arduino <br>
+## 3 Configuration
 
-**Prerequisites:**
+move_group is a ROS node. It uses the ROS parameter server to obtain three types of information:
 
-- **M5** series version, **M5Stack-basic** burn **miniRobot** at the bottom, select **Transponder** function, **ATOM** burn the latest version of **atomMain** at the end (factory default burned)
+- URDF - move_group looks for the robot_description parameter in the ROS parameter server to obtain the robot's URDF.
+- SRDF - move_group looks for the robot_description_semantic parameter in the ROS parameter server to obtain the robot's SRDF. The SRDF is typically created by the user using the MoveIt Setup Assistant.
+- MoveIt configuration - move_group will look for additional MoveIt-specific configuration in the ROS parameter server, including information about joint constraints, kinematics, motion planning, perception, and more. Configuration files for these components are automatically generated by the MoveIt Setup Assistant and stored in the configuration directory of the robot's corresponding MoveIt configuration package. For more information on using the setup assistant, see: [MoveIt Setup Assistant](https://moveit.picknik.ai/main/doc/examples/setup_assistant/setup_assistant_tutorial.html)
+
+---
+
+[← Previous Section](../6.1-python/README.md) | [Next Page →](./6.2.1-Environment_Setup.md)
