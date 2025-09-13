@@ -30,10 +30,8 @@ You can use Python to develop our robot arm according to the following guideline
 
 6. [Gripper control](./6_gripper.md)
 
-7. [TCP&IP](./7_TCPIP.md)
+7. [Robot exception handling](./7_exception_description.md)
 
-8. [Handle control](./9_HandleControl.md)
+---
 
-9. [Drawing patterns](./15_280_gcode_draw.md)
-
-10. [Demonstration code and video](./8_example.md)
+[← Previous Page](../README.md) | [Next Page →](./1_download.md)
