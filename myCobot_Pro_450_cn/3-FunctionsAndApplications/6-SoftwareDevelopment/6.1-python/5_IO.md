@@ -31,4 +31,4 @@ for i in range(2):
 
 ---
 
-[← 上一章](./4_coord.md) | [下一章 →](./6_gripper.md)
+[← 上一页](./4_coord.md) | [下一页 →](./6_gripper.md)

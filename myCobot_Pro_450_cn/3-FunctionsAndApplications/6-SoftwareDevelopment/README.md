@@ -26,4 +26,4 @@ mycobot Pro 450 是基于 PC 开发和使用的。由于机械臂内没有内置
 
 ---
 
-[← 上一章](../5-BasicApplication/5.4-FirmwareUpdateInfo.md) | [下一章 →](../6-SoftwareDevelopment/6.1-python/README.mdd)
+[← 上一章](../5-BasicApplication/5.4-FirmwareUpdateInfo.md) | [下一节 →](./6.1-python/README.md)

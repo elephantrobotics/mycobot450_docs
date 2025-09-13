@@ -33,4 +33,4 @@ time.sleep(2)
 
 ---
 
-[← 上一章](./5_IO.md) | [下一章 →](./7_exception_description.md)
+[← 上一页](./5_IO.md) | [下一页 →](./7_exception_description.md)
