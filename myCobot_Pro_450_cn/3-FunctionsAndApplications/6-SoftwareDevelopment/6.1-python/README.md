@@ -36,4 +36,4 @@
 
 ---
 
-[← 上一章](../README.md) | [下一章 →](./1_download.md)
+[← 上一页](../README.md) | [下一页 →](./1_download.md)
