@@ -1,64 +1,51 @@
-## What is myBlockly?
+# What is myStudio Pro?
 
 ![](../../../../resources/3-FunctionsAndApplications/6.developmentGuide/myBlocklyAndUlFlow/myblocklyTutorials/myblockly界面.jpg)
 
-**myBlockly** is a fully visual modular programming software, a graphical programming language.
+**myStudio Pro** is a one-stop robot programming and control software, supporting visual programming interaction, quick movement control, drag teaching, robot status query and configuration. There is a `myBlockly` module in myStudio Pro.
 
-**myBlockly** is similar to MIT's children's programming language Scratch in terms of function/design.
+`myBlockly` is functionally and designed similar to Scratch, a children's programming language developed by the Massachusetts Institute of Technology.
 
 When using **myBlockly**, users can drag and drop modules to build code logic, which is very similar to building blocks.
 
-From the user's perspective, **myBlockly** is a simple and easy-to-use visual tool for generating code. From the developer's perspective, **myBlockly** is a text box that contains the code entered by the user.
+From the user's perspective, `myBlockly` is a simple and easy-to-use visual code generation tool. From the perspective of developers, **myBlockly** is a text box that contains code input by users.
 
-The process of generating code into the text box is the process of the user dragging in **myBlockly**.
+The process of generating code in the text box is the process of the user dragging the code in `myBlockly` in **myStudio Pro**.
 
-## myBlockly installation
-![](../../../../resources/3-FunctionsAndApplications/6.developmentGuide/myBlocklyAndUlFlow/myblocklyTutorials/myblockly下载.jpg)
+The operating systems supported by myStudio Pro are as follows:
 
-**myBlockly download address:**
+- Windows
 
-- GitHub address: https://github.com/elephantrobotics/myblockly-package/releases
-- Official website address: https://www.elephantrobotics.com/download/
+- macOS
 
-**Applicable devices:**
-- myCobot 280
-- **myCobot 280 M5**
-- myCobot 280 PI
-- myCobot 280 Jetson Nano
-- myCobot 280 for Arduino
+- Linux arm64
 
-**Prerequisites:**
+The modern browsers supported by myStudio Pro are as follows:
 
-- **M5** series version, **M5Stack-basic** burn **miniRobot** at the bottom, select **Transponder** function, **ATOM** burn the latest version of **atomMain** at the end (factory default burned)
+- Chrome
 
-- **Pi \ jetsonnano** series, **ATOM** burn the latest version of **atomMain** (factory default burned)
+- Edge
 
-- Configure **Python environment**, please refer to the [Python ▶](https://docs.elephantrobotics.com/docs/gitbook/7-ApplicationBasePython/7.1_download.html) chapter
+- Safari
+  
+- ...
 
-## myBlockly Development and Use Guide
+**Jump to each section:**
 
-You can use myBlockly to develop our robotic arm according to the following guidelines
+- [6.5.1 FirstUse of myStudio Pro](./6.5.1-myStudioFirstUse.md)
 
-1.[MyBlockly Initial Use](5.1.1-myBlocklyFirstUse.md)
+- [6.5.2 Install and Uninstall](./6.5.2-install_uninstall.md)
 
-2.[Control RGB Light Board](5.1.2-ControlRGB.md)
+- [6.5.3 Interface Description](./6.5.3-interface_description.md)
 
-3.[Control the Robotic Arm to Return to Origin](5.1.3-ControlRoboticArmBackZero.md)
+- [6.5.4 Frequently Asked Questions](./6.5.4-Q&A.md)
 
-4.[Control Single Joint Movement](5.1.4-ControlSingleJoint.md)
+- [6.5.5 myBlockly](./6.5.5-blockly/6.5.5.1-blocklyFirstUse.md)
 
-5.[Control Multiple Joints](5.1.5-ControlSinglesJoint.md)
+- [6.5.6 QuickMove](./6.5.6-quickmove/6.5.6.1-quickmoveFirstUse.md)
 
-6.[Control the robot arm to swing left and right](5.1.6-ControlRoboticSwingLeft&Right.md)
+- [6.5.7 firmware and applications](./6.5.7-firmware/6.5.7.1-firmwareFirstUse.md)
 
-7.[Control the robot arm to dance](5.1.7-ControlRoboticArmDance.md)
+- [6.5.8 Settings](./6.5.8-setting/6.5.8.1-settingFirstUse.md)
 
-8.[Use of gripper](5.1.8-GripperUse.md)
-
-9.[Use of suction pump](5.1.9-PumpUse.md)
-
-10.[Gripper test](5.13-gripperTest.md)
-
-11.[IO test](5.14-ioTest.md)
-
-12.[Q&A](5.1.10Q&A.md)
+[← Previous page](./README.md) | [Next page →](./6.5.1-myStudioFirstUse.md)

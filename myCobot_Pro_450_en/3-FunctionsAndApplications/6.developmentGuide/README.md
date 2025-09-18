@@ -14,8 +14,8 @@ Our robot supports Python, and the development of the Python API library is also
 ROS (Robot Operating System), as an open source robot operating system, provides unlimited possibilities for robot development and control. Our robot can be controlled in a modular way through ROS's rich control functions. Whether it is joint control, path planning or sensor feedback, ROS provides corresponding tools and libraries to make the control process more flexible and efficient. </br>
 [6.3 ROS2](./6.3-ROS2/README.md)<br>
 ROS 2 (Robot Operating System 2) is a flexible software framework designed for robot software development. Our robot can make application development more efficient and modular through a series of services and functions such as hardware abstraction, device drivers, library functions, visualization tools, messaging, and package management. </br>
-[6.4 Blockly](./6.5-myBlockly/README.md)<br>
-myBlockly is a puzzle-style programming software developed by the R&D team of Shenzhen Elephant Robot Company. It is based on the python environment and the pymycobot dependency library, allowing users to program and control the mycobot robot in a building block-like manner.<br>
+[6.4 myStudio Pro](./6.5-myStudio/README.md)<br>
+myStudio Pro is a One-stop robot programming and control software, supporting visual programming interaction, quick movement control, drag teaching, and robot status query and configuration.<br>
 [6.5 C++](./6.4-Cplus/README.md)<br>
 C++ is the inheritance of C language. It can be used for both procedural programming in C language and object-based programming characterized by abstract data types. Using C++ language, you can freely develop (coordinate control, angle control, io control, gripper control, etc.) through the C++ dynamic library developed by our company, and control some robots that our company has developed.<br>
 [6.6 Communication](./6.6-CommunicationProtocolPackage/6.6-communication.md)<br>
