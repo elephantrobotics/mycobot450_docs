@@ -1,6 +1,6 @@
 # What is myStudio Pro?
 
-![](../../../../resources/3-FunctionsAndApplications/6.developmentGuide/myBlocklyAndUlFlow/myblocklyTutorials/myblockly界面.jpg)
+![](../../../resources/3-FunctionsAndApplications/6.developmentGuide/myStudio/home/home.png)
 
 **myStudio Pro** is a one-stop robot programming and control software, supporting visual programming interaction, quick movement control, drag teaching, robot status query and configuration. There is a `myBlockly` module in myStudio Pro.
 
