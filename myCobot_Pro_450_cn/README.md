@@ -52,8 +52,8 @@
 
 * 功能与应用
   * [5 基础功能](3-FunctionsAndApplications/5-BasicApplication/README.md)
-    * [5.1 myStudio](3-FunctionsAndApplications/5-BasicApplication/5.1-myStudio/README.md)
-      * [5.1.1 首次使用 myStudio](3-FunctionsAndApplications/5-BasicApplication/5.1-myStudio/5.1.1-myStudioFirstUse.md)
+    * [5.1 myStudio Pro](3-FunctionsAndApplications/5-BasicApplication/5.1-myStudio/README.md)
+      * [5.1.1 首次使用 myStudio Pro](3-FunctionsAndApplications/5-BasicApplication/5.1-myStudio/5.1.1-myStudioFirstUse.md)
       * [5.1.2 下载和卸载](3-FunctionsAndApplications/5-BasicApplication/5.1-myStudio/5.1.2-install_uninstall.md)
       * [5.1.3 接口描述](3-FunctionsAndApplications/5-BasicApplication/5.1-myStudio/5.1.3-interface_description.md)
       * [5.1.4 常见问题解答](3-FunctionsAndApplications/5-BasicApplication/5.1-myStudio/5.1.4-Q&A.md)
