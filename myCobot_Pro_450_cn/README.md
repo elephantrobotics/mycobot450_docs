@@ -30,6 +30,8 @@
 
 ### 文档目录  
 
+# myCobot-Pro-450 gitbook
+
 * [Introduction](README.md)
 
 * 产品信息
@@ -52,15 +54,11 @@
 
 * 功能与应用
   * [5 基础功能](3-FunctionsAndApplications/5-BasicApplication/README.md)
-    * [5.1 myStudio](3-FunctionsAndApplications/5-BasicApplication/5.1-myStudio/README.md)
-      * [5.1.1 首次使用 myStudio](3-FunctionsAndApplications/5-BasicApplication/5.1-myStudio/5.1.1-myStudioFirstUse.md)
+    * [5.1 myBlockly](3-FunctionsAndApplications/5-BasicApplication/5.1-myStudio/README.md)
+      * [5.1.1 首次使用 mblockly](3-FunctionsAndApplications/5-BasicApplication/5.1-myStudio/5.1.1-myStudioFirstUse.md)
       * [5.1.2 下载和卸载](3-FunctionsAndApplications/5-BasicApplication/5.1-myStudio/5.1.2-install_uninstall.md)
       * [5.1.3 接口描述](3-FunctionsAndApplications/5-BasicApplication/5.1-myStudio/5.1.3-interface_description.md)
       * [5.1.4 常见问题解答](3-FunctionsAndApplications/5-BasicApplication/5.1-myStudio/5.1.4-Q&A.md)
-      * [5.1.5 myBlockly](3-FunctionsAndApplications/5-BasicApplication/5.1-myStudio/5.1.5-blockly/5.1.5.1-blocklyFirstUse.md)
-      * [5.1.6 快速移动](3-FunctionsAndApplications/5-BasicApplication/5.1-myStudio/5.1.6-quickmove/5.1.6.1-quickmovefirstuse.md)
-      * [5.1.7 固件与应用](3-FunctionsAndApplications/5-BasicApplication/5.1-myStudio/5.1.7-firmware/5.1.7.1-firmware_main.md)
-      * [5.1.8 设置](3-FunctionsAndApplications/5-BasicApplication/5.1-myStudio/5.1.8-setting/5.1.8.1-setting_main.md)
     * [5.2 机器人控制端口](3-FunctionsAndApplications/5-BasicApplication/5.2-RobotControlPort.md)
     * [5.3 系统使用](3-FunctionsAndApplications/5-BasicApplication/5.3-SystemUsageInstructions.md)
     * [5.4 固件更新](3-FunctionsAndApplications/5-BasicApplication/5.4-FirmwareUpdateInfo.md)
@@ -85,16 +83,16 @@
       * [6.3.2 ROS2 基础](3-FunctionsAndApplications/6-SoftwareDevelopment/6.3-ROS2/6.3.2-ROS2_Basics.md)
       * [6.3.3 Rviz2 使用](3-FunctionsAndApplications/6-SoftwareDevelopment/6.3-ROS2/6.3.3-RVIZ2_Introduction.md)
       * [6.3.4 基本功能案例](3-FunctionsAndApplications/6-SoftwareDevelopment/6.3-ROS2/6.3.4-Basic_Functions.md)
-    * [6.4 基于C++ 开发使用](3-FunctionsAndApplications/6-SoftwareDevelopment/6.3-Cplus/README.md)
-      * [6.4.1 环境搭建](3-FunctionsAndApplications/6-SoftwareDevelopment/6.3-Cplus/6.3.1-download.md)
-      * [6.4.2 编译运行](3-FunctionsAndApplications/6-SoftwareDevelopment/6.3-Cplus/6.3.2-build.md)
-      * [6.4.3 关节控制](3-FunctionsAndApplications/6-SoftwareDevelopment/6.3-Cplus/6.3.3-angle.md)
-      * [6.4.4 坐标控制](3-FunctionsAndApplications/6-SoftwareDevelopment/6.3-Cplus/6.3.4-coord.md)      
-      * [6.4.5 IO控制](3-FunctionsAndApplications/6-SoftwareDevelopment/6.3-Cplus/6.3.5-io.md)      
-      * [6.4.6 夹爪控制](3-FunctionsAndApplications/6-SoftwareDevelopment/6.3-Cplus/6.3.6-gripper.md)      
-      * [6.4.7 api说明](3-FunctionsAndApplications/6-SoftwareDevelopment/6.3-Cplus/6.3.7-API.md)      
-      * [6.4.8 使用案例](3-FunctionsAndApplications/6-SoftwareDevelopment/6.3-Cplus/6.3.8-example.md)      
-    * [6.5 基于通信协议包开发](3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-CommunicationProtocolPackage/6.4-communication.md)
+    * [6.4 基于C++ 开发使用](3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/README.md)
+      * [6.4.1 环境搭建](3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.1-download.md)
+      * [6.4.2 编译运行](3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.2-build.md)
+      * [6.4.3 关节控制](3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.3-angle.md)
+      * [6.4.4 坐标控制](3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.4-coord.md)      
+      * [6.4.5 IO控制](3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.5-io.md)      
+      * [6.4.6 夹爪控制](3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.6-gripper.md)      
+      * [6.4.7 api说明](3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.7-API.md)      
+      * [6.4.8 使用案例](3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.8-example.md)      
+    * [6.5 基于通信协议包开发](3-FunctionsAndApplications/6-SoftwareDevelopment/6.5-CommunicationProtocolPackage/6.5-communication.md)
   * [7 成功案例](3-FunctionsAndApplications/7-ExamplesRobotsUsing/README.md)
     * [7.1 机器人复合案例](3-FunctionsAndApplications/7-ExamplesRobotsUsing/7.1.md)
     * [7.2 3D视觉无序分拣](3-FunctionsAndApplications/7-ExamplesRobotsUsing/7.2.md)
@@ -122,6 +120,10 @@
 
 * 致谢
   * [11 致谢](5-Acknowledgments/11-Acknowledgements.md)
+
+
+     
+
 
 ---
 
