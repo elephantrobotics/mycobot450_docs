@@ -30,6 +30,8 @@
 
 ### 文档目录  
 
+# myCobot-Pro-450 gitbook
+
 * [Introduction](README.md)
 
 * 产品信息
@@ -85,16 +87,16 @@
       * [6.3.2 ROS2 基础](3-FunctionsAndApplications/6-SoftwareDevelopment/6.3-ROS2/6.3.2-ROS2_Basics.md)
       * [6.3.3 Rviz2 使用](3-FunctionsAndApplications/6-SoftwareDevelopment/6.3-ROS2/6.3.3-RVIZ2_Introduction.md)
       * [6.3.4 基本功能案例](3-FunctionsAndApplications/6-SoftwareDevelopment/6.3-ROS2/6.3.4-Basic_Functions.md)
-    * [6.4 基于C++ 开发使用](3-FunctionsAndApplications/6-SoftwareDevelopment/6.3-Cplus/README.md)
-      * [6.4.1 环境搭建](3-FunctionsAndApplications/6-SoftwareDevelopment/6.3-Cplus/6.3.1-download.md)
-      * [6.4.2 编译运行](3-FunctionsAndApplications/6-SoftwareDevelopment/6.3-Cplus/6.3.2-build.md)
-      * [6.4.3 关节控制](3-FunctionsAndApplications/6-SoftwareDevelopment/6.3-Cplus/6.3.3-angle.md)
-      * [6.4.4 坐标控制](3-FunctionsAndApplications/6-SoftwareDevelopment/6.3-Cplus/6.3.4-coord.md)      
-      * [6.4.5 IO控制](3-FunctionsAndApplications/6-SoftwareDevelopment/6.3-Cplus/6.3.5-io.md)      
-      * [6.4.6 夹爪控制](3-FunctionsAndApplications/6-SoftwareDevelopment/6.3-Cplus/6.3.6-gripper.md)      
-      * [6.4.7 api说明](3-FunctionsAndApplications/6-SoftwareDevelopment/6.3-Cplus/6.3.7-API.md)      
-      * [6.4.8 使用案例](3-FunctionsAndApplications/6-SoftwareDevelopment/6.3-Cplus/6.3.8-example.md)      
-    * [6.5 基于通信协议包开发](3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-CommunicationProtocolPackage/6.4-communication.md)
+    * [6.4 基于C++ 开发使用](3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/README.md)
+      * [6.4.1 环境搭建](3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.1-download.md)
+      * [6.4.2 编译运行](3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.2-build.md)
+      * [6.4.3 关节控制](3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.3-angle.md)
+      * [6.4.4 坐标控制](3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.4-coord.md)      
+      * [6.4.5 IO控制](3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.5-io.md)      
+      * [6.4.6 夹爪控制](3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.6-gripper.md)      
+      * [6.4.7 api说明](3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.7-API.md)      
+      * [6.4.8 使用案例](3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.8-example.md)      
+    * [6.5 基于通信协议包开发](3-FunctionsAndApplications/6-SoftwareDevelopment/6.5-CommunicationProtocolPackage/6.5-communication.md)
   * [7 成功案例](3-FunctionsAndApplications/7-ExamplesRobotsUsing/README.md)
     * [7.1 机器人复合案例](3-FunctionsAndApplications/7-ExamplesRobotsUsing/7.1.md)
     * [7.2 3D视觉无序分拣](3-FunctionsAndApplications/7-ExamplesRobotsUsing/7.2.md)
@@ -122,6 +124,10 @@
 
 * 致谢
   * [11 致谢](5-Acknowledgments/11-Acknowledgements.md)
+
+
+     
+
 
 ---
 
