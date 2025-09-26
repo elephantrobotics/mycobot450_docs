@@ -20,22 +20,17 @@
 | 通信         | TCP/IP-Socket<br>MODBUS<br>Ethernet IP    |
 
 
-## 2. 控制核心参数
-
-### 2.1 主控制器规格表
-
-
-### 2.2 辅助控制器规格表
-
 ---
 
-## 3. 结构尺寸参数
+## 2. 结构尺寸参数
 > ！本章以毫米为距离单位，以度为角度单位。
 
-### 3.1 产品尺寸和工作空间
+### 2.1 产品尺寸和工作空间
 <!-- ![工作范围](../../resources/1-ProductInformation/2.ProductParameter/WorkingRange.png) -->
 ![尺寸规格](../../resources/1-ProductIntroduction/2.ProductParameter/size.png)
-### 3.2 关节运动范围
+### 2.2 关节运动范围
+**硬件关节运动范围**
+
 | 关节       | 范围 |
 | :--------: | :----------:|
 | J1        | -360 ~ +360     |
@@ -44,7 +39,18 @@
 | J4        | -150 ~ +150 |
 | J5   | -360 ~ +360                   |
 | J6   | -360 ~ +360         |
-### 3.3 孔位安装
+
+**软件关节运动范围**
+
+| 关节       | 范围 |
+| :--------: | :----------:|
+| J1        | -165 ~ +165     |
+| J2        | -120 ~ +120      |
+| J3  | -158 ~ +158                   |
+| J4        | -165 ~ +165 |
+| J5   | -165 ~ +165                   |
+| J6   | -175 ~ +175         |
+### 2.3 孔位安装
 - 机器人底座安装法兰，底座同时兼容乐高科技件安装方式和M4螺丝安装方式。
 
 ![孔位安装](../../resources/1-ProductIntroduction/2.ProductParameter/孔位安装1.jpg)
@@ -53,9 +59,11 @@
 
 ![孔位安装](../../resources/1-ProductIntroduction/2.ProductParameter/末端.png)
 
-## 4. 电气特性参数
+## 3. 电气特性参数
+![底座](../../resources/1-ProductIntroduction/2.ProductParameter/底座.png)
 
-## 5. 笛卡尔坐标参数
+
+## 4. 笛卡尔坐标参数
 
 ![DH参数](../../resources/1-ProductIntroduction/2.ProductParameter/坐标.png)
 

@@ -1,21 +1,54 @@
-# 基础功能
+# 什么是 myStudio Pro？
 
-| ![](../../resources/5-BasicApplication/README/danger.png)| 本章主要解释产品的基本功能用法和基本软件的使用。本章至关重要，应仔细阅读。在实际应用机器人之前，请确保正确理解所述操作。 |
-| ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+![](../../../resources/5-BasicApplication/5.2/5.2.1/img/myblockly/myblockly界面.jpg)
 
+**myStudio Pro** 是一款一站式机器人编程控制软件，支持可视化编程交互、快捷移动控制、拖动教学、机器人状态查询配置，在myStudio Pro中有`myBlockly`模块。
 
-- [5.1 myStudio Pro](./5.1-myStudio/README.md)<br/>
-myStudio Pro一站式机器人编程控制软件，支持可视化编程交互、快捷移动控制、拖动教学、机器人状态查询配置。myStudio Pro界面简洁，编程功能全面。它的myBlockly可视化编程方法适合初次接触机器人产品的用户。
+**myBlockly** 在功能/设计上类似于麻省理工学院的儿童编程语言 Scratch。
 
-- [5.2 机器人控制端口](./5.2-RobotControlPort.md)
+使用 **myBlockly** 时，用户可以通过拖动模块来构建代码逻辑。这个过程就像搭积木一样。
 
+从用户的角度来看，**myBlockly** 是一个简单易用的可视化代码生成工具。从开发人员的角度来看，**myBlockly** 是一个文本框，其中包含用户输入的代码。
 
-- [5.3 系统使用](./5.3-SystemUsageInstructions.md)  
-在使用系统之前，你需要掌握基本的 Linux 知识，如文件管理和命令行操作。在网络配置方面，要了解访问系统的远程连接方法（如 SSH）。闪存镜像时，选择正确的文件和工具，正确设置参数，确保系统正常运行。
+在文本框中生成代码的过程，就是用户在 **myStudio Pro** 中的myBlockly中拖动代码的过程。
 
-- [5.4 固件更新](./5.4-FirmwareUpdateInfo.md)<br/>
-为了确保您的 mycobot pro 450 机器臂始终处于最佳状态，我们不断改进和更新固件。固件更新是确保设备功能、性能和安全性的关键步骤之一。通过及时更新固件，我们可以修复已知问题、改进功能、提高性能，并确保 mycobot pro 450 机器臂 的稳定性和安全性。
+## myStudio Pro 支持的操作系统如下：
 
+- Windows
+
+- macOS
+
+- Linux arm64
+  
+## myStudio Pro 支持的现代浏览器如下：
+
+- Chrome
+
+- Edge
+
+- Safari
+
+- ...
+
+**跳转到各部分：**
+- [5.1 首次使用 myStudio Pro](./5.1-myStudioFirstUse.md)
+- [5.2 下载和卸载](./5.2-install_uninstall.md)
+- [5.3 接口描述](./5.3-interface_description.md)
+- [5.4 常见问题解答](./5.4-Q&A.md)
+- [5.5 myBlockly]()
+    - [5.5.1 首次使用](./5.5-blockly/5.5.1-blocklyFirstUse.md)
+    - [5.5.2 blockly主界面介绍](./5.5-blockly/5.5.2-interfaceDescription.md)
+    - [5.5.3 小案例](./5.5-blockly/5.5.3-littleCase.md)
+    - [5.5.4 快速填入数据](./5.5-blockly/5.5.4-autofill.md)
+    - [5.5.5 快速移动](./5.5-blockly/5.5.5-quickMove.md)
+    - [5.5.6 学习使用坐标控制](./5.5-blockly/5.5.6-useCoords.md)
+    - [5.5.7 单步执行](./5.5-blockly/5.5.7-singleStep.md)
+    - [5.5.8 程序控制](./5.5-blockly/5.5.8-program.md)
+    - [5.5.9 路点](./5.5-blockly/5.5.9-waypoint.md)
+    - [5.5.10 夹爪的使用](./5.5-blockly/5.5.10-gripperUse.md)
+- [5.6 快速移动](./5.6-quickmove/5.6.1-quickmovefirstuse.md)
+- [5.7 固件与应用](./5.7-firmware/5.7.1-firmware_main.md)
+- [5.8 设置](./5.8-setting/5.8.1-setting_main.md)
 ---
 
-[← 上一章](../../2-BasicSettings/4-FirstInstallAndUse/4.3-PowerOnDetectionGuide.md) | [下一章 →](../5-BasicApplication/5.1-5.1-myBlockly/README.md)
+[← 上一章](../../2-BasicSettings/4-FirstInstallAndUse/4.3-PowerOnDetectionGuide.md) | [下一章 →](./5.1-myStudioFirstUse.md)

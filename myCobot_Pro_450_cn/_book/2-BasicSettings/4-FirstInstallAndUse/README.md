@@ -1,6 +1,5 @@
 # 首次安装和使用
 
-![](../resources/4-FirstInstallAndUse/README/JN-main.png)
 
 - **感谢您选择我们的产品**
 
