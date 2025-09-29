@@ -192,13 +192,44 @@ First, go to the project address: **https://github.com/elephantrobotics/pymycobo
 
 <img src="../../../resources\3-FunctionsAndApplications\6.developmentGuide\python\build/pymycobotdownload.jpg" style="zoom: 33%;" />
 
+## Preparing for Use
+
+Before using the Python API, please ensure that the following hardware and environment are complete:
+
+- **Hardware**
+  - MyCobot Pro 450 robot arm
+  - Network cable (for connecting the robot arm to the computer)
+  - Power adapter
+  - Emergency stop switch (for safe operation)
+
+- **Software and Environment**
+  - Python 3.6 or later installed
+  - The `pymycobot` library installed (using the `pip install pymycobot` terminal command)
+  - Ensure that the MyCobot Pro 450 is properly powered on and in standby mode
+  - Ensure that the MyCobot Pro 450 server is started
+
+- **Network Configuration**
+  - MyCobot Pro 450 default IP address: `192.168.0.232`
+  - Default port number: `4500`
+  - **Note**: The PC network card IP address must be set to **Same network segment** (e.g., `192.168.0.xxx`, where `xxx` is any number between 2 and 254 and cannot conflict with the robot arm's IP address).
+  - Example:
+    - Robot arm IP: `192.168.0.232`
+    - PC IP: `192.168.0.100`
+    - Subnet mask: `255.255.255.0`
+
+---
+
 ## Simple Demonstration
 
 ```python
 import time
 from pymycobot import Pro450Client
 
+# The default IP address is "192.168.0.232" and the default port number is 4500
 pro450 = Pro450Client('192.168.0.232', 4500) # Client connection communication
+
+if pro450.is_power_on() !=1:
+    pro450.power_on()  # Power on
 
 print(pro450.get_angles()) # Read all joint angles
 
