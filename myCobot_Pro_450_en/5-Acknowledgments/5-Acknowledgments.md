@@ -1,6 +1,6 @@
 # Acknowledgements
 
-We would like to express our deep gratitude to all the people who have participated in the development, testing and improvement of the myCobot series of products (including myCobot 280 pi, myCobot 280 M5, myCobot 280 JN, myCobot 280 For Arduino and kits). Every detail polished and every feature innovative is inseparable from the hard work and dedication of the team behind it.
+We would like to express our deep gratitude to all the people who have participated in the development, testing and improvement of the myCobot series of products (including myCobot 280 pi, myCobot 280 M5, myCobot 280 JN, myCobot 280 For Arduino, myCobot Pro 450 and kits). Every detail polished and every feature innovative is inseparable from the hard work and dedication of the team behind it.
 
 ### Special thanks:
 
@@ -20,4 +20,4 @@ We look forward to continuing to explore and progress on the road of robotics wi
 
 ---
 
-[← Previous Chapter](../5-SupportAndService/5-SupportAndService.md)
+[← Previous Chapter](../4-SupportAndService/Accessories/10.9-penHolder.md)

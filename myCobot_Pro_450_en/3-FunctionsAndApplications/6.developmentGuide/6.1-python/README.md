@@ -34,4 +34,4 @@ You can use Python to develop our robot arm according to the following guideline
 
 ---
 
-[← Previous Page](../README.md) | [Next Page →](./1_download.md)
+[← Previous Chapter](../README.md) | [Next Chapter→](./1_download.md)

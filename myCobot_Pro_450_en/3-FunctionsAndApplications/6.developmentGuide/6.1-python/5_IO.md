@@ -28,7 +28,6 @@ for i in range(2):
     time.sleep(3)
     close_gripper()
 ```
-
 ---
 
-[← Previous Page](./4_coord.md) | [Next Page →](./6_gripper.md)
+[← Previous Chapter](./4_coord.md) | [Next Chapter→](./6_gripper.md)

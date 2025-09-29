@@ -208,4 +208,4 @@ pro450.send_angle(1, 90, 50) # Control J1 joint movement to 90 degrees at a spee
 
 ---
 
-[← Previous Page](./README.md) | [Next Page →](./2_API.md)
+[← Previous Chapter](./README.md) | [Next Chapter→](./2_API.md)

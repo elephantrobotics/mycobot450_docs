@@ -28,4 +28,4 @@ time.sleep(3)
 
 ---
 
-[← Previous Page](./2_API.md) | [Next Page →](./4_coord.md)
+[← Previous Chapter](./2_API.md) | [Next Chapter→](./4_coord.md)

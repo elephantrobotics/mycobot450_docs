@@ -895,4 +895,4 @@ print(mc.get_angles())
 
 ---
 
-[← Previous Page](./1_download.md) | [Next Page →](./3_angle.md)
+[← Previous Chapter](./1_download.md) | [Next Chapter→](./3_angle.md)

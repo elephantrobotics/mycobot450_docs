@@ -103,4 +103,4 @@ MoveIt 2 has a global developer community that continuously provides updates, fe
 
 ---
 
-[← Previous Section](../6.2-ROS1/README.md) | [Next Page →](./6.3.1-Environment_Setup.md)
+[← Previous Chapter](../6.2-ROS1/6.2.4-Basic_Functions.md) | [Next Chapter→](./6.3.1-Environment_Setup.md)

@@ -69,4 +69,4 @@ move_group is a ROS node. It uses the ROS parameter server to obtain three types
 
 ---
 
-[← Previous Section](../6.1-python/README.md) | [Next Page →](./6.2.1-Environment_Setup.md)
+[← Previous Chapter](../6.1-python/7_exception_description.md) | [Next Chapter→](./6.2.1-Environment_Setup.md)

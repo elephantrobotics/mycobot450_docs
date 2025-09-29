@@ -30,4 +30,4 @@ time.sleep(3)
 
 ---
 
-[← Previous Page](./3_angle.md) | [Next Page →](./5_IO.md)
+[← Previous Chapter](./3_angle.md) | [Next Chapter→](./5_IO.md)

@@ -1,70 +1,74 @@
-# Chapter 1 Product Introduction
-## 1.product description
+# Product Introduction
+## 1. product description
 
-##### myCobot 280 M5
+##### myCobot Pro 450  
 
-![封面](../../resources/1-ProductInformation/1.ProductIntroduction/main1.jpg)
-##### Desktop six-axis collaborative robot
+![封面](../../resources/1-ProductInformation/1.ProductIntroduction/main.jpg)
+##### The first choice for getting started with the full harmonic collaborative robot arm
 
-### Product Introduction
+### 1.1 Product Introduction
 
-myCobot is jointly produced by **Elephant Robot** and **M5stack**. It is the **world's smallest and lightest six-axis collaborative robot**. It can be redeveloped according to user needs to achieve user customization. It is a productivity tool and a tool to expand the boundaries of imagination.
+The myCobot Pro 450 is a compact, **fully harmonic, six-axis collaborative robot arm** designed for use in **education, scientific experiments, commercial demonstrations, and light industrial automation**. It boasts a wide range of core functions and precise manipulation capabilities, including a working radius of up to 450 mm, a payload capacity of 1 kg, and positioning repeatability up to ±0.1 mm. It excels at a wide range of light-load, high-precision tasks.
 
-myCobot weighs 850g, has a payload of 250g, and an effective working radius of 280mm. It is small in size but powerful in function. It can be matched with a variety of end effectors to adapt to a variety of application scenarios, and can also support the secondary development of multi-platform software to meet the needs of various scenarios such as **scientific research and education, smart home, and commercial exploration**.
+In terms of control, it relies on a built-in industrial-grade core control board and self-developed control system, which can be easily connected to terminal devices such as computers, tablets, and mobile phones. The pre-installed drag-and-drop programming software and quick debugging interface make it easy for users with no basic knowledge to get started. At the same time, the integrated interface design on the tool side eliminates the trouble of cables when connecting the grippers, and the newly added CAN and RS485 interfaces on the base provide ample space for secondary development and function expansion. Its core value lies in providing users in different fields with a high-performance, easy-to-use and highly scalable collaborative robot arm solution, helping to improve work efficiency and innovation capabilities.
 
-### design concept
+### 1.2 design concept
 ![理念](../../resources/1-ProductInformation/1.ProductIntroduction/DualScreen.jpg)
-The myCobot 280 series robot arm is a six-degree-of-freedom collaborative robot developed by Elephant Robotics for scenarios such as scientific research and education, maker applications, and commercial displays. The robot arm has a compact and exquisite appearance and structure, and a one-piece fully enclosed body design without any leaking cables. It is equipped with the robot motion control algorithm independently developed by Elephant Robotics, and supports multiple control modes such as angle, coordinate, potential value, and radian value, making it easier for users to understand the complex working principles of robots and the application principles of robots. It supports the development of application cooperation and can be expanded to a variety of main controls such as PCs, industrial computers, and embedded devices, suitable for a variety of application scenarios.
 
-### Design goals
+The myCobot Pro 450 was designed to meet the growing demand for diverse applications. In education, it aims to help students more intuitively engage with and learn robotics, cultivating practical skills and innovative thinking. In scientific research, it aims to provide researchers with stable and precise experimental tools, accelerating their research progress. In commercial displays, it aims to create engaging interactive experiences and enhance presentations.
+
+### 1.3 Design goals
 
 | Design goals                                             | description                                                  | Application scenarios and features                           |
-| -------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| **Universal multi-functional platform**                  | myCobot 280 M5 is suitable for a variety of application scenarios such as education, research and commercial display, maker development, etc. | Its six degrees of freedom and 280mm arm span support complex motion control in various working environments. It can be equipped with a variety of end accessories such as grippers and suction pumps to meet various application scenarios. |
-| **Educational Support**                                  | myCobot 280 M5 supports drag-and-drop programming language and interactive drag-and-drop teaching, which facilitates the intuitive display of how the robot arm works. | The product supports the myblocky graphical programming tool, which allows beginners to intuitively experience robot applications by dragging and combining different modules for programming. |
-| **Programmability and scalability**                      | The myCobot 280 M5 is highly programmable, allowing users to customize and program it to meet the needs of future technologies based on emerging technologies. | Through user-defined programming, the equipment can achieve optimized operation and experimental results to meet the ever-changing needs of research and development. |
-| **Technological innovation and knowledge dissemination** | myCobot 280 M5 can be used as a platform to showcase the latest scientific and technological achievements in commercial exhibitions, aiming to enhance the public's understanding and interest in science and technology and promote the transformation of scientific and technological innovation into commercialization. | By displaying and demonstrating the latest scientific and technological achievements, we can increase public participation, promote the popularization of scientific and technological knowledge and the market acceptance of scientific and technological products. |
+| ---------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **Meet diverse high-precision operation needs**     | The 450mm working radius covers a standard tabletop, the 1kg payload supports multiple end effectors, and the repeatability accuracy is controlled to ±0.1mm. | - Educational and scientific research scenarios: can be used for experimental data collection, and its high precision can ensure the accuracy and reliability of the data；<br>- Light industrial automation scenarios: It can perform fine material processing, such as the installation and sorting of electronic components, to improve production efficiency and product quality.|
+| **Lowering usage thresholds and technical barriers**           | Multi-terminal connection, pre-installed drag-and-drop programming software, 4 industrial-grade connections and multi-standard protocols, easy to use even with zero basic knowledge. | - Educational teaching scenario: Students can easily connect and operate the robotic arm through terminal devices, learn robot programming knowledge with the help of programming software, and improve practical skills；<br>- Business scenarios: Enterprise personnel can use this robotic arm to conduct preliminary research and verification of solutions without complex technical training, reducing the cost of using technology. |
+| **Promote innovative application and expansion**   |It integrates multimodal and embodied intelligent large models, features visual and voice control, provides four out-of-the-box solutions, and supports secondary development through its interfaces. | - Research scenarios: Researchers can conduct cutting-edge research on robot intelligent decision-making, autonomous motion strategies, and other topics based on large models and embodied intelligence capabilities.；<br>- Commercial display scenarios: Leverage multimodal interaction and unique application solutions to create a novel interactive display experience, attract customer attention, and enhance brand image. |
 
-### Features
+### 1.4 Feature
 
-![特点](../../resources/1-ProductInformation/1.ProductIntroduction/product.png)
+![特点](../../resources/1-ProductInformation/1.ProductIntroduction/ProductFeature.png)
 
-|                                                              |                                                              |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| **Unique industrial design, extremely compact**              | Integrated design, compact overall structure, net weight of only 850g, very easy to carry. Modular design, few spare parts, low maintenance cost, can be quickly disassembled and replaced, and realize plug and play |
-| **High configuration, equipped with two displays**           | It contains 6 high-performance servo motors with fast response, small inertia and smooth rotation. It has two display screens and supports fastLED library, which is convenient for expanding application interactive output. |
-| **LEGO connector, M5 has thousands of applications**         | The base uses M5Stack-basic as the main control, and thousands of application cases can be used directly. The base and the end are equipped with Lego technology parts interface, which is suitable for the development of various micro embedded devices. |
-| **Graphical programming, supporting industrial robot software** | Using myBlockly visual programming software, programming is easy on the palm of your hand, and the operation is simple and easy to use. Supports Arduino + ROS open source system. |
-| **Track entry, point saving**                                | myCobot 280 M5 supports drag-to-teach and can record the saved paths. It breaks away from the traditional path point storage mode and can save up to 60 minutes of different paths. |
+| Features                | Feature description                                                     |
+| -----------------------| ------------------------------------------------------------ | 
+| **Ultra-long standby**            | Laboratory-verified lifespan > 10,000 hours (Note: actual operating conditions may affect this), long-lasting stability, making teaching and research less stressful. |
+| **Commercial-grade safety joints**      | The integrated harmonic reducer + servo motor + joint brake + controller self-locks upon power failure, ensuring safety and reliability, and greater peace of mind for human-machine collaboration. |
+| **Integrated precision, solid and reliable**   | The all-metal integrated high-temperature die-cast body has uniform structural strength and a built-in controller, eliminating the need for external electrical boxes and complex cables, making it simple and efficient. |
+| **The Internet of Things**          | Support for four industrial-grade connections (WLAN/EtherNet/RS485/CAN) and a variety of protocols (Socket-TCP/Modbus/CANOpen) allows for easy integration into existing systems and worry-free Industry 4.0 integration. |
+| **Precise and efficient, lightweight choice**   | Working radius: 450mm, load: 1kg, accuracy: ±0.1mm, weight: < 5kg, optimized for light-load, high-precision tasks, it is an ideal partner for desktop automation and precision operations. |
+| **Zero threshold control**          | myCobot Pro cross-platform control center - connect directly from your browser (just enter the IP address), no installation required! Integrated: Blockly graphical programming & drag-to-teach: turn novice programmers into programming experts in seconds. Fast mobile control & status monitoring. Supports multiple connection configurations including Modbus, VNC, and Socket. One-stop firmware upgrades and management. |
+| **Open source ecosystem, unlimited possibilities**   | Provides a complete URDF model and exposes low-level interfaces for joint motors (including queryable position, velocity, acceleration, and current), facilitating kinematic and dynamic simulation modeling (ROS2, Isaac Sim, and MuJoCo). Over 90 standard control interface libraries (Python and C++) are available, covering status query and joint and Cartesian motion control. This is developer-friendly and efficiently enables secondary development. |
+| **Infusion of "soul" into large models**     | Supports integration with large multimodal models (such as DeepSeek and ChatGPT) to enable intelligent grasping using voice commands and visual recognition, making interaction more intuitive. Supports integration with large embodied intelligence models (such as Lerobot) to enable autonomous motion strategy learning and deployment, exploring the frontiers of intelligent agents. |
+| **Cool App Suite**             | Provides three out-of-the-box solutions: 3D visual disordered sorting, high-precision writing and painting, and mobile composite robots, allowing you to quickly build teaching/experimental/display scenarios. |
 
 
 
-## 2.Product Application
+
+## 2. Product Application
 
 ![应用场景](../../resources/1-ProductInformation/1.ProductIntroduction/ApplicationScenario.png)
-### Client
+### 2.1 Client
 
-|                                                 |                                                              |
-| ----------------------------------------------- | ------------------------------------------------------------ |
-| **Educational institutions**                    | myCobot 280 can be used as a teaching and scientific research tool designed for robotic experiments and technology demonstrations. It can effectively support complex data analysis, algorithm development and verification activities, significantly improving research quality and educational effectiveness. |
-| **Technical developers and engineers**          | Supporting multiple programming languages such as Python, C++, C#, myCobot 280 M5 is suitable for professionals who need personalized programming and system integration. Its modular design and high programmability make it an ideal platform for developing and testing new control algorithms or robot applications. |
-| **Trade show and public exhibition organisers** | myCobot 280 has become the preferred equipment for technology display and product demonstration with its precision operation display advantage. Dynamic demonstration not only attracts the audience, but also enhances their sense of participation, effectively promoting technological innovation and products. |
-| **Geek development enthusiast**                 | myCobot 280 uses myBlockly visual programming software, which allows users to easily program on the palm of their hands and is easy to operate. It supports Arduino + ROS open source systems to meet the various creative needs of enthusiasts. |
+|                              |                                                              |
+| ---------------------------- | ------------------------------------------------------------ |
+| **Educators and students**          | It is suitable for course teaching, experimental training and skills competitions in robotics engineering, artificial intelligence, automation control, mechatronics and other majors in colleges and vocational schools, providing teachers and students with an ideal platform from theory to practice. |
+| **Researchers and developers**          | It provides a stable hardware platform and deep software open interfaces for scientific research institutes, corporate R&D departments and a large number of robotics enthusiasts to assist in algorithm verification, prototype development and cutting-edge technology exploration. |
+| **Commercial and industrial users**            | It is suitable for interactive product display in commercial showrooms, small-batch precision production in light industrial environments, sample sorting, quality inspection and other tasks, providing efficient and reliable automation solutions. |
 
 
-### Application Scenario
+### 2.2 Application Scenario
 ![应用场景](../../resources/1-ProductInformation/1.ProductIntroduction/Application.gif)
 
-| **User Group** | **Application Scenarios** | **Advantage Target** |
+| **user group**               | **Core application scenarios (out-of-the-box)**                                   | **Expand application scenarios (unlimited possibilities)**                                                           |
 | -------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| **Teachers and students in the field of education** | - STEM education<br>- Robotics projects<br>- Interdisciplinary research projects<br>- Education and research | - Improve students' interest in science and technology<br>- Enhance hands-on skills and problem-solving skills<br>- Promote innovative thinking and teamwork<br>- Provide a practical platform for data collection and robotics |
-| **Makers and technical developers** | - Prototype development<br>- Experimental research<br>- Algorithm testing and verification<br>- Robot trial teaching | - Accelerate research progress<br>- Connect theory and practice<br>- Promote technological innovation<br>- Support multiple programming languages ​​and development environments |
-| **Business presentations and marketing professionals** | - Exhibition displays<br>- Technology demonstrations<br>- Brand promotion | - Attract potential customers and investors<br>- Showcase the company's technological strength and innovative products<br>- Enhance brand influence |
+| **Teachers and students in the field of education**   | - Basic teaching of robotics: mechanical structure, kinematics, and trajectory planning principle experiments.<br>- Drag-and-drop programming: manual craftsmanship imitation, action recording and reproduction.<br>- Introduction to graphical programming: Use Blockly for basic training in logical thinking and programming. | - Advanced algorithm development: Research on machine vision, path planning, force control and other algorithms based on Python/C++/ROS2.<br>- Artificial intelligence integration: Develop AI comprehensive application projects such as voice control and intelligent visual recognition and grasping. |
+| **Makers and technology developers**       | - Rapid Prototyping (PoC): Verify the feasibility of automated processes or gripping solutions.<br>- High-precision simulation: Provides accurate URDF models and seamlessly integrates with simulation environments such as Isaac Sim and MuJoCo. | - Exploration of cutting-edge fields: As a physical platform, it is used for research on cutting-edge topics such as embodied intelligence, reinforcement learning, and human-machine collaboration.<br>- Composite system development: Integrate with AGV/AMR mobile chassis to build mobile manipulation robots. |
+| **Commercial demonstrations and light industry** | - Automated commercial display: 24/7 automated product display and fun interaction with the audience.<br>- Precision operations: high-precision writing and drawing, circuit board point detection, and sample sorting.<br>- 3D visual sorting: Combined with 3D cameras, it can realize the grasping and sorting of disordered workpieces in cluttered environments.                       | - Production line automation integration: Communicate with PLCs via Modbus/TCP/IP and other protocols, and integrate into small production lines to perform tasks such as loading and unloading, and precision assembly.<br>- Laboratory automation: Replace manual labor to perform repetitive experimental operations, such as sample pipetting and culture dish transportation. |
 
 ---
 
-## 3.Supported extension development
-![拓展开发](../../resources/1-ProductInformation/1.ProductIntroduction/EXP.png)
+## 3. Supported extension development
+![拓展开发](../../resources/1-ProductInformation/1.ProductIntroduction/ExpansionAndDevelopment.png)
 
 The mycobot series of robotic arms are extremely valuable in the fields of education and scientific research, especially in Python and ROS (Robot Operating System), two widely used development environments. These environments provide strong support, allowing the mycobot series of products to be widely used in machine learning, artificial intelligence research, complex motion control, and visual processing tasks. At the same time, with dozens of accessories such as adaptive grippers, camera flanges, suction pumps, etc., you can give full play to myCobot's creative ideas.
 
@@ -73,20 +77,17 @@ The mycobot series of robotic arms are extremely valuable in the fields of educa
 | | |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | **Python** | The robot supports Python and has a complete Python API library. The robot's joint angles, coordinates, grippers, etc. can be controlled through Python. |
-| **ROS** | Supports both ROS1 and ROS2 versions, and provides RVIZ simulation environment support. <br> Allows users to display the robot arm and collect the robot arm's status information in real time, making mycobot 280 M5 suitable for ROS beginners and educational purposes. |
+| **ROS** |The myCobot Pro 450 supports ROS 2 and the RVIZ2 simulation environment. It allows users to display the robot arm and collect robot status information in real time, making it suitable for ROS beginners and educational purposes. |
 | **Hardware interface** | Including IO, USB, etc., to facilitate the connection of various sensors and actuators. |
 | **Software library** | Provides a wealth of open source libraries and APIs to simplify the development process. |
 | **System compatibility** | Compatible with Windows, Linux, MacOS, and adaptable to a variety of development environments. |
 | **C++** | Using the C++ language, you can freely develop (coordinate control, angle control, IO control, gripper control, etc.) through the C++ dynamic library developed by our company, and control some robots that our company has developed. |
-| **C#** | Using the C# language, you can freely develop (coordinate control, angle control, io control, gripper control, etc.) through the C# dynamic library provided by our company, and control some robots that our company has developed. |
-| **Arduino** | Provides the open source program MyCobotBasic sample program. At the same time, users can also modify the open source program according to their own needs. |
-| **JavaScript** | The robot can be controlled through the company's JavaScript language ecosystem library. |
 | **myBlockly** | It is both a graphical programming software and a visualization tool. Users can drag and drop modules to create programs. This process is very similar to building blocks, which is convenient, fast and easy to use. |
 
 ---
 
 
-## 4.purchase address
+## 4. purchase address
 
 If you are interested in purchasing this device, please click on the link below
 
@@ -96,4 +97,4 @@ AliExpress：[https://elephantrobotics.aliexpress.com/store/1101941423](https://
 
 ---
 
-[Next Chapter →](../2.ProductParameter/2-ProductParameters.md)
+[← Previous Chapter](../../README.md) | [Next Chapter→](../2.ProductParameter/2-ProductParameters.md)

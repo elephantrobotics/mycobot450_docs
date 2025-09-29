@@ -93,4 +93,4 @@ The robot is in motion and does not respond when you send a motion point. Please
 
 ---
 
-[← Previous Page](./6_gripper.md) | [Next Section →](../6.2-ROS1/README.md)
+[← Previous Chapter](./6_gripper.md) | [Next Chapter→](../6.2-ROS1/README.md)

@@ -35,4 +35,4 @@ time.sleep(2)
 
 ---
 
-[← Previous Page](./5_IO.md) | [Next Page →](./7_exception_description.md)
+[← Previous Chapter](./5_IO.md) | [Next Chapter→](./7_exception_description.md)
