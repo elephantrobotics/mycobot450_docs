@@ -46,6 +46,7 @@ Generating code in the text box is similar to dragging code into myBlockly in **
     - [5.5.8 program control](./5.5-blockly/5.5.8-program.md)
     - [5.5.9 waypoint](./5.5-blockly/5.5.9-waypoint.md)
     - [5.5.10 gripperUse](./5.5-blockly/5.5.10-gripperUse.md)
+    - [5.5.11 dragTeach](./5.5-blockly/5.5.11-dragTeach.md)
 - [5.6 quickmovefirstuse](./5.6-quickmove/5.6.1-quickmovefirstuse.md)
 - [5.7 firmware_main](./5.7-firmware/5.7.1-firmware_main.md)
 - [5.8 setting_main](./5.8-setting/5.8.1-setting_main.md)
