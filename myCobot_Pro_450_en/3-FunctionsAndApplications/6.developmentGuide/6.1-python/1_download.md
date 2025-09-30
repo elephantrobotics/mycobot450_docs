@@ -192,9 +192,9 @@ First, go to the project address: **https://github.com/elephantrobotics/pymycobo
 
 <img src="../../../resources\3-FunctionsAndApplications\6.developmentGuide\python\build/pymycobotdownload.jpg" style="zoom: 33%;" />
 
-## Preparing for Use
+## Pre-use Preparation
 
-Before using the Python API, please ensure that the following hardware and environment are complete:
+Before using the sample functions, please ensure that the following hardware and environment are complete:
 
 - **Hardware**
   - MyCobot Pro 450 robot arm
@@ -205,17 +205,23 @@ Before using the Python API, please ensure that the following hardware and envir
 - **Software and Environment**
   - Python 3.6 or later installed
   - The `pymycobot` library installed (using the `pip install pymycobot` terminal command)
-  - Ensure that the MyCobot Pro 450 is properly powered on and in standby mode
-  - Ensure that the MyCobot Pro 450 server is started
+  - Ensure that the MyCobot Pro 450 is properly powered on and in standby mode.
+  - **Note**: The Pro 450 server automatically starts upon powering on; no manual operation is required.
 
 - **Network Configuration**
   - MyCobot Pro 450 default IP address: `192.168.0.232`
   - Default port number: `4500`
-  - **Note**: The PC network card IP address must be set to **Same network segment** (e.g., `192.168.0.xxx`, where `xxx` is any number between 2 and 254 and cannot conflict with the robot arm's IP address).
+  - **Note**: PC The local network card IP address must be set to the same network segment as the robot (e.g., 192.168.0.xxx, where xxx is a number between 2 and 254 and must not conflict with the robot).
   - Example:
-    - Robot arm IP: `192.168.0.232`
-    - PC IP: `192.168.0.100`
-    - Subnet mask: `255.255.255.0`
+    - Robot IP: 192.168.0.232
+    - PC IP: 192.168.0.100
+    - Subnet mask: 255.255.255.0
+
+  - **Verification**: After completing the network configuration, execute the following command on the PC terminal. If data packets are successfully returned, the network connection is normal:
+
+    ```bash
+    ping 192.168.0.232
+    ```
 
 ---
 
