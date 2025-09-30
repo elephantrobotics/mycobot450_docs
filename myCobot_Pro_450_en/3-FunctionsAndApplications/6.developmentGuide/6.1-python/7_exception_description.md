@@ -10,8 +10,11 @@ Under normal circumstances, this interface returns all 0s. Reading the robot sta
 
 ```python
 from pymycobot import Pro450Client
-
+# The default IP address is "192.168.0.232" and the default port number is 4500
 pro450 = Pro450Client('192.168.0.232', 4500)
+
+if pro450.is_power_on() !=1:
+    pro450.power_on()  # Power on
 
 pro450.get_robot_status() # Reading Robot Status
 

@@ -228,15 +228,49 @@ from pymycobot import Pro450Client
 
    <img src="../../../resources\3-FunctionsAndApplications\6.developmentGuide\python\build/pymycobotgithub.jpg" style="zoom: 33%;" />
 
+## 使用前准备
 
+在使用案例功能I之前，请先确认以下硬件和环境准备齐全：
+
+- **硬件设备**  
+  - MyCobot Pro 450 机械臂  
+  - 网线（用于连接机械臂与电脑）  
+  - 电源适配器  
+  - 急停开关（确保安全操作）
+
+- **软件与环境**  
+  - 已安装 Python 3.6 及以上版本  
+  - 已安装 `pymycobot` 库（通过 `pip install pymycobot` 终端命令安装）  
+  - 确保 MyCobot Pro 450 已正确接通电源，并处于待机状态  
+  - **注意**：Pro 450 服务端会在设备上电后自动启动，无需手动操作  
+
+- **网络配置**  
+  - MyCobot Pro 450 默认 IP 地址：`192.168.0.232`  
+  - 默认端口号：`4500`  
+  - **注意**：PC 端需要将本机网卡 IP 设置为 **同一网段**（例如 `192.168.0.xxx`，`xxx` 为 2~254 之间的任意数，且不能与机械臂冲突）。  
+  - 示例：  
+    - 机械臂 IP：`192.168.0.232`  
+    - PC IP：`192.168.0.100`  
+    - 子网掩码：`255.255.255.0`
+  
+  - **验证**：完成网络配置后，可在 PC 终端执行以下命令，若能成功返回数据包，则说明网络连接正常：  
+  
+    ```bash
+    ping 192.168.0.232
+    ```
+
+---
 
 ## 简单演示
 
 ```python
 import time
 from pymycobot import Pro450Client
-
+# IP地址默认是"192.168.0.232"，端口号默认是4500
 pro450 = Pro450Client('192.168.0.232', 4500)  # 客户端连接通信
+
+if pro450.is_power_on() !=1:
+    pro450.power_on()  # 上电
 
 print(pro450.get_angles())  # 读取全关节角度信息
 
