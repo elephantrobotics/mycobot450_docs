@@ -13,6 +13,9 @@ from pymycobot import Pro450Client
 
 pro450 = Pro450Client('192.168.0.232', 4500)
 
+if pro450.is_power_on() !=1:
+    pro450.power_on()  # 上电
+
 pro450.get_robot_status() #读取机器人状态
 ```
 
