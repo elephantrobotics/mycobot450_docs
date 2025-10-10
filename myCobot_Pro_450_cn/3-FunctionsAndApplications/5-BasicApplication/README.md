@@ -1,6 +1,6 @@
 # 什么是 myStudio Pro？
 
-![](../../resources/5-BasicApplication/5.2/5.2.1/img/myblockly/myblockly界面.jpg)
+![](../../../resources/5-BasicApplication/5.2/5.2.1/img/myblockly/myblockly界面.jpg)
 
 **myStudio Pro** 是一款一站式机器人编程控制软件，支持可视化编程交互、快捷移动控制、拖动教学、机器人状态查询配置，在myStudio Pro中有`myBlockly`模块。
 
@@ -46,6 +46,7 @@
     - [5.5.8 程序控制](./5.5-blockly/5.5.8-program.md)
     - [5.5.9 路点](./5.5-blockly/5.5.9-waypoint.md)
     - [5.5.10 夹爪的使用](./5.5-blockly/5.5.10-gripperUse.md)
+    - [5.5.11 拖动示教的使用](./5.5-blockly/5.5.11-dragTeach.md)
 - [5.6 快速移动](./5.6-quickmove/5.6.1-quickmovefirstuse.md)
 - [5.7 固件与应用](./5.7-firmware/5.7.1-firmware_main.md)
 - [5.8 设置](./5.8-setting/5.8.1-setting_main.md)
