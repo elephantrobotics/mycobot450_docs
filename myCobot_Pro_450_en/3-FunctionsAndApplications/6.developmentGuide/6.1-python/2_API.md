@@ -720,15 +720,10 @@ print(mc.get_angles())
   - `baud_rate` (`int`): Baud rate
   - `timeout`: Timeout
 
-#### `get_base_external_config(communicate_mode, baud_rate, timeout)`
+#### `get_base_external_config()`
 
 - **Function**: Read the bottom external device configuration
-- **Return value**:
-  - `communicate_mode` (`int`)
-    - `1`: 485
-    - `2`: can
-  - `baud_rate` (`int`): Baud rate
-  - `timeout`: Timeout
+- **Return value**: `list` returns a list: [communication mode, baud rate, timeout]
 
 #### `base_external_can_control(can_id, can_data)`
 
@@ -765,10 +760,12 @@ print(mc.get_angles())
 - **Parameters**： data_len (int): The number of bytes to be read, range 1 ~ 45
 - **Return value:** 0 : not set 1 : Setup completed
 
-#### `tool_serial_write_data()`
+#### `tool_serial_write_data(command)`
 
 - **function:** End 485 sends data， Data length range is 1 ~ 45 bytes
-- **Return value:** 0-Normal 1-Robot triggered collision detection
+- **Parameters**： 
+  - `command` (`list`): Data instructions in modbus format
+- **Return value:** Modbus data list
 
 <!-- #### `tool_serial_flush()`
 
