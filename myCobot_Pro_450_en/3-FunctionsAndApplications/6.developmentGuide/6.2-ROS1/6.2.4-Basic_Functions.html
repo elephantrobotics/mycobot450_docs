@@ -81,7 +81,7 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../6.3-ROS2/" />
+    <link rel="next" href="6.2.5-Troubleshooting.html" />
     
     
     <link rel="prev" href="6.2.3-RVIZ_Introduction.html" />
@@ -490,7 +490,7 @@
                 <a href="../../5-BasicApplication/5.5-blockly/5.5.2-interfaceDescription.html">
             
                     
-                    5.5.2 blocklyFirstUse
+                    5.5.2 blockly-interfaceDescription
             
                 </a>
             
@@ -503,7 +503,7 @@
                 <a href="../../5-BasicApplication/5.5-blockly/5.5.3-littleCase.html">
             
                     
-                    5.5.3 blocklyFirstUse
+                    5.5.3 littleCase
             
                 </a>
             
@@ -516,7 +516,7 @@
                 <a href="../../5-BasicApplication/5.5-blockly/5.5.4-autofill.html">
             
                     
-                    5.5.4 blocklyFirstUse
+                    5.5.4 autofill
             
                 </a>
             
@@ -529,7 +529,7 @@
                 <a href="../../5-BasicApplication/5.5-blockly/5.5.5-quickMove.html">
             
                     
-                    5.5.5 blocklyFirstUse
+                    5.5.5 quickMove
             
                 </a>
             
@@ -542,7 +542,7 @@
                 <a href="../../5-BasicApplication/5.5-blockly/5.5.6-useCoords.html">
             
                     
-                    5.5.6 blocklyFirstUse
+                    5.5.6 useCoords
             
                 </a>
             
@@ -555,7 +555,7 @@
                 <a href="../../5-BasicApplication/5.5-blockly/5.5.7-singleStep.html">
             
                     
-                    5.5.7 blocklyFirstUse
+                    5.5.7 singleStep
             
                 </a>
             
@@ -568,7 +568,7 @@
                 <a href="../../5-BasicApplication/5.5-blockly/5.5.8-program.html">
             
                     
-                    5.5.8 blocklyFirstUse
+                    5.5.8 program control
             
                 </a>
             
@@ -581,7 +581,7 @@
                 <a href="../../5-BasicApplication/5.5-blockly/5.5.9-waypoint.html">
             
                     
-                    5.5.9 blocklyFirstUse
+                    5.5.9 waypoint
             
                 </a>
             
@@ -594,7 +594,20 @@
                 <a href="../../5-BasicApplication/5.5-blockly/5.5.10-gripperUse.html">
             
                     
-                    5.5.10 blocklyFirstUse
+                    5.5.10 gripperUse
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.5.11" data-path="../../5-BasicApplication/5.5-blockly/5.5.11-dragTeach.html">
+            
+                <a href="../../5-BasicApplication/5.5-blockly/5.5.11-dragTeach.html">
+            
+                    
+                    5.5.11 dragTeach
             
                 </a>
             
@@ -841,6 +854,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.4.2.2.5" data-path="6.2.5-Troubleshooting.html">
+            
+                <a href="6.2.5-Troubleshooting.html">
+            
+                    
+                    6.2.5 Common Problems and Solutions
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -905,6 +931,19 @@
             
                     
                     6.3.4 Basic Function Cases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3.5" data-path="../6.3-ROS2/6.3.5-Troubleshooting.html">
+            
+                <a href="../6.3-ROS2/6.3.5-Troubleshooting.html">
+            
+                    
+                    6.3.5 Common Problems and Solutions
             
                 </a>
             
@@ -1296,11 +1335,50 @@
 <p><strong>Note: The pymycobot driver library version must be greater than 4.0.0</strong></p>
 </blockquote>
 </blockquote>
+<h2 id="pre-use-preparation">Pre-use Preparation</h2>
+<p>Before using the sample functions, please ensure that the following hardware and environment are complete:</p>
+<ul>
+<li><p><strong>Hardware</strong></p>
+<ul>
+<li>MyCobot Pro 450 robot arm</li>
+<li>Network cable (for connecting the robot arm to the computer)</li>
+<li>Power adapter</li>
+<li>Emergency stop switch (for safe operation)</li>
+</ul>
+</li>
+<li><p><strong>Software and Environment</strong></p>
+<ul>
+<li>Python 3.6 or later installed</li>
+<li>The <code>pymycobot</code> library installed (using the <code>pip install pymycobot</code> terminal command)</li>
+<li>Ensure that the MyCobot Pro 450 is properly powered on and in standby mode.</li>
+<li><strong>Note</strong>: The Pro 450 server automatically starts upon powering on; no manual operation is required.</li>
+</ul>
+</li>
+<li><p><strong>Network Configuration</strong></p>
+<ul>
+<li>MyCobot Pro 450 default IP address: <code>192.168.0.232</code></li>
+<li>Default port number: <code>4500</code></li>
+<li><strong>Note</strong>: PC The local network card IP address must be set to the same network segment as the robot (e.g., 192.168.0.xxx, where xxx is a number between 2 and 254 and must not conflict with the robot).</li>
+<li><p>Example:</p>
+<ul>
+<li>Robot IP: 192.168.0.232</li>
+<li>PC IP: 192.168.0.100</li>
+<li>Subnet mask: 255.255.255.0</li>
+</ul>
+</li>
+<li><p><strong>Verification</strong>: After completing the network configuration, execute the following command on the PC terminal. If data packets are successfully returned, the network connection is normal:</p>
+<pre><code class="lang-bash">ping 192.168.0.232
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
 <h2 id="1-slider-control">1 Slider Control</h2>
-<!-- <video id="my-video" class="video-js" controls preload="auto" width="100%"
-poster="" data-setup='{"aspectRatio":"16:9"}'>
+<video id="my-video" class="video-js" controls preload="auto" width="100%" poster="" data-setup="{&quot;aspectRatio&quot;:&quot;16:9&quot;}">
 
-<source src="../../../resources/3-FunctionsAndApplications/6.developmentGuide/ROS/ROS1/video/320-m5-ros1-slider.mp4"></video> -->
+  <source src="../../../resources/3-FunctionsAndApplications/6.developmentGuide/ROS/ROS1/video/450-ROS1-slider-control.mp4"></video>
+
 <p>Open a command line and run:</p>
 <pre><code class="lang-bash">roslaunch mycobot_pro_450 slider_control.launch
 
@@ -1324,10 +1402,10 @@ rosrun mycobot_pro_450 slider_control_force_gripper.py
 <p><strong>Avoid dragging the slider quickly after connecting the robot arm to prevent damage.</strong></p>
 <h2 id="2-model-following">2 Model Following</h2>
 <p>In addition to the above controls, we can also make the model follow the movement of the actual robot arm.</p>
-<!-- <video id="my-video" class="video-js" controls preload="auto" width="100%"
-poster="" data-setup='{"aspectRatio":"16:9"}'>
+<video id="my-video" class="video-js" controls preload="auto" width="100%" poster="" data-setup="{&quot;aspectRatio&quot;:&quot;16:9&quot;}">
 
-<source src="../../../resources/3-FunctionsAndApplications/6.developmentGuide/ROS/ROS1/video/320-m5-ros1-follow.mp4"></video> -->
+  <source src="../../../resources/3-FunctionsAndApplications/6.developmentGuide/ROS/ROS1/video/450-ROS1-model-control.mp4"></video>
+
 <p>Open a command line and start the ROS node:</p>
 <pre><code class="lang-bash">roscore
 </code></pre>
@@ -1351,10 +1429,10 @@ Publishing...
 <p><img src="../../../resources/3-FunctionsAndApplications/6.developmentGuide/ROS/ROS1/rviz/rviz-5.png" width="500" align="center"></p>
 <h2 id="3-gui-control">3 GUI Control</h2>
 <p>Building on the above, this package also <strong>provides a simple graphical user interface (GUI)</strong>. Connect to mycobot.</p>
-<!-- <video id="my-video" class="video-js" controls preload="auto" width="100%"
-poster="" data-setup='{"aspectRatio":"16:9"}'>
+<video id="my-video" class="video-js" controls preload="auto" width="100%" poster="" data-setup="{&quot;aspectRatio&quot;:&quot;16:9&quot;}">
 
-<source src="../../../resources/3-FunctionsAndApplications/6.developmentGuide/ROS/ROS1/video/320-m5-ros1-gui.mp4"></video> -->
+  <source src="../../../resources/3-FunctionsAndApplications/6.developmentGuide/ROS/ROS1/video/450-ROS1-GUI-control.mp4"></video>
+
 <p>Open the command line:</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># The default IP address of the Pro450 is &quot;192.168.0.232&quot; and the port number is 4500.</span>
 roslaunch mycobot_pro_450 simple_gui.launch
@@ -1418,10 +1496,10 @@ Joint Limit:
 <p><strong>Note:</strong> Before using the gripper switch button, ensure that the adaptive gripper is connected to the end-of-arm robot.</p>
 <h2 id="4-keyboard-control">4 Keyboard Control</h2>
 <p>Keyboard control functionality has been added to the <code>mycobot_pro_450</code> package, allowing real-time synchronization within rviz. This functionality relies on the Python API, so ensure that the robot arm is connected.</p>
-<!-- <video id="my-video" class="video-js" controls preload="auto" width="100%"
-poster="" data-setup='{"aspectRatio":"16:9"}'>
+<video id="my-video" class="video-js" controls preload="auto" width="100%" poster="" data-setup="{&quot;aspectRatio&quot;:&quot;16:9&quot;}">
 
-  <source src="../../../resources/3-FunctionsAndApplications/6.developmentGuide/ROS/ROS1/video/320-m5-ros1-teletop.mp4"></video> -->
+  <source src="../../../resources/3-FunctionsAndApplications/6.developmentGuide/ROS/ROS1/video/450-ROS1-keyboard-control.mp4"></video>
+
 <p>Open a command line and run:</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># The default IP address of the Pro450 is &quot;192.168.0.232&quot; and the port number is 4500.</span>
 roslaunch mycobot_pro_450 teleop_keyboard.launch
@@ -1524,6 +1602,10 @@ currently:    speed: 50    change percent: 5
 </ul>
 <h2 id="5-moveit-usage">5 Moveit Usage</h2>
 <p><code>mycobot_ros</code> integrates the MoveIt component.</p>
+<video id="my-video" class="video-js" controls preload="auto" width="100%" poster="" data-setup="{&quot;aspectRatio&quot;:&quot;16:9&quot;}">
+
+  <source src="../../../resources/3-FunctionsAndApplications/6.developmentGuide/ROS/ROS1/video/450-ROS1-moveit-control.mp4"></video>
+
 <p>Open a command line and run:</p>
 <pre><code class="lang-bash">roslaunch mycobot_pro450_moveit demo.launch
 </code></pre>
@@ -1656,7 +1738,7 @@ rosrun mycobot_pro450_moveit sync_plan.py
 		</a>
 		
 		
-		<a href="../6.3-ROS2/" class="navigation navigation-next " aria-label="Next page: 6.3 Development and use based on ROS2">
+		<a href="6.2.5-Troubleshooting.html" class="navigation navigation-next " aria-label="Next page: 6.2.5 Common Problems and Solutions">
 			<i class="fa fa-angle-right"></i>
 		</a>
 		
@@ -1666,7 +1748,7 @@ rosrun mycobot_pro450_moveit sync_plan.py
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"6.2.4 Basic Function Cases","level":"1.4.2.2.4","depth":4,"next":{"title":"6.3 Development and use based on ROS2","level":"1.4.2.3","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.3-ROS2/README.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.3-ROS2/README.md","articles":[{"title":"6.3.1 Environment Setup","level":"1.4.2.3.1","depth":4,"path":"3-FunctionsAndApplications/6.developmentGuide/6.3-ROS2/6.3.1-Environment_Setup.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.3-ROS2/6.3.1-Environment_Setup.md","articles":[]},{"title":"6.3.2 ROS2 Basics","level":"1.4.2.3.2","depth":4,"path":"3-FunctionsAndApplications/6.developmentGuide/6.3-ROS2/6.3.2-ROS2_Basics.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.3-ROS2/6.3.2-ROS2_Basics.md","articles":[]},{"title":"6.3.3 Rivz2 Use","level":"1.4.2.3.3","depth":4,"path":"3-FunctionsAndApplications/6.developmentGuide/6.3-ROS2/6.3.3-RVIZ2_Introduction.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.3-ROS2/6.3.3-RVIZ2_Introduction.md","articles":[]},{"title":"6.3.4 Basic Function Cases","level":"1.4.2.3.4","depth":4,"path":"3-FunctionsAndApplications/6.developmentGuide/6.3-ROS2/6.3.4-Basic_Functions.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.3-ROS2/6.3.4-Basic_Functions.md","articles":[]}]},"previous":{"title":"6.2.3 Rivz Use","level":"1.4.2.2.3","depth":4,"path":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.3-RVIZ_Introduction.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.3-RVIZ_Introduction.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.4-Basic_Functions.md","mtime":"2025-09-29T08:24:50.646Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-09-29T09:22:40.446Z"},"basePath":"../../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"6.2.4 Basic Function Cases","level":"1.4.2.2.4","depth":4,"next":{"title":"6.2.5 Common Problems and Solutions","level":"1.4.2.2.5","depth":4,"path":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.5-Troubleshooting.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.5-Troubleshooting.md","articles":[]},"previous":{"title":"6.2.3 Rivz Use","level":"1.4.2.2.3","depth":4,"path":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.3-RVIZ_Introduction.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.3-RVIZ_Introduction.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.4-Basic_Functions.md","mtime":"2025-10-10T06:48:05.754Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-10-10T07:24:49.931Z"},"basePath":"../../..","book":{"language":""}});
 		});
 	</script>
 </div>
@@ -1701,6 +1783,10 @@ rosrun mycobot_pro450_moveit sync_plan.py
     
         
         <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

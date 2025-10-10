@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>5.5.8 blocklyFirstUse · GitBook</title>
+        <title>5.5.8 program control · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -490,7 +490,7 @@
                 <a href="5.5.2-interfaceDescription.html">
             
                     
-                    5.5.2 blocklyFirstUse
+                    5.5.2 blockly-interfaceDescription
             
                 </a>
             
@@ -503,7 +503,7 @@
                 <a href="5.5.3-littleCase.html">
             
                     
-                    5.5.3 blocklyFirstUse
+                    5.5.3 littleCase
             
                 </a>
             
@@ -516,7 +516,7 @@
                 <a href="5.5.4-autofill.html">
             
                     
-                    5.5.4 blocklyFirstUse
+                    5.5.4 autofill
             
                 </a>
             
@@ -529,7 +529,7 @@
                 <a href="5.5.5-quickMove.html">
             
                     
-                    5.5.5 blocklyFirstUse
+                    5.5.5 quickMove
             
                 </a>
             
@@ -542,7 +542,7 @@
                 <a href="5.5.6-useCoords.html">
             
                     
-                    5.5.6 blocklyFirstUse
+                    5.5.6 useCoords
             
                 </a>
             
@@ -555,7 +555,7 @@
                 <a href="5.5.7-singleStep.html">
             
                     
-                    5.5.7 blocklyFirstUse
+                    5.5.7 singleStep
             
                 </a>
             
@@ -568,7 +568,7 @@
                 <a href="5.5.8-program.html">
             
                     
-                    5.5.8 blocklyFirstUse
+                    5.5.8 program control
             
                 </a>
             
@@ -581,7 +581,7 @@
                 <a href="5.5.9-waypoint.html">
             
                     
-                    5.5.9 blocklyFirstUse
+                    5.5.9 waypoint
             
                 </a>
             
@@ -594,7 +594,20 @@
                 <a href="5.5.10-gripperUse.html">
             
                     
-                    5.5.10 blocklyFirstUse
+                    5.5.10 gripperUse
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.5.11" data-path="5.5.11-dragTeach.html">
+            
+                <a href="5.5.11-dragTeach.html">
+            
+                    
+                    5.5.11 dragTeach
             
                 </a>
             
@@ -841,6 +854,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.4.2.2.5" data-path="../../6.developmentGuide/6.2-ROS1/6.2.5-Troubleshooting.html">
+            
+                <a href="../../6.developmentGuide/6.2-ROS1/6.2.5-Troubleshooting.html">
+            
+                    
+                    6.2.5 Common Problems and Solutions
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -905,6 +931,19 @@
             
                     
                     6.3.4 Basic Function Cases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3.5" data-path="../../6.developmentGuide/6.3-ROS2/6.3.5-Troubleshooting.html">
+            
+                <a href="../../6.developmentGuide/6.3-ROS2/6.3.5-Troubleshooting.html">
+            
+                    
+                    6.3.5 Common Problems and Solutions
             
                 </a>
             
@@ -1275,7 +1314,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >5.5.8 blocklyFirstUse</a>
+        <a href="../../.." >5.5.8 program control</a>
     </h1>
 </div>
 
@@ -1293,14 +1332,16 @@
 						<h1 id="program-control">Program Control</h1>
 <p><em>Before You Begin</em></p>
 <blockquote>
-<p><em>1. Ensure the machine is powered on</em></p>
-<p><em>2. Ensure the machine is properly connected</em></p>
+<p><em>1. Ensure the robot is powered on</em></p>
+<p><em>2. Ensure the robot server is running</em></p>
+<p><em>3. Ensure the robot is at zero position</em></p>
 </blockquote>
 <p>This chapter introduces how to debug block code through the <code>Run Panel</code> and implement <code>Pause</code>, <code>Resume</code>, <strong><code>Single Step</code></strong>, and <code>Stop</code> of the program.</p>
 <p>Edit a program to control the movement of joint 1 of the robot arm</p>
 <p><img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/blockly/program1.png"></p>
 <p><img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/blockly/program2.png"></p>
 <p>Click the <code>Run Panel</code> button. When the Run Panel pops up, click <code>Run All</code> and then immediately click the <code>Pause</code> button. The program will pause after executing the first instruction <code>mc.send_angle(1,0,20)</code>.</p>
+<p><img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/blockly/program3.png"></p>
 <p>The program is paused. The next instruction to be executed, <code>time.sleep(3)</code>, appears.</p>
 <p>At this point:</p>
 <ul>
@@ -1338,12 +1379,12 @@
 
 		
 		
-		<a href="5.5.7-singleStep.html" class="navigation navigation-prev " aria-label="Previous page: 5.5.7 blocklyFirstUse">
+		<a href="5.5.7-singleStep.html" class="navigation navigation-prev " aria-label="Previous page: 5.5.7 singleStep">
 			<i class="fa fa-angle-left"></i>
 		</a>
 		
 		
-		<a href="5.5.9-waypoint.html" class="navigation navigation-next " aria-label="Next page: 5.5.9 blocklyFirstUse">
+		<a href="5.5.9-waypoint.html" class="navigation navigation-next " aria-label="Next page: 5.5.9 waypoint">
 			<i class="fa fa-angle-right"></i>
 		</a>
 		
@@ -1353,7 +1394,7 @@
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"5.5.8 blocklyFirstUse","level":"1.4.1.5.8","depth":4,"next":{"title":"5.5.9 blocklyFirstUse","level":"1.4.1.5.9","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.9-waypoint.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.9-waypoint.md","articles":[]},"previous":{"title":"5.5.7 blocklyFirstUse","level":"1.4.1.5.7","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.7-singleStep.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.7-singleStep.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.8-program.md","mtime":"2025-09-29T08:14:30.694Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-09-29T09:22:40.446Z"},"basePath":"../../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"5.5.8 program control","level":"1.4.1.5.8","depth":4,"next":{"title":"5.5.9 waypoint","level":"1.4.1.5.9","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.9-waypoint.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.9-waypoint.md","articles":[]},"previous":{"title":"5.5.7 singleStep","level":"1.4.1.5.7","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.7-singleStep.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.7-singleStep.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.8-program.md","mtime":"2025-10-10T06:48:05.747Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-10-10T07:24:49.931Z"},"basePath":"../../..","book":{"language":""}});
 		});
 	</script>
 </div>
@@ -1388,6 +1429,10 @@
     
         
         <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

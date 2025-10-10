@@ -490,7 +490,7 @@
                 <a href="5.5-blockly/5.5.2-interfaceDescription.html">
             
                     
-                    5.5.2 blocklyFirstUse
+                    5.5.2 blockly-interfaceDescription
             
                 </a>
             
@@ -503,7 +503,7 @@
                 <a href="5.5-blockly/5.5.3-littleCase.html">
             
                     
-                    5.5.3 blocklyFirstUse
+                    5.5.3 littleCase
             
                 </a>
             
@@ -516,7 +516,7 @@
                 <a href="5.5-blockly/5.5.4-autofill.html">
             
                     
-                    5.5.4 blocklyFirstUse
+                    5.5.4 autofill
             
                 </a>
             
@@ -529,7 +529,7 @@
                 <a href="5.5-blockly/5.5.5-quickMove.html">
             
                     
-                    5.5.5 blocklyFirstUse
+                    5.5.5 quickMove
             
                 </a>
             
@@ -542,7 +542,7 @@
                 <a href="5.5-blockly/5.5.6-useCoords.html">
             
                     
-                    5.5.6 blocklyFirstUse
+                    5.5.6 useCoords
             
                 </a>
             
@@ -555,7 +555,7 @@
                 <a href="5.5-blockly/5.5.7-singleStep.html">
             
                     
-                    5.5.7 blocklyFirstUse
+                    5.5.7 singleStep
             
                 </a>
             
@@ -568,7 +568,7 @@
                 <a href="5.5-blockly/5.5.8-program.html">
             
                     
-                    5.5.8 blocklyFirstUse
+                    5.5.8 program control
             
                 </a>
             
@@ -581,7 +581,7 @@
                 <a href="5.5-blockly/5.5.9-waypoint.html">
             
                     
-                    5.5.9 blocklyFirstUse
+                    5.5.9 waypoint
             
                 </a>
             
@@ -594,7 +594,20 @@
                 <a href="5.5-blockly/5.5.10-gripperUse.html">
             
                     
-                    5.5.10 blocklyFirstUse
+                    5.5.10 gripperUse
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.5.11" data-path="5.5-blockly/5.5.11-dragTeach.html">
+            
+                <a href="5.5-blockly/5.5.11-dragTeach.html">
+            
+                    
+                    5.5.11 dragTeach
             
                 </a>
             
@@ -841,6 +854,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.4.2.2.5" data-path="../6.developmentGuide/6.2-ROS1/6.2.5-Troubleshooting.html">
+            
+                <a href="../6.developmentGuide/6.2-ROS1/6.2.5-Troubleshooting.html">
+            
+                    
+                    6.2.5 Common Problems and Solutions
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -905,6 +931,19 @@
             
                     
                     6.3.4 Basic Function Cases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3.5" data-path="../6.developmentGuide/6.3-ROS2/6.3.5-Troubleshooting.html">
+            
+                <a href="../6.developmentGuide/6.3-ROS2/6.3.5-Troubleshooting.html">
+            
+                    
+                    6.3.5 Common Problems and Solutions
             
                 </a>
             
@@ -1290,20 +1329,80 @@
     
 					<section class="normal markdown-section">
 						
-						<h1 id="preparing-to-use-mystudio-pro">Preparing to use myStudio Pro</h1>
-<ol>
-<li><p>Hardware Configuration. Before using myStudio Pro, ensure the machine is powered on and the server program is running, including the <code>nginx</code> service. <code>nginx</code> automatically starts when the machine is powered on by default. To ensure the normal use of myStudio Pro, you can access the system using an <code>SSH</code> connection and enter the following command in the terminal.</p>
-<pre><code class="lang-bash">   nginx
-</code></pre>
+						<h1 id="preparations-before-using-mystudio-pro">Preparations Before Using myStudio Pro</h1>
+<p>Hardware configuration</p>
 <blockquote>
-<p>By default, myStudio runs on port 80. You can also modify the service running port by modifying the corresponding configuration file.</p>
+<p>Before using myStudio Pro, please make sure the machine is powered on.</p>
+<p>The following are the steps on how to start a server program (taking the Windows operating system as an example) :</p>
 </blockquote>
+<h4 id="static-ip-configuration">static IP configuration</h4>
+<ul>
+<li><p>First, you need to prepare a functioning network cable. Connect one end of the cable to the network port of the machine base and the other end to the network port of your PC device.</p>
 </li>
-<li><p>Software Configuration. Before using myStudio Pro, please make sure you have installed a browser on your computer.</p>
+<li><p>After the network cable is connected, it is necessary to manually configure the machine&apos;s &quot;static IP&quot; for the subsequent &quot;ssh connection&quot;. The configuration steps are as follows:</p>
+<ul>
+<li><p>Open the Control panel, select <code>Network and Internet</code>, and then click <code>View Network Status and Tasks</code>.</p>
+<p><img src="../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/control.png"></p>
 </li>
-</ol>
-<hr>
-<p><a href="./">&#x2190; Previous Chapter</a> | <a href="5.2-install_uninstall.html">Next Chapter&#x2192;</a></p>
+<li><p>At this point, enter the &quot;Network and Sharing Center&quot; panel, select &quot;Change Adapter Settings&quot; from the left menu bar, and click to open the &quot;Network Connections&quot; panel.</p>
+<p><img src="../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/internet.png"></p>
+</li>
+<li><p>Select &quot;Ethernet&quot; and right-click on the &quot;Properties&quot; panel. After it opens successfully, left-click on &quot;Internet Protocol Version 4 (TCP/IPv4)&quot;, and finally click the &quot;Properties&quot; button underground</p>
+<p><img src="../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/internet1.png"></p>
+</li>
+<li><p>Go to the Properties panel, click on &apos;Use the following IP address (S)&apos; with the mouse, and configure the static IP address &apos;192.168.0.x&apos; and the subnet mask &apos;255.255.255.0&apos;.</p>
+<p>  <img src="../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/internet2.png"></p>
+<ul>
+<li>Finally, click &quot;Confirm&quot; and close the corresponding configuration panel.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>To verify whether the static IP configuration is successful, press the &apos;Win+R&apos; key combination to bring up the run window. Then, in the run window, type &apos;cmd&apos; to open the &apos;Windows Command Prompt&apos;, type &apos;ping 192.168.0.232&apos; and press the Enter key. If the following content is output, it indicates that the static IP configuration is successful. And the network cable connection is normal.</p>
+<p><img src="../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/ping.png"></p>
+</li>
+</ul>
+<h4 id="start-the-server-program">start the server program</h4>
+<ul>
+<li><p>You can log in to the machine system via <code>ssh</code>connection to perform operations and control. This chapter takes the <code>MobaXterm</code> graphical tool as an example for operation.</p>
+</li>
+<li><p>Open the application, click on <code>Session</code> in the upper left corner to pop up the panel, then select <code>SSH</code> to connect and enter the corresponding &apos;Remote host&apos;. After entering, click Confirm.</p>
+</li>
+<li><p>After a successful connection, the panel requires you to enter your &quot;username&quot; and &quot;password&quot;, both of which are set to &quot;root&quot; by default, and press Enter to log in to the system.</p>
+</li>
+<li><p>The MyCobotPro 450 server program is by default in the following path <code>/root/MyCobot450/bin</code> directory. Then use the command <code>View Current directory Files</code> to check if there is a corresponding &apos;executable file&apos;. The name of the executable file is generally <code>MyCobotPro</code>.</p>
+<pre><code class="lang-bash"> ls
+</code></pre>
+</li>
+</ul>
+<p>If the server file is executed and the terminal does not report an error message and outputs the following information, the file is successfully run.</p>
+<pre><code class="lang-bash">./MyCobotPro
+</code></pre>
+<p><img src="../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/mycobotpro.png"></p>
+<h3 id="software-configuration">Software configuration</h3>
+<blockquote>
+<p>Before using myStudio Pro, please make sure that a browser, such as modern browsers like Chrome/Edge/Safari, has been installed on your computer.</p>
+</blockquote>
+<h3 id="mystudio-pro-access">myStudio Pro access</h3>
+<blockquote>
+<p>myStudio Pro is a Web application that does not require installation and can be used in a browser via IP.</p>
+</blockquote>
+<ul>
+<li>In the ssh connection terminal, enter the command <code>ifconfig</code> to view, configure and manage network interface parameters, and confirm the <code>IP</code>.</li>
+</ul>
+<pre><code class="lang-bash">ifconfig
+</code></pre>
+<p><img src="../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/ifconfig.png"></p>
+<ul>
+<li>Then enter this <code>IP</code> into the <code>URL</code> address of the browser. Note: the <code>http</code> protocol needs to be added. The complete address is as follows;</li>
+</ul>
+<pre><code class="lang-bash">http://&lt; Robotic Arm System IP&gt;:&lt; Port Number &gt;
+</code></pre>
+<ul>
+<li>When the browser renders the page, it indicates successful access to myStudio Pro.</li>
+</ul>
+<p><img src="../../resources/3-FunctionsAndApplications/5.myBlockly/home/home.png"></p>
+<p><a href="./">&#x2190; Previous page</a> | <a href="5.2-install_uninstall.html">Next page &#x2192;</a></p>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
 						
 					</section>
@@ -1346,7 +1445,7 @@
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"5.1 myStudioFirstUse","level":"1.4.1.1","depth":3,"next":{"title":"5.2 install_uninstall","level":"1.4.1.2","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-install_uninstall.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.2-install_uninstall.md","articles":[]},"previous":{"title":"5. Basic functions","level":"1.4.1","depth":2,"path":"3-FunctionsAndApplications/5-BasicApplication/README.md","ref":"3-FunctionsAndApplications/5-BasicApplication/README.md","articles":[{"title":"5.1 myStudioFirstUse","level":"1.4.1.1","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.1-myStudioFirstUse.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.1-myStudioFirstUse.md","articles":[]},{"title":"5.2 install_uninstall","level":"1.4.1.2","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-install_uninstall.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.2-install_uninstall.md","articles":[]},{"title":"5.3 interface_description","level":"1.4.1.3","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-interface_description.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.3-interface_description.md","articles":[]},{"title":"5.4 Q&A","level":"1.4.1.4","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.4-Q&A.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.4-Q&A.md","articles":[]},{"title":"5.5 blockly","level":"1.4.1.5","depth":3,"ref":"","articles":[{"title":"5.5.1 blocklyFirstUse","level":"1.4.1.5.1","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.1-blocklyFirstUse.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.1-blocklyFirstUse.md","articles":[]},{"title":"5.5.2 blocklyFirstUse","level":"1.4.1.5.2","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.2-interfaceDescription.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.2-interfaceDescription.md","articles":[]},{"title":"5.5.3 blocklyFirstUse","level":"1.4.1.5.3","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.3-littleCase.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.3-littleCase.md","articles":[]},{"title":"5.5.4 blocklyFirstUse","level":"1.4.1.5.4","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.4-autofill.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.4-autofill.md","articles":[]},{"title":"5.5.5 blocklyFirstUse","level":"1.4.1.5.5","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.5-quickMove.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.5-quickMove.md","articles":[]},{"title":"5.5.6 blocklyFirstUse","level":"1.4.1.5.6","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.6-useCoords.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.6-useCoords.md","articles":[]},{"title":"5.5.7 blocklyFirstUse","level":"1.4.1.5.7","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.7-singleStep.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.7-singleStep.md","articles":[]},{"title":"5.5.8 blocklyFirstUse","level":"1.4.1.5.8","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.8-program.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.8-program.md","articles":[]},{"title":"5.5.9 blocklyFirstUse","level":"1.4.1.5.9","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.9-waypoint.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.9-waypoint.md","articles":[]},{"title":"5.5.10 blocklyFirstUse","level":"1.4.1.5.10","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.10-gripperUse.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.10-gripperUse.md","articles":[]}]},{"title":"5.6 quickmovefirstuse","level":"1.4.1.6","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.6-quickmove/5.6.1-quickmovefirstuse.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.6-quickmove/5.6.1-quickmovefirstuse.md","articles":[]},{"title":"5.7 firmware_main","level":"1.4.1.7","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.7-firmware/5.7.1-firmware_main.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.7-firmware/5.7.1-firmware_main.md","articles":[]},{"title":"5.8 setting_main","level":"1.4.1.8","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.8-setting/5.8.1-setting_main.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.8-setting/5.8.1-setting_main.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"3-FunctionsAndApplications/5-BasicApplication/5.1-myStudioFirstUse.md","mtime":"2025-09-29T08:10:39.089Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-09-29T09:22:40.446Z"},"basePath":"../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"5.1 myStudioFirstUse","level":"1.4.1.1","depth":3,"next":{"title":"5.2 install_uninstall","level":"1.4.1.2","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-install_uninstall.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.2-install_uninstall.md","articles":[]},"previous":{"title":"5. Basic functions","level":"1.4.1","depth":2,"path":"3-FunctionsAndApplications/5-BasicApplication/README.md","ref":"3-FunctionsAndApplications/5-BasicApplication/README.md","articles":[{"title":"5.1 myStudioFirstUse","level":"1.4.1.1","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.1-myStudioFirstUse.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.1-myStudioFirstUse.md","articles":[]},{"title":"5.2 install_uninstall","level":"1.4.1.2","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-install_uninstall.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.2-install_uninstall.md","articles":[]},{"title":"5.3 interface_description","level":"1.4.1.3","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-interface_description.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.3-interface_description.md","articles":[]},{"title":"5.4 Q&A","level":"1.4.1.4","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.4-Q&A.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.4-Q&A.md","articles":[]},{"title":"5.5 blockly","level":"1.4.1.5","depth":3,"ref":"","articles":[{"title":"5.5.1 blocklyFirstUse","level":"1.4.1.5.1","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.1-blocklyFirstUse.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.1-blocklyFirstUse.md","articles":[]},{"title":"5.5.2 blockly-interfaceDescription","level":"1.4.1.5.2","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.2-interfaceDescription.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.2-interfaceDescription.md","articles":[]},{"title":"5.5.3 littleCase","level":"1.4.1.5.3","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.3-littleCase.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.3-littleCase.md","articles":[]},{"title":"5.5.4 autofill","level":"1.4.1.5.4","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.4-autofill.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.4-autofill.md","articles":[]},{"title":"5.5.5 quickMove","level":"1.4.1.5.5","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.5-quickMove.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.5-quickMove.md","articles":[]},{"title":"5.5.6 useCoords","level":"1.4.1.5.6","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.6-useCoords.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.6-useCoords.md","articles":[]},{"title":"5.5.7 singleStep","level":"1.4.1.5.7","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.7-singleStep.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.7-singleStep.md","articles":[]},{"title":"5.5.8 program control","level":"1.4.1.5.8","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.8-program.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.8-program.md","articles":[]},{"title":"5.5.9 waypoint","level":"1.4.1.5.9","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.9-waypoint.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.9-waypoint.md","articles":[]},{"title":"5.5.10 gripperUse","level":"1.4.1.5.10","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.10-gripperUse.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.10-gripperUse.md","articles":[]},{"title":"5.5.11 dragTeach","level":"1.4.1.5.11","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.11-dragTeach.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.11-dragTeach.md","articles":[]}]},{"title":"5.6 quickmovefirstuse","level":"1.4.1.6","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.6-quickmove/5.6.1-quickmovefirstuse.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.6-quickmove/5.6.1-quickmovefirstuse.md","articles":[]},{"title":"5.7 firmware_main","level":"1.4.1.7","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.7-firmware/5.7.1-firmware_main.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.7-firmware/5.7.1-firmware_main.md","articles":[]},{"title":"5.8 setting_main","level":"1.4.1.8","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.8-setting/5.8.1-setting_main.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.8-setting/5.8.1-setting_main.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"3-FunctionsAndApplications/5-BasicApplication/5.1-myStudioFirstUse.md","mtime":"2025-10-10T06:48:05.742Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-10-10T07:24:49.931Z"},"basePath":"../..","book":{"language":""}});
 		});
 	</script>
 </div>
@@ -1381,6 +1480,10 @@
     
         
         <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

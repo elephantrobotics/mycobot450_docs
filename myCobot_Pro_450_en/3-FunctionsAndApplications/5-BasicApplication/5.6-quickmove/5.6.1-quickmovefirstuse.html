@@ -84,7 +84,7 @@
     <link rel="next" href="../5.7-firmware/5.7.1-firmware_main.html" />
     
     
-    <link rel="prev" href="../5.5-blockly/5.5.10-gripperUse.html" />
+    <link rel="prev" href="../5.5-blockly/5.5.11-dragTeach.html" />
     
 
     </head>
@@ -490,7 +490,7 @@
                 <a href="../5.5-blockly/5.5.2-interfaceDescription.html">
             
                     
-                    5.5.2 blocklyFirstUse
+                    5.5.2 blockly-interfaceDescription
             
                 </a>
             
@@ -503,7 +503,7 @@
                 <a href="../5.5-blockly/5.5.3-littleCase.html">
             
                     
-                    5.5.3 blocklyFirstUse
+                    5.5.3 littleCase
             
                 </a>
             
@@ -516,7 +516,7 @@
                 <a href="../5.5-blockly/5.5.4-autofill.html">
             
                     
-                    5.5.4 blocklyFirstUse
+                    5.5.4 autofill
             
                 </a>
             
@@ -529,7 +529,7 @@
                 <a href="../5.5-blockly/5.5.5-quickMove.html">
             
                     
-                    5.5.5 blocklyFirstUse
+                    5.5.5 quickMove
             
                 </a>
             
@@ -542,7 +542,7 @@
                 <a href="../5.5-blockly/5.5.6-useCoords.html">
             
                     
-                    5.5.6 blocklyFirstUse
+                    5.5.6 useCoords
             
                 </a>
             
@@ -555,7 +555,7 @@
                 <a href="../5.5-blockly/5.5.7-singleStep.html">
             
                     
-                    5.5.7 blocklyFirstUse
+                    5.5.7 singleStep
             
                 </a>
             
@@ -568,7 +568,7 @@
                 <a href="../5.5-blockly/5.5.8-program.html">
             
                     
-                    5.5.8 blocklyFirstUse
+                    5.5.8 program control
             
                 </a>
             
@@ -581,7 +581,7 @@
                 <a href="../5.5-blockly/5.5.9-waypoint.html">
             
                     
-                    5.5.9 blocklyFirstUse
+                    5.5.9 waypoint
             
                 </a>
             
@@ -594,7 +594,20 @@
                 <a href="../5.5-blockly/5.5.10-gripperUse.html">
             
                     
-                    5.5.10 blocklyFirstUse
+                    5.5.10 gripperUse
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.5.11" data-path="../5.5-blockly/5.5.11-dragTeach.html">
+            
+                <a href="../5.5-blockly/5.5.11-dragTeach.html">
+            
+                    
+                    5.5.11 dragTeach
             
                 </a>
             
@@ -841,6 +854,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.4.2.2.5" data-path="../../6.developmentGuide/6.2-ROS1/6.2.5-Troubleshooting.html">
+            
+                <a href="../../6.developmentGuide/6.2-ROS1/6.2.5-Troubleshooting.html">
+            
+                    
+                    6.2.5 Common Problems and Solutions
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -905,6 +931,19 @@
             
                     
                     6.3.4 Basic Function Cases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3.5" data-path="../../6.developmentGuide/6.3-ROS2/6.3.5-Troubleshooting.html">
+            
+                <a href="../../6.developmentGuide/6.3-ROS2/6.3.5-Troubleshooting.html">
+            
+                    
+                    6.3.5 Common Problems and Solutions
             
                 </a>
             
@@ -1314,38 +1353,46 @@
 </tr>
 <tr>
 <td>2</td>
-<td>Terminal IO pins 1 and 2, input</td>
+<td>The bottom IO pin numbers 1-12 are input and belong to the security module detection items</td>
 </tr>
 <tr>
 <td>3</td>
-<td>Terminal IO pins 1 and 2, output, used to control the Pro force-controlled gripper</td>
+<td>The bottom IO pin numbers 1 to 12 are for output. You can click the switch button to set the output</td>
 </tr>
 <tr>
 <td>4</td>
-<td>Enable free movement mode</td>
+<td>Terminal IO pins 1 and 2, input</td>
 </tr>
 <tr>
 <td>5</td>
-<td>Exit the fast movement interface</td>
+<td>Terminal IO pins 1 and 2, output, used to control the Pro force-controlled gripper</td>
 </tr>
 <tr>
 <td>6</td>
-<td>Angle Control: Click the <code>+</code> or <code>-</code> buttons to control the joint angles of the robot arm. The values &#x200B;&#x200B;represent the current joint angle information of the robot arm, and you can also directly modify the values &#x200B;&#x200B;to control the joints.</td>
+<td>Enable free movement mode</td>
 </tr>
 <tr>
 <td>7</td>
-<td>Coordinate Control: Click the <code>+</code> or <code>-</code> buttons to control the coordinates of the robot arm. The values &#x200B;&#x200B;represent the current coordinate posture information of the robot arm, and you can also directly modify the values &#x200B;&#x200B;to control the coordinates.</td>
+<td>Exit the fast movement interface</td>
 </tr>
 <tr>
 <td>8</td>
-<td>Set the movement speed of the robot arm. The default is 10 mm/s.</td>
+<td>Angle Control: Click the <code>+</code> or <code>-</code> buttons to control the joint angles of the robot arm. The values &#x200B;&#x200B;represent the current joint angle information of the robot arm, and you can also directly modify the values &#x200B;&#x200B;to control the joints.</td>
 </tr>
 <tr>
 <td>9</td>
-<td>Angle Step: The angle value to increase or decrease each time when adjusting the angle.</td>
+<td>Coordinate Control: Click the <code>+</code> or <code>-</code> buttons to control the coordinates of the robot arm. The values &#x200B;&#x200B;represent the current coordinate posture information of the robot arm, and you can also directly modify the values &#x200B;&#x200B;to control the coordinates.</td>
 </tr>
 <tr>
 <td>10</td>
+<td>Set the movement speed of the robot arm. The default is 10 mm/s.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Angle Step: The angle value to increase or decrease each time when adjusting the angle.</td>
+</tr>
+<tr>
+<td>12</td>
 <td>Coordinate Step: The coordinate value to increase or decrease each time when adjusting the coordinate posture.</td>
 </tr>
 </tbody>
@@ -1360,10 +1407,22 @@
 <h3 id="4-free-movement">4 Free movement</h3>
 <p>By clicking the Free Move button, the free move mode is turned on. The interface button turns orange, indicating that the machine is in free move mode and can be dragged and moved.</p>
 <p><img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/quickmove/freemove.png"></p>
+<p><strong>Note:</strong> After clicking, a secondary confirmation pop-up window will appear first to prevent the mechanical arm joint from loosening due to accidental clicking and causing a fall.</p>
+<p>Click the <code>OK</code> button to release the joint, and the machine can move freely.</p>
+<p><img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/quickmove/freemove2.png"></p>
 <p>The button turns yellow:</p>
+<p><img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/quickmove/freemove1.png"></p>
 <p>When the free movement button is yellow, clicking it again turns free movement mode off.</p>
-<h3 id="5-io-control">5 IO Control</h3>
-<h4 id="51-terminal-io">5.1 Terminal IO</h4>
+<h3 id="5-keep-moving">5 Keep moving</h3>
+<p>By long-pressing the + - buttons in the corresponding area, you can control the robot to move continuously at the specified Angle.</p>
+<p><img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/quickmove/move.png"></p>
+<p>Note: After holding down the + - buttons for 3 seconds each time, you need to release the buttons, hold them down again, and then continue the operation to keep moving.</p>
+<h3 id="6-io-control">6 IO Control</h3>
+<h3 id="61-base-io">6.1 Base IO</h3>
+<p>Set the output of the bottom IO pin numbers 1-12, and users can customize the control actuator. For example, the control grippers and suction pumps can be customized.</p>
+<p><img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/quickmove/base-io1.png"></p>
+<p>Click the <code>on/off</code> button to make Settings.</p>
+<h4 id="62-end-io">6.2 END IO</h4>
 <p>Set terminal IO pins 1-2 as output to control the Pro force-controlled gripper.</p>
 <p><img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/quickmove/end-io1.png"></p>
 <p>Turn on the Pro force-controlled gripper by clicking the On/Off button.</p>
@@ -1399,7 +1458,7 @@
 
 		
 		
-		<a href="../5.5-blockly/5.5.10-gripperUse.html" class="navigation navigation-prev " aria-label="Previous page: 5.5.10 blocklyFirstUse">
+		<a href="../5.5-blockly/5.5.11-dragTeach.html" class="navigation navigation-prev " aria-label="Previous page: 5.5.11 dragTeach">
 			<i class="fa fa-angle-left"></i>
 		</a>
 		
@@ -1414,7 +1473,7 @@
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"5.6 quickmovefirstuse","level":"1.4.1.6","depth":3,"next":{"title":"5.7 firmware_main","level":"1.4.1.7","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.7-firmware/5.7.1-firmware_main.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.7-firmware/5.7.1-firmware_main.md","articles":[]},"previous":{"title":"5.5.10 blocklyFirstUse","level":"1.4.1.5.10","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.10-gripperUse.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.10-gripperUse.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"3-FunctionsAndApplications/5-BasicApplication/5.6-quickmove/5.6.1-quickmovefirstuse.md","mtime":"2025-09-29T08:15:31.496Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-09-29T09:22:40.446Z"},"basePath":"../../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"5.6 quickmovefirstuse","level":"1.4.1.6","depth":3,"next":{"title":"5.7 firmware_main","level":"1.4.1.7","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.7-firmware/5.7.1-firmware_main.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.7-firmware/5.7.1-firmware_main.md","articles":[]},"previous":{"title":"5.5.11 dragTeach","level":"1.4.1.5.11","depth":4,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.11-dragTeach.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.11-dragTeach.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"3-FunctionsAndApplications/5-BasicApplication/5.6-quickmove/5.6.1-quickmovefirstuse.md","mtime":"2025-10-10T06:48:05.748Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-10-10T07:24:49.931Z"},"basePath":"../../..","book":{"language":""}});
 		});
 	</script>
 </div>
@@ -1449,6 +1508,10 @@
     
         
         <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
