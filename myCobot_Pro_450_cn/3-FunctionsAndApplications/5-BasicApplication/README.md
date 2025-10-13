@@ -1,6 +1,6 @@
 # 什么是 myStudio Pro？
 
-![](../../../resources/5-BasicApplication/5.2/5.2.1/img/myblockly/myblockly界面.jpg)
+![](../../resources/5-BasicApplication/5.2/5.2.1/img/myblockly/myblockly界面.jpg)
 
 **myStudio Pro** 是一款一站式机器人编程控制软件，支持可视化编程交互、快捷移动控制、拖动教学、机器人状态查询配置，在myStudio Pro中有`myBlockly`模块。
 

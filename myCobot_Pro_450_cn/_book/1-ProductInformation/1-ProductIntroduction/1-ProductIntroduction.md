@@ -3,7 +3,7 @@
 
 ##### myCobot Pro 450  
 
-![封面](../../resources/1-ProductIntroduction/1.ProductIntroduction/main.jpg)
+![封面](../../resources/1-ProductIntroduction/1.ProductIntroduction/ProductDescription.png)
 ##### 全谐波协作机械臂入门首选
 
 ### 1.1 产品简介
@@ -13,7 +13,7 @@ myCobot Pro 450 是一款面向**教育教学、科学实验、商业展示及�
 在控制方面，它依托内置工业级核心控制板和自研控制系统，可便捷连接电脑、平板、手机等终端设备。预装的拖拽式编程软件与快速调试接口，让零基础用户也能轻松上手操作。同时，工具端的集成化接口设计消除了连接夹爪时的线缆困扰，底座新增的 CAN、RS485 接口为二次开发和功能拓展提供了广阔空间。其核心价值在于为不同领域的用户提供了一款高性能、易操作且扩展性强的协作机械臂解决方案，助力提升工作效率与创新能力。
 
 ### 1.2 设计理念
-![理念](../../resources/1-ProductInformation/1.ProductIntroduction/DualScreen.jpg)
+![理念](../../resources/1-ProductIntroduction/1.ProductIntroduction/DualScreen.png)
 
 设计 myCobot Pro 450 的初衷，是为了满足日益增长的多样化应用需求。在教育领域，期望帮助学生更直观地接触和学习机器人技术，培养实践操作能力和创新思维；在科研场景中，为科研人员提供稳定、精准的实验操作工具，加速科研进程；在商业展示方面，打造具有吸引力的互动体验装置，提升展示效果。
 
@@ -46,7 +46,7 @@ myCobot Pro 450 是一款面向**教育教学、科学实验、商业展示及�
 
 ## 2. 产品应用
 
-![应用场景](../../resources/1-ProductInformation/1.ProductIntroduction/ApplicationScenario.png)
+![应用场景](../../resources/1-ProductIntroduction/1.ProductIntroduction/ApplicationScenario.png)
 ### 2.1 用户群体
 
 |                              |                                                              |
@@ -57,7 +57,7 @@ myCobot Pro 450 是一款面向**教育教学、科学实验、商业展示及�
 
 
 ### 2.2 应用场景
-![应用场景](../../resources/1-ProductInformation/1.ProductIntroduction/Application.gif)
+![应用场景](../../resources/1-ProductIntroduction/1.ProductIntroduction/Application.png)
 
 | **用户群体**               | **核心应用场景（开箱即用）**                                   | **扩展应用场景 (无限可能)**                                                           |
 | -------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -68,11 +68,11 @@ myCobot Pro 450 是一款面向**教育教学、科学实验、商业展示及�
 ---
 
 ## 3. 支持的扩展开发
-![拓展开发](../../resources/1-ProductInformation/1.ProductIntroduction/ExpansionAndDevelopment.png)
+![拓展开发](../../resources/1-ProductIntroduction/1.ProductIntroduction/ExpansionAndDevelopment.png)
 
 mycobot 系列机械臂在教育和科研领域中极具价值，特别是在 Python 和 ROS（Robot Operating System)这两个广泛使用的开发环境中。这些环境提供了强大的支持，使得 mycobot  系列产品能够广泛应用于机器学习、人工智能研究、复杂运动控制以及视觉处理任务中。同时搭配自适应夹爪、摄像头法兰、吸泵等数十种配件，可以尽情发挥myCobot的创意想法。
 
-![拓展开发2](../../resources/1-ProductInformation/1.ProductIntroduction/ExpansionAndDevelopment2.jpg)
+![拓展开发2](../../resources/1-ProductIntroduction/1.ProductIntroduction/ExpansionAndDevelopment2.png)
 
 |   |  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |

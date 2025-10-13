@@ -1,4 +1,6 @@
 # myCobot Pro 450 
+
+![封面](../../resources/1-ProductIntroduction/1.ProductIntroduction/main.jpg)
 全谐波协作机械臂入门首选 
 
 核心文档
