@@ -31,7 +31,7 @@ Before using the sample functions, please ensure that the following hardware and
 
 ---
 
-## Gripper control
+## Gripper Control
 
 Before using Python to control the gripper, you must first install and connect the gripper to the robotic arm. Different grippers are compatible with different robotic arms. Here, we use the myGripper F100 Pro force-controlled gripper.
 

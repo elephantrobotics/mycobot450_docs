@@ -1,7 +1,7 @@
 # Pro 450 Python Socket API
 [toc]
 
-## Preparing for Use
+## Preparing For Use
 
 Before using the Python API, please ensure that the following hardware and environment are complete:
 
@@ -34,7 +34,7 @@ Before using the Python API, please ensure that the following hardware and envir
 
 ---
 
-## API usage instructions
+## API Usage Instructions
 
 API (Application Programming Interface), also known as Application Programming Interface functions, are predefined functions. When using the following function interfaces, please import our API library at the beginning by entering the following code, otherwise it will not run successfully:
 
@@ -190,7 +190,7 @@ print(mc.get_angles())
     - `0`: Custom protocol
     - `1`: Modbus protocol
 
-### 3.Robot abnormal control
+### 3.Robot Abnormal Control
 
 #### `get_robot_status()`
 
@@ -235,7 +235,7 @@ print(mc.get_angles())
 - **Function**: Read motor error information during robot motion
 - **Return value**: `list`, a list of 6, all zeros, indicating normal operation
 
-### 4.MDI Mode and Operation
+### 4.MDI Mode And Operation
 
 #### `set_control_mode(mode)`
 
@@ -368,7 +368,7 @@ print(mc.get_angles())
   - `0` not moving
   - `-1` error
 
-### 5. JOG Mode and Operation
+### 5. JOG Mode And Operation
 
 #### `jog_angle(joint_id, direction, speed)`
 
@@ -457,7 +457,7 @@ print(mc.get_angles())
     - `1`: Coordinate acceleration
     - `max_acc`: Angular acceleration range 1 to 150°/s, coordinate acceleration range 1 to 400 mm/s
 
-### 7. Joint software limit operation
+### 7. Joint Software Limit Operation
 
 #### `get_joint_min_angle(joint_id)`
 
@@ -487,7 +487,7 @@ print(mc.get_angles())
   - `id` : Enter joint ID (range 1-6)
   - `angle`: Refer to the limit information of the corresponding joint in the [send_angle()](#send_angleid-degree-speed) interface, which must not be greater than the maximum value
 
-### 8. Joint motor auxiliary control
+### 8. Joint Motor Auxiliary Control
 
 #### `get_servo_encoders()`
 
@@ -634,7 +634,7 @@ print(mc.get_angles())
 - `endpoint(list)`: Arc endpoint
 - `speed(int)`: 1 to 100
 
-### 12. Run auxiliary information
+### 12. Run Auxiliary Information
 
 #### `get_zero_pos()`
 
@@ -656,7 +656,7 @@ print(mc.get_angles())
 - **function**：Get the movement status of all joints
 - **Return value**： a value of 0 means no error
 
-### 13. Robotic arm end IO control
+### 13. Robotic Arm End IO Control
 
 #### `set_digital_output(pin_no, pin_signal)`
 
@@ -694,7 +694,7 @@ print(mc.get_angles())
 
   - `b (int)`: 0 to 255
 
-### 15. Bottom IO control
+### 15. Bottom IO Control
 
 #### `set_base_io_output(pin_no, pin_signal)`
 
@@ -738,7 +738,7 @@ print(mc.get_angles())
 - **Parameters:**
   - `data` (`list`) List contents are in hexadecimal format, with a maximum length of 64 characters.
 
-### 16. Set up 485 communication at the end of the robotic arm
+### 16. Set Up 485 Communication At The End Of The Robotic Arm
 
 <!-- #### `tool_serial_restore()`
 
@@ -956,7 +956,7 @@ print(mc.get_angles())
   - `current_angles`: `list` A list of floating-point values ​​for all angles, indicating the current angles of the robot arm.
 - **Return Value**: `list` A list of floating-point values ​​for all angles.
 
-### 20. Pro force-controlled gripper
+### 20. Pro Force-controlled Gripper
 
 #### `get_pro_gripper_firmware_version( gripper_id=14)`
 

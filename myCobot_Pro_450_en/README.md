@@ -1,4 +1,6 @@
 # myCobot Pro 450
+
+![](./resources/1-ProductInformation/1.ProductIntroduction/main.png)
 The first choice for getting started with the full harmonic collaborative robot arm
 
 Core Document

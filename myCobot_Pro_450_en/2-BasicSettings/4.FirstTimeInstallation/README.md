@@ -1,4 +1,4 @@
-# First installation and use
+# First Installation And Use
 
 - **Thank you for choosing our product**
   

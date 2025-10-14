@@ -1,4 +1,4 @@
-# Environment setup
+# Environment Setup
 
 pymycobot is a Python package for serial communication with myCobot, supporting Python3.5 and later versions.
 
@@ -14,7 +14,7 @@ pip install pymycobot --upgrade --user
 
 ## Windows System
 
-### Download and install Python
+### Download And Install Python
 
 **Applicable devices:** 
 
@@ -57,7 +57,7 @@ If the input is wrong (for example, enter pythonn), an error message will appear
 
 > **Note:** The error message is generally caused by not configuring the environment variables. You can refer to **1.3 Configure environment variables** to modify the environment variables.
 
-#### Configure environment variables
+#### Configure Environment Variables
 Since Windows will search for python.exe according to the path set by a Path environment variable, if it is not found, an error will be reported. Therefore, if you miss checking `Add Python 3.10 to PATH` during installation, you need to manually add the path where python.exe is located to Path, or reinstall Python and remember to check the `Add Python 3.10 to PATH` option.
 
 The following are the steps to manually add the path where python.exe is located.
@@ -78,13 +78,13 @@ The following are the steps to manually add the path where python.exe is located
 
 <img src="../../../resources\3-FunctionsAndApplications\6.developmentGuide\python\build/user variable3.jpg" style="zoom: 50%;" />
 
-### PyCharm installation and use
+### PyCharm Installation And Use
 
 PyCharm is a powerful Python editor with cross-platform capabilities. First, let's introduce the installation steps of PyCharm in Windows system.
 
 **Download address:** **https://www.jetbrains.com/pycharm/download/#section=windows**
 
-#### Download and install
+#### Download And Install
 
 * After entering the website, we will see the following interface:
 
@@ -108,7 +108,7 @@ Download the file according to the interface introduction. Professional means pr
 
 <img src="../../../resources\3-FunctionsAndApplications\6.developmentGuide\python\build/pycharm下载4.jpg" style="zoom: 50%;" />
 
-#### Create a project
+#### Create A Project
 
 After PyCharm is installed, enter the software and create the first program.
 
@@ -140,7 +140,7 @@ After PyCharm is installed, enter the software and create the first program.
 
 <img src="../../../resources\3-FunctionsAndApplications\6.developmentGuide\python\build/createproject2.jpg" style="zoom: 33%;" />
 
-#### Before use
+#### Before Use
 
 * Firmware burning. Firmware refers to the device "driver" stored inside the device. Only through firmware can the operating system implement the operation of a specific machine according to the standard device driver. Different versions of the robot arm need to burn different firmware (refer to the **MyStudio** chapter).
 
@@ -172,7 +172,7 @@ python2 setup.py install
 python3 setup.py install
 ```
 
-## Simple use of Python
+## Simple Use Of Python
 
 After the above preparations are completed, start to control the robot arm through Python code. Here, the MyCobot Pro 450 version is used as an example for demonstration.
 

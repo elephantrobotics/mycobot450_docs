@@ -4,7 +4,7 @@
 
 ## 1. Robot Specifications
 
-![封面](../../resources/1-ProductInformation/2.ProductParameter/main.jpg)
+![封面](../../resources/1-ProductInformation/2.ProductParameter/main.png)
 
 | Index | Parameters |
 | :-----------: | :---------: |
@@ -21,13 +21,13 @@
 
 ---
 
-## 2. Structural dimension parameters
+## 2. Structural Dimension Parameters
 > ！This chapter uses millimeters as distance units and degrees as angle units.
 
-### 2.1 Product dimensions and working space
+### 2.1 Product Dimensions And Working Space
 <!-- ![工作范围](../../resources/1-ProductInformation/2.ProductParameter/WorkingRange.png) -->
 ![尺寸规格](../../resources/1-ProductInformation/2.ProductParameter/size.png)
-### 2.2 Joint range of motion
+### 2.2 Joint Range Of Motion
 **Hardware joint range of motion**
 
 | Joints | Range |
@@ -49,7 +49,7 @@
 | J4        | -165 ~ +165 |
 | J5   | -165 ~ +165                   |
 | J6   | -175 ~ +175         |
-### 2.3 Hole installation
+### 2.3 Hole Installation
 - The robot base is mounted with flanges. The base is compatible with both LEGO technology and M4 screw installation.
 
 ![孔位安装](../../resources/1-ProductInformation/2.ProductParameter/孔位安装1.jpg)
@@ -58,11 +58,11 @@
 
 ![孔位安装](../../resources/1-ProductInformation/2.ProductParameter/末端.png)
 
-## 3. Electrical characteristic parameters
+## 3. Electrical Characteristic Parameters
 ![底座](../../resources/1-ProductInformation/2.ProductParameter/底座.png)
 
 
-## 4. Cartesian coordinate parameters
+## 4. Cartesian Coordinate Parameters
 
 ![DH参数](../../resources/1-ProductInformation/2.ProductParameter/坐标.png)
 
