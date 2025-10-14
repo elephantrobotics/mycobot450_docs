@@ -718,7 +718,7 @@ print(mc.get_angles())
     - `1`: 485
     - `2`: can
   - `baud_rate` (`int`): Baud rate
-  - `timeout`: Timeout
+  - `timeout`: (`int`) Timeout period, in milliseconds
 
 #### `get_base_external_config()`
 
