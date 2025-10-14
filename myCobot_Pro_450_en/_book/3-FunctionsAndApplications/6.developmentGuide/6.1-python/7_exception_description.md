@@ -1,4 +1,4 @@
-# Checking and Handling Robot Arm Exceptions
+# Checking And Handling Robot Arm Exceptions
 
 When the robot arm fails to execute a motion command, you can query the corresponding exception information in the Python terminal, for example.
 
@@ -10,8 +10,11 @@ Under normal circumstances, this interface returns all 0s. Reading the robot sta
 
 ```python
 from pymycobot import Pro450Client
-
+# The default IP address is "192.168.0.232" and the default port number is 4500
 pro450 = Pro450Client('192.168.0.232', 4500)
+
+if pro450.is_power_on() !=1:
+    pro450.power_on()  # Power on
 
 pro450.get_robot_status() # Reading Robot Status
 
@@ -49,9 +52,9 @@ This indicates that robot J2 exceeded the limit.
 
 Indicates that the robot's J5 line is abnormal - receiving an error
 
-### Exception resolution
+### Exception Resolution
 
-#### Joint out of limit
+#### Joint Out Of Limit
 
 When a joint exceeds the limit, use one of the following solutions:
 

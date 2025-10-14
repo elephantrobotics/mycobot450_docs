@@ -1,4 +1,4 @@
-# Checking and Handling Robot Arm Exceptions
+# Checking And Handling Robot Arm Exceptions
 
 When the robot arm fails to execute a motion command, you can query the corresponding exception information in the Python terminal, for example.
 
@@ -52,9 +52,9 @@ This indicates that robot J2 exceeded the limit.
 
 Indicates that the robot's J5 line is abnormal - receiving an error
 
-### Exception resolution
+### Exception Resolution
 
-#### Joint out of limit
+#### Joint Out Of Limit
 
 When a joint exceeds the limit, use one of the following solutions:
 

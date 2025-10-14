@@ -1,9 +1,9 @@
-# ROS2 introduction
+# ROS2 Introduction
 
 The predecessor of ROS2 is ROS, and ROS is the Robot Operating System (Robot Operating System). But ROS itself is not an operating system, but a software library and toolset.
 The emergence of Ros solved the communication problem of each component of the robot. Later, more and more robot algorithms were integrated into ROS. ROS2 inherited ROS, which is more powerful and better than ROS.
 
-## 1 Design goals and features of ROS2
+## 1 Design Goals And Features Of ROS2
 
 ROS2 has the historical mission of changing the era of intelligent robots. At the beginning of the design, it was considered to meet the needs of various robot applications.
 
@@ -29,7 +29,7 @@ The release version and maintenance cycle corresponding to ROS2 and Ubuntu.
 | [Galactic](http://docs.ros.org/en/galactic/index.html) | 2021.5 | 2022.11 |Ubuntu 20.04(Focal Fossa)  |
 | [Humble](http://docs.ros.org/en/humble/index.html)   | 2022.5 | 2027.5 | Ubuntu 22.04(Jammy Jellyfish)  |
 
-## 3 Comparison of ROS and ROS2
+## 3 Comparison Of ROS And ROS2
 
 ROS2 redesigned the system architecture. The architecture changes between the two generations of ROS are as follows:
 
@@ -79,7 +79,7 @@ MoveIt 2 provides a motion control interface that tightly integrates with the ro
 6. **Visualization Tools**
 Integrated with RViz 2, it supports intuitive interaction and debugging, displaying the motion planning and execution process in real time.
 
-### Advantages of MoveIt 2
+### Advantages Of MoveIt 2
 
 - **Real-time Support Based on ROS 2**
 ROS 2's DDS communication architecture empowers MoveIt 2, significantly improving real-time performance and reliability.

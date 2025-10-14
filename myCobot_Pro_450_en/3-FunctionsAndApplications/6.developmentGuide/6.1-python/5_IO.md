@@ -31,7 +31,7 @@ Before using the sample functions, please ensure that the following hardware and
 
 ---
 
-## IO control
+## IO Control
 
 IO stands for data input and output. Our robot arm's Basic and Atom pins have multiple pins. This section mainly explains how to use the end-point IO to control the gripper.
 

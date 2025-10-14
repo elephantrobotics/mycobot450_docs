@@ -1,9 +1,9 @@
 # Product Introduction
-## 1. product description
+## 1. Product Description
 
 ##### myCobot Pro 450  
 
-![封面](../../resources/1-ProductInformation/1.ProductIntroduction/main.jpg)
+![封面](../../resources/1-ProductInformation/1.ProductIntroduction/ProductDescription.png)
 ##### The first choice for getting started with the full harmonic collaborative robot arm
 
 ### 1.1 Product Introduction
@@ -12,12 +12,12 @@ The myCobot Pro 450 is a compact, **fully harmonic, six-axis collaborative robot
 
 In terms of control, it relies on a built-in industrial-grade core control board and self-developed control system, which can be easily connected to terminal devices such as computers, tablets, and mobile phones. The pre-installed drag-and-drop programming software and quick debugging interface make it easy for users with no basic knowledge to get started. At the same time, the integrated interface design on the tool side eliminates the trouble of cables when connecting the grippers, and the newly added CAN and RS485 interfaces on the base provide ample space for secondary development and function expansion. Its core value lies in providing users in different fields with a high-performance, easy-to-use and highly scalable collaborative robot arm solution, helping to improve work efficiency and innovation capabilities.
 
-### 1.2 design concept
-![理念](../../resources/1-ProductInformation/1.ProductIntroduction/DualScreen.jpg)
+### 1.2 Design Concept
+![理念](../../resources/1-ProductInformation/1.ProductIntroduction/DualScreen.png)
 
 The myCobot Pro 450 was designed to meet the growing demand for diverse applications. In education, it aims to help students more intuitively engage with and learn robotics, cultivating practical skills and innovative thinking. In scientific research, it aims to provide researchers with stable and precise experimental tools, accelerating their research progress. In commercial displays, it aims to create engaging interactive experiences and enhance presentations.
 
-### 1.3 Design goals
+### 1.3 Design Goals
 
 | Design goals                                             | description                                                  | Application scenarios and features                           |
 | ---------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -57,7 +57,7 @@ The myCobot Pro 450 was designed to meet the growing demand for diverse applicat
 
 
 ### 2.2 Application Scenario
-![应用场景](../../resources/1-ProductInformation/1.ProductIntroduction/Application.gif)
+![应用场景](../../resources/1-ProductInformation/1.ProductIntroduction/Application.png)
 
 | **user group**               | **Core application scenarios (out-of-the-box)**                                   | **Expand application scenarios (unlimited possibilities)**                                                           |
 | -------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -67,12 +67,12 @@ The myCobot Pro 450 was designed to meet the growing demand for diverse applicat
 
 ---
 
-## 3. Supported extension development
+## 3. Supported Extension Development
 ![拓展开发](../../resources/1-ProductInformation/1.ProductIntroduction/ExpansionAndDevelopment.png)
 
 The mycobot series of robotic arms are extremely valuable in the fields of education and scientific research, especially in Python and ROS (Robot Operating System), two widely used development environments. These environments provide strong support, allowing the mycobot series of products to be widely used in machine learning, artificial intelligence research, complex motion control, and visual processing tasks. At the same time, with dozens of accessories such as adaptive grippers, camera flanges, suction pumps, etc., you can give full play to myCobot's creative ideas.
 
-![拓展开发2](../../resources/1-ProductInformation/1.ProductIntroduction/ExpansionAndDevelopment2.jpg)
+![拓展开发2](../../resources/1-ProductInformation/1.ProductIntroduction/ExpansionAndDevelopment2.png)
 
 | | |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -87,7 +87,7 @@ The mycobot series of robotic arms are extremely valuable in the fields of educa
 ---
 
 
-## 4. purchase address
+## 4. Purchase Address
 
 If you are interested in purchasing this device, please click on the link below
 

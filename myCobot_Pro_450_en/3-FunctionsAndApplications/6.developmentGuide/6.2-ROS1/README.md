@@ -10,7 +10,7 @@ ROS is not a real-time framework, but it can be embedded in real-time programs. 
 
 ![ROS Icon](../../../resources/3-FunctionsAndApplications/6.developmentGuide/ROS/ROSicon.png)
 
-## 1 Design Goals and Features of ROS
+## 1 Design Goals And Features Of ROS
 
 Many people ask, "What's the difference between ROS and other robotics software platforms?" This question is difficult to answer. ROS isn't a framework that integrates most functions or features. In fact, its primary goal is to support code reuse in robotics development. ROS is a framework for distributed processes (i.e., nodes), which are encapsulated in programs and function packages and can be easily shared and distributed. ROS also supports a federated system similar to a code repository, which facilitates collaboration and distribution of projects. This design allows for complete independence in project development and implementation, from file systems to user interfaces (ROS has no limitations). Furthermore, all projects can be integrated with ROS's basic tools.
 
