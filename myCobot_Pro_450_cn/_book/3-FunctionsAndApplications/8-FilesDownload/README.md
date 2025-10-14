@@ -15,7 +15,7 @@
 
 (资料有待更新)
 
-## [宣传资料](./8.5-PromotionalMaterials/README.md)
+## [宣传资料](./8.4-PromotionalMaterials/README.md)
 
 宣传资料部分包含myCobot Pro 450机械臂的产品宣传册、展示视频及客户案例。这些资料不仅展示了机械臂的核心优势和应用场景，还提供了实际应用中的成功案例，帮助潜在客户更直观地了解产品的价值。
 
