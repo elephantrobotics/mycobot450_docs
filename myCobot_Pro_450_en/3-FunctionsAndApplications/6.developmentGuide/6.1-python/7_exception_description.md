@@ -78,17 +78,42 @@ Most hardware errors can be recovered using exception recovery.
 pro450.servo_restore(joint_id)
 ```
 
-If this problem persists after using exception recovery or restarting the robot, please contact our engineers. Detailed information about the hardware errors for each joint is shown in Figure 1:
+If this problem persists after using exception recovery or restarting the robot, please contact our engineers. Detailed information about the hardware errors for each joint is shown:
 
-<img src="../../../resources/3-FunctionsAndApplications/6.developmentGuide/python/exception/6-1-5-1.2-001.png" alt="pic" width="500" height="400"/>
+| Bit (2 bytes) | Error Status |
+| :-----------: | :---------: |
+| 0 | CAN bus error. Exception recovery possible. If recovery is not possible, check the communication line, repair it, and then power on again. |
+| 1 | Short circuit. Exception recovery possible. |
+| 2 | Invalid setting data |
+| 3 | Control error. Exception recovery possible. |
+| 4 | CAN communication error. Exception recovery possible. If recovery is not possible, check the communication line, repair it, and then power on again. |
+| 5 | Feedback error. Exception recovery possible. |
+| 6 | Positive limit switch active. |
+| 7 | Negative limit switch active. |
+| 8 | Negative limit switch active. |
+| 9 | Overcurrent. Exception recovery possible. |
+| 10 | 12t protection. Exception recovery possible. Overtemperature. Exception recovery possible. |
+| 11 | Driver board overtemperature. Exception recovery possible. |
+| 12 | Overvoltage. Exception recovery possible. |
+| 13 | Undervoltage, exception recovery possible |
+| 14 | Command error |
+| 15 | Enable inactive |
 
 #### Joint Software Errors
 
-Software error feedback mainly includes: circuit abnormalities, CAN module abnormalities, encoder abnormalities, and enable failure. If the enable failure occurs, use `pro450.set_motor_enable(254, 1)` to enable motion again. For other abnormalities, please contact our engineers. Detailed joint software error information is shown in Figures 2 and 3:
+Software error feedback mainly includes: circuit abnormalities, CAN module abnormalities, encoder abnormalities, and enable failure. If the enable failure occurs, use `pro450.set_motor_enable(254, 1)` to enable motion again. For other abnormalities, please contact our engineers. Detailed joint software error information is shown:
 
-<img src="../../../resources/3-FunctionsAndApplications/6.developmentGuide/python/exception/6-1-5-1.2-002.png" alt="pic" width="500" height="400"/>
-
-<img src="../../../resources/3-FunctionsAndApplications/6.developmentGuide/python/exception/6-1-5-1.2-003.png" alt="pic" width="500" height="400"/>
+| Bit (1 byte) | Error Status 1 - Abnormal 0 - Normal |
+| :-----------: | :---------: |
+| 0 | CAN initialization error. Check the main control board. After repairing the control board error, power cycle. Symptoms: The machine cannot be enabled or controlled. |
+| 1 | Motor initialization error. Check the motor communication circuit. After repairing the error, power cycle. Symptoms: The machine cannot properly feedback joint information or control. |
+| 2 | Motor transmission error. Check the motor communication circuit. Symptoms: Machine position feedback error. Can be cleared using error recovery. |
+| 3 | Motor reception error. Check the motor communication circuit. Symptoms: Machine position feedback error. Can be cleared using error recovery. This feedback allows normal machine control and does not require user notification. It is mainly used for troubleshooting. |
+| 4 | Position error. Check the motor encoder. Symptoms: The machine is disabled and motion control is impossible. Can be cleared using error recovery. |
+| 5 | Terminal transmission error. Check the terminal communication line, etc. Symptom: Terminal interface feedback error. Can be cleared using error recovery. |
+| 6 | Terminal reception error. Check the terminal communication line, etc. Symptom: Terminal interface feedback error. Can be cleared using error recovery. This feedback allows normal machine control without prompting the user and is primarily used for troubleshooting. |
+| 7 | Motor encoder error. When the encoder reports an error, movement is disabled. Clear the encoder error. Older motor driver boards do not report errors—even if an encoder error is reported, the software does not report the error. How to distinguish newer boards: The board with the battery is a new driver board. |
+| 8 | Feedback will be generated when the enable is turned off. The machine must be enabled before movement. |
 
 #### The robot is in motion and cannot move.
 
