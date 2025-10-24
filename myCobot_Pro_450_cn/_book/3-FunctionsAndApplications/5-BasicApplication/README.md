@@ -6,7 +6,7 @@
 
   -  工具清单：mycobot pro 450  机械臂主体、产品配件包、产品使用指南等。
 
-2.将.把机器臂平放在桌面上并正向放到桌面边，用G型夹固定。
+2.将机器臂平放在桌面上并正向放到桌面边，用G型夹固定。
 
 ![放置](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/放置.png)
 
