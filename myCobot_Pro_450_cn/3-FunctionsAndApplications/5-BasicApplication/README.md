@@ -1,55 +1,60 @@
-# 什么是 myStudio Pro？
+# 初次使用机械臂指南
+## 安装方式
+1.在开始组装之前，请清理工作台，并准备好需要用到的工具。
 
-![](../../resources/5-BasicApplication/5.2/5.2.1/img/myblockly/myblockly界面.jpg)
+  -  工作环境：水平放置在承重至少大于机械臂自重 3 倍的桌面上且不小于机械臂的工作范围，并有足够的安装、使用、维护和修理空间。
 
-**myStudio Pro** 是一款一站式机器人编程控制软件，支持可视化编程交互、快捷移动控制、拖动教学、机器人状态查询配置，在myStudio Pro中有`myBlockly`模块。
+  -  工具清单：mycobot pro 450  机械臂主体、产品配件包、产品使用指南等。
 
-**myBlockly** 在功能/设计上类似于麻省理工学院的儿童编程语言 Scratch。
+2.将机器臂平放在桌面上并正向放到桌面边，用G型夹固定。
 
-使用 **myBlockly** 时，用户可以通过拖动模块来构建代码逻辑。这个过程就像搭积木一样。
+![放置](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/放置.png)
 
-从用户的角度来看，**myBlockly** 是一个简单易用的可视化代码生成工具。从开发人员的角度来看，**myBlockly** 是一个文本框，其中包含用户输入的代码。
+3.结构安装完成后，方可进行下一步的电源连接。
+> **注意:**
+> 1. 在底座安装台上调整机器人位置时，请勿在底座安装台上直接推拉机器人，以免造成划伤。 
+> 2. 手动移动机器人时，请勿对机身易损部位施加外力，以免对机器人造成不必要的损坏。
 
-在文本框中生成代码的过程，就是用户在 **myStudio Pro** 中的myBlockly中拖动代码的过程。
+## 连接电源
 
-## myStudio Pro 支持的操作系统如下：
+> 准备工具：已安装好底座安装台的mycobot pro 450 机械臂、DC24V 直流电源、急停按钮等。
 
-- Windows
+> **注意：**
+> 1. 请确认您已完成上述的结构安装，并将机械臂底座固定在桌面上，以确保操作安全。
+> 2. 请按照下列图示流程，将电源适配器与机械臂上对应的接口进行连接：
 
-- macOS
+步骤 1：
+将直流电源（请确保使用官方适配器，或者DC24V15A 以上供电能力的直流电源）与mycobot pro 450 机械臂上对应的DC 圆形接口相连，适配器另一端链接110-220V电源插座。
 
-- Linux arm64
-  
-## myStudio Pro 支持的现代浏览器如下：
+![电源](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/电源.png)
 
-- Chrome
+步骤 2：
+将急停按钮与mycobot pro 450 机械臂上对应的接口相连。
 
-- Edge
+![急停](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/急停.png)
 
-- Safari
+步骤 3：
+将mycobot pro 450机械臂上对应的LAN1接口与上位机相连。
 
-- ...
+![LAN1](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/LAN1.png)
 
-**跳转到各部分：**
-- [5.1 首次使用 myStudio Pro](./5.1-myStudioFirstUse.md)
-- [5.2 下载和卸载](./5.2-install_uninstall.md)
-- [5.3 接口描述](./5.3-interface_description.md)
-- [5.4 常见问题解答](./5.4-Q&A.md)
-- [5.5 myBlockly]()
-    - [5.5.1 首次使用](./5.5-blockly/5.5.1-blocklyFirstUse.md)
-    - [5.5.2 blockly主界面介绍](./5.5-blockly/5.5.2-interfaceDescription.md)
-    - [5.5.3 小案例](./5.5-blockly/5.5.3-littleCase.md)
-    - [5.5.4 快速填入数据](./5.5-blockly/5.5.4-autofill.md)
-    - [5.5.5 快速移动](./5.5-blockly/5.5.5-quickMove.md)
-    - [5.5.6 学习使用坐标控制](./5.5-blockly/5.5.6-useCoords.md)
-    - [5.5.7 单步执行](./5.5-blockly/5.5.7-singleStep.md)
-    - [5.5.8 程序控制](./5.5-blockly/5.5.8-program.md)
-    - [5.5.9 路点](./5.5-blockly/5.5.9-waypoint.md)
-    - [5.5.10 夹爪的使用](./5.5-blockly/5.5.10-gripperUse.md)
-    - [5.5.11 拖动示教的使用](./5.5-blockly/5.5.11-dragTeach.md)
-- [5.6 快速移动](./5.6-quickmove/5.6.1-quickmovefirstuse.md)
-- [5.7 固件与应用](./5.7-firmware/5.7.1-firmware_main.md)
-- [5.8 设置](./5.8-setting/5.8.1-setting_main.md)
----
+步骤 4：
+按下开关键开机。
+
+![开机](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/开机.png)
+
+> **注意：**
+> 1. mycobot pro 450必须使用外部电源供电，以提供足够的电力
+> 2. 额定电压:24V
+> 3. 额定电流:10A
+> 4. 插头类型: DC24V  MIC4（NEUTRIK XLR NC4FX equivalent）
+
+## 夹爪安装及使用
+
+可以参考以下链接：
+
+- [夹爪安装](https://docs.elephantrobotics.com/docs/myGripper-F100-cn/4-FirstInstallAndUse/4-FirstInstallAndUse.html)
+- [夹爪使用](./5.5-blockly/5.5.10-gripperUse.md)
+
 
 [← 上一章](../../2-BasicSettings/4-FirstInstallAndUse/4.3-PowerOnDetectionGuide.md) | [下一章 →](./5.1-myStudioFirstUse.md)

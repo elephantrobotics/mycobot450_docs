@@ -1466,13 +1466,148 @@
 <ul>
 <li>The robot base is mounted with flanges. The base is compatible with both LEGO technology and M4 screw installation.</li>
 </ul>
-<p><img src="../../resources/1-ProductInformation/2.ProductParameter/&#x5B54;&#x4F4D;&#x5B89;&#x88C5;1.jpg" alt="&#x5B54;&#x4F4D;&#x5B89;&#x88C5;"></p>
+<p><img src="../../resources/1-ProductInformation/2.ProductParameter/&#x5B54;&#x4F4D;&#x5B89;&#x88C5;1.png" alt="&#x5B54;&#x4F4D;&#x5B89;&#x88C5;"></p>
 <ul>
 <li>The robot end is equipped with a flange, and the end of the robotic arm is compatible with both LEGO technology holes and screw thread holes.</li>
 </ul>
 <p><img src="../../resources/1-ProductInformation/2.ProductParameter/&#x672B;&#x7AEF;.png" alt="&#x5B54;&#x4F4D;&#x5B89;&#x88C5;"></p>
 <h2 id="3-electrical-characteristic-parameters">3. Electrical Characteristic Parameters</h2>
-<p><img src="../../resources/1-ProductInformation/2.ProductParameter/&#x5E95;&#x5EA7;.png" alt="&#x5E95;&#x5EA7;"></p>
+<h3 id="31-electrical-interface-of-the-robotic-arm-base">3.1 Electrical Interface Of The Robotic Arm Base</h3>
+<h4 id="311-base-introduction">3.1.1 Base Introduction</h4>
+<ul>
+<li><p>Base front view&#xFF1A;
+<img src="../../resources/1-ProductInformation/2.ProductParameter/&#x6B63;&#x9762;.png" width="800" height="auto"></p>
+<ul>
+<li>&#x2460; RJ45&#xFF1A;Dual network ports, used for connecting the device to the Internet or other network devices.</li>
+<li>&#x2461; USB3&#xFF1A;High-speed USB interface for connecting to computers or peripheral devices.</li>
+<li>&#x2462; RS485&#xFF1A;Industrial serial communication, connecting PLC, sensors, etc.</li>
+<li>&#x2463; CAN&#xFF1A;CAN bus communication, connecting drives, I/O modules, etc.</li>
+<li>&#x2464;  Function IO: digital signal input/output.</li>
+<li>&#x2465; Power switch: Press and hold to turn on the power, press and hold again to turn off the power.</li>
+<li>&#x2466; 24V power supply: Connect the power adapter.  </li>
+<li>&#x2467; Emergency stop interface: Connect an external emergency stop button to cut off the power supply in an emergency to ensure safety.</li>
+</ul>
+</li>
+</ul>
+<h4 id="312-base-interface-description">3.1.2 Base Interface Description</h4>
+<ul>
+<li>The definition of each interface is shown in the following table:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Label</th>
+<th style="text-align:center">Signal Name</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1-12</td>
+<td style="text-align:center">I/O</td>
+<td style="text-align:center">24V</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-electrical-interface-at-the-end-of-the-robotic-arm">3.2 Electrical Interface At The End Of The Robotic Arm</h3>
+<h4 id="321-introduction-to-the-end-of-the-robotic-arm">3.2.1 Introduction To The End Of The Robotic Arm</h4>
+<ul>
+<li><p>Side View Of The End Of The Robotic Arm:</p>
+<p><img src="../../resources/1-ProductIntroduction/2.ProductParameter" alt="M8 aviation socket"></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Number</th>
+<th style="text-align:center">Interface</th>
+<th style="text-align:center">Definition</th>
+<th style="text-align:center">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">12</td>
+<td style="text-align:center">M8 aviation socket</td>
+<td style="text-align:center">End-of-line tool IO interface</td>
+<td style="text-align:center">24V/2A output, supports short-circuit, reverse polarity, lightning strike, overcurrent, and overvoltage protection</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">M8 aviation socket</td>
+<td style="text-align:center">RS485 interface</td>
+<td style="text-align:center">Supports configurable baud rates of 9600 and 115200</td>
+</tr>
+</tbody>
+</table>
+<h4 id="322-robotic-arm-end-interface-description">3.2.2 Robotic Arm End Interface Description</h4>
+<p><img src="../../resources/1-ProductInformation/2.ProductParameter/&#x673A;&#x68B0;&#x81C2;&#x672B;&#x7AEF;&#x5DE5;&#x5177;&#x8BF4;&#x660E;.png" width="800" height="auto"></p>
+<ul>
+<li>The definition of each interface is shown in the following table:</li>
+</ul>
+<p>The definitions of the various tool I/O ports are shown in the table below. Note that the tool I/O output is PNP type and the input is NPN type. The wiring method is the same as the bottom output interface.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Number</th>
+<th style="text-align:center">Signal</th>
+<th style="text-align:center">Explanation</th>
+<th style="text-align:center">Matching M8 line color</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">GND</td>
+<td style="text-align:center">DC24V negative pole</td>
+<td style="text-align:center">white</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">OUT1</td>
+<td style="text-align:center">Tool output interface 1</td>
+<td style="text-align:center">brown</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">OUT2</td>
+<td style="text-align:center">Tool output interface 2</td>
+<td style="text-align:center">green</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">485A</td>
+<td style="text-align:center">485 standard interface A</td>
+<td style="text-align:center">yellow</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">24V</td>
+<td style="text-align:center">DC24V positive pole</td>
+<td style="text-align:center">gray</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">IN1</td>
+<td style="text-align:center">Tool input interface 1</td>
+<td style="text-align:center">pink</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">IN2</td>
+<td style="text-align:center">Tool input interface 2</td>
+<td style="text-align:center">blue</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center">485B</td>
+<td style="text-align:center">485 standard interface B</td>
+<td style="text-align:center">purple</td>
+</tr>
+</tbody>
+</table>
 <h2 id="4-cartesian-coordinate-parameters">4. Cartesian Coordinate Parameters</h2>
 <p><img src="../../resources/1-ProductInformation/2.ProductParameter/&#x5750;&#x6807;.png" alt="DH&#x53C2;&#x6570;"></p>
 <hr>
@@ -1515,7 +1650,7 @@
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"2. ProductParameters","level":"1.2.2","depth":2,"next":{"title":"Basic Settings","level":"1.3","depth":1,"ref":"","articles":[{"title":"3. UserNotice","level":"1.3.1","depth":2,"path":"2-BasicSettings/3.UserNotice/README.md","ref":"2-BasicSettings/3.UserNotice/README.md","articles":[{"title":"3.1 SafetyInstruction","level":"1.3.1.1","depth":3,"path":"2-BasicSettings/3.UserNotice/3.1-SafetyInstruction.md","ref":"2-BasicSettings/3.UserNotice/3.1-SafetyInstruction.md","articles":[]},{"title":"3.2 TransportandStorage","level":"1.3.1.2","depth":3,"path":"2-BasicSettings/3.UserNotice/3.2-TransportandStorage.md","ref":"2-BasicSettings/3.UserNotice/3.2-TransportandStorage.md","articles":[]},{"title":"3.3 MaintenanceandCare","level":"1.3.1.3","depth":3,"path":"2-BasicSettings/3.UserNotice/3.3-MaintenanceandCare.md","ref":"2-BasicSettings/3.UserNotice/3.3-MaintenanceandCare.md","articles":[]},{"title":"3.4 FAQs","level":"1.3.1.4","depth":3,"path":"2-BasicSettings/3.UserNotice/3.4-FAQs.md","ref":"2-BasicSettings/3.UserNotice/3.4-FAQs.md","articles":[{"title":"3.4.1 Software","level":"1.3.1.4.1","depth":4,"path":"2-BasicSettings/3.UserNotice/3.4.1-software.md","ref":"2-BasicSettings/3.UserNotice/3.4.1-software.md","articles":[]},{"title":"3.4.2 Hardware","level":"1.3.1.4.2","depth":4,"path":"2-BasicSettings/3.UserNotice/3.4.2-hardware.md","ref":"2-BasicSettings/3.UserNotice/3.4.2-hardware.md","articles":[]},{"title":"3.4.3 Other","level":"1.3.1.4.3","depth":4,"path":"2-BasicSettings/3.UserNotice/3.4.3-other.md","ref":"2-BasicSettings/3.UserNotice/3.4.3-other.md","articles":[]}]}]},{"title":"4. FirstTimeInstallation","level":"1.3.2","depth":2,"path":"2-BasicSettings/4.FirstTimeInstallation/README.md","ref":"2-BasicSettings/4.FirstTimeInstallation/README.md","articles":[{"title":"4.1 ProductStandardList","level":"1.3.2.1","depth":3,"path":"2-BasicSettings/4.FirstTimeInstallation/4.1-ProductStandardList.md","ref":"2-BasicSettings/4.FirstTimeInstallation/4.1-ProductStandardList.md","articles":[]},{"title":"4.2 ProductUnboxingGuide","level":"1.3.2.2","depth":3,"path":"2-BasicSettings/4.FirstTimeInstallation/4.2-ProductUnboxingGuide.md","ref":"2-BasicSettings/4.FirstTimeInstallation/4.2-ProductUnboxingGuide.md","articles":[]},{"title":"4.3 PowerOnDetectionGuide","level":"1.3.2.3","depth":3,"path":"2-BasicSettings/4.FirstTimeInstallation/4.3-PowerOnDetectionGuide.md","ref":"2-BasicSettings/4.FirstTimeInstallation/4.3-PowerOnDetectionGuide.md","articles":[]}]}]},"previous":{"title":"1. IntroductionProduct ","level":"1.2.1","depth":2,"path":"1-ProductInformation/1.ProductIntroduction/1-ProductIntroduction.md","ref":"1-ProductInformation/1.ProductIntroduction/1-ProductIntroduction.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"1-ProductInformation/2.ProductParameter/2-ProductParameters.md","mtime":"2025-10-14T03:15:58.984Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-10-14T05:32:02.482Z"},"basePath":"../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"2. ProductParameters","level":"1.2.2","depth":2,"next":{"title":"Basic Settings","level":"1.3","depth":1,"ref":"","articles":[{"title":"3. UserNotice","level":"1.3.1","depth":2,"path":"2-BasicSettings/3.UserNotice/README.md","ref":"2-BasicSettings/3.UserNotice/README.md","articles":[{"title":"3.1 SafetyInstruction","level":"1.3.1.1","depth":3,"path":"2-BasicSettings/3.UserNotice/3.1-SafetyInstruction.md","ref":"2-BasicSettings/3.UserNotice/3.1-SafetyInstruction.md","articles":[]},{"title":"3.2 TransportandStorage","level":"1.3.1.2","depth":3,"path":"2-BasicSettings/3.UserNotice/3.2-TransportandStorage.md","ref":"2-BasicSettings/3.UserNotice/3.2-TransportandStorage.md","articles":[]},{"title":"3.3 MaintenanceandCare","level":"1.3.1.3","depth":3,"path":"2-BasicSettings/3.UserNotice/3.3-MaintenanceandCare.md","ref":"2-BasicSettings/3.UserNotice/3.3-MaintenanceandCare.md","articles":[]},{"title":"3.4 FAQs","level":"1.3.1.4","depth":3,"path":"2-BasicSettings/3.UserNotice/3.4-FAQs.md","ref":"2-BasicSettings/3.UserNotice/3.4-FAQs.md","articles":[{"title":"3.4.1 Software","level":"1.3.1.4.1","depth":4,"path":"2-BasicSettings/3.UserNotice/3.4.1-software.md","ref":"2-BasicSettings/3.UserNotice/3.4.1-software.md","articles":[]},{"title":"3.4.2 Hardware","level":"1.3.1.4.2","depth":4,"path":"2-BasicSettings/3.UserNotice/3.4.2-hardware.md","ref":"2-BasicSettings/3.UserNotice/3.4.2-hardware.md","articles":[]},{"title":"3.4.3 Other","level":"1.3.1.4.3","depth":4,"path":"2-BasicSettings/3.UserNotice/3.4.3-other.md","ref":"2-BasicSettings/3.UserNotice/3.4.3-other.md","articles":[]}]}]},{"title":"4. FirstTimeInstallation","level":"1.3.2","depth":2,"path":"2-BasicSettings/4.FirstTimeInstallation/README.md","ref":"2-BasicSettings/4.FirstTimeInstallation/README.md","articles":[{"title":"4.1 ProductStandardList","level":"1.3.2.1","depth":3,"path":"2-BasicSettings/4.FirstTimeInstallation/4.1-ProductStandardList.md","ref":"2-BasicSettings/4.FirstTimeInstallation/4.1-ProductStandardList.md","articles":[]},{"title":"4.2 ProductUnboxingGuide","level":"1.3.2.2","depth":3,"path":"2-BasicSettings/4.FirstTimeInstallation/4.2-ProductUnboxingGuide.md","ref":"2-BasicSettings/4.FirstTimeInstallation/4.2-ProductUnboxingGuide.md","articles":[]},{"title":"4.3 PowerOnDetectionGuide","level":"1.3.2.3","depth":3,"path":"2-BasicSettings/4.FirstTimeInstallation/4.3-PowerOnDetectionGuide.md","ref":"2-BasicSettings/4.FirstTimeInstallation/4.3-PowerOnDetectionGuide.md","articles":[]}]}]},"previous":{"title":"1. IntroductionProduct ","level":"1.2.1","depth":2,"path":"1-ProductInformation/1.ProductIntroduction/1-ProductIntroduction.md","ref":"1-ProductInformation/1.ProductIntroduction/1-ProductIntroduction.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"1-ProductInformation/2.ProductParameter/2-ProductParameters.md","mtime":"2025-10-24T03:47:54.122Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-10-24T08:52:59.778Z"},"basePath":"../..","book":{"language":""}});
 		});
 	</script>
 </div>

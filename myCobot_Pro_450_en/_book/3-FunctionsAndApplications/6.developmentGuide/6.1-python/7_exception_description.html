@@ -1376,12 +1376,129 @@ pro450.get_robot_status() <span class="hljs-comment"># Reading Robot Status</spa
 <p>Most hardware errors can be recovered using exception recovery.</p>
 <pre><code class="lang-bash">pro450.servo_restore(joint_id)
 </code></pre>
-<p>If this problem persists after using exception recovery or restarting the robot, please contact our engineers. Detailed information about the hardware errors for each joint is shown in Figure 1:</p>
-<p><img src="../../../resources/3-FunctionsAndApplications/6.developmentGuide/python/exception/6-1-5-1.2-001.png" alt="pic" width="500" height="400"></p>
+<p>If this problem persists after using exception recovery or restarting the robot, please contact our engineers. Detailed information about the hardware errors for each joint is shown:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Bit (2 bytes)</th>
+<th style="text-align:center">Error Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">CAN bus error. Exception recovery possible. If recovery is not possible, check the communication line, repair it, and then power on again.</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">Short circuit. Exception recovery possible.</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">Invalid setting data</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">Control error. Exception recovery possible.</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">CAN communication error. Exception recovery possible. If recovery is not possible, check the communication line, repair it, and then power on again.</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">Feedback error. Exception recovery possible.</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">Positive limit switch active.</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">Negative limit switch active.</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center">Negative limit switch active.</td>
+</tr>
+<tr>
+<td style="text-align:center">9</td>
+<td style="text-align:center">Overcurrent. Exception recovery possible.</td>
+</tr>
+<tr>
+<td style="text-align:center">10</td>
+<td style="text-align:center">12t protection. Exception recovery possible. Overtemperature. Exception recovery possible.</td>
+</tr>
+<tr>
+<td style="text-align:center">11</td>
+<td style="text-align:center">Driver board overtemperature. Exception recovery possible.</td>
+</tr>
+<tr>
+<td style="text-align:center">12</td>
+<td style="text-align:center">Overvoltage. Exception recovery possible.</td>
+</tr>
+<tr>
+<td style="text-align:center">13</td>
+<td style="text-align:center">Undervoltage, exception recovery possible</td>
+</tr>
+<tr>
+<td style="text-align:center">14</td>
+<td style="text-align:center">Command error</td>
+</tr>
+<tr>
+<td style="text-align:center">15</td>
+<td style="text-align:center">Enable inactive</td>
+</tr>
+</tbody>
+</table>
 <h4 id="joint-software-errors">Joint Software Errors</h4>
-<p>Software error feedback mainly includes: circuit abnormalities, CAN module abnormalities, encoder abnormalities, and enable failure. If the enable failure occurs, use <code>pro450.set_motor_enable(254, 1)</code> to enable motion again. For other abnormalities, please contact our engineers. Detailed joint software error information is shown in Figures 2 and 3:</p>
-<p><img src="../../../resources/3-FunctionsAndApplications/6.developmentGuide/python/exception/6-1-5-1.2-002.png" alt="pic" width="500" height="400"></p>
-<p><img src="../../../resources/3-FunctionsAndApplications/6.developmentGuide/python/exception/6-1-5-1.2-003.png" alt="pic" width="500" height="400"></p>
+<p>Software error feedback mainly includes: circuit abnormalities, CAN module abnormalities, encoder abnormalities, and enable failure. If the enable failure occurs, use <code>pro450.set_motor_enable(254, 1)</code> to enable motion again. For other abnormalities, please contact our engineers. Detailed joint software error information is shown:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Bit (1 byte)</th>
+<th style="text-align:center">Error Status 1 - Abnormal 0 - Normal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">CAN initialization error. Check the main control board. After repairing the control board error, power cycle. Symptoms: The machine cannot be enabled or controlled.</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">Motor initialization error. Check the motor communication circuit. After repairing the error, power cycle. Symptoms: The machine cannot properly feedback joint information or control.</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">Motor transmission error. Check the motor communication circuit. Symptoms: Machine position feedback error. Can be cleared using error recovery.</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">Motor reception error. Check the motor communication circuit. Symptoms: Machine position feedback error. Can be cleared using error recovery. This feedback allows normal machine control and does not require user notification. It is mainly used for troubleshooting.</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">Position error. Check the motor encoder. Symptoms: The machine is disabled and motion control is impossible. Can be cleared using error recovery.</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">Terminal transmission error. Check the terminal communication line, etc. Symptom: Terminal interface feedback error. Can be cleared using error recovery.</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">Terminal reception error. Check the terminal communication line, etc. Symptom: Terminal interface feedback error. Can be cleared using error recovery. This feedback allows normal machine control without prompting the user and is primarily used for troubleshooting.</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">Motor encoder error. When the encoder reports an error, movement is disabled. Clear the encoder error. Older motor driver boards do not report errors&#x2014;even if an encoder error is reported, the software does not report the error. How to distinguish newer boards: The board with the battery is a new driver board.</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center">Feedback will be generated when the enable is turned off. The machine must be enabled before movement.</td>
+</tr>
+</tbody>
+</table>
 <h4 id="the-robot-is-in-motion-and-cannot-move">The robot is in motion and cannot move.</h4>
 <p>The robot is in motion and does not respond when you send a motion point. Please stop the robot by executing <code>pro450.stop()</code> and <code>pro450.resume()</code>. If the robot still cannot move, please contact our engineers. <br></p>
 <hr>
@@ -1428,7 +1545,7 @@ pro450.get_robot_status() <span class="hljs-comment"># Reading Robot Status</spa
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"6.1.7 RobotExceptionHandling","level":"1.4.2.1.7","depth":4,"next":{"title":"6.2 ROS1","level":"1.4.2.2","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/README.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/README.md","articles":[{"title":"6.2.1 EnvironmentSetup","level":"1.4.2.2.1","depth":4,"path":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.1-Environment_Setup.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.1-Environment_Setup.md","articles":[]},{"title":"6.2.2 ROSBasics","level":"1.4.2.2.2","depth":4,"path":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.2-ROS_Basics.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.2-ROS_Basics.md","articles":[]},{"title":"6.2.3 RivzUse","level":"1.4.2.2.3","depth":4,"path":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.3-RVIZ_Introduction.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.3-RVIZ_Introduction.md","articles":[]},{"title":"6.2.4 BasicFunctionCases","level":"1.4.2.2.4","depth":4,"path":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.4-Basic_Functions.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.4-Basic_Functions.md","articles":[]},{"title":"6.2.5 CommonProblemsAndSolutions","level":"1.4.2.2.5","depth":4,"path":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.5-Troubleshooting.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.5-Troubleshooting.md","articles":[]}]},"previous":{"title":"6.1.6 GripperControl","level":"1.4.2.1.6","depth":4,"path":"3-FunctionsAndApplications/6.developmentGuide/6.1-python/6_gripper.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.1-python/6_gripper.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"3-FunctionsAndApplications/6.developmentGuide/6.1-python/7_exception_description.md","mtime":"2025-10-14T04:34:40.801Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-10-14T05:32:02.482Z"},"basePath":"../../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"6.1.7 RobotExceptionHandling","level":"1.4.2.1.7","depth":4,"next":{"title":"6.2 ROS1","level":"1.4.2.2","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/README.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/README.md","articles":[{"title":"6.2.1 EnvironmentSetup","level":"1.4.2.2.1","depth":4,"path":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.1-Environment_Setup.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.1-Environment_Setup.md","articles":[]},{"title":"6.2.2 ROSBasics","level":"1.4.2.2.2","depth":4,"path":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.2-ROS_Basics.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.2-ROS_Basics.md","articles":[]},{"title":"6.2.3 RivzUse","level":"1.4.2.2.3","depth":4,"path":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.3-RVIZ_Introduction.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.3-RVIZ_Introduction.md","articles":[]},{"title":"6.2.4 BasicFunctionCases","level":"1.4.2.2.4","depth":4,"path":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.4-Basic_Functions.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.4-Basic_Functions.md","articles":[]},{"title":"6.2.5 CommonProblemsAndSolutions","level":"1.4.2.2.5","depth":4,"path":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.5-Troubleshooting.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.2-ROS1/6.2.5-Troubleshooting.md","articles":[]}]},"previous":{"title":"6.1.6 GripperControl","level":"1.4.2.1.6","depth":4,"path":"3-FunctionsAndApplications/6.developmentGuide/6.1-python/6_gripper.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.1-python/6_gripper.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"3-FunctionsAndApplications/6.developmentGuide/6.1-python/7_exception_description.md","mtime":"2025-10-20T02:03:36.043Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-10-24T08:52:59.778Z"},"basePath":"../../..","book":{"language":""}});
 		});
 	</script>
 </div>
