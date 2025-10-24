@@ -1,56 +1,61 @@
-# What is myStudio Pro?
+# First-time Use Guide For The Robot Arm
+## Installation Method
+1.Before you begin assembly, clean your work surface and gather the necessary tools.
 
-![](../../resources/3-FunctionsAndApplications/5-BasicApplication/5.2/5.2.1/img/myblockly/myblockly界面.jpg)
+  - Working Environment: Place the robot horizontally on a table capable of supporting at least three times the robot's own weight and within the robot's working range, with ample space for installation, use, maintenance, and repair.
 
-**myStudio Pro** is a one-stop robot programming and control software that supports visual programming interaction, quick motion control, drag-based tutorials, and robot status query and configuration. *myStudio Pro* includes the `myBlockly` module.
+  - Tool List: mycobot pro 450 robot, accessory kit, user guide, etc.
 
-**myBlockly** is similar in function and design to MIT's children's programming language, Scratch.
+2.Place the robot arm flat on the table and position it towards the edge of the table, securing it with a G-clamp.
 
-With **myBlockly**, users can construct code logic by dragging blocks, much like building blocks.
+![放置](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/放置.png)
 
-From a user's perspective, **myBlockly** is a simple and easy-to-use visual code generation tool. From a developer's perspective, **myBlockly** is a text box containing user-entered code.
+3.After the structure is installed, the next step of power connection can be carried out.
 
-Generating code in the text box is similar to dragging code into myBlockly in **myStudio Pro**.
+> **Note:**
+> 1. When adjusting the robot's position on the base mounting platform, do not push or pull the robot directly on the base mounting platform to avoid scratches.
+> 2. When manually moving the robot, do not apply external force to vulnerable parts of the robot to avoid unnecessary damage.
 
-## myStudio Pro supports the following operating systems ：
+## Connect Power
 
-- Windows
+> Tools required: mycobot pro 450 robotic arm with a pre-installed base mounting platform, 24V DC power supply, emergency stop button, etc.
 
-- macOS
+> **Note:**
+> 1. Please ensure that you have completed the above structural installation and secure the base of the robotic arm to the desktop to ensure safe operation.
+> 2. Please follow the steps below to connect the power adapter to the corresponding port on the robotic arm:
 
-- Linux arm64
-  
-## myStudio Pro supports the following modern browsers :
+Step  1：
+Connect a DC power supply (make sure to use the official adapter, or a DC power supply with a DC24V 15A or higher) to the corresponding DC round connector on the mycobot pro 450 robot arm. Connect the other end of the adapter to a 110-220V power outlet.
 
-- Chrome
+![电源](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/电源.png)
 
-- Edge
+Step  2：
+Connect the emergency stop button to the corresponding interface on the mycobot pro 450 robot arm.
 
-- Safari
+![急停](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/急停.png)
 
-- ...
+Step  3：
+Connect the corresponding LAN1 interface on the mycobot pro 450 robot arm to the host computer.
 
-**Jump to sections：**
-- [5.1 myStudioFirstUse](./5.1-myStudioFirstUse.md)
-- [5.2 Install_uninstall](./5.2-install_uninstall.md)
-- [5.3 Interface_description](./5.3-interface_description.md)
-- [5.4 Q&A](./5.4-Q&A.md)
-- [5.5 myBlockly]()
-    - [5.5.1 BlocklyFirstUse](./5.5-blockly/5.5.1-blocklyFirstUse.md)
-    - [5.5.2 Blockly-interfaceDescription](./5.5-blockly/5.5.2-interfaceDescription.md)
-    - [5.5.3 LittleCase](./5.5-blockly/5.5.3-littleCase.md)
-    - [5.5.4 Autofill](./5.5-blockly/5.5.4-autofill.md)
-    - [5.5.5 QuickMove](./5.5-blockly/5.5.5-quickMove.md)
-    - [5.5.6 UseCoords](./5.5-blockly/5.5.6-useCoords.md)
-    - [5.5.7 SingleStep](./5.5-blockly/5.5.7-singleStep.md)
-    - [5.5.8 ProgramControl](./5.5-blockly/5.5.8-program.md)
-    - [5.5.9 Waypoint](./5.5-blockly/5.5.9-waypoint.md)
-    - [5.5.10 GripperUse](./5.5-blockly/5.5.10-gripperUse.md)
-    - [5.5.11 DragTeach](./5.5-blockly/5.5.11-dragTeach.md)
-- [5.6 QuickMoveFirstuse](./5.6-quickmove/5.6.1-quickmovefirstuse.md)
-- [5.7 Firmware_main](./5.7-firmware/5.7.1-firmware_main.md)
-- [5.8 Setting_main](./5.8-setting/5.8.1-setting_main.md)
+![LAN1](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/LAN1.png)
 
----
+Step  4：
+Press the power button to turn on the device.
+
+![开机](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/开机.png)
+
+> **Note:**
+> 1. The mycobot pro 450 must be powered by an external power supply to provide sufficient power.
+> 2. Rated voltage: 24V
+> 3. Rated current: 10A
+> 4. Connector type: DC24V MIC4 (NEUTRIK XLR NC4FX equivalent)
+
+## Gripper Installation And Use
+
+You can refer to the following links:
+
+- [Clamp installation](https://docs.elephantrobotics.com/docs/myGripper-F100-en/4-FirstInstallAndUse/4-FirstInstallAndUse.html)
+- [Gripper use](./5.5-blockly/5.5.10-gripperUse.md)
+
 
 [← Previous Chapter](../../2-BasicSettings/4.FirstTimeInstallation/4.3-PowerOnDetectionGuide.md) | [Next Chapter→](./5.1-myStudioFirstUse.md)
