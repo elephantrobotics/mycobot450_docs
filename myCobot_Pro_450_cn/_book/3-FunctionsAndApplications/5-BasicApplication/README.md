@@ -26,22 +26,22 @@
 步骤 1：
 将直流电源（请确保使用官方适配器，或者DC24V15A 以上供电能力的直流电源）与mycobot pro 450 机械臂上对应的DC 圆形接口相连，适配器另一端链接110-220V电源插座。
 
-![电源](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/电源.png)
+![电源](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/电源.JPG)
 
 步骤 2：
 将急停按钮与mycobot pro 450 机械臂上对应的接口相连。
 
-![急停](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/急停.png)
+![急停](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/急停.JPG)
 
 步骤 3：
 将mycobot pro 450机械臂上对应的LAN1接口与上位机相连。
 
-![LAN1](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/LAN1.png)
+![LAN1](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/LAN1.JPG)
 
 步骤 4：
-按下开关键开机。
+按下电源开关键，按键周围亮起绿色灯光则开机工作准备完成。
 
-![开机](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/开机.png)
+![开机](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/开机.JPG)
 
 > **注意：**
 > 1. mycobot pro 450必须使用外部电源供电，以提供足够的电力
