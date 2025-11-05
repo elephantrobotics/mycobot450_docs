@@ -27,22 +27,22 @@
 Step  1：
 Connect a DC power supply (make sure to use the official adapter, or a DC power supply with a DC24V 15A or higher) to the corresponding DC round connector on the mycobot pro 450 robot arm. Connect the other end of the adapter to a 110-220V power outlet.
 
-![电源](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/电源.png)
+![电源](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/电源.JPG)
 
 Step  2：
 Connect the emergency stop button to the corresponding interface on the mycobot pro 450 robot arm.
 
-![急停](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/急停.png)
+![急停](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/急停.JPG)
 
 Step  3：
 Connect the corresponding LAN1 interface on the mycobot pro 450 robot arm to the host computer.
 
-![LAN1](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/LAN1.png)
+![LAN1](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/LAN1.JPG)
 
 Step  4：
-Press the power button to turn on the device.
+Press the power button; a green light around the button indicates that the device is ready to start.
 
-![开机](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/开机.png)
+![开机](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/开机.JPG)
 
 > **Note:**
 > 1. The mycobot pro 450 must be powered by an external power supply to provide sufficient power.

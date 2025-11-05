@@ -71,7 +71,7 @@
   - ④ CAN：CAN bus communication, connecting drives, I/O modules, etc.
   - ⑤  Function IO: digital signal input/output.
   - ⑥ Power switch: Press and hold to turn on the power, press and hold again to turn off the power.
-  - ⑦ 24V power supply: Connect the power adapter.  
+  - ⑦ DC24V power supply: Connect the power adapter.  
   - ⑧ Emergency stop interface: Connect an external emergency stop button to cut off the power supply in an emergency to ensure safety.
 
 #### 3.1.2 Base Interface Description
@@ -87,7 +87,7 @@
 
 * Side View Of The End Of The Robotic Arm:
 
- ![M8 aviation socket](../../resources/1-ProductIntroduction/2.ProductParameter)
+ ![M8 aviation socket](../../resources/1-ProductInformation/2.ProductParameter/末端接口.png)
 
 | Number | Interface | Definition | Function |
 |:------:|:----------------:|:-----------:|:-------------------:|
