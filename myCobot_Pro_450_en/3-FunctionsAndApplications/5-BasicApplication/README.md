@@ -57,5 +57,9 @@ You can refer to the following links:
 - [Clamp installation](https://docs.elephantrobotics.com/docs/myGripper-F100-en/4-FirstInstallAndUse/4-FirstInstallAndUse.html)
 - [Gripper use](./5.5-blockly/5.5.10-gripperUse.md)
 
+> **Note:**
+>
+>！Hot-swapping is not supported when connecting the gripper. Before operation, ensure that the power supply to the robotic arm is turned off and the power is off to avoid damage to the equipment or safety hazards caused by operating it while it is powered on.
+
 
 [← Previous Chapter](../../2-BasicSettings/4.FirstTimeInstallation/4.3-PowerOnDetectionGuide.md) | [Next Chapter→](./5.1-myStudioFirstUse.md)
