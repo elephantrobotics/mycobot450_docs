@@ -56,5 +56,10 @@
 - [夹爪安装](https://docs.elephantrobotics.com/docs/myGripper-F100-cn/4-FirstInstallAndUse/4-FirstInstallAndUse.html)
 - [夹爪使用](./5.5-blockly/5.5.10-gripperUse.md)
 
+> **注意：**
+>
+>！连接夹爪时不支持热插拔，操作前需确保机械臂已关闭动力电源并掉使能，避免因带电操作导致设备损坏或安全隐患。
+
+
 
 [← 上一章](../../2-BasicSettings/4-FirstInstallAndUse/4.3-PowerOnDetectionGuide.md) | [下一章 →](./5.1-myStudioFirstUse.md)
