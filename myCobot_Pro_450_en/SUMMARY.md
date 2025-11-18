@@ -41,6 +41,7 @@
     * [5.6 QuickMoveFirstuse](3-FunctionsAndApplications/5-BasicApplication/5.6-quickmove/5.6.1-quickmovefirstuse.md)
     * [5.7 Firmware_main](3-FunctionsAndApplications/5-BasicApplication/5.7-firmware/5.7.1-firmware_main.md)
     * [5.8 Setting_main](3-FunctionsAndApplications/5-BasicApplication/5.8-setting/5.8.1-setting_main.md)
+    * [5.9 System image burning](3-FunctionsAndApplications/5-BasicApplication/5.9-system_flash.md)
   * [6. SoftwareDevelopmentGuide](3-FunctionsAndApplications/6.developmentGuide/README.md)
     * [6.1 Python](3-FunctionsAndApplications/6.developmentGuide/6.1-python/README.md)
       * [6.1.1 EnvironmentConstruction](3-FunctionsAndApplications/6.developmentGuide/6.1-python/1_download.md)
