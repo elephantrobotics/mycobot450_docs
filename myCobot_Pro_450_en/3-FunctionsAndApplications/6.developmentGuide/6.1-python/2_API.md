@@ -162,17 +162,17 @@ print(mc.get_angles())
   - 0 - Failure
   - 1 - Error
 
-#### `set_communication_mode(communication_mode, protocol_mode=None)`
+#### `set_communication_mode(protocol_mode)`
 
-- **Function:** Sets the current robot communication mode.
+- **Function:** Sets the current robot Modbus communication mode.
 
 - **Parameters:**
-  - `communication_mode`: `int`
-    - 0 - Socket communication mode
-    - 1 - 485 communication mode
-  - `protocol_mode`: `int`, protocol mode, optional, default: None
-    - `0`: Custom protocol
-    - `1`: Modbus protocol
+
+  - `protocol_mode`: `int` 0 or 1
+
+    - `0`: close Modbus protocol
+
+    - `1`: open Modbus protocol
 - **Return value**: `int`
   - 1 - Success
   - 0 - Failure
@@ -573,11 +573,12 @@ print(mc.get_angles())
 - **Function**: Get the joint collision threshold
 - **Return value**: A list of all joint collision thresholds
 
-#### `set_torque_comp(joint_id, comp_value=100)`
+#### `set_torque_comp(joint_id, damping, comp_value=0)`
 
 - **Function**: Set the torque compensation coefficient
 - **Parameter**:
   - `joint_id` `int`: Joint ID, range 1 to 6
+  - `damping` `int`: Range 0 ~ 1. 1 - On, 0 - Off
   - `comp_value`: Compensation value, range 0-250, default 100. Smaller values ​​result in more difficult joint dragging.
 
 #### `get_torque_comp()`

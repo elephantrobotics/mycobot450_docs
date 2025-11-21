@@ -41,6 +41,7 @@
     * [5.6 快速移动](3-FunctionsAndApplications/5-BasicApplication/5.6-quickmove/5.6.1-quickmovefirstuse.md)
     * [5.7 固件与应用](3-FunctionsAndApplications/5-BasicApplication/5.7-firmware/5.7.1-firmware_main.md)
     * [5.8 设置](3-FunctionsAndApplications/5-BasicApplication/5.8-setting/5.8.1-setting_main.md)
+    * [5.9 系统镜像烧录](3-FunctionsAndApplications/5-BasicApplication/5.9-system_flash.md)
   * [6 软件开发指南](3-FunctionsAndApplications/6-SoftwareDevelopment/README.md)
     * [6.1 基于python 开发使用](3-FunctionsAndApplications/6-SoftwareDevelopment/6.1-python/README.md)
       * [6.1.1 环境搭建](3-FunctionsAndApplications/6-SoftwareDevelopment/6.1-python/1_download.md)
