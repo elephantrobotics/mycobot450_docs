@@ -4,7 +4,8 @@
 
 ## 1. 机器人规格参数
 
-![封面](../../resources/1-ProductIntroduction/2.ProductParameter/main.jpg)
+<img src = ../../resources/1-ProductIntroduction/2.ProductParameter/main.jpg
+width = "1200" align = "center">
 
 | 指标       | 参数 |
 | :-----------: | :---------: |
@@ -25,9 +26,10 @@
 ## 2. 结构尺寸参数
 > ！本章以毫米为距离单位，以度为角度单位。
 
-### 2.1 产品尺寸和工作空间
-<!-- ![工作范围](../../resources/1-ProductInformation/2.ProductParameter/WorkingRange.png) -->
-![尺寸规格](../../resources/1-ProductIntroduction/2.ProductParameter/size.png)
+### 2.1 产品尺寸
+
+<img src = ../../resources/1-ProductIntroduction/2.ProductParameter/size.png
+width = "550" align = "center">
 ### 2.2 关节运动范围
 **硬件关节运动范围**
 
@@ -53,11 +55,13 @@
 ### 2.3 孔位安装
 - 机器人底座安装法兰，底座同时兼容乐高科技件安装方式和M4螺丝安装方式。
 
-![孔位安装](../../resources/1-ProductIntroduction/2.ProductParameter/孔位安装1.jpg)
+<img src = ../../resources/1-ProductIntroduction/2.ProductParameter/孔位安装1.png
+width = "550" align = "center">
 
 - 机器人末端安装法兰，机械臂末端同时兼容乐高科技件孔与螺丝螺纹孔。
 
-![孔位安装](../../resources/1-ProductIntroduction/2.ProductParameter/末端.png)
+<img src = ../../resources/1-ProductIntroduction/2.ProductParameter/末端.png
+width = "550" align = "center">
 
 ## 3. 电气特性参数
 
@@ -66,7 +70,7 @@
 
 * 底座正面图：
 
-  <img src="../../resources/1-ProductIntroduction/2.ProductParameter/正面.png" width="800" height="auto" />
+  <img src="../../resources/1-ProductIntroduction/2.ProductParameter/正面.png" width="550" height="auto" />
 
   - ① RJ45：双网口，用于设备联网或连接其他网络设备。
   - ② USB3：高速USB接口，连接电脑或外围设备。
@@ -74,37 +78,33 @@
   - ④ CAN：CAN总线通信，连接驱动器、I/O模块等。
   - ⑤ 功能IO：数字信号输入/输出。
   - ⑥ 电源开关：按下锁定为开机，再次按下释放为关机。
-  - ⑦ 24V电源：连接电源适配器。 
+  - ⑦ DC24V电源：连接电源适配器。 
   - ⑧ 急停接口：连接外部急停按钮，紧急情况下切断电源，保障安全。
 
 #### 3.1.2 底座接口说明
 
 * 每个接口的定义如下表所示:
 
-| 标签 | 信号名 | 类型 | 功能 | 备注 |
-| :---: | :----: | :--: | :------: | :----: |
-
-
-
-
-
+| 标签 | 信号名 | 类型 | 功能 |
+| :---: | :----: | :--: | :------: |
+| 2     | 1-12 | I/O |  24V |   |    
 
 ### 3.2 机械臂末端电气接口
 #### 3.2.1 机械臂末端介绍
 
 * 机械臂末端侧视图
 
-  ![M8航空插座](../../resources/1-ProductIntroduction/2.ProductParameter)
+  <img src="../../resources/1-ProductIntroduction/2.ProductParameter/末端接口.png" width="550" height="auto" />
 
-| 编号 | 接口    | 定义 | 功能         | 备注         |
-|:------:|:----------------:|:-----------:|:-------------------:|:------------------:|
-| 12     | M8航空插座 | 末端工具IO接口 |  24V/2A输出，支持短路、反接、雷击、过流、过压保护 |                  |
-|        | M8航空插座 | RS485接口      | 支持配置波特率9600、115200                      |                  |
+| 编号 | 接口    | 定义 | 功能         | 
+|:------:|:----------------:|:-----------:|:-------------------:|
+| 12     | M8航空插座 | 末端工具IO接口 |  24V/2A输出，支持短路、反接、雷击、过流、过压保护 |  
+|        | M8航空插座 | RS485接口      | 支持配置波特率9600、115200                       |
 
 
 #### 3.2.2 机械臂末端接口说明
 
-<img src="../../resources/1-ProductIntroduction/2.ProductParameter/机械臂末端工具说明.png" width="800" height="auto" />
+<img src="../../resources/1-ProductIntroduction/2.ProductParameter/机械臂末端工具说明.png" width="550" height="auto" />
 
 * 每个接口的定义如下表所示:
 
@@ -124,7 +124,9 @@
 
 ## 4. 笛卡尔坐标参数
 
-![DH参数](../../resources/1-ProductIntroduction/2.ProductParameter/坐标.png)
+<img src = ../../resources/1-ProductIntroduction/2.ProductParameter/坐标.png
+width = "550" align = "center">
+
 
 
 
