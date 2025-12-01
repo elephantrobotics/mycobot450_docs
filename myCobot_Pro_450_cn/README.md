@@ -63,7 +63,7 @@
     * [5.5 myBlockly]()
       * [5.5.1 首次使用](3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.1-blocklyFirstUse.md)
       * [5.5.2 blockly主界面介绍](3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.2-interfaceDescription.md)
-      * [5.5.3 小案例](3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.3-littleCase.md)
+      * [5.5.3 基础功能使用](3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.3-littleCase.md)
       * [5.5.4 快速填入数据](3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.4-autofill.md)
       * [5.5.5 快速移动](3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.5-quickMove.md)
       * [5.5.6 学习使用坐标控制](3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.6-useCoords.md)
