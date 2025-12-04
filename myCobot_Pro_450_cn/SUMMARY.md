@@ -72,7 +72,7 @@
       * [6.4.6 夹爪控制](3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.6-gripper.md)      
       * [6.4.7 api说明](3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.7-API.md)      
       * [6.4.8 使用案例](3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.8-example.md)       -->
-    * [6.5 基于通信协议包开发](3-FunctionsAndApplications/6-SoftwareDevelopment/6.5-CommunicationProtocolPackage/6.5-communication1.md)
+    * [6.5 基于通信协议包开发](3-FunctionsAndApplications/6-SoftwareDevelopment/6.5-CommunicationProtocolPackage/6.5-communication.md)
   * [7 成功案例](3-FunctionsAndApplications/7-ExamplesRobotsUsing/README.md)
     <!-- * [7.1 机器人复合案例](3-FunctionsAndApplications/7-ExamplesRobotsUsing/7.1.md)
     * [7.2 3D视觉无序分拣](3-FunctionsAndApplications/7-ExamplesRobotsUsing/7.2.md)
