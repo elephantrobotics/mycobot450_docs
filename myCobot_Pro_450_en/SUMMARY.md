@@ -29,7 +29,7 @@
     * [5.5 Blockly]()
       * [5.5.1 BlocklyFirstUse](3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.1-blocklyFirstUse.md)
       * [5.5.2 BlocklyInterfaceDescription](3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.2-interfaceDescription.md)
-      * [5.5.3 LittleCase](3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.3-littleCase.md)
+      * [5.5.3 Basic function usage](3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.3-littleCase.md)
       * [5.5.4 Autofill](3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.4-autofill.md)
       * [5.5.5 QuickMove](3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.5-quickMove.md)
       * [5.5.6 UseCoords](3-FunctionsAndApplications/5-BasicApplication/5.5-blockly/5.5.6-useCoords.md)
