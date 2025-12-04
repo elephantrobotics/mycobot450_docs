@@ -64,7 +64,7 @@
       * [6.3.4 BasicFunctionCases](3-FunctionsAndApplications/6.developmentGuide/6.3-ROS2/6.3.4-Basic_Functions.md)
       * [6.3.5 CommonProblemsAndSolutions](3-FunctionsAndApplications/6.developmentGuide/6.3-ROS2/6.3.5-Troubleshooting.md)
     * [6.4 C++](3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/README1.md)
-    * [6.5 SerialCommunicationProtocol](3-FunctionsAndApplications/6.developmentGuide/6.5-CommunicationProtocolPackage/6.5-communication1.md)
+    * [6.5 SerialCommunicationProtocol](3-FunctionsAndApplications/6.developmentGuide/6.5-CommunicationProtocolPackage/6.5-communication.md)
   * [7. SuccessfulCases](3-FunctionsAndApplications/7.SuccessfulCase/README.md)
   * [ 8. SupportingResources](3-FunctionsAndApplications/8.SupportingResources/README.md)
     * [8.1 ProductInformation](3-FunctionsAndApplications/8.SupportingResources/8.1-ProductInformation/README.md)
