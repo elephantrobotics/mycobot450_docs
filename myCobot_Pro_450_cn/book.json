@@ -1,4 +1,8 @@
 {
+  "styles":{
+    "website": "/sidebar.css"
+  },
+  
   "plugins": [
     "chapter-fold",
     "expandable-chapters",

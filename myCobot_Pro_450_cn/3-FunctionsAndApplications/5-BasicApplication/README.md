@@ -1,65 +1,17 @@
-# 初次使用机械臂指南
-## 安装方式
-1.在开始组装之前，请清理工作台，并准备好需要用到的工具。
+# 第五章 基础功能
 
-  -  工作环境：水平放置在承重至少大于机械臂自重 3 倍的桌面上且不小于机械臂的工作范围，并有足够的安装、使用、维护和修理空间。
+**本章主要解释产品的基本功能用法和基本软件的使用。本章至关重要，应仔细阅读。在实际应用机器人之前，请确保正确理解所述操作。**
 
-  -  工具清单：mycobot pro 450  机械臂主体、产品配件包、产品使用指南等。
+- [5.1 系统使用说明 ](./5.1-SystemInstructions.md)<br>
+本部分介绍了 myCobot Pro 机器人控制系统的一体化操作方案，涵盖本地简易控制（MiniRobot）、远程专业编程（myStudio Pro）、安全灵活的网络架构以及标准的工业通信接口。
 
-2.将机器臂平放在桌面上并正向放到桌面边，用G型夹固定。
+- [5.2 MiniRobot 介绍](./5.2-minirobot/README.md)<br>
+本部分介绍了MiniRobot是myCobot Pro机械臂的本地控制面板，它基于miniroboflow适配，支持通过按钮进行离线现场操作，核心功能包括拖动示教、状态查询、基础配置、通信转发与零位校准，提供了直观便捷的人机交互接口。
 
-![放置](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/放置.png)
+- [5.3 myStudio Pro 介绍](./5.3-myStudioPro/README.md)<br>
+本部分介绍了myStudio Pro 是一款集多功能于一体的机器人编程控制软件，为用户提供可视化编程交互、快捷移动控制、拖动教学、机器人状态查询与配置等一站式解决方案。软件内主要集成四大功能模块：myBlockly、快速移动、资源链接、设置覆盖从编程到调试、从学习到部署的全流程需求。
 
-3.结构安装完成后，方可进行下一步的电源连接。
-> **注意:**
-> 1. 在底座安装台上调整机器人位置时，请勿在底座安装台上直接推拉机器人，以免造成划伤。 
-> 2. 手动移动机器人时，请勿对机身易损部位施加外力，以免对机器人造成不必要的损坏。
+- [5.4 系统更新说明](./5.4-SystemUpdate.md)<br>
+本部分详细介绍了为 Pro450 机械臂烧录/更新系统镜像的完整流程。核心操作是通过 PC 端的专用工具（RKDevTool）将新的系统镜像文件写入设备主控。
 
-## 连接电源
-
-> 准备工具：已安装好底座安装台的mycobot pro 450 机械臂、DC24V 直流电源、急停按钮等。
-
-> **注意：**
-> 1. 请确认您已完成上述的结构安装，并将机械臂底座固定在桌面上，以确保操作安全。
-> 2. 请按照下列图示流程，将电源适配器与机械臂上对应的接口进行连接：
-
-步骤 1：
-将直流电源（请确保使用官方适配器，或者DC24V15A 以上供电能力的直流电源）与mycobot pro 450 机械臂上对应的DC 圆形接口相连，适配器另一端链接110-220V电源插座。
-
-![电源](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/电源.JPG)
-
-步骤 2：
-将急停按钮与mycobot pro 450 机械臂上对应的接口相连。
-
-![急停](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/急停.JPG)
-
-步骤 3：
-将mycobot pro 450机械臂上对应的LAN1接口与上位机相连。
-
-![LAN1](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/LAN1.JPG)
-
-步骤 4：
-按下电源开关键，按键周围亮起绿色灯光则开机工作准备完成。
-
-![开机](../../resources/3-FunctionsAndApplications/5.myBlockly/Basic/开机.JPG)
-
-> **注意：**
-> 1. mycobot pro 450必须使用外部电源供电，以提供足够的电力
-> 2. 额定电压:24V
-> 3. 额定电流:10A
-> 4. 插头类型: DC24V  MIC4（NEUTRIK XLR NC4FX equivalent）
-
-## 夹爪安装及使用
-
-可以参考以下链接：
-
-- [夹爪安装](https://docs.elephantrobotics.com/docs/myGripper-F100-cn/4-FirstInstallAndUse/4-FirstInstallAndUse.html)
-- [夹爪使用](./5.5-blockly/5.5.10-gripperUse.md)
-
-> **注意：**
->
->！连接夹爪时不支持热插拔，操作前需确保机械臂已关闭动力电源并掉使能，避免因带电操作导致设备损坏或安全隐患。
-
-
-
-[← 上一章](../../2-BasicSettings/4-FirstInstallAndUse/4.3-PowerOnDetectionGuide.md) | [下一章 →](./5.1-myStudioFirstUse.md)
+[← 上一章](../../2-BasicSettings/4-FirstInstallAndUse/4.3-PowerOnDetectionGuide.md) | [下一章 →](./5.1-SystemInstructions)
