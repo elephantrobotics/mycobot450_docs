@@ -3,7 +3,8 @@
 
 ##### myCobot Pro 450  
 
-![封面](../../resources/1-ProductIntroduction/1.ProductIntroduction/ProductDescription.png)
+<img src = ../../resources/1-ProductIntroduction/1.ProductIntroduction/ProductDescription.png
+width = "1200" align = "center">
 ##### 全谐波协作机械臂入门首选
 
 ### 1.1 产品简介
@@ -13,7 +14,9 @@ myCobot Pro 450 是一款面向**教育教学、科学实验、商业展示及�
 在控制方面，它依托内置工业级核心控制板和自研控制系统，可便捷连接电脑、平板、手机等终端设备。预装的拖拽式编程软件与快速调试接口，让零基础用户也能轻松上手操作。同时，工具端的集成化接口设计消除了连接夹爪时的线缆困扰，底座新增的 CAN、RS485 接口为二次开发和功能拓展提供了广阔空间。其核心价值在于为不同领域的用户提供了一款高性能、易操作且扩展性强的协作机械臂解决方案，助力提升工作效率与创新能力。
 
 ### 1.2 设计理念
-![理念](../../resources/1-ProductIntroduction/1.ProductIntroduction/DualScreen.png)
+
+<img src = ../../resources/1-ProductIntroduction/1.ProductIntroduction/DualScreen.png
+width = "1200" align = "center">
 
 设计 myCobot Pro 450 的初衷，是为了满足日益增长的多样化应用需求。在教育领域，期望帮助学生更直观地接触和学习机器人技术，培养实践操作能力和创新思维；在科研场景中，为科研人员提供稳定、精准的实验操作工具，加速科研进程；在商业展示方面，打造具有吸引力的互动体验装置，提升展示效果。
 
@@ -27,18 +30,19 @@ myCobot Pro 450 是一款面向**教育教学、科学实验、商业展示及�
 
 ### 1.4 产品特点
 
-![特点](../../resources/1-ProductIntroduction/1.ProductIntroduction/ProductFeature.png)
+<img src = ../../resources/1-ProductIntroduction/1.ProductIntroduction/ProductFeature.png
+width = "1200" align = "center">
 
-| 产品特点                | 特点描述                                                     |
-| -----------------------| ------------------------------------------------------------ | 
-| **超长待机**            | 实验室验证寿命 > 10,000小时 (注：实际工况可能影响)，持久稳定，教学科研更省心。 |
-| **商用级安全关节**      | 集成谐波减速器 + 伺服电机 + 关节刹车 + 控制器，断电瞬间自锁，安全可靠，人机协作更安心。 |
-| **一体精工，坚固可靠**   | 全金属一体化高温压铸机身，结构强度统一，内置控制器，告别外置电箱与复杂线缆，简洁高效。 |
-| **万“物”互联**          | 支持 4 种工业级连接 (WLAN/EtherNet/RS485/CAN)，协议丰富 (Socket-TCP/Modbus/CANOpen)，轻松融入现有系统，工业4.0接入无忧。 |
-| **精准高效，轻量之选**   | 工作半径： 450mm, 负载： 1kg, 精度： ±0.1mm, 自重： < 5kg, 专为轻负载、高精度任务优化，是桌面级自动化与精密操作的理想搭档。 |
-| **零门槛操控**          | myCobot Pro 跨平台控制中心 - 浏览器直连 (输入IP即可)，无需安装！集成：Blockly图形化编程 & 拖动示教：小白秒变编程高手。快捷移动控制 & 状态监控。支持 Modbus/VNC/Socket 等多连接配置。一站式固件升级与管理。 |
-| **开源生态，无限可能**   | 提供完整 URDF 模型，开放关节电机底层接口 (位置/速度/加速度/电流等状态可查)，助力运动学/动力学仿真建模 (ROS2, Isaac Sim, MuJoCo)。开放90+ 标准控制接口库 (Python & C++)，覆盖状态查询、关节/笛卡尔空间运动控制，开发者友好，高效赋能二次开发。 |
-| **大模型“灵魂”注入**     | 支持接入多模态大模型 (如 DeepSeek、ChatGPT)，实现语音指令 + 视觉识别的智能抓取，交互更直观。支持接入具身智能大模型 (如 Lerobot)，赋能机器人自主运动策略学习与部署，探索智能体前沿。 |
+| 产品特点                         | 特点描述                                                     |
+| --------------------------------| -------------------------------------------------------- | 
+| **超长待机**                | 实验室验证寿命 > 10,000小时 (注：实际工况可能影响)，持久稳定，教学科研更省心。 |
+| **商用级安全关节**          | 集成谐波减速器 + 伺服电机 + 关节刹车 + 控制器，断电瞬间自锁，安全可靠，人机协作更安心。 |
+| **一体精工，坚固可靠**       | 全金属一体化高温压铸机身，结构强度统一，内置控制器，告别外置电箱与复杂线缆，简洁高效。 |
+| **万“物”互联**              | 支持 4 种工业级连接 (WLAN/EtherNet/RS485/CAN)，协议丰富 (Socket-TCP/Modbus/CANOpen)，轻松融入现有系统，工业4.0接入无忧。 |
+| **精准高效，轻量之选**       | 工作半径： 450mm, 负载： 1kg, 精度： ±0.1mm, 自重： < 5kg, 专为轻负载、高精度任务优化，是桌面级自动化与精密操作的理想搭档。 |
+| **零门槛操控**              | myCobot Pro 跨平台控制中心 - 浏览器直连 (输入IP即可)，无需安装！集成：Blockly图形化编程 & 拖动示教：小白秒变编程高手。快捷移动控制 & 状态监控。支持 Modbus/VNC/Socket 等多连接配置。一站式固件升级与管理。 |
+| **开源生态，无限可能**       | 提供完整 URDF 模型，开放关节电机底层接口 (位置/速度/加速度/电流等状态可查)，助力运动学/动力学仿真建模 (ROS2, Isaac Sim, MuJoCo)。开放90+ 标准控制接口库 (Python & C++)，覆盖状态查询、关节/笛卡尔空间运动控制，开发者友好，高效赋能二次开发。 |
+| **大模型“灵魂”注入**         | 支持接入多模态大模型 (如 DeepSeek、ChatGPT)，实现语音指令 + 视觉识别的智能抓取，交互更直观。支持接入具身智能大模型 (如 Lerobot)，赋能机器人自主运动策略学习与部署，探索智能体前沿。 |
 | **炫酷应用套件**             | 提供 3 套开箱即用方案 - 3D视觉无序分拣、高精度写字绘画、移动复合机器人，快速搭建教学/实验/展示场景。 |
 
 
@@ -46,7 +50,8 @@ myCobot Pro 450 是一款面向**教育教学、科学实验、商业展示及�
 
 ## 2. 产品应用
 
-![应用场景](../../resources/1-ProductIntroduction/1.ProductIntroduction/ApplicationScenario.png)
+<img src = ../../resources/1-ProductIntroduction/1.ProductIntroduction/ApplicationScenario.png
+width = "1200" align = "center">
 ### 2.1 用户群体
 
 |                              |                                                              |
@@ -57,7 +62,9 @@ myCobot Pro 450 是一款面向**教育教学、科学实验、商业展示及�
 
 
 ### 2.2 应用场景
-![应用场景](../../resources/1-ProductIntroduction/1.ProductIntroduction/Application.png)
+
+<img src = ../../resources/1-ProductIntroduction/1.ProductIntroduction/Application.png
+width = "1200" align = "center">
 
 | **用户群体**               | **核心应用场景（开箱即用）**                                   | **扩展应用场景 (无限可能)**                                                           |
 | -------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -68,21 +75,24 @@ myCobot Pro 450 是一款面向**教育教学、科学实验、商业展示及�
 ---
 
 ## 3. 支持的扩展开发
-![拓展开发](../../resources/1-ProductIntroduction/1.ProductIntroduction/ExpansionAndDevelopment.png)
 
-mycobot 系列机械臂在教育和科研领域中极具价值，特别是在 Python 和 ROS（Robot Operating System)这两个广泛使用的开发环境中。这些环境提供了强大的支持，使得 mycobot  系列产品能够广泛应用于机器学习、人工智能研究、复杂运动控制以及视觉处理任务中。同时搭配自适应夹爪、摄像头法兰、吸泵等数十种配件，可以尽情发挥myCobot的创意想法。
+<img src = ../../resources/1-ProductIntroduction/1.ProductIntroduction/ExpansionAndDevelopment.png
+width = "1200" align = "center">
 
-![拓展开发2](../../resources/1-ProductIntroduction/1.ProductIntroduction/ExpansionAndDevelopment2.png)
+mycobot 系列机械臂在教育和科研领域中极具价值，特别是在 Python 和 ROS（Robot Operating System）这两个广泛使用的开发环境中。这些环境提供了强大的支持，使得 mycobot  系列产品能够广泛应用于机器学习、人工智能研究、复杂运动控制以及视觉处理任务中。同时搭配自适应夹爪、摄像头法兰、吸泵等数十种配件，可以尽情发挥myCobot的创意想法。
+
+<img src = ../../resources/1-ProductIntroduction/1.ProductIntroduction/ExpansionAndDevelopment2.png
+width = "1200" align = "center">
 
 |   |  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | **Python**                                                   | 机器人支持Python，具备完善的Python API库。 可通过Python控制机器人的关节角度、坐标、夹持器等。 |
-| **ROS**                                                      | 支持  ROS2 版本，提供 RVIZ2 仿真环境支持。<br>允许用户实时显示机械臂和采集机械臂的状态信息，使得myCobot Pro 450适合 ROS 初学者和教育用途。 |
-| **硬件接口**                                                 | 包括 IO、USB 等，方便连接各种传感器和执行器。              |
+| **ROS**                                                      | 支持 ROS1 和 ROS2 双版本，提供 RVIZ 仿真环境支持。<br>允许用户实时显示机械臂和采集机械臂的状态信息，使得myCobot Pro 450适合 ROS 初学者和教育用途。 |
+| **硬件接口**                                                 | 包括 IO、LAN1 等，方便连接各种传感器和执行器。              |
 | **软件库**                                                   | 提供丰富的开源库和 API 来简化开发过程。                    |
 | **系统兼容性**                                               | 兼容 Windows、Linux、MacOS，适应多种开发环境。             |
 | **C++** | 使用c++语言，您可以通过我们公司开发的c++动态库，进行自由开发（坐标控制、角度控制、io控制、夹爪控制等），控制我们公司已经研发出来的部分机器人。 |
-| **myBlockly** | 既是图形化编程软件又是可视化工具。 用户可以拖拽模块创建程序，这个过程非常类似于搭积木，方便快捷易上手。 |
+| **myStudio Pro** | 是一款一站式机器人编程控制软件，支持可视化编程交互、快捷移动控制、拖动教学、机器人状态查询配置，在myStudio Pro中有myBlockly模块。|
 
 ---
 
