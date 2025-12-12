@@ -162,17 +162,14 @@ print(mc.get_angles())
   - 0-失败
   - -1-错误
 
-#### `set_communication_mode(communication_mode, protocol_mode=None)`
+#### `set_communication_mode(protocol_mode)`
 
-- **功能:** 设置当前机器人通信模式。
+- **功能:** 设置当前机器人Modbus通信模式。
   
-- **参数:** 
-  - `communication_mode`: `int`
-    - 0 - socket 通信模式
-    - 1 - 485通信模式
-  - `protocol_mode`: `int`，协议模式，可选，默认None 
-    - `0`: 自定义协议
-    - `1`: Modbus协议
+- **参数:**
+  - `protocol_mode`: `int` 0 或者 1
+    - `0`: 关闭 Modbus协议
+    - `1`: 打开 Modbus协议
 - **返回值**：`int`
   - 1-成功
   - 0-失败
@@ -182,10 +179,7 @@ print(mc.get_angles())
 
 - **功能:** 获取当前机器人通信模式。
   
-- **返回值:** 
-  - `communication_mode`: `int`
-    - 0 - socket 通信模式
-    - 1 - 485通信模式
+- **返回值:**
   - `protocol_mode`: `int`
     - `0`: 自定义协议
     - `1`: Modbus协议
@@ -272,12 +266,12 @@ print(mc.get_angles())
   - `degree`：角度值（`float`）
       | 关节 Id | 范围 |
       | ---- | ---- |
-      | 1 | -165 ~ 165 |
-      | 2 | -120 ~ 120 |
-      | 3 | -158 ~ 158 |
-      | 4 | -165 ~ 165 |
-      | 5 | -165 ~ 165 |
-      | 6 | -175 ~ 175 |
+      | 1 | -162 ~ 162 |
+      | 2 | -114 ~ 114 |
+      | 3 | -154 ~ 154 |
+      | 4 | -162 ~ 162 |
+      | 5 | -162 ~ 162 |
+      | 6 | -165 ~ 165 |
 
     - `speed`：机械臂运动速度及范围 1~100
 
@@ -303,7 +297,7 @@ print(mc.get_angles())
       | ---- | ---- |
       | x | -466 ~ 466 |
       | y | -466 ~ 466 |
-      | z | -230 ~ 614 |
+      | z | -150 ~ 677 |
       | rx | -180 ~ 180 |
       | ry | -180 ~ 180 |
       | rz | -180 ~ 180 |
@@ -574,12 +568,13 @@ print(mc.get_angles())
 - **功能**：获取关节碰撞阈值
 - **返回值**：一个列表, 全关节碰撞阈值
 
-#### `set_torque_comp(joint_id, comp_value=100)`
+#### `set_torque_comp(joint_id, damping, comp_value=0)`
 
 - **功能**设置力矩补偿系数
 - **参数**：
   - `joint_id` `int`: 关节ID，范围 1 ~ 6
-  - `comp_value`: 补偿值，范围0~250，默认100，值越小，关节拖动越吃力
+  - `damping` `int`: 范围 0 ~ 1。 1-打开，0-关闭
+  - `comp_value`: 补偿值，范围0~250，默认0，值越小，关节拖动越吃力
 
 #### `get_torque_comp()`
 
@@ -925,14 +920,19 @@ print(mc.get_angles())
     - `3`：关节速度融合滤波器
     - `4`：坐标速度融合滤波器
     - `5`：拖动示教采样周期
-- **返回值:** `int` 1 ~ 100
+- **返回值:** `int` 1 ~ 255
 
 #### `set_filter_len(rank, value)`
 
 - **功能:** 设置滤波器参数
 - **参数:**
   - `rank (int)`: 1 ~ 5
-  - `value (int)`: 1 ~ 100
+    - `1`：拖动示教采样滤波器
+    - `2`：拖动示教执行滤波器
+    - `3`：关节速度融合滤波器
+    - `4`：坐标速度融合滤波器
+    - `5`：拖动示教采样周期
+  - `value (int)`: 1 ~ 255
 
 #### `get_fusion_parameters(rank_mode)`
 
