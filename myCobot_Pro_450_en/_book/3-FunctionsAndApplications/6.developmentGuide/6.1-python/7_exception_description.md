@@ -30,7 +30,7 @@ Indicates the robot is not moving, no joints are exceeding limits, no joint hard
 
 A complete explanation of each value is as follows:
 
-`[Reserved, Whether Moving, Whether J1 Exceeds Limits, Whether J2 Exceeds Limits, Whether J3 Exceeds Limits, Whether J4 Exceeds Limits, Whether J5 Exceeds Limits, Whether J6 Exceeds Limits, Whether J1 Motor Hardware Error, Whether J2 Motor Hardware Error, Whether J3 Motor Hardware Error, Whether J4 Motor Hardware Error, Whether J5 Motor Hardware Error, Whether J6 Motor Hardware Error, Whether J1 Software Communication Error, Whether J2 Software Communication Error, Whether J3 Software Communication Error, Whether J4 Software Communication Error, Whether J5 Software Communication Error, Whether J6 Software Communication Error]`
+`[joint collision, Whether Moving, Whether J1 Exceeds Limits, Whether J2 Exceeds Limits, Whether J3 Exceeds Limits, Whether J4 Exceeds Limits, Whether J5 Exceeds Limits, Whether J6 Exceeds Limits, Whether J1 Motor Hardware Error, Whether J2 Motor Hardware Error, Whether J3 Motor Hardware Error, Whether J4 Motor Hardware Error, Whether J5 Motor Hardware Error, Whether J6 Motor Hardware Error, Whether J1 Software Communication Error, Whether J2 Software Communication Error, Whether J3 Software Communication Error, Whether J4 Software Communication Error, Whether J5 Software Communication Error, Whether J6 Software Communication Error]`
 
 The following example is as follows:
 

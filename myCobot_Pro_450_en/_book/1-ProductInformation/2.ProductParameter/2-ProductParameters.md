@@ -32,23 +32,24 @@
 
 | Joints | Range |
 | :--------: | :----------:|
-| J1        | -165 ~ +165     |
-| J2        | -117 ~ +117      |
-| J3  | -157 ~ +157                   |
-| J4        | -165 ~ +165 |
-| J5   | -165 ~ +165                   |
+| J1        | -169 ~ +169     |
+| J2        | -131 ~ +131      |
+| J3  | -159 ~ +159                   |
+| J4        | -167 ~ +167 |
+| J5   | -168 ~ +168                   |
 | J6   | -168 ~ +168         |
 
 **Software joint range of motion**
 
 | Joints | Range |
 | :--------: | :----------:|
-| J1        | -165 ~ +165     |
-| J2        | -120 ~ +120      |
-| J3  | -158 ~ +158                   |
-| J4        | -165 ~ +165 |
-| J5   | -165 ~ +165                   |
-| J6   | -175 ~ +175         |
+| 1 | -162 ~ 162 |
+  | 2 | -125 ~ 125 |
+  | 3 | -154 ~ 154 |
+  | 4 | -162 ~ 162 |
+  | 5 | -162 ~ 162 |
+  | 6 | -165 ~ 165 |
+  
 ### 2.3 Hole Installation
 - The robot base is mounted with flanges. The base is compatible with both LEGO technology and M4 screw installation.
 

@@ -172,4 +172,4 @@
 
 ---
 
-[← 上一章]() | [下一章 →](./5.3.1-myStudioFirstUse.md)
+[← 上一章](../5.2-minirobot/README.md) | [下一章 →](./5.3.1-myStudioFirstUse.md)
