@@ -31,6 +31,7 @@
         * [5.2.5 零位校准](3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.5-calibration.md)
         * [5.2.6 版本显示](3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.6-firmware.md)
         * [5.2.7 无线连接状态](3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.7-connection.md)
+        * [5.2.8 Q&A](3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.8-Q&A.md)
     * [5.3 myStudio Pro 介绍](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/README.md)
         * [5.3.1 准备工作](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.1-myStudioFirstUse.md)
         * [5.3.2 首次使用](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.2-myBlockly.md)
