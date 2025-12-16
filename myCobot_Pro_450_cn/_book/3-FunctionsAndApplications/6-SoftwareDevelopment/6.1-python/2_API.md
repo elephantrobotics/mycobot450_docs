@@ -184,12 +184,29 @@ print(mc.get_angles())
     - `0`: 自定义协议
     - `1`: Modbus协议
 
+#### `get_free_move_mode()`
+
+- **功能:** 读取自由移动模式
+
+- **返回值:** 
+  - `0`: 关闭自由移动模式
+  - `1`: 打开自由移动模式
+
+#### `set_free_move_mode(mode)`
+
+- **功能:** 设置自由移动模式（仅当打开自由移动后，按住末端按钮才可放松关节）
+  
+- **参数:**
+  - `1`: 打开自由移动模式。
+  - `0`: 关闭自由移动模式。
+
 ### 3. 机器人异常检测
 
 #### `get_robot_status()`
 
-- **功能：** 机器人错误安全状态
-- **返回值:** 0 - 正常。其他 - 机器人触发碰撞检测
+- **功能：** 读取机器人错误安全状态
+- **返回值:** 0 - 正常。比如[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]，其他 - 机器人异常
+  - `[关节是否碰撞，是否正在运动，J1是否超限，J2是否超限，J3是否超限，J4是否超限，J5是否超限，J6是否超限，J1是否电机硬件报错，J2是否电机硬件报错，J3是否电机硬件报错，J4是否电机硬件报错，J5是否电机硬件报错，J6是否电机硬件报错，J1是否软件通信报错，J2是否软件通信报错，J3是否软件通信报错，J4是否软件通信报错，J5是否软件通信报错，J6是否软件通信报错]`
 
 #### `servo_restore(joint_id)`
 
@@ -202,6 +219,11 @@ print(mc.get_angles())
 - **功能**：读取通信异常次数
 - **参数**：
   - `joint_id`: int. 关节 id 1 - 6
+- **返回值**： `list` 长度为4的列表，比如[0, 0, 0, 0]，分别代表：
+  - `[0]`: 关节发送异常次数
+  - `[1]`: 关节读取异常次数
+  - `[2]`: 末端发送异常次数
+  - `[3]`: 末端发送异常次数
 
 #### `get_error_information()`
 
@@ -215,6 +237,7 @@ print(mc.get_angles())
     - `34`: 速度融合报错
     - `35`：零空间运动无相邻解
     - `36`：奇异位置无解，请使用关节控制离开奇异点
+  - `81~86`: J1 ~ J6关节触发碰撞，请使用`resume`接口恢复
 
 #### `clear_error_information()`
 
@@ -267,7 +290,7 @@ print(mc.get_angles())
       | 关节 Id | 范围 |
       | ---- | ---- |
       | 1 | -162 ~ 162 |
-      | 2 | -114 ~ 114 |
+      | 2 | -125 ~ 125 |
       | 3 | -154 ~ 154 |
       | 4 | -162 ~ 162 |
       | 5 | -162 ~ 162 |
@@ -314,7 +337,7 @@ print(mc.get_angles())
 
 - **功能：** 控制指令暂停核心并停止所有运动指令
 - **参数:**
-  - `deceleration`： 是否减速并停止，默认为 0。1代表缓暂停
+  - `deceleration`： 是否减速并停止，默认为 0。0和1均代表缓暂停
 - **返回值**:
   - `1` - stopped
   - `0` - not stop
@@ -336,7 +359,7 @@ print(mc.get_angles())
 
 - **功能：** 停止机器人运动
 - **参数:**
-  - `deceleration` ： 是否减速并停止。默认为 0。1代表缓停
+  - `deceleration` ： 是否减速并停止。默认为 0。0和1均代表缓停
 - **返回值**:
   - `1` - 已停止
   - `0` - 未停止
@@ -396,23 +419,6 @@ print(mc.get_angles())
   - `coord_id`: 坐标轴 1 - 6.
   - `increment`: 基于当前位置坐标的增量移动
   - `speed`: 1 ~ 100
-
-<!-- ### 5. Coordinate controlled attitude deviation angle
-
-#### `get_solution_angles()`
-
-- **功能：** Obtain the value of zero space deflection angle
-- **返回值**：Zero space deflection angle value
-
-#### `set_solution_angles(angle, speed)`
-
-- **功能：** Obtain the value of zero space deflection angle
-
-- **参数:**
-
-  - ` angle` : Input the angle range of joint 1, angle range -90 to 90
-
-  - `speed` : 1 - 100.-->
 
 ### 6. 速度/加速度参数
 
@@ -557,11 +563,18 @@ print(mc.get_angles())
 
 #### `set_collision_mode(mode)`
 
-- **功能**设置关节碰撞阈值
+- **功能**设置关节碰撞检测
 - **参数**： `int`
   - `mode`:
     - `0`: 关闭
     - `1`: 打开
+
+#### `set_collision_threshold(joint_id, threshold_value=100)`
+
+- **功能**设置关节碰撞检测
+- **参数**：
+  - `mode`: `int` 关节ID，范围 1 ~ 6
+  - `threshold_value`: `int` 碰撞阈值，范围为 50 ~ 250，默认值为 100，值越小，越容易触发碰撞
 
 #### `get_collision_threshold()`
 
@@ -581,40 +594,11 @@ print(mc.get_angles())
 - **功能**：获取力矩补偿系数
 - **返回值**：一个列表, 全关节力矩补偿系数
 
-<!-- #### `set_identify_mode(mode)`
-
-- **功能**: 设置动力学参数辨识模式
-- **参数**： `int`
-  - `mode`:
-    - `0`: 关闭
-    - `1`: 打开
-
-#### `get_identify_mode()`
-
-- **功能**：获取动力学参数辨识模式
-- **返回值**：
-  - `0`: 关闭
-  - `1`: 打开 -->
-
 #### `fourier_trajectories(trajectory)`
 
 - **功能**: 执行动力学辨识轨迹
 - **参数**： 
   - `trajectory`: `int`，范围 0 ~ 1
-
-<!-- #### `set_dynamic_parameters(add, data)`
-
-- **功能**: 设置动力学参数
-- **参数**:
-  - `add`: `int`，范围 0 ~ 62
-  - `data`: 参数值
-
-#### `get_dynamic_parameters(add)`
-
-- **功能**: 读取动力学参数
-- **参数**：
-  - `add`: (int), 范围 0 ~ 62
-- **返回值**：data * 0.001 -->
 
 #### `parameter_identify()`
 
@@ -624,7 +608,7 @@ print(mc.get_angles())
 
 #### `write_move_c(transpoint, endpoint, speed)`
 
-- **功能**：圆弧轨迹运动(指定途经点）
+- **功能**：圆弧轨迹运动(指定途经点)
 - **参数**：
   - `transpoint(list)`：圆弧坐标途经点
   - `endpoint (list)`：圆弧坐标结束点
@@ -741,26 +725,6 @@ print(mc.get_angles())
 
 ### 16. 设置末端485通信
 
-<!-- #### `tool_serial_restore()`
-
-- **功能**：485 factory reset
-
-#### `tool_serial_ready()`
-
-- **功能：** Set up 485 communication
-- **返回值:** 0 : not set 1 : Setup completed
-
-#### `tool_serial_available()`
-
-- **功能：** Set up 485 communication
-- **返回值:** 0-Normal 1-Robot triggered collision detection -->
-
-#### `tool_serial_read_data(data_len)`
-
-- **功能：** 读取固定长度数据，读取前先读取缓冲区长度，读取完成后数据会被清除
-- **参数**： data_len (int): 需要读取的字节数，范围1~45
-- **返回值:** 0：未设置 1：设置完成
-
 #### `tool_serial_write_data(command)`
 
 - **功能：** 末端485发送数据，数据长度范围为1~45字节
@@ -768,39 +732,29 @@ print(mc.get_angles())
   - `command` (`list`): modbus格式的数据指令
 - **返回值:** modbus数据列表
 
-<!-- #### `tool_serial_flush()`
-
-- **功能：** Clear 485 buffer
-- **返回值:** 0-Normal 1-Robot triggered collision detection
-
-#### `tool_serial_peek()`
-
-- **功能：** View the first data in the buffer, the data will not be cleared
-- **返回值:** 1 byte data
-
-#### `tool_serial_set_baud(baud)`
-
-- **功能：** Set 485 baud rate, default 115200
-- **参数**: baud (int): baud rate
-- **返回值:** NULL
-
-#### `tool_serial_set_timeout(max_time)`
-
-- **功能：** Set 485 timeout in milliseconds, default 30ms
-- **参数**: max_time (int): timeout
-- **返回值:** NULL -->
-
-#### `set_over_time(timeout=1000)`
-
-- **功能：** 设置超时时间(默认1s,超时时间内未读取数据缓冲区会清除)
-- **参数**： timeout (int): 超时时间，单位ms，范围0~65535
-
 #### `flash_tool_firmware(main_version, modified_version=0)`
 
 - **功能：** 烧录末端固件
 - **参数:**
   - `main_version (str)`: 主次版本号，比如 `'1.1'`
   - `modified_version (int)`: 更正版本号，范围 0 ~ 255，默认是 0 
+
+#### `set_tool_serial_baud_rate(baud_rate=115200)`
+
+- **功能：** 设置末端485波特率，默认115200
+- **参数**: `baud_rate` (`int`): 标准波特率，仅支持115200和1000000
+- **返回值:** 1
+
+#### `set_tool_serial_timeout(timeou=10000)`
+
+- **功能：** 设置末端485超时时间，默认10秒
+- **参数**: `timeout (int)`: 超时时间， 单位毫秒，范围 1 ~ 10000
+- **返回值:** 1 
+
+#### `get_tool_config()`
+
+- **功能：** 获取末端485波特率和超时时间
+- **返回值:** (`list`) 包含波特率和超时时间的列表，比如：[波特率, 超时时间]
 
 ### 17. 工具坐标系操作
 
@@ -883,7 +837,7 @@ print(mc.get_angles())
 
 ### 18. 算法参数
 
-#### `get_vr_mode()`
+<!-- #### `get_vr_mode()`
 
 - **功能:** 获取VR模式
 - **返回值:**
@@ -894,7 +848,7 @@ print(mc.get_angles())
 
 - **功能:** 设置VR模式
 - **参数**：
-  - `move`: 1 - 打开, 0 - 关闭.
+  - `move`: 1 - 打开, 0 - 关闭. -->
 
 #### `get_model_direction()`
 
@@ -1173,3 +1127,47 @@ print(mc.get_angles())
 - **参数**：
   - `gripper_id` (`int`) 夹爪ID，默认14，取值范围 1 ~ 254。
 - **返回值**：(`int`) 夹持电流值，范围 100 ~ 300。
+
+#### `set_pro_gripper_baud(baud_rate=0, gripper_id=14)`
+
+- **功能**：设置力控夹爪波特率
+- **参数**：
+  - `baud_rate` (`int`): 波特率索引，范围0 ~ 1, 默认 0 - 115200
+    - `0` - 115200
+    - `1` - 1000000
+  - `gripper_id` (`int`) 夹爪ID，默认14，取值范围 1 ~ 254。
+- **返回值**：
+  - 0 - 失败
+  - 1 - 成功
+
+#### `get_pro_gripper_baud(gripper_id=14)`
+
+- **功能**：读取力控夹爪波特率
+- **参数**：
+  - `gripper_id` (`int`) 夹爪ID，默认14，取值范围 1 ~ 254。
+- **返回值**：(`int`)  波特率索引，默认 0 - 115200
+  - `0` - 115200
+  - `1` - 1000000
+
+#### `set_pro_gripper_modbus(state, custom_mode=False, gripper_id=14)`
+
+- **功能**：设置力控夹爪modbus通信模式
+- **参数**：
+  - `state` (`int`): 范围 0 ~ 1。
+    - `0`: 关闭modbus通信模式，打开自定义通信模式
+    - `1`: 打开modbus通信模式，关闭自定义通信模式
+  - `custom_mode` (`bool`): 自定义通信模式标识，默认False（当前是modbus模式）。如果当前是自定义通信模式，打开modbus通信模式，需要把custom_mode改为True. 比如：`set_pro_gripper_modbus(1, True)`
+  - `gripper_id` (`int`) 夹爪ID，默认14，取值范围 1 ~ 254。
+- **返回值**：
+  - 0 - 失败
+  - 1 - 成功
+
+#### `set_pro_gripper_init(gripper_id=14)`
+
+- **功能**：夹爪初始化，将夹爪恢复到 **115200波特率** 的Modbus模式
+- **参数**：
+  - `gripper_id` (`int`) 夹爪ID，默认14，取值范围 1 ~ 254。
+- **返回值**：(`bool`) 
+  - `True` - 成功
+  - `False` - 失败
+  
