@@ -33,7 +33,7 @@
       * [5.2.7 Connection功能](3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.7-connection.md)
     * [5.3 myStudio Pro 介绍](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/README.md)
       * [5.3.1 准备工作](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.1-myStudioFirstUse.md)
-      * [5.3.2 首次使用](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.2-myBlockly.md)
+      * [5.3.2 myBlockly](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.2-myBlockly.md)
       * [5.3.3 快速移动](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.3-quickmove.md)
       * [5.3.4 资源链接](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.4-resource.md)
       * [5.3.5 设置](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.5-setting.md)

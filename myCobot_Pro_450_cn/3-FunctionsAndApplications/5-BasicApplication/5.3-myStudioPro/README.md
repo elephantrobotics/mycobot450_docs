@@ -1,6 +1,7 @@
-# 什么是 myStudio Pro？
+# myStudio Pro 介绍
 
-![](../../../resources/5-BasicApplication/5.2/5.2.1/img/myblockly/myblockly界面.jpg)
+<!-- ![](../../../resources/5-BasicApplication/5.2/5.2.1/img/myblockly/myblockly界面.jpg) -->
+<img width="800" align="center" src="../../../resources/5-BasicApplication/5.2/5.2.1/img/myblockly/myblockly界面.jpg" alt="blank">
 
 **myStudio Pro** 是一款集多功能于一体的机器人编程控制软件，为用户提供可视化编程交互、快捷移动控制、拖动教学、机器人状态查询与配置等一站式解决方案。软件内主要集成四大功能模块：`myBlockly`、`快速移动`、`资源链接`、`设置`覆盖从编程到调试、从学习到部署的全流程需求。
 
@@ -20,14 +21,13 @@
 
 模块涵盖软件与机器人系统的基础配置选项。用户可在此进行语言切换、关节运动限位设置、系统更新检测与更新等操作。
 
-
 # myStudio Pro 界面的显示和基本功能的使用
 
 打开软件，主界面如下图所示
 
-<img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/home.png" alt="blank" />
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/home.png" alt="blank" />
 
-界面功能介绍，界面分成两个区域：
+界面功能介绍，界面分成三个区域：
 
 1. 回零与上下电
 2. 功能实现
@@ -35,39 +35,39 @@
 
 > 注意：软件会自动与机器进行通信连接，若右下角显示未连接请检查PC与机器网络连接是否通畅，或尝试将机器重启。
 
-### 回零
+## 回零
 
 此按钮功能为：控制机器人所有关节都回到零位位置。
 
-<img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/zero.png" />
+<img width="800" align="center"  src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/zero.png" />
 
 **注意**：此按钮功能生效的前提的已经成功连接机器人的通信。鼠标左键长按点击此按钮以后，机器人开始执行回零指令，机械臂将缓慢移动至零位，鼠标长按松开即回零指令停止执行。
 
 回零完成以后，会弹窗提示完成回零。
 
-<img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/zero-success.png" alt="blank" />
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/zero-success.png" alt="blank" />
 
 ### 软急停
 
 此按钮功能为：控制机器人整机掉电。访问页面时，会检测当前机器人是否上电，如果已经上电，此按钮为红色状态；如果未上电，此按钮会改为绿色状态并且会以弹窗的形式提示机器人未上电，可以通过点击此按钮来上电。
 
-<img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/stop.png" alt="blank" />
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/stop.png" alt="blank" />
 
-#### 上电
+### 上电
 
 当此按钮为绿色图案时，此按钮的功能为上电。鼠标左键点击此按钮以后，机器人开始执行上电指令，应用整个界面会被一层透明浅灰色的阴影覆盖，上电未结束之前，不得点击界面内的其他功能，并且应用中心位置会显示正在上电的转圈图案提示。
 
-<img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/power-on.png" alt="blank" />
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/power-on.png" alt="blank" />
 
 上电完成以后, 图标会变成红色并且弹窗提示。
 
-<img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/power-on-success.png" alt="blank" />
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/power-on-success.png" alt="blank" />
 
-#### 下电
+### 下电
 
 当此按钮为红色图案时，此按钮的功能为下电。鼠标左键点击此按钮以后，机器人开始执行下电指令。
 
-<img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/power-off.png" alt="blank" />
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/power-off.png" alt="blank" />
 
 下电完成以后, 图标会变成绿色并且弹窗提示。
 
@@ -90,69 +90,66 @@
 
 此处为可点击按钮，鼠标左键点击以后，会跳转到[myBlockly 图形化编程界面](./5.3.2-myBlockly.md)
 
-<img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/myBlockly.png" />
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/myBlockly.png" />
 
 #### 打开文件
 
 此处为可点击按钮。
 
-<img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/myBlockly-open.png" />
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/myBlockly-open.png" />
 
 点击后会自动跳转到myBlockly并打开文件管理列表，可以基于文件列表进行 JSON 文件相关操作。
 
-<img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/myBlockly-open1.png" />
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/myBlockly-open1.png" />
 
 #### 新建文件
 
-此按钮与[**myBlockly**](./README.md#myblockly)"功能一样。
+此按钮与[**myBlockly**](./README.md#myblockly)功能一样。
 
 #### 快捷载入历史保存的 blockly 文件
 
 当你在使用过 myBlockly 编程并且已经保存过 blockly 文件，如下图示位置会显示保存的文件名称以及保存时间，显示数量最多为 4 个，如果超过 4 个，只显示最新保存的 4 个。鼠标左键点击可以打开 myBlockly 并且自动加载选中的 blockly 文件。
 
-<img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/myBlockly-open2.png" />
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/myBlockly-open2.png" />
 
 ### 常用工具
 
-#### 快速移动
+#### [快速移动](./5.3.3-quickmove.md)
 
 功能：提供机器人 IO 快捷控制以及关节角度、坐标的快捷控制
 
-<img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/quickmove.png" />
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/quickmove.png" />
 
-快速移动[功能详细介绍](./5.3.3-quickmove.md)
+<!-- 快速移动[功能详细介绍](./5.3.3-quickmove.md) -->
 
-#### 资源链接
+#### [资源链接](./5.3.4-resource.md)
 
 功能：提供机器人嵌入式固件的更新升级、产品使用手册、官方视频、官方 GitHub 官方在线商城以及意见反馈功能。
 
-<img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/function.png" />
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/function.png" />
 
-资源链接[功能详细介绍](./5.3.4-resource.md)
+### [设置](./5.3.5-setting.md)
 
-### 设置
+功能：集成以下核心功能：实时监控机器人状态与信息、一键检查更新应用版本、个性化设置（语言/运动参数）、以及快速配置网络连接与登录账户，助您高效管理机器人系统。
 
-功能：应用以及机器人基本信息的展示以及更改功能
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/setting.png" />
 
-<img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/setting.png" />
-
-设置[功能详细介绍](./5.3.5-setting.md)
 
 ### 信息展示
 
 应用的底层部分，包含大象机器人公司的 logo、当前机器的类型、警报提示以及当前机器人的运行状态。
 
-<img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/information-1.png" alt="blank" />
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/information-1.png" alt="blank" />
 
 #### 报警提示
 
 功能：展示机器人错误信息，并且鼠标左点击可以打开错误日志窗口。
 
-<img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/information-2.png" alt="blank" />
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/information-2.png" alt="blank" />
 
 鼠标左键点击，打开错误日志窗口。
 
-<img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/information-3.png" alt="blank" />
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/information-3.png" alt="blank" />
 
 如果机器人在运行的过程中报错，应用就会捕获异常并且显示在错误日志界面中，错误日志表格内含义如下：
 
@@ -169,10 +166,10 @@
 
 | Color | meaning                                                     |
 | ---- | ------------------------------------------------------------ |
-| <img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/unconnect.png" />| 未连接 |
-| <img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/normal.png" />    | 正常待机 |
-| <img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/running.png" />    | 正在运动 |
-| <img src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/error.png" />    | 机器异常  |
+| <img  align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/unconnect.png" />| 未连接 |
+| <img  align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/normal.png" />    | 正常待机 |
+| <img  align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/running.png" />    | 正在运动 |
+| <img  align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/error.png" />    | 机器异常  |
 
 ---
 
