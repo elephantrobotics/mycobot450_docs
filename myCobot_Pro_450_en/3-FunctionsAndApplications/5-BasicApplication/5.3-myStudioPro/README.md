@@ -25,7 +25,7 @@ The module covers the basic configuration options of software and robot systems.
 
 Open the software. The main interface is as shown in the following figure.
 
-<img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/home.png" alt="blank" />
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/home.png" alt="blank" />
 
 Interface function introduction: The interface is divided into two areas:
 
@@ -39,35 +39,35 @@ Return to zero
 
 The function of this button is to control all the joints of the robot to return to the zero position.
 
-<img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/zero.png" alt="blank" />
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/zero.png" alt="blank" />
 
 **Note :**  The function of this button takes effect only if the communication of the robot has been successfully connected. After long pressing and clicking this button with the left mouse button, the robot will start to execute the return-to-zero command. The mechanical arm will slowly move to the zero position. Once the mouse button is released after long pressing, the return-to-zero command stops executing.
 
 After the zeroing process is completed, a pop-up window will appear to prompt that the zeroing is done.
 
-<img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/zero-success.png" alt="blank" />
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/zero-success.png" alt="blank" />
 
 #### Soft emergency stop
 
 The function of this button is to control the power failure of the entire robot. When visiting the page, it will detect whether the current robot is powered on. If it is powered on, this button will be in red. If the robot is not powered on, this button will change to green and a pop-up window will appear to indicate that the robot is not powered on. You can click this button to power it on.
 
-<img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/stop.png" alt="blank" />
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/stop.png" alt="blank" />
 
 #### power on
 
 When this button is in a green pattern, its function is to power on. After left-clicking this button with the mouse, the robot will start to execute the power-on command. The entire interface of the application will be covered with a layer of transparent light gray shadow. Before the power-on is completed, do not click on other functions within the interface, and a rotating pattern indicating that the application is power-on will be displayed at the center of the application.
 
-<img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/power-on.png" alt="blank" />
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/power-on.png" alt="blank" />
 
 After power-on is completed, the icon will turn red and a pop-up window will appear to prompt.
 
-<img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/power-on-success.png" alt="blank" />
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/power-on-success.png" alt="blank" />
 
 #### power off
 
 When this button is marked in red, its function is to power off. After left-clicking this button with the mouse, the robot begins to execute the power-off command.
 
-<img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/power-off.png" alt="blank" />
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/power-off.png" alt="blank" />
 
 After the power-off is completed, the icon will turn green and a pop-up window will appear as a prompt.
 
@@ -90,17 +90,17 @@ Note: To use myBlockly, you must first connect the device for communication.
 
 Here is a clickable button. Clicking it with the left mouse button will redirect you to [myBlockly Graphical Programming Interface](./5.3.2-myBlockly.md).
 
-<img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/myBlockly.png" alt="blank" />
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/myBlockly.png" alt="blank" />
 
 #### open file
 
 Here is a clickable button.
 
-<img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/open-file.png" alt="blank" />
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/open-file.png" alt="blank" />
 
 After clicking, it will automatically redirect to myBlockly and open the file management list, allowing you to perform operations related to JSON files based on the file list.
 
-<img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/open-file1.png" alt="blank" />
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/open-file1.png" alt="blank" />
 
 #### new file
 
@@ -110,7 +110,7 @@ This button has the same function as [**myBlockly**](./ readme.md #myblockly).
 
 When you have used myBlockly programming and have already saved blockly files, the names of the saved files and their saving times will be displayed at the position shown in the following figure. The maximum number of displayed files is 4. If it exceeds 4, only the latest 4 saved files will be shown. Left-click the mouse button to open myBlockly and automatically load the selected blockly file.
 
-<img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/blockly-1.png" alt="blank" />
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/blockly-1.png" alt="blank" />
 
 Common tools
 
@@ -118,7 +118,7 @@ Common tools
 
 Function: Provide quick control of robot IO as well as quick control of joint angles and coordinates
 
-<img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/quickmove.png" alt="blank" />
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/quickmove.png" alt="blank" />
 
 Quick Move [Detailed Feature Introduction](./5.3.3-quickmove.md)
 
@@ -126,7 +126,7 @@ Link to ####
 
 Functions: Provide updates and upgrades for the embedded firmware of robots, product user manuals, official videos, official GitHub online stores, and feedback functions.
 
-<img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/resource.png" alt="blank" />
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/resource.png" alt="blank" />
 
 Resource Link [Detailed Feature Introduction](./5.3.4-resource.md)
 
@@ -134,7 +134,7 @@ Resource Link [Detailed Feature Introduction](./5.3.4-resource.md)
 
 Function: Display and modification of basic information of applications and robots
 
-<img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/settings.png" alt="blank" />
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/settings.png" alt="blank" />
 
 Settings [Function Details](./5.3.5-setting.md)
 
@@ -142,17 +142,17 @@ Information display
 
 The underlying part of the application includes the logo of Elephant Robot Company, the current type of machine, alarm prompts, and the current operating status of the robot.
 
-<img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/footer.png" alt="blank" />
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/footer.png" alt="blank" />
 
 #### alarm prompt
 
 Function: Display robot error messages, and left-clicking with the mouse can open the error log window.
 
-<img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/footer1.png" alt="blank" />
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/footer1.png" alt="blank" />
 
 Left-click the mouse button to open the error log window.
 
-<img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/footer2.png" alt="blank" />
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/footer2.png" alt="blank" />
 
 If the robot reports an error during operation, the application will capture the exception and display it in the error log interface. The meaning in the error log table is as follows:
 
@@ -169,10 +169,10 @@ Function: Display the current operating status of the robot
 
 | Color | meaning                                                     |
 | ---- | ------------------------------------------------------------ |
-| <img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/unconnect.png" alt="blank" /> |  not connected |
-| <img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/normal.png" alt="blank" /> | standby  |
-| <img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/running.png" alt="blank" /> |  operation |
-| <img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/error.png" alt="blank" /> |  error |
+| <img align = "center"  src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/unconnect.png" alt="blank" /> |  not connected |
+| <img align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/normal.png" alt="blank" /> | standby  |
+| <img align = "center"  src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/running.png" alt="blank" /> |  operation |
+| <img align = "center"  src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/error.png" alt="blank" /> |  error |
 
 ---
 
