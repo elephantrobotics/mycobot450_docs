@@ -18,10 +18,12 @@ Before using the sample functions, please ensure that the following hardware and
   - MyCobot Pro 450 default IP address: `192.168.0.232`
   - Default port number: `4500`
   - **Note**: PC The local network card IP address must be set to the same network segment as the robot (e.g., 192.168.0.xxx, where xxx is a number between 2 and 254 and must not conflict with the robot).
+  - For detailed configuration instructions, please refer to the section on [Static IP Configuration](../../5-BasicApplication/5.3-myStudioPro/5.3.1-myStudioFirstUse.md).
   - Example:
-    - Robot IP: 192.168.0.232
-    - PC IP: 192.168.0.100
-    - Subnet mask: 255.255.255.0
+    - Robot IP: `192.168.0.232`
+    - PC IP: `192.168.0.100`
+    - Subnet mask: `255.255.255.0`
+    - DNS server: `114.114.114.114`
 
   - **Verification**: After completing the network configuration, execute the following command on the PC terminal. If data packets are successfully returned, the network connection is normal:
 
