@@ -103,7 +103,7 @@ After clicking, it will automatically redirect to myBlockly and open the file ma
 
 #### Create File
 
-This button has the same function as [**myBlockly**](./ readme.md #myblockly).
+This button has the same function as [**myBlockly**](./readme.md#myblockly).
 
 **quickly load the historically saved blockly file**
 
