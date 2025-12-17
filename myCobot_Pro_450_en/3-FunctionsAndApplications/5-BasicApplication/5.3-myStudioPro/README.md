@@ -169,4 +169,4 @@ Function: Display the current operating status of the robot
 
 ---
 
-[← Previous Chapter](../5.4-minirobot/README.md) → [Next Chapter →](./5.3.1-myStudioFirstUse.md)
+[← Previous Chapter](../5.4-minirobot/README.md) | [Next Chapter →](./5.3.1-myStudioFirstUse.md)
