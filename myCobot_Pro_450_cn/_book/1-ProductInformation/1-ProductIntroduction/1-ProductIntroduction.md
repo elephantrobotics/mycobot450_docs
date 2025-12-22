@@ -5,6 +5,7 @@
 
 <img src = ../../resources/1-ProductIntroduction/1.ProductIntroduction/ProductDescription.png
 width = "1200" align = "center">
+
 ##### 全谐波协作机械臂入门首选
 
 ### 1.1 产品简介
@@ -50,8 +51,7 @@ width = "1200" align = "center">
 
 ## 2. 产品应用
 
-<img src = ../../resources/1-ProductIntroduction/1.ProductIntroduction/ApplicationScenario.png
-width = "1200" align = "center">
+<img src = ../../resources/1-ProductIntroduction/1.ProductIntroduction/ApplicationScenario.png width = "1200" align = "center">
 ### 2.1 用户群体
 
 |                              |                                                              |

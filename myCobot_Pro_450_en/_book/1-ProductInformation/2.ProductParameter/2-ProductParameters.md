@@ -4,7 +4,8 @@
 
 ## 1. Robot Specifications
 
-![封面](../../resources/1-ProductInformation/2.ProductParameter/main.png)
+<img src = ../../resources/1-ProductInformation/2.ProductParameter/main.png
+width = "1200" align = "center">
 
 | Index | Parameters |
 | :-----------: | :---------: |
@@ -25,45 +26,51 @@
 > ！This chapter uses millimeters as distance units and degrees as angle units.
 
 ### 2.1 Product Dimensions And Working Space
-<!-- ![工作范围](../../resources/1-ProductInformation/2.ProductParameter/WorkingRange.png) -->
-![尺寸规格](../../resources/1-ProductInformation/2.ProductParameter/size.png)
+
+<img src = ../../resources/1-ProductInformation/2.ProductParameter/size.png
+width = "550" align = "center">
+
 ### 2.2 Joint Range Of Motion
 **Hardware joint range of motion**
 
 | Joints | Range |
 | :--------: | :----------:|
-| J1        | -165 ~ +165     |
-| J2        | -117 ~ +117      |
-| J3  | -157 ~ +157                   |
-| J4        | -165 ~ +165 |
-| J5   | -165 ~ +165                   |
+| J1        | -169 ~ +169     |
+| J2        | -131 ~ +131      |
+| J3  | -159 ~ +159                   |
+| J4        | -167 ~ +167 |
+| J5   | -168 ~ +168                   |
 | J6   | -168 ~ +168         |
 
 **Software joint range of motion**
 
 | Joints | Range |
 | :--------: | :----------:|
-| J1        | -165 ~ +165     |
-| J2        | -120 ~ +120      |
-| J3  | -158 ~ +158                   |
-| J4        | -165 ~ +165 |
-| J5   | -165 ~ +165                   |
-| J6   | -175 ~ +175         |
+| 1 | -162 ~ 162 |
+  | 2 | -125 ~ 125 |
+  | 3 | -154 ~ 154 |
+  | 4 | -162 ~ 162 |
+  | 5 | -162 ~ 162 |
+  | 6 | -165 ~ 165 |
+  
 ### 2.3 Hole Installation
 - The robot base is mounted with flanges. The base is compatible with both LEGO technology and M4 screw installation.
 
-![孔位安装](../../resources/1-ProductInformation/2.ProductParameter/孔位安装1.png)
+<img src = ../../resources/1-ProductInformation/2.ProductParameter/孔位安装1.png
+width = "550" align = "center">
 
 - The robot end is equipped with a flange, and the end of the robotic arm is compatible with both LEGO technology holes and screw thread holes.
 
-![孔位安装](../../resources/1-ProductInformation/2.ProductParameter/末端.png)
+<img src = ../../resources/1-ProductInformation/2.ProductParameter/末端.png
+width = "550" align = "center">
 
 ## 3. Electrical Characteristic Parameters
 ### 3.1 Electrical Interface Of The Robotic Arm Base
 #### 3.1.1 Base Introduction
 
 * Base front view：
- <img src="../../resources/1-ProductInformation/2.ProductParameter/正面.png" width="800" height="auto" />
+
+ <img src="../../resources/1-ProductInformation/2.ProductParameter/正面.png" width="550" height="auto" />
 
   - ① RJ45：Dual network ports, used for connecting the device to the Internet or other network devices.
   - ② USB3：High-speed USB interface for connecting to computers or peripheral devices.
@@ -87,7 +94,7 @@
 
 * Side View Of The End Of The Robotic Arm:
 
- ![M8 aviation socket](../../resources/1-ProductInformation/2.ProductParameter/末端接口.png)
+ <img src="../../resources/1-ProductInformation/2.ProductParameter/末端接口.png" width="550" height="auto" />
 
 | Number | Interface | Definition | Function |
 |:------:|:----------------:|:-----------:|:-------------------:|
@@ -96,7 +103,7 @@
 
 #### 3.2.2 Robotic Arm End Interface Description
 
-<img src="../../resources/1-ProductInformation/2.ProductParameter/机械臂末端工具说明.png" width="800" height="auto" />
+<img src="../../resources/1-ProductInformation/2.ProductParameter/机械臂末端工具说明.png" width="550" height="auto" />
 
 * The definition of each interface is shown in the following table:
 
@@ -117,8 +124,8 @@ The definitions of the various tool I/O ports are shown in the table below. Note
 
 ## 4. Cartesian Coordinate Parameters
 
-![DH参数](../../resources/1-ProductInformation/2.ProductParameter/坐标.png)
-
+<img src = ../../resources/1-ProductInformation/2.ProductParameter/坐标.png
+width = "550" align = "center">
 
 
 ---

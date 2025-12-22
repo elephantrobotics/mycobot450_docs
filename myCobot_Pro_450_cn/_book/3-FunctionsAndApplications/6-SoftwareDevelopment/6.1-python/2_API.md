@@ -1,5 +1,4 @@
 # Pro 450 Python Socket API
-[toc]
 
 ## 使用前准备
 
@@ -20,11 +19,13 @@
 - **网络配置**  
   - MyCobot Pro 450 默认 IP 地址：`192.168.0.232`  
   - 默认端口号：`4500`  
-  - **注意**：PC 端需要将本机网卡 IP 设置为 **同一网段**（例如 `192.168.0.xxx`，`xxx` 为 2~254 之间的任意数，且不能与机械臂冲突）。  
+  - **注意**：PC 端需要将本机网卡 IP 设置为 **同一网段**（例如 `192.168.0.xxx`，`xxx` 为 2~254 之间的任意数，且不能与机械臂冲突）。 
+  - 具体配置方式请查看 [静态IP配置](https://docs.elephantrobotics.com/docs/mycobot-pro450-cn/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.1-myStudioFirstUse.html#%E9%9D%99%E6%80%81ip%E9%85%8D%E7%BD%AE) 章节内容。
   - 示例：  
     - 机械臂 IP：`192.168.0.232`  
     - PC IP：`192.168.0.100`  
     - 子网掩码：`255.255.255.0`
+    - DNS服务器：`114.114.114.114`
   
   - **验证**：完成网络配置后，可在 PC 终端执行以下命令，若能成功返回数据包，则说明网络连接正常：  
   
@@ -538,11 +539,11 @@ print(mc.get_angles())
 #### `drag_teach_save()`
 
 - **功能：** 开始录制并拖动教学点。
-  - 注意：为了呈现最佳运动效果，录制时间请勿超过90秒
+  - 注意：为了呈现最佳运动效果，录制时间请勿超过120秒
 
-<!-- #### `drag_teach_pause()`
+#### `drag_teach_pause()`
 
-- **功能：** Pause sampling -->
+- **功能：** 暂停拖动示教
 
 #### `drag_teach_execute()`
 
