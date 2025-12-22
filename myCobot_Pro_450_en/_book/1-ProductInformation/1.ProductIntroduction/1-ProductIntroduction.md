@@ -3,7 +3,8 @@
 
 ##### myCobot Pro 450  
 
-![封面](../../resources/1-ProductInformation/1.ProductIntroduction/ProductDescription.png)
+<img src = ../../resources/1-ProductInformation/1.ProductIntroduction/ProductDescription.png width = "1200" align = "center">
+
 ##### The first choice for getting started with the full harmonic collaborative robot arm
 
 ### 1.1 Product Introduction
@@ -13,7 +14,8 @@ The myCobot Pro 450 is a compact, **fully harmonic, six-axis collaborative robot
 In terms of control, it relies on a built-in industrial-grade core control board and self-developed control system, which can be easily connected to terminal devices such as computers, tablets, and mobile phones. The pre-installed drag-and-drop programming software and quick debugging interface make it easy for users with no basic knowledge to get started. At the same time, the integrated interface design on the tool side eliminates the trouble of cables when connecting the grippers, and the newly added CAN and RS485 interfaces on the base provide ample space for secondary development and function expansion. Its core value lies in providing users in different fields with a high-performance, easy-to-use and highly scalable collaborative robot arm solution, helping to improve work efficiency and innovation capabilities.
 
 ### 1.2 Design Concept
-![理念](../../resources/1-ProductInformation/1.ProductIntroduction/DualScreen.png)
+
+<img src = ../../resources/1-ProductInformation/1.ProductIntroduction/DualScreen.png width = "1200" align = "center">
 
 The myCobot Pro 450 was designed to meet the growing demand for diverse applications. In education, it aims to help students more intuitively engage with and learn robotics, cultivating practical skills and innovative thinking. In scientific research, it aims to provide researchers with stable and precise experimental tools, accelerating their research progress. In commercial displays, it aims to create engaging interactive experiences and enhance presentations.
 
@@ -27,7 +29,8 @@ The myCobot Pro 450 was designed to meet the growing demand for diverse applicat
 
 ### 1.4 Feature
 
-![特点](../../resources/1-ProductInformation/1.ProductIntroduction/ProductFeature.png)
+<img src = ../../resources/1-ProductInformation/1.ProductIntroduction/ProductFeature.png
+width = "1200" align = "center">
 
 | Features                | Feature description                                                     |
 | -----------------------| ------------------------------------------------------------ | 
@@ -46,7 +49,8 @@ The myCobot Pro 450 was designed to meet the growing demand for diverse applicat
 
 ## 2. Product Application
 
-![应用场景](../../resources/1-ProductInformation/1.ProductIntroduction/ApplicationScenario.png)
+<img src = ../../resources/1-ProductInformation/1.ProductIntroduction/ApplicationScenario.png width = "1200" align = "center">
+
 ### 2.1 Client
 
 |                              |                                                              |
@@ -57,7 +61,9 @@ The myCobot Pro 450 was designed to meet the growing demand for diverse applicat
 
 
 ### 2.2 Application Scenario
-![应用场景](../../resources/1-ProductInformation/1.ProductIntroduction/Application.png)
+
+<img src = ../../resources/1-ProductInformation/1.ProductIntroduction/Application.png
+width = "1200" align = "center">
 
 | **user group**               | **Core application scenarios (out-of-the-box)**                                   | **Expand application scenarios (unlimited possibilities)**                                                           |
 | -------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -68,21 +74,22 @@ The myCobot Pro 450 was designed to meet the growing demand for diverse applicat
 ---
 
 ## 3. Supported Extension Development
-![拓展开发](../../resources/1-ProductInformation/1.ProductIntroduction/ExpansionAndDevelopment.png)
+
+<img src = ../../resources/1-ProductInformation/1.ProductIntroduction/ExpansionAndDevelopment.png width = "1200" align = "center">
 
 The mycobot series of robotic arms are extremely valuable in the fields of education and scientific research, especially in Python and ROS (Robot Operating System), two widely used development environments. These environments provide strong support, allowing the mycobot series of products to be widely used in machine learning, artificial intelligence research, complex motion control, and visual processing tasks. At the same time, with dozens of accessories such as adaptive grippers, camera flanges, suction pumps, etc., you can give full play to myCobot's creative ideas.
 
-![拓展开发2](../../resources/1-ProductInformation/1.ProductIntroduction/ExpansionAndDevelopment2.png)
+<img src = ../../resources/1-ProductInformation/1.ProductIntroduction/ExpansionAndDevelopment2.png width = "1200" align = "center">
 
 | | |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | **Python** | The robot supports Python and has a complete Python API library. The robot's joint angles, coordinates, grippers, etc. can be controlled through Python. |
-| **ROS** |The myCobot Pro 450 supports ROS 2 and the RVIZ2 simulation environment. It allows users to display the robot arm and collect robot status information in real time, making it suitable for ROS beginners and educational purposes. |
+| **ROS** |It supports both ROS1 and ROS2 versions and provides RVIZ simulation environment support.  It allows users to display the robotic arm and collect its status information in real time, making the myCobot Pro 450 suitable for ROS beginners and educational purposes. |
 | **Hardware interface** | Including IO, USB, etc., to facilitate the connection of various sensors and actuators. |
 | **Software library** | Provides a wealth of open source libraries and APIs to simplify the development process. |
 | **System compatibility** | Compatible with Windows, Linux, MacOS, and adaptable to a variety of development environments. |
 | **C++** | Using the C++ language, you can freely develop (coordinate control, angle control, IO control, gripper control, etc.) through the C++ dynamic library developed by our company, and control some robots that our company has developed. |
-| **myBlockly** | It is both a graphical programming software and a visualization tool. Users can drag and drop modules to create programs. This process is very similar to building blocks, which is convenient, fast and easy to use. |
+| **myStudio Pro** | This is a one-stop software for robot programming and control, supporting visual programming interaction, quick motion control, drag-and-drop teaching, and robot status inquiry and configuration.  It includes the myBlockly module within myStudio Pro.|
 
 ---
 

@@ -1,5 +1,4 @@
 # Pro 450 Python Socket API
-[toc]
 
 ## Preparing For Use
 
