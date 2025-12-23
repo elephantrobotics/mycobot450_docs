@@ -2,11 +2,11 @@
 
 * [Introduction](README.md)
 
-* Product Information
+## Product Information
   * [1. IntroductionProduct ](1-ProductInformation/1.ProductIntroduction/1-ProductIntroduction.md)
   * [2. ProductParameters](1-ProductInformation/2.ProductParameter/2-ProductParameters.md)
 
-* Basic Settings
+## Basic Settings
   * [3. UserNotice](2-BasicSettings/3.UserNotice/README.md)
     * [3.1 SafetyInstruction](2-BasicSettings/3.UserNotice/3.1-SafetyInstruction.md)
     * [3.2 TransportandStorage](2-BasicSettings/3.UserNotice/3.2-TransportandStorage.md)
@@ -20,8 +20,18 @@
     * [4.2 ProductUnboxingGuide](2-BasicSettings/4.FirstTimeInstallation/4.2-ProductUnboxingGuide.md)
     * [4.3 PowerOnDetectionGuide](2-BasicSettings/4.FirstTimeInstallation/4.3-PowerOnDetectionGuide.md)
 
-* Functions and applications
+## Functions and applications
   * [5. BasicFunctions](3-FunctionsAndApplications/5-BasicApplication/README.md)
+    * [5.1 SystemInstructions](3-FunctionsAndApplications/5-BasicApplication/5.1-SystemInstructions.md)
+    * [5.2 MiniRobot](3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/README.md)
+      * [5.2.1 Home Function](3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.1-home.md)
+      * [5.2.2 DragTeach Function](3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.2-dragteach.md)
+      * [5.2.3 BlocklyRunner Function](3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.3-blocklyrunner.md)
+      * [5.2.4 QuickMove Function](3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.4-quickmove.md)
+      * [5.2.5 Calibration Function](3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.5-calibration.md)
+      * [5.2.6 Home Function](3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.6-firmware.md)
+      * [5.2.7 Wireless Connect Function](3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.7-connection.md)
+      * [5.2.8 Q&A](3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.8-Q&A.md)
     * [5.3 MyStudio Pro](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/README.md)
       * [5.3.1 MyStudioFirstUse](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.1-mystudiofirstuse.md)
       * [5.3.2 MyBlockly](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.2-myBlockly.md)
@@ -30,15 +40,7 @@
       * [5.3.5 Setting](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.5-setting.md)
       * [5.3.6 Modbus](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.6-modbus.md)
       * [5.3.7 Q&A](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.7-Q&A.md)
-    * [5.4 MiniRobot]()
-      * [5.4.1 Home Function](3-FunctionsAndApplications/5-BasicApplication/5.4-minirobot/5.4.1-home.md)
-      * [5.4.2 DragTeach Function](3-FunctionsAndApplications/5-BasicApplication/5.4-minirobot/5.4.2-dragteach.md)
-      * [5.4.3 BlocklyRunner Function](3-FunctionsAndApplications/5-BasicApplication/5.4-minirobot/5.4.3-blocklyrunner.md)
-      * [5.4.4 QuickMove Function](3-FunctionsAndApplications/5-BasicApplication/5.4-minirobot/5.4.4-quickmove.md)
-      * [5.4.5 Calibration Function](3-FunctionsAndApplications/5-BasicApplication/5.4-minirobot/5.4.5-calibration.md)
-      * [5.4.6 Home Function](3-FunctionsAndApplications/5-BasicApplication/5.4-minirobot/5.4.6-firmware.md)
-      * [5.4.7 Wireless Connect Function](3-FunctionsAndApplications/5-BasicApplication/5.4-minirobot/5.4.7-connection.md)
-      * [5.4.8 Q&A](3-FunctionsAndApplications/5-BasicApplication/5.4-minirobot/5.4.8-Q&A.md)
+    * [5.4 SystemUpdate](3-FunctionsAndApplications/5-BasicApplication/5.4-system_flash.md)
   * [6. SoftwareDevelopmentGuide](3-FunctionsAndApplications/6.developmentGuide/README.md)
     * [6.1 Python](3-FunctionsAndApplications/6.developmentGuide/6.1-python/README.md)
       * [6.1.1 EnvironmentConstruction](3-FunctionsAndApplications/6.developmentGuide/6.1-python/1_download.md)
@@ -69,9 +71,9 @@
     * [8.3 SystemInformation](3-FunctionsAndApplications/8.SupportingResources/8.3-SystemInformation/README.md)
     * [8.4 PromotionalMaterials](3-FunctionsAndApplications/8.SupportingResources/8.4-PromotionalMaterials/README.md)
 
-* Support and Services
-  * [9 ContactUs](4-SupportAndService/9.AboutUs/9.AboutUs.md)
-  * [10 Accessories](4-SupportAndService/Accessories/accessories.md)
+## Support and Services
+  * [9. ContactUs](4-SupportAndService/9.AboutUs/9.AboutUs.md)
+  * [10. Accessories](4-SupportAndService/Accessories/accessories.md)
     * [10.1 MyGripperF100](4-SupportAndService/Accessories/10.1-myGripperF100.md)
     * [10.2 PneumaticGripper](4-SupportAndService/Accessories/10.2-PneumaticGripper.md)
     * [10.3 AdaptiveGripper](4-SupportAndService/Accessories/10.3-AdaptiveGripper.md)
@@ -82,5 +84,5 @@
     * [10.8 CameraModulePro](4-SupportAndService/Accessories/10.8-CameraModulePro.md)
     * [10.9 PenHolder](4-SupportAndService/Accessories/10.9-penHolder.md)
 
-* Acknowledgments
-  * [11 Acknowledgments](5-Acknowledgments/5-Acknowledgments.md)
+## Acknowledgments
+  * [11. Acknowledgments](5-Acknowledgments/5-Acknowledgments.md)

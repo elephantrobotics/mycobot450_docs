@@ -23,7 +23,7 @@ Record and play back the robotic arm's motion trajectory using intuitive drag-an
 - Trajectories saved in Flash can be uploaded to the myStudio Pro production folder
 
 ### [3.BlocklyRunner](./5.4.3-blocklyrunner.md) 
-Manage and execute trajectory files published through myStudio Pro:
+Manage and execute trajectory files published by myStudio Pro or MiniRobot:
 
 - Automatically checks published trajectories in the myStudio Pro production folder
 - Supports play, pause, and stop operations
@@ -71,14 +71,18 @@ View the robotic arm's network connection information:
 
 - myStudio Pro production folder: Published track files
 - myStudio Pro test folder: Unpublished track files
-- Flash saving will overwrite previous files, only retaining the latest version.
+- Saving to Flash in MiniRobot will overwrite previous files, keeping only the latest version
+- Only track files saved in Flash in MiniRobot can be uploaded to the myStudio Pro production folder
 
 
-## Error codes that occur during machine operation are divided into software error codes and motor error codes. The error code table is as follows:
+## Error Codes
 
-Software Error Codes
+Error codes that occur during machine operation are divided into software error codes and motor error codes. The error code table is as follows:
+
+### Software
+
 | Bits | Description |
-|-------------|------|
+|---|------|
 | 0 | CAN initialization error. Check the main control board, repair the error, and then power off and restart. Symptoms: The robot cannot be enabled or controlled. |
 | 1 | Motor initialization error. Check the motor communication lines, repair the error, and then power off and restart. Symptoms: The robot cannot properly provide joint information or control. |
 | 2 | Motor malfunction. Check the motor communication lines, etc. Symptoms: Abnormal machine position feedback. Can be cleared using error recovery. |
@@ -90,9 +94,10 @@ Software Error Codes
 | 8 | Emergency stop triggered by button. Enable state must be restored before movement. |
 
 
-Motor Error Codes
+### Motor
+
 | Bit | Description |
-|-------------|------|
+|---|------|
 | 0 | CAN bus error. Error recovery can be used. If recovery fails, check communication lines, repair, and then power on to enable. |
 | 1 | Short circuit. Error recovery can be used. |
 | 2 | Invalid setting data. |

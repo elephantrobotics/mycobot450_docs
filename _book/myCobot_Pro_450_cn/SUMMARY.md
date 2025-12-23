@@ -63,7 +63,7 @@
         * [6.3.4 基本功能案例](3-FunctionsAndApplications/6-SoftwareDevelopment/6.3-ROS2/6.3.4-Basic_Functions.md)
         * [6.3.5 常见问题与解决方法](3-FunctionsAndApplications/6-SoftwareDevelopment/6.3-ROS2/6.3.5-Troubleshooting.md)
     * [6.4 基于C++ 开发使用](3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/README1.md)
-    * [6.5 基于通信协议包开发](3-FunctionsAndApplications/6-SoftwareDevelopment/6.5-CommunicationProtocolPackage/6.5-communication1.md)
+    * [6.5 基于通信协议包开发](3-FunctionsAndApplications/6-SoftwareDevelopment/6.5-CommunicationProtocolPackage/6.5-communication.md)
 * [7 成功案例](3-FunctionsAndApplications/7-ExamplesRobotsUsing/README.md)
 * [8 配套资源](3-FunctionsAndApplications/8-FilesDownload/README.md)
     * [8.1 产品资料](3-FunctionsAndApplications/8-FilesDownload/8.1-ProductInformation/README.md)

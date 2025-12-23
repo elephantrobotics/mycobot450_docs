@@ -1,6 +1,8 @@
 # myCobot Pro 450
 
-![](./resources/1-ProductInformation/1.ProductIntroduction/main.png)
+<img src = ./resources/1-ProductInformation/1.ProductIntroduction/main.png
+width = "1200" align = "center">
+
 The first choice for getting started with the full harmonic collaborative robot arm
 
 Core Document
