@@ -99,7 +99,7 @@ Document Directory
     * [6.6 Development and use based on serial communication protocol](3-FunctionsAndApplications/6.developmentGuide/CommunicationProtocolPackage/18-communication.md)
   * [7. Successful Cases](3-FunctionsAndApplications/7.SuccessfulCase/7-SuccessfulCases.md)
     * [Robot gripper carrying wooden block example](3-FunctionsAndApplications/7.SuccessfulCase/7.1.md)
-    * [Robot suction pump to carry wooden blocks](3-FunctionsAndApplications/7.SuccessfulCase/7.3.md)
+    * [Lerobot ACT Imitation learning](3-FunctionsAndApplications/7.SuccessfulCase/7.3.md)
   * [ 8. Supporting Resources](3-FunctionsAndApplications/8.SupportingResources/README.md)
     * [8.1 Product Information](3-FunctionsAndApplications/8.SupportingResources/8.1-ProductInformation/README.md)
     * [8.2 Product Drawings](3-FunctionsAndApplications/8.SupportingResources/8.2-ProductDrawings/README.md)
