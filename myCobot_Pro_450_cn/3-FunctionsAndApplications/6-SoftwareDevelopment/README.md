@@ -20,7 +20,7 @@ mycobot Pro 450 是基于 PC 开发和使用的。由于机械臂内没有内置
 - [6.4 C++](./6.4-Cplus/README1.md)<br>
   C++是C语言的继承，既可以进行C语言的过程化程序设计，又可以进行以抽象数据类型为特点的基于对象的程序设计。使用c++语言，您可以通过我们公司开发的c++动态库，进行自由开发（坐标控制、角度控制、io控制、夹爪控制等），控制我们公司已经研发出来的部分机器人。<br>
 
-- [6.5 Communication](./6.5-CommunicationProtocolPackage/6.5-communication1.md)<br>
+- [6.5 Communication](./6.5-CommunicationProtocolPackage/6.5-communication.md)<br>
   如果您对信息论、编码和机器人通信功能有一定的了解，那么您就应该明白，所有的通信都源于数据传输。为了方便用户操作机器人，我们开放了基于串口通信的通信协议。您可以使用串口助手或将其封装到您熟悉的任何编程语言中来控制机器人。
 
 
