@@ -41,6 +41,7 @@
         * [5.3.6 modbus](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.6-modbus.md)
         * [5.3.7 常见问题](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.7-Q&A.md)
     * [5.4 系统镜像烧录](3-FunctionsAndApplications/5-BasicApplication/5.4-SystemUpdate.md)
+    * [5.5 零位校准](3-FunctionsAndApplications/5-BasicApplication/5.5-set_joint_zero.md)
 * [6 软件开发指南](3-FunctionsAndApplications/6-SoftwareDevelopment/README.md)
     * [6.1 基于python 开发使用](3-FunctionsAndApplications/6-SoftwareDevelopment/6.1-python/README.md)
         * [6.1.1 环境搭建](3-FunctionsAndApplications/6-SoftwareDevelopment/6.1-python/1_download.md)
