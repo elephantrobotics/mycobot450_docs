@@ -41,6 +41,7 @@
         * [5.3.6 Modbus](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.6-modbus.md)
         * [5.3.7 Q&A](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.7-Q&A.md)
     * [5.4 SystemUpdate](3-FunctionsAndApplications/5-BasicApplication/5.4-system_flash.md)
+    * [5.5 Zero Point Calibration](3-FunctionsAndApplications/5-BasicApplication/5.5-set_joint_zero.md)
 * [6. SoftwareDevelopmentGuide](3-FunctionsAndApplications/6.developmentGuide/README.md)
     * [6.1 Python](3-FunctionsAndApplications/6.developmentGuide/6.1-python/README.md)
         * [6.1.1 EnvironmentConstruction](3-FunctionsAndApplications/6.developmentGuide/6.1-python/1_download.md)
