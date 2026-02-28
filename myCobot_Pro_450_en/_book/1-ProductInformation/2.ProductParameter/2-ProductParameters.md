@@ -35,23 +35,23 @@ width = "550" align = "center">
 
 | Joints | Range |
 | :--------: | :----------:|
-| J1        | -169 ~ +169     |
-| J2        | -131 ~ +131      |
-| J3  | -159 ~ +159                   |
-| J4        | -167 ~ +167 |
-| J5   | -168 ~ +168                   |
-| J6   | -168 ~ +168         |
+| J1 | -165 ~ 165 |
+| J2 | -117 ~ 117 |
+| J3 | -157 ~ 157 |
+| J4 | -165 ~ 165 |
+| J5 | -165 ~ 165 |
+| J6 | -168 ~ 168 |
 
 **Software joint range of motion**
 
 | Joints | Range |
 | :--------: | :----------:|
-| 1 | -162 ~ 162 |
-  | 2 | -125 ~ 125 |
-  | 3 | -154 ~ 154 |
-  | 4 | -162 ~ 162 |
-  | 5 | -162 ~ 162 |
-  | 6 | -165 ~ 165 |
+| J1 | -162 ~ 162 |
+| J2 | -125 ~ 125 |
+| J3 | -154 ~ 154 |
+| J4 | -162 ~ 162 |
+| J5 | -162 ~ 162 |
+| J6 | -165 ~ 165 |
   
 ### 2.3 Hole Installation
 - The robot base is mounted with flanges. The base is compatible with both LEGO technology and M4 screw installation.
@@ -74,8 +74,8 @@ width = "550" align = "center">
 
   - ① RJ45：Dual network ports, used for connecting the device to the Internet or other network devices.
   - ② USB3：High-speed USB interface for connecting to computers or peripheral devices.
-  - ③ RS485：Industrial serial communication, connecting PLC, sensors, etc.
-  - ④ CAN：CAN bus communication, connecting drives, I/O modules, etc.
+  - ③ RS485: Industrial serial communication, used to connect PLCs, sensors, etc. Wiring sequence (from left to right): GND、485_B、485_A
+  - ④ CAN: CAN bus communication, used to connect drivers. Wiring sequence (from left to right): CAN_GND、 CAN_L、 CAN_H
   - ⑤  Function IO: digital signal input/output.
   - ⑥ Power switch: Press and hold to turn on the power, press and hold again to turn off the power.
   - ⑦ DC24V power supply: Connect the power adapter.  

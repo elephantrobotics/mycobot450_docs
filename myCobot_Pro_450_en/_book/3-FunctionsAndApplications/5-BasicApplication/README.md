@@ -14,4 +14,7 @@ This section introduces myStudio Pro, a multi-functional robot programming and c
 - [5.4 SystemUpdate](./5.4-system_flash.md)<br>
 This section provides a detailed explanation of the complete process for flashing/updating the system image on the Pro450 robotic arm. The core operation involves writing the new system image file to the device's main controller using a dedicated PC-based tool (RKDevTool).
 
+- [5.5 Zero-position calibration](./5.5-set_joint_zero.md)<br>
+This section describes how to perform zero-position calibration of robotic arm joints using the Python API. This is applicable after burning a system image and when joint zero-position deviations occur.
+
 [← Previous Chapter](../../2-BasicSettings/4.FirstTimeInstallation/4.3-PowerOnDetectionGuide.md) | [Next Chapter →](./5.1-SystemInstructions.md)
