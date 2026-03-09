@@ -2,7 +2,7 @@
 
 <img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.2/5.2.1/img/myblockly/myblockly界面.jpg" alt="blank" />
 
-**myStudio Pro** is a robot programming and control software integrating multiple functions, providing users with one-stop solutions such as visual programming interaction, quick movement control, drag teaching, robot status query and configuration. The software mainly integrates four functional modules: `myBlockly`, `Quick Move`, `Firmware and Applications`, and `Settings`, covering the entire process requirements from programming to debugging, from learning to deployment.
+**myStudio Pro** is a robot programming and control software integrating multiple functions, providing users with one-stop solutions such as visual programming interaction, quick movement control, drag teaching, robot status query and configuration. The software mainly integrates four functional modules: `myBlockly`, `Quick Move`, `Resource Link`, and `Settings`, covering the entire process requirements from programming to debugging, from learning to deployment.
 
 The **`myBlockly`** module draws on Scratch, a children's programming language developed by the Massachusetts Institute of Technology, in terms of functionality and design concept, and uses a graphical building block assembly method for programming. Users can gradually build a complete code logic by intuitively dragging and dropping module combinations. The entire process is simple to operate and easy to understand, making it especially suitable for programming beginners and teaching scenarios.
 
