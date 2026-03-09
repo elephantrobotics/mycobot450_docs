@@ -36,7 +36,7 @@
         * [5.3.1 MyStudioFirstUse](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.1-mystudiofirstuse.md)
         * [5.3.2 MyBlockly](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.2-myBlockly.md)
         * [5.3.3 QuickMove](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.3-quickmove.md)
-        * [5.3.4 Firmware and Applications](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.4-resource.md)
+        * [5.3.4 Resource Link](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.4-resource.md)
         * [5.3.5 Setting](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.5-setting.md)
         * [5.3.6 Modbus](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.6-modbus.md)
         * [5.3.7 Q&A](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.7-Q&A.md)
@@ -84,7 +84,8 @@
     * [10.7 ModuleSuctionCup](4-SupportAndService/Accessories/10.7-ModuleSuctionCup.md)
     * [10.8 CameraModulePro](4-SupportAndService/Accessories/10.8-CameraModulePro.md)
     * [10.9 PenHolder](4-SupportAndService/Accessories/10.9-penHolder.md)
+* [11. LogUpdate](4-SupportAndService/11-LogUpdate.md)
 
 ## Acknowledgments
-* [11. Acknowledgments](5-Acknowledgments/5-Acknowledgments.md)
+* [12. Acknowledgments](5-Acknowledgments/5-Acknowledgments.md)
 

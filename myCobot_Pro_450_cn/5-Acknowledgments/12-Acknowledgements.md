@@ -20,4 +20,4 @@
 
 ---
 
-[← 上一章](../4-SupportAndService/10-Accessories/10.9-PenHolderPro.md)
+[← 上一章](../4-SupportAndService/11-LogUpdate)
