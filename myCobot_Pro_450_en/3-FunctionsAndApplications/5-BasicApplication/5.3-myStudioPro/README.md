@@ -177,23 +177,17 @@ For example, capturing a joint 1 over-limit error:
 
 <img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/error-1.png" alt="blank" />
 
-1. When an abnormality is detected in the robotic arm, a specific warning pop-up window will appear. The pop-up consists of four parts: 
-    1. The specific content of the current abnormality error; 
-    2. The solution to the current abnormality error. If the current abnormality can be resolved or recovered, it will be displayed; otherwise, no content will be displayed; 
-    3. A 'Repair' button for the current abnormality error that can be cleared or recovered. Triggering this button will automatically repair the abnormality; otherwise, no button will be displayed; 
-    4. A confirmation button for the current abnormality. If you do not want to handle the error, you can use this button to ignore the current abnormality.
+1.When an abnormality occurs with the robotic arm, a specific warning pop-up window will be displayed. This pop-up window consists of four main parts: 1. The detailed content of the current abnormal error; 2. The solution method for the current abnormal error. If the current abnormality can be resolved or recovered, it will be displayed; otherwise, no content will be shown; 3. The 'repair button' for the current abnormal error that can be cleared or recovered. Clicking this button will automatically perform the repair process for the abnormality; otherwise, no button will be displayed; 4. The 'confirm button' for the current abnormality. If you do not want to handle the error, you can click this button to ignore the current abnormality.
 
-<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/error-2.png" alt="blank" /> 2. Repaired anomalies will be displayed in the historical alarm table of the anomaly list, and currently existing anomalies will be displayed in the current alarm table. The anomaly's existence time will be automatically recorded.
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/error-2.png" alt="blank" /> 
+
+2.The fixed exceptions will be displayed in the historical alarm table of the exception list, while the current existing exceptions will be shown in the current alarm table. At the same time, the duration of the exception occurrence will be automatically recorded.
 
 <img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/error-3.png" alt="blank" />
 
-3. If an anomaly is repairable, click the Repair button 
+3.If the anomaly is repairable, you can click the "Restore" button (1) to perform the anomaly repair operation. Clicking the "Clear record" button (2) will clear the historical alarm records that have been resolved.
 
-    (1) to perform the anomaly repair operation. Clicking the Clear Records button
-
-    (2) will clear the resolved historical alarm records.
-
-    <img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/error-4.png" alt="blank" />
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/error-4.png" alt="blank" />
 
 ## Robot status
 
