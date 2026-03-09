@@ -105,7 +105,9 @@ This is a clickable button.
 
 <img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/myBlockly-open.png" />
 
-Clicking this will automatically navigate to myBlockly and open the file management list, allowing you to perform JSON file-related operations based on the file list. <img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/myBlockly-open1.png" />
+Clicking this will automatically navigate to myBlockly and open the file management list, allowing you to perform JSON file-related operations based on the file list. 
+
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/myBlockly-open1.png" />
 
 #### Create a New File
 
