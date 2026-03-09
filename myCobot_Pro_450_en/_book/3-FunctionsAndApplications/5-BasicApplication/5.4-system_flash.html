@@ -1207,6 +1207,19 @@
             
         </li>
     
+        <li class="chapter " data-level="5.3" data-path="../../4-SupportAndService/11-LogUpdate.html">
+            
+                <a href="../../4-SupportAndService/11-LogUpdate.html">
+            
+                    
+                    11. LogUpdate
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -1219,7 +1232,7 @@
                 <a href="../../5-Acknowledgments/5-Acknowledgments.html">
             
                     
-                    11. Acknowledgments
+                    12. Acknowledgments
             
                 </a>
             
@@ -1281,6 +1294,33 @@
 					<section class="normal markdown-section">
 						
 						<h1 id="pro450-system-image-burning-instructions">Pro450 System Image Burning Instructions</h1>
+<h2 id="system-image-version-notes">System Image Version Notes</h2>
+<table>
+<thead>
+<tr>
+<th>Version Number</th>
+<th>Release Date</th>
+<th>Update Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v1.0.2025.12.30</td>
+<td>December 30, 2025</td>
+<td><strong>New Features:</strong><br>Added drag-and-drop teaching file functionality<br><strong>Optimizations:</strong><br>1. Webapp updated to v2.0.0<br>2. Main controller firmware updated to v1.1.6<br>3. Updated Wi-Fi connection script, ensuring eth1 usage is not disabled after connection<br>4. Updated auto-start script</td>
+</tr>
+<tr>
+<td>v1.0.2025.11.10</td>
+<td>November 10, 2025</td>
+<td><strong>Optimizations:</strong><br>Updated Wi-Fi connection script, allowing simultaneous Wi-Fi and LAN connections</td>
+</tr>
+<tr>
+<td>v1.0.2025.10.18</td>
+<td>October 18, 2025</td>
+<td><strong>New Features:</strong><br>1. Added webapp v1.0.0 and MyCobotPro firmware<br>2. Changed the WiFi module<br>3. Enabled GPIO support<br>4. Disabled RK NPU<br>5. Disabled SD module<br>6. Added wifi_hotspot_start and wifi_hotspot_stop scripts<br>7. Configured eth1 to support DHCP<br>8. Added /usr/bin/versions file to print system and firmware versions<br>9. Added /etc/version and /etc/version_log files<br>10. Installed pymycobot v4.0.2<br><strong>Optimizations:</strong><br>Updated webapp program and MyCobotPro firmware<br><strong>Fixes:</strong><br>Fixed the issue of eth0 being unusable (fixed GPIO in the device tree)<br></td>
+</tr>
+</tbody>
+</table>
 <p><strong>Note:</strong> After the system image is burned, each joint of the robotic arm needs to be <strong>recalibrated at its zero position</strong> before it can be used normally. Please refer to the section on <a href="5.5-set_joint_zero.html">5.5-Zero Point Calibration</a>.</p>
 <p>This section will guide you on how to use a burning tool on your PC to correctly burn the system image to the Pro450 controller. Please follow the steps strictly to ensure a safe and successful burning process.</p>
 <h2 id="1-preparation">1 Preparation</h2>
@@ -1406,18 +1446,36 @@ ping 192.168.0.232
 <li><p>Remotely SSH into the Pro450 system from your PC to execute the flashing command.</p>
 </li>
 </ul>
-<h2 id="6-ssh-remote-connection">6 SSH Remote Connection</h2>
+<h2 id="6-activating-system-upgrade-function">6 Activating System Upgrade Function</h2>
+<ul>
+<li><p><strong>Method 1:</strong> webapp (Recommended)</p>
+</li>
+<li><p><strong>Method 2:</strong> SSH Remote Connection Command</p>
+</li>
+</ul>
+<h3 id="61-using-webapp">6.1 Using webapp</h3>
+<h4 id="611-activating-webapp">6.1.1 Activating webapp</h4>
+<p>Open your browser and enter the following command to activate <strong>myStudioPro</strong>:</p>
+<pre><code class="lang-bash">http://192.168.0.232:8000/
+</code></pre>
+<p><img src="../../resources/3-FunctionsAndApplications/5-BasicApplication/5.9-system_flash/webapp_1.png" alt="webapp_1"></p>
+<h4 id="612-activating-system-flashing-function">6.1.2 Activating System Flashing Function</h4>
+<p>In the interface, click <strong>Settings</strong> -&gt; <strong>Update Check </strong> page, then select the <strong>System Update</strong> module, and click the <strong>Manual Upgrade</strong> button.</p>
+<p><img src="../../resources/3-FunctionsAndApplications/5-BasicApplication/5.9-system_flash/webapp_2.png" alt="webapp_1"></p>
+<h3 id="62-ssh-remote-connection">6.2 SSH Remote Connection</h3>
+<h4 id="621-ssh-remote-connection">6.2.1 SSH Remote Connection</h4>
+<p>6.2.2 SSH Command to Enable System Burning Function</p>
 <p>Use the <code>Win + R</code> shortcut to open the <code>cmd</code> command prompt and enter the following command:</p>
 <p><code>ssh-keygen -R 192.168.0.232</code></p>
 <p><code>ssh root@192.168.0.232</code></p>
 <p>Follow the prompts to enter <code>yes</code>, then enter the login password <code>root</code>.</p>
 <p><img src="../../resources/3-FunctionsAndApplications/5-BasicApplication/5.9-system_flash/5.9-1.png" width="800" align="center"></p>
-<h2 id="7-start-the-system-flashing-function">7. Start the System Flashing Function</h2>
+<h4 id="622-ssh-command-to-enable-system-burning-function">6.2.2 SSH Command to Enable System Burning Function</h4>
 <p>After logging in via SSH, enter the following command to start the system flashing function:</p>
 <p><code>reboot loader</code></p>
 <p><img src="../../resources/3-FunctionsAndApplications/5-BasicApplication/5.9-system_flash/5.9-2.png" width="800" align="center"></p>
-<h2 id="8-start-the-flashing-tool">8 Start the flashing tool</h2>
-<p>After starting the system flashing function in <strong>Step 7</strong>, opening the flashing tool will display the following image:</p>
+<h2 id="7-start-the-flashing-tool">7 Start the flashing tool</h2>
+<p>After starting the system flashing function in <strong>Step 6</strong>, opening the flashing tool will display the following image:</p>
 <p><img src="../../resources/3-FunctionsAndApplications/5-BasicApplication/5.9-system_flash/5.9-3.png" width="800" align="center"></p>
 <ul>
 <li>Click the <code>Upgrade Firmware</code> button</li>
@@ -1436,7 +1494,7 @@ ping 192.168.0.232
 <li>After the system image is successfully burned, a prompt message will appear on the right side of the burning tool:</li>
 </ul>
 <p><img src="../../resources/3-FunctionsAndApplications/5-BasicApplication/5.9-system_flash/5.9-8.png" width="800" align="center"></p>
-<h2 id="9-verify-system-image-burning">9 Verify System Image Burning</h2>
+<h2 id="8-verify-system-image-burning">8 Verify System Image Burning</h2>
 <p>After burning the system image, reconnect to the robotic arm system remotely using SSH and enter the following command to check the system version number:</p>
 <p><code>cat /etc/version</code></p>
 <p><img src="../../resources/3-FunctionsAndApplications/5-BasicApplication/5.9-system_flash/5.9-9.png" width="800" align="center"></p>
@@ -1486,7 +1544,7 @@ ping 192.168.0.232
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"5.4 SystemUpdate","level":"4.1.4","depth":2,"next":{"title":"5.5 Zero Point Calibration","level":"4.1.5","depth":2,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-set_joint_zero.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-set_joint_zero.md","articles":[]},"previous":{"title":"5.3.7 Q&A","level":"4.1.3.7","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.7-Q&A.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.7-Q&A.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"/sidebar.css"}},"file":{"path":"3-FunctionsAndApplications/5-BasicApplication/5.4-system_flash.md","mtime":"2026-02-28T02:09:59.132Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-02-28T03:33:49.018Z"},"basePath":"../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"5.4 SystemUpdate","level":"4.1.4","depth":2,"next":{"title":"5.5 Zero Point Calibration","level":"4.1.5","depth":2,"path":"3-FunctionsAndApplications/5-BasicApplication/5.5-set_joint_zero.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.5-set_joint_zero.md","articles":[]},"previous":{"title":"5.3.7 Q&A","level":"4.1.3.7","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.7-Q&A.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.7-Q&A.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"/sidebar.css"}},"file":{"path":"3-FunctionsAndApplications/5-BasicApplication/5.4-system_flash.md","mtime":"2026-03-06T07:44:22.202Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-03-09T02:46:42.295Z"},"basePath":"../..","book":{"language":""}});
 		});
 	</script>
 </div>
