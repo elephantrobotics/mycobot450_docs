@@ -84,7 +84,8 @@
     * [10.7 ModuleSuctionCup](4-SupportAndService/Accessories/10.7-ModuleSuctionCup.md)
     * [10.8 CameraModulePro](4-SupportAndService/Accessories/10.8-CameraModulePro.md)
     * [10.9 PenHolder](4-SupportAndService/Accessories/10.9-penHolder.md)
+* [11. LogUpdate](4-SupportAndService/11-LogUpdate.md)
 
 ## Acknowledgments
-* [11. Acknowledgments](5-Acknowledgments/5-Acknowledgments.md)
+* [12. Acknowledgments](5-Acknowledgments/5-Acknowledgments.md)
 

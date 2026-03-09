@@ -84,7 +84,8 @@
     * [10.7 模块化吸盘](4-SupportAndService/10-Accessories/10.7-ModuleSuctionCup.md)
     * [10.8 摄像头法兰](4-SupportAndService/10-Accessories/10.8-CameraModulePro.md)
     * [10.9 笔夹](4-SupportAndService/10-Accessories/10.9-PenHolderPro.md)
+* [11 更新日志](4-SupportAndService/11-LogUpdate.md)
 
 ## 致谢
-* [11 致谢](5-Acknowledgments/11-Acknowledgements.md)
+* [12 致谢](5-Acknowledgments/12-Acknowledgements.md)
 
