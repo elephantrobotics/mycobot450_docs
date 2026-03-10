@@ -177,23 +177,21 @@ For example, capturing a joint 1 over-limit error:
 
 <img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/error-1.png" alt="blank" />
 
-1. When an abnormality is detected in the robotic arm, a specific warning pop-up window will appear. The pop-up consists of four parts: 
+1、When an abnormality is detected in the robotic arm, a specific warning pop-up window will appear. The pop-up consists of four parts: 
     1. The specific content of the current abnormality error; 
     2. The solution to the current abnormality error. If the current abnormality can be resolved or recovered, it will be displayed; otherwise, no content will be displayed; 
     3. A 'Repair' button for the current abnormality error that can be cleared or recovered. Triggering this button will automatically repair the abnormality; otherwise, no button will be displayed; 
     4. A confirmation button for the current abnormality. If you do not want to handle the error, you can use this button to ignore the current abnormality.
 
-<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/error-2.png" alt="blank" /> 2. Repaired anomalies will be displayed in the historical alarm table of the anomaly list, and currently existing anomalies will be displayed in the current alarm table. The anomaly's existence time will be automatically recorded.
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/error-2.png" alt="blank" /> 
+
+2、Repaired anomalies will be displayed in the historical alarm table of the anomaly list, and currently existing anomalies will be displayed in the current alarm table. The anomaly's existence time will be automatically recorded.
 
 <img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/error-3.png" alt="blank" />
 
-3. If an anomaly is repairable, click the Repair button 
+3、If an anomaly is repairable, click the Repair button (1) to perform the anomaly repair operation. Clicking the Clear Records button (2) will clear the resolved historical alarm records.
 
-    (1) to perform the anomaly repair operation. Clicking the Clear Records button
-
-    (2) will clear the resolved historical alarm records.
-
-    <img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/error-4.png" alt="blank" />
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/error-4.png" alt="blank" />
 
 ## Robot status
 
