@@ -2,7 +2,7 @@
 
 <img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.2/5.2.1/img/myblockly/myblockly界面.jpg" alt="blank" />
 
-**myStudio Pro** is a robot programming and control software integrating multiple functions, providing users with one-stop solutions such as visual programming interaction, quick movement control, drag teaching, robot status query and configuration. The software mainly integrates four functional modules: `myBlockly`, `Quick Move`, `Firmware and Applications`, and `Settings`, covering the entire process requirements from programming to debugging, from learning to deployment.
+**myStudio Pro** is a robot programming and control software integrating multiple functions, providing users with one-stop solutions such as visual programming interaction, quick movement control, drag teaching, robot status query and configuration. The software mainly integrates four functional modules: `myBlockly`, `Quick Move`, `Resource Link`, and `Settings`, covering the entire process requirements from programming to debugging, from learning to deployment.
 
 The **`myBlockly`** module draws on Scratch, a children's programming language developed by the Massachusetts Institute of Technology, in terms of functionality and design concept, and uses a graphical building block assembly method for programming. Users can gradually build a complete code logic by intuitively dragging and dropping module combinations. The entire process is simple to operate and easy to understand, making it especially suitable for programming beginners and teaching scenarios.
 
@@ -105,7 +105,9 @@ This is a clickable button.
 
 <img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/myBlockly-open.png" />
 
-Clicking this will automatically navigate to myBlockly and open the file management list, allowing you to perform JSON file-related operations based on the file list. <img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/myBlockly-open1.png" />
+Clicking this will automatically navigate to myBlockly and open the file management list, allowing you to perform JSON file-related operations based on the file list. 
+
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/myBlockly-open1.png" />
 
 #### Create a New File
 
@@ -177,19 +179,15 @@ For example, capturing a joint 1 over-limit error:
 
 <img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/error-1.png" alt="blank" />
 
-1、When an abnormality is detected in the robotic arm, a specific warning pop-up window will appear. The pop-up consists of four parts: 
-    1. The specific content of the current abnormality error; 
-    2. The solution to the current abnormality error. If the current abnormality can be resolved or recovered, it will be displayed; otherwise, no content will be displayed; 
-    3. A 'Repair' button for the current abnormality error that can be cleared or recovered. Triggering this button will automatically repair the abnormality; otherwise, no button will be displayed; 
-    4. A confirmation button for the current abnormality. If you do not want to handle the error, you can use this button to ignore the current abnormality.
+1.When an abnormality occurs with the robotic arm, a specific warning pop-up window will be displayed. This pop-up window consists of four main parts: 1. The detailed content of the current abnormal error; 2. The solution method for the current abnormal error. If the current abnormality can be resolved or recovered, it will be displayed; otherwise, no content will be shown; 3. The 'repair button' for the current abnormal error that can be cleared or recovered. Clicking this button will automatically perform the repair process for the abnormality; otherwise, no button will be displayed; 4. The 'confirm button' for the current abnormality. If you do not want to handle the error, you can click this button to ignore the current abnormality.
 
 <img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/error-2.png" alt="blank" /> 
 
-2、Repaired anomalies will be displayed in the historical alarm table of the anomaly list, and currently existing anomalies will be displayed in the current alarm table. The anomaly's existence time will be automatically recorded.
+2.The fixed exceptions will be displayed in the historical alarm table of the exception list, while the current existing exceptions will be shown in the current alarm table. At the same time, the duration of the exception occurrence will be automatically recorded.
 
 <img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/error-3.png" alt="blank" />
 
-3、If an anomaly is repairable, click the Repair button (1) to perform the anomaly repair operation. Clicking the Clear Records button (2) will clear the resolved historical alarm records.
+3.If the anomaly is repairable, you can click the "Restore" button (1) to perform the anomaly repair operation. Clicking the "Clear record" button (2) will clear the historical alarm records that have been resolved.
 
 <img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/error-4.png" alt="blank" />
 
