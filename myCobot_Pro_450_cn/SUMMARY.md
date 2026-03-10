@@ -36,7 +36,7 @@
         * [5.3.1 首次使用](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.1-myStudioFirstUse.md)
         * [5.3.2 myBlockly](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.2-myBlockly.md)
         * [5.3.3 快速移动](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.3-quickmove.md)
-        * [5.3.4 固件与应用](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.4-resource.md)
+        * [5.3.4 资源链接](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.4-resource.md)
         * [5.3.5 设置](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.5-setting.md)
         * [5.3.6 modbus](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.6-modbus.md)
         * [5.3.7 常见问题](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.7-Q&A.md)

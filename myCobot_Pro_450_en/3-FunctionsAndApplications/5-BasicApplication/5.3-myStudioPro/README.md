@@ -2,7 +2,7 @@
 
 <img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.2/5.2.1/img/myblockly/myblockly界面.jpg" alt="blank" />
 
-**myStudio Pro** is a robot programming and control software integrating multiple functions, providing users with one-stop solutions such as visual programming interaction, quick movement control, drag teaching, robot status query and configuration. The software mainly integrates four functional modules: `myBlockly`, `Quick Move`, `Firmware and Applications`, and `Settings`, covering the entire process requirements from programming to debugging, from learning to deployment.
+**myStudio Pro** is a robot programming and control software integrating multiple functions, providing users with one-stop solutions such as visual programming interaction, quick movement control, drag teaching, robot status query and configuration. The software mainly integrates four functional modules: `myBlockly`, `Quick Move`, `Resource Link`, and `Settings`, covering the entire process requirements from programming to debugging, from learning to deployment.
 
 The **`myBlockly`** module draws on Scratch, a children's programming language developed by the Massachusetts Institute of Technology, in terms of functionality and design concept, and uses a graphical building block assembly method for programming. Users can gradually build a complete code logic by intuitively dragging and dropping module combinations. The entire process is simple to operate and easy to understand, making it especially suitable for programming beginners and teaching scenarios.
 
@@ -13,148 +13,183 @@ From the perspective of user experience, **myBlockly** is a low-threshold visual
 
 The module focuses on the rapid positioning and real-time control of the robotic arm. The rapid movement function can quickly move the robotic arm to the designated position. The read and write states of the end and bottom IO can be set. In addition, the module provides a dedicated operation area, supporting step-by-step or continuous motion control of joints or coordinates, achieving high-precision position adjustment and flexible motion debugging.
 
-**Firmware and Applications**
+**Resource Links**
 
-The module provides users with a convenient resource navigation function, centrally displaying the entry points of commonly used external links, including firmware downloads, technical documents, official contact information, etc. Users can quickly access relevant supporting materials without manually searching, improving the efficiency of use and maintenance.
+This module provides users with convenient resource navigation, centrally displaying frequently used external links, including technical documents and official contact information. Users can quickly access relevant support materials without manual searching, improving usage and maintenance efficiency.
 
 **Settings**
 
-The module covers the basic configuration options of software and robot systems. Users can perform operations such as language switching, joint movement limit setting, system update detection and update here.
+This module covers basic configuration options for the software and robot system. Users can perform operations such as language switching, joint motion limit settings, system update detection, and software driver updates here.
 
-# myStudio Pro interface display and the use of basic functions
+**Modbus**
 
-Open the software. The main interface is as shown in the following figure.
+This module provides users with convenient MODBUS protocol access control. Through the MODBUS protocol, interactive control of the device can be achieved. When enabled, the device can preview the register address function table or perform interactive operations through this module.
 
-<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/home.png" alt="blank" />
+## myStudio Pro Interface Display and Basic Function Usage
 
-Interface function introduction: The interface is divided into three areas:
+Open the software. The main interface is shown in the image below.
 
-1. Reset to zero and power on/off
-2. Function realization
-3. Information display
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/home.png" alt="blank" />
 
-Note: The software will automatically communicate and connect to the machine. If the lower right corner shows "Not connected", please check whether the network connection between the PC and the machine is unobstructed, or try restarting the machine.
+Interface Function Introduction: The interface is divided into three areas:
 
-## Return to zero
+1. Return to Zero and Power On/Off
 
-The function of this button is to control all the joints of the robot to return to the zero position.
+2. Function Implementation
 
-<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/zero.png" alt="blank" />
+3. Information Display
 
-**Note :**  The function of this button takes effect only if the communication of the robot has been successfully connected. After long pressing and clicking this button with the left mouse button, the robot will start to execute the return-to-zero command. The mechanical arm will slowly move to the zero position. Once the mouse button is released after long pressing, the return-to-zero command stops executing.
+> Note: The software will automatically connect to the robot. If the bottom right corner displays "Not Connected," please check if the network connection between your PC and the robot is stable, or try restarting the robot.
 
-After the zeroing process is completed, a pop-up window will appear to prompt that the zeroing is done.
+## Return to Zero
 
-<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/zero-success.png" alt="blank" />
+This button's function is to control all joints of the robot to return to the zero position.
 
-## Soft emergency stop
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/zero.png" />
 
-The function of this button is to control the power failure of the entire robot. When visiting the page, it will detect whether the current robot is powered on. If it is powered on, this button will be in red. If the robot is not powered on, this button will change to green and a pop-up window will appear to indicate that the robot is not powered on. You can click this button to power it on.
+**Note**: This button function requires a successful communication connection with the robot. After pressing and holding the left mouse button, the robot will begin executing the zero-return command. The robotic arm will slowly move to the zero position. Releasing the mouse button will stop the zero-return command.
 
-<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/stop.png" alt="blank" />
+A pop-up window will indicate that zeroing is complete.
 
-## Power on
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/zero-success.png" alt="blank" />
 
-When this button is in a green pattern, its function is to power on. After left-clicking this button with the mouse, the robot will start to execute the power-on command. The entire interface of the application will be covered with a layer of transparent light gray shadow. Before the power-on is completed, do not click on other functions within the interface, and a rotating pattern indicating that the application is power-on will be displayed at the center of the application.
+## Soft Emergency Stop
 
-<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/power-on.png" alt="blank" />
+This button function: Controls the robot to shut down. When accessing the page, the system checks if the robot is powered on. If it is, this button is red; if it is not powered on, the button turns green and a pop-up message will indicate that the robot is not powered on. You can click this button to power it on.
 
-After power-on is completed, the icon will turn red and a pop-up window will appear to prompt.
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/stop.png" alt="blank" />
 
-<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/power-on-success.png" alt="blank" />
+## Power On
 
-## Power off
+When this button is green, its function is to power on. After left-clicking this button, the robot begins executing the power-on command. The entire application interface will be covered by a transparent light gray shadow. Before the power-on process is complete, you cannot click any other functions on the interface, and a spinning circle indicating that the robot is powering on will appear in the center of the application.
 
-When this button is marked in red, its function is to power off. After left-clicking this button with the mouse, the robot begins to execute the power-off command.
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/power-on.png" alt="blank" />
 
-<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/power-off.png" alt="blank" />
+After power-on is complete, the icon will turn red and a pop-up notification will appear.
 
-After the power-off is completed, the icon will turn green and a pop-up window will appear as a prompt.
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/power-on-success.png" alt="blank" />
 
-## Function implementation
+## Power Off
 
-Here you can choose the functions you want to use. The functions include the following:
+When this button is red, its function is to power off. Left-clicking this button will cause the robot to execute the power-off command.
 
-1. [myBlockly Graphical Programming](./5.3.2-myBlockly.md)
-2. Move quickly
-3. Firmware and Applications
-4. Settings
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/power-off.png" alt="blank" />
+
+After power-off, the icon will turn green and a pop-up notification will appear.
+
+## Function Implementation
+
+Here you can select the functions you want to use. The functions include:
+
+> 1. [myBlockly Graphical Programming](./5.3.2-myBlockly.md)
+> 2. Quick Move
+> 3. Resource Links
+> 4. Settings
+> 5. Modbus
 
 ## myBlockly
-`myBlockly` is a fully visual modular programming interface, belonging to a graphical programming language, suitable for beginners to get familiar with programming. Users can develop applications by dragging and dropping puzzles to create both simple and complex functions. Supports functions such as saving, loading, single-step debugging and execution of graphical code, and executing specified individual building blocks.
 
-Note: To use myBlockly, you must first connect the device for communication.
+`myBlockly` is a fully visual modular programming interface, belonging to the graphical programming language, suitable for beginners to learn programming. Users can develop applications by dragging and dropping puzzle pieces, creating simple and complex functions. It supports saving, loading, single-step debugging, and executing specified individual blocks in the graphical code.
+
+Note: A device connection is required to use myBlockly.
 
 #### myBlockly
 
-Here is a clickable button. Clicking it with the left mouse button will redirect you to [myBlockly Graphical Programming Interface](./5.3.2-myBlockly.md).
+This is a clickable button. Left-clicking it will navigate to the [myBlockly graphical programming interface](./5.3.2-myBlockly.md)
 
-<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/myBlockly.png" alt="blank" />
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/myBlockly.png" />
 
 #### Open File
 
-Here is a clickable button.
+This is a clickable button.
 
-<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/open-file.png" alt="blank" />
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/myBlockly-open.png" />
 
-After clicking, it will automatically redirect to myBlockly and open the file management list, allowing you to perform operations related to JSON files based on the file list.
+Clicking this will automatically navigate to myBlockly and open the file management list, allowing you to perform JSON file-related operations based on the file list. 
 
-<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/open-file1.png" alt="blank" />
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/myBlockly-open1.png" />
 
-#### Create File
+#### Create a New File
 
-This button has the same function as [**myBlockly**](./README.md#myblockly).
+This button functions the same as [**myBlockly**](./README.md#myblockly).
 
-**quickly load the historically saved blockly file**
+**Quickly Load Saved Blockly Files**
 
-When you have used myBlockly programming and have already saved blockly files, the names of the saved files and their saving times will be displayed at the position shown in the following figure. The maximum number of displayed files is 4. If it exceeds 4, only the latest 4 saved files will be shown. Left-click the mouse button to open myBlockly and automatically load the selected blockly file.
+When you have used myBlockly programming and saved Blockly files, the saved file names and save times will be displayed in the location shown in the image below. A maximum of 4 files can be displayed; if more than 4 are displayed, only the 4 most recently saved files will be shown. Left-clicking will open myBlockly and automatically load the selected Blockly file.
 
-<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/blockly-1.png" alt="blank" />
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/myBlockly-open2.png" />
 
-## Common tools
+## Common Tools
 
-#### [Quick move](./5.3.3-quickmove.md)
+#### [Quick Move](./5.3.3-quickmove.md)
 
-Function: Provide quick control of robot IO as well as quick control of joint angles and coordinates
+Function: Provides quick control of robot IO and quick control of joint angles and coordinates
 
-<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/quickmove.png" alt="blank" />
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/quickmove.png" />
 
-#### [Firmware and Applications](./5.3.4-resource.md)
+<!-- Quick Move [Detailed Function Introduction](./5.3.3-quickmove.md) -->
 
-Functions: Provide updates and upgrades for the embedded firmware of robots, product user manuals, official videos, official GitHub online stores, and feedback functions.
+#### [Resource Link](./5.3.4-resource.md)
 
-<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/resource.png" alt="blank" />
+Features: Provides robot product user manuals, official videos, an official GitHub repository, an official online store, and a feedback function.
+
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/function.png" />
 
 #### [Settings](./5.3.5-setting.md)
 
-Functions: Integrates the following core functions: real-time monitoring of robot status and information, one-click check and update of application versions, personalized Settings (language/motion parameters), as well as quick configuration of network connections and login accounts, helping you manage the robot system efficiently.
+Features: Integrates the following core functions: real-time monitoring of robot status and information, one-click check for application version updates, personalized settings (language/motion parameters), and quick configuration of network connection and login account, helping you efficiently manage your robot system.
 
-<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/settings.png" alt="blank" />
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/settings.png" />
 
-## Information display
+#### [modbus](./5.3.6-modbus.md)
 
-The underlying part of the application includes the logo of Elephant Robot Company, the current type of machine, alarm prompts, and the current operating status of the robot.
+Function: Enables interactive control of the device via the MODBUS protocol. After enabling the device, this module allows previewing the register address function table or performing interactive operations.
 
-<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/footer.png" alt="blank" />
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/modbus.png" />
 
-## Alarm prompt
+## Information Display
 
-Function: Display robot error messages, and left-clicking with the mouse can open the error log window.
+The underlying part of the application, including the Elephant Robotics logo, the current machine type, alarm prompts, and the current robot's operating status.
 
-<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/footer1.png" alt="blank" />
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/information-1.png" alt="blank" />
 
-Left-click the mouse button to open the error log window.
+## Alarm Notification
 
-<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/home/footer2.png" alt="blank" />
+Function: Displays robot error messages, and left-clicking opens the error log window.
 
-If the robot reports an error during operation, the application will capture the exception and display it in the error log interface. The meaning in the error log table is as follows:
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/information-2.png" alt="blank" />
 
-- No: Error log serial number
-- Time: The time when the error occurred
-- Type: The type of error that occurs
-- Description: Incorrect description information
+Left-click to open the error log window.
 
-After the application captures an error, it will first pop up a window to prompt and provide a solution. If you don't want to deal with the error, you can also ignore it. When you disconnect and reconnect the device or enter the error log interface and click the "Clear" button, a pop-up window will appear again to prompt you and save it to the error log table.
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/information-3.png" alt="blank" />
+
+If the robot encounters an error during operation, the application will capture the exception and display it in the error log interface. The meanings in the error log table are as follows:
+
+- number: Error log number
+
+- time: Time when the error occurred
+
+- type: Type of error encountered
+
+- description: Error description
+
+After the application captures an error, it will first display a pop-up prompt and provide a solution. If you do not want to handle the error, you can ignore it. When you disconnect and reconnect the device or enter the error log interface, clicking the "Clear" button will re-enable the pop-up prompt and save it to the error log table.
+
+For example, capturing a joint 1 over-limit error:
+
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/error-1.png" alt="blank" />
+
+1.When an abnormality occurs with the robotic arm, a specific warning pop-up window will be displayed. This pop-up window consists of four main parts: 1. The detailed content of the current abnormal error; 2. The solution method for the current abnormal error. If the current abnormality can be resolved or recovered, it will be displayed; otherwise, no content will be shown; 3. The 'repair button' for the current abnormal error that can be cleared or recovered. Clicking this button will automatically perform the repair process for the abnormality; otherwise, no button will be displayed; 4. The 'confirm button' for the current abnormality. If you do not want to handle the error, you can click this button to ignore the current abnormality.
+
+<img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/error-2.png" alt="blank" /> 
+
+2.The fixed exceptions will be displayed in the historical alarm table of the exception list, while the current existing exceptions will be shown in the current alarm table. At the same time, the duration of the exception occurrence will be automatically recorded.
+
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/error-3.png" alt="blank" />
+
+3.If the anomaly is repairable, you can click the "Restore" button (1) to perform the anomaly repair operation. Clicking the "Clear record" button (2) will clear the historical alarm records that have been resolved.
+
+<img width = "800" align = "center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/home/error-4.png" alt="blank" />
 
 ## Robot status
 
@@ -169,4 +204,4 @@ Function: Display the current operating status of the robot
 
 ---
 
-[← Previous Chapter](../5.4-minirobot/README.md) | [Next Chapter →](./5.3.1-myStudioFirstUse.md)
+[← [Previous Chapter](../5.1-SystemInstructions.md) | [Next Chapter →](./5.3.1-myStudioFirstUse.md)
