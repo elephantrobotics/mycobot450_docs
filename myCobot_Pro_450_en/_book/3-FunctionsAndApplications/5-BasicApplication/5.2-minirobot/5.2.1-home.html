@@ -485,12 +485,25 @@
             
         </li>
     
-        <li class="chapter " data-level="4.1.2.8" data-path="5.2.8-Q&A.html">
+        <li class="chapter " data-level="4.1.2.8" data-path="5.2.8-settings.html">
             
-                <a href="5.2.8-Q&A.html">
+                <a href="5.2.8-settings.html">
             
                     
-                    5.2.8 Q&A
+                    5.2.8 Settings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.9" data-path="5.2.9-Q&A.html">
+            
+                <a href="5.2.9-Q&A.html">
+            
+                    
+                    5.2.9 Q&A
             
                 </a>
             
@@ -561,7 +574,7 @@
                 <a href="../5.3-myStudioPro/5.3.4-resource.html">
             
                     
-                    5.3.4 Firmware and Applications
+                    5.3.4 Resource Link
             
                 </a>
             
@@ -1296,6 +1309,16 @@
 						<h1 id="first-use">First Use</h1>
 <p>MiniRobot is an interactive module consisting of a TFT screen and buttons. The buttons on the bottom, from left to right, are A, B, C, and D. These buttons allow you to switch between displaying different robotic arm information and control the robotic arm&apos;s status.</p>
 <p>Before starting MiniRobot, the robotic arm must be powered on and the emergency stop button must be connected. After the robotic arm is powered on, if the backend is not started, MiniRobot will default to displaying all current data as 0, including angle, coordinates, and IP. MiniRobot will automatically update the current data approximately 10 seconds after the robotic arm is powered on.</p>
+<p>After the robotic arm is powered on, MiniRobot will first display its logo.</p>
+<p><img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.4/5.4.1-home/5.4.1-logo.png" width="300" ,align="center"></p>
+<p>Then it will enter the main interface, which by default displays the joint information and static IP information of the current robotic arm.</p>
+<p><img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.4/5.4.1-home/5.4.1-home.png" width="300" ,align="center"></p>
+<p>Pressing the A button will enter the menu interface. Use the icons at the bottom of the screen to select specific functions. <strong>Note that if there is no operation on this interface for 30 seconds, it will automatically redirect back to the main interface.</strong></p>
+<p><img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.4/5.4.1-home/5.4.1-Program.png" width="300" ,align="center"></p>
+<p>You can switch between displaying different robotic arm information using the buttons at the bottom of the screen. Pressing the C button displays the robotic arm&apos;s current coordinates and static IP information.</p>
+<p><img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.4/5.4.1-home/5.4.1-coords.png" width="300" ,align="center"></p>
+<p>Pressing the D button displays the current input/output status of the M8 interface at the end. No small dot indicates a low level, and a white dot indicates a high level.</p>
+<p><img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.4/5.4.1-home/5.4.1-IO.png" width="300" ,align="center"></p>
 <p><strong>Note that MiniRobot, myStudio Pro, and the Python interface have mutually exclusive control over the robotic arm&apos;s motion. Only one interface can control the robotic arm at a time. If MiniRobot enters the control interface, myStudio Pro or the Python interface will not be able to control the robotic arm, and vice versa.</strong></p>
 <p>Entering the control interface is indicated by the following:</p>
 <ol>
@@ -1307,18 +1330,27 @@
 </li>
 <li><p>Zero-position Calibration Interface and its sub-interfaces.</p>
 </li>
+<li><p>Settings interface and its sub-interfaces.</p>
+</li>
 </ol>
-<p>After the robotic arm is powered on, MiniRobot will first display its logo.</p>
-<p><img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.4/5.4.1-home/5.4.1-logo.png" width="300" ,align="center"></p>
-<p>Then it will enter the main interface, which by default displays the joint information and static IP information of the current robotic arm.</p>
-<p><img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.4/5.4.1-home/5.4.1-home.png" width="300" ,align="center"></p>
-<p>Pressing the A button will enter the menu interface. Use the icons at the bottom of the screen to select specific functions. <strong>Note that if there is no operation on this interface for 30 seconds, it will automatically redirect back to the main interface.</strong> **</p>
-<p><img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.4/5.4.1-home/5.4.1-Program.png" width="300" ,align="center"></p>
-<p>You can switch between displaying different robotic arm information using the buttons at the bottom of the screen. Pressing the C button displays the robotic arm&apos;s current coordinates and static IP information.</p>
-<p><img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.4/5.4.1-home/5.4.1-coords.png" width="300" ,align="center"></p>
-<p>Pressing the D button displays the current input/output status of the M8 interface at the end. No small dot indicates a low level, and a white dot indicates a high level.</p>
-<p><img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.4/5.4.1-home/5.4.1-IO.png" width="300" ,align="center"></p>
-<p><a href="../5.3-myStudioPro/">&#x2190; Previous Chapter</a> |<a href="5.4.2-dragteach.md">Next Page &#x2192;</a></p>
+<p>When another interface is controlling the robotic arm, a pop-up will appear on the screen with the message &quot;Other ports are under control...&quot;, which will automatically close after three seconds.</p>
+<p><img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.4/5.4.1-home/5.4.1-control1.png" width="300" ,align="center"></p>
+<p>At this point, when entering the menu page, only &quot;Firmware&quot; and &quot;Connection&quot; can be accessed, while other options are grayed out and unavailable.</p>
+<p><img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.4/5.4.1-home/5.4.1-control2.png" width="300" ,align="center"></p>
+<p><strong>When the emergency stop button is pressed, a pop-up will appear asking if power needs to be reapplied. Note: You need to release the emergency stop before selecting power-on, otherwise power-on will fail.</strong></p>
+<p>Emergency stop pressed pop-up prompt, press the C key to perform power-on operation.</p>
+<p><img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.4/5.4.1-home/5.4.1-power1.png" width="300" ,align="center"></p>
+<p>Power-on process pop-up prompt.</p>
+<p><img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.4/5.4.1-home/5.4.1-power2.png" width="300" ,align="center"></p>
+<p>Power-on completion pop-up prompt.</p>
+<p><img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.4/5.4.1-home/5.4.1-power3.png" width="300" ,align="center"></p>
+<p>Power-on failure pop-up prompt.</p>
+<p><img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.4/5.4.1-home/5.4.1-power4.png" width="300" ,align="center"></p>
+<p>Power-on timeout with no response prompts error code &quot;4-01-0&quot;.</p>
+<p><strong>In the robotic arm power-off state, any button operation will prompt to power on first before operating the robotic arm. Note: You need to release the emergency stop before selecting power-on, otherwise power-on will fail.</strong></p>
+<p>Power-off state, press any button to prompt a pop-up, press the C key to perform power-on operation (power-on process prompts are the same as above).</p>
+<p><img src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.4/5.4.1-home/5.4.1-power5.png" width="300" ,align="center"></p>
+<p><a href="../5.1-SystemInstructions.html">&#x2190; Previous Chapter</a> | <a href="5.2.2-dragteach.html">Next Page &#x2192;</a></p>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
 						
 					</section>
@@ -1361,7 +1393,7 @@
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"5.2.1 Home Function","level":"4.1.2.1","depth":3,"next":{"title":"5.2.2 DragTeach Function","level":"4.1.2.2","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.2-dragteach.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.2-dragteach.md","articles":[]},"previous":{"title":"5.2 MiniRobot","level":"4.1.2","depth":2,"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/README.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/README.md","articles":[{"title":"5.2.1 Home Function","level":"4.1.2.1","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.1-home.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.1-home.md","articles":[]},{"title":"5.2.2 DragTeach Function","level":"4.1.2.2","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.2-dragteach.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.2-dragteach.md","articles":[]},{"title":"5.2.3 BlocklyRunner Function","level":"4.1.2.3","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.3-blocklyrunner.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.3-blocklyrunner.md","articles":[]},{"title":"5.2.4 QuickMove Function","level":"4.1.2.4","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.4-quickmove.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.4-quickmove.md","articles":[]},{"title":"5.2.5 Calibration Function","level":"4.1.2.5","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.5-calibration.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.5-calibration.md","articles":[]},{"title":"5.2.6 Home Function","level":"4.1.2.6","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.6-firmware.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.6-firmware.md","articles":[]},{"title":"5.2.7 Wireless Connect Function","level":"4.1.2.7","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.7-connection.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.7-connection.md","articles":[]},{"title":"5.2.8 Q&A","level":"4.1.2.8","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.8-Q&A.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.8-Q&A.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"/sidebar.css"}},"file":{"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.1-home.md","mtime":"2025-12-30T01:47:42.039Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-03-09T02:46:42.295Z"},"basePath":"../../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"5.2.1 Home Function","level":"4.1.2.1","depth":3,"next":{"title":"5.2.2 DragTeach Function","level":"4.1.2.2","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.2-dragteach.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.2-dragteach.md","articles":[]},"previous":{"title":"5.2 MiniRobot","level":"4.1.2","depth":2,"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/README.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/README.md","articles":[{"title":"5.2.1 Home Function","level":"4.1.2.1","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.1-home.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.1-home.md","articles":[]},{"title":"5.2.2 DragTeach Function","level":"4.1.2.2","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.2-dragteach.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.2-dragteach.md","articles":[]},{"title":"5.2.3 BlocklyRunner Function","level":"4.1.2.3","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.3-blocklyrunner.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.3-blocklyrunner.md","articles":[]},{"title":"5.2.4 QuickMove Function","level":"4.1.2.4","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.4-quickmove.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.4-quickmove.md","articles":[]},{"title":"5.2.5 Calibration Function","level":"4.1.2.5","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.5-calibration.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.5-calibration.md","articles":[]},{"title":"5.2.6 Home Function","level":"4.1.2.6","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.6-firmware.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.6-firmware.md","articles":[]},{"title":"5.2.7 Wireless Connect Function","level":"4.1.2.7","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.7-connection.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.7-connection.md","articles":[]},{"title":"5.2.8 Settings","level":"4.1.2.8","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.8-settings.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.8-settings.md","articles":[]},{"title":"5.2.9 Q&A","level":"4.1.2.9","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.9-Q&A.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.9-Q&A.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"/sidebar.css"}},"file":{"path":"3-FunctionsAndApplications/5-BasicApplication/5.2-minirobot/5.2.1-home.md","mtime":"2026-03-16T03:43:12.371Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-03-16T03:45:29.791Z"},"basePath":"../../..","book":{"language":""}});
 		});
 	</script>
 </div>
