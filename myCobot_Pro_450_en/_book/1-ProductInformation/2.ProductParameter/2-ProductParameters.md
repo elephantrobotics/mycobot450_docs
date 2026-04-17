@@ -4,7 +4,7 @@
 
 ## 1. Robot Specifications
 
-<img src = ../../resources/1-ProductInformation/2.ProductParameter/main.png
+<img src="../../resources/1-ProductInformation/2.ProductParameter/main.png"
 width = "1200" align = "center">
 
 | Index | Parameters |
@@ -124,9 +124,15 @@ The definitions of the various tool I/O ports are shown in the table below. Note
 
 ## 4. Cartesian Coordinate Parameters
 
-<img src = ../../resources/1-ProductInformation/2.ProductParameter/坐标.png
-width = "550" align = "center">
+<img src="../../resources/1-ProductInformation/2.ProductParameter/坐标.png"
+width = "400" align = "center">
 
+* The definitions of each coordinate system are shown in the table below:
+
+| Coordinate System | Definition |
+| :--- | :--- |
+| **End Coordinate System** | - Origin: The intersection of the end flange surface and the J6 rotation axis. <br> - X-axis: When the robotic arm is in the joint zero position, facing the base switch, horizontally to the right. <br> - Y-axis: When the robotic arm is in the joint zero position, facing the base switch, vertically downward. <br> - Z-axis: When the robotic arm is in the joint zero position, facing the base switch, horizontally forward. |
+| **Base Coordinate System** | - Origin: The intersection of the base bottom surface and the J1 rotation axis. <br> - X-axis: Facing the base switch, horizontally forward. <br> - Y-axis: Facing the base switch, horizontally to the left. <br> - Z-axis: Vertically upward. |
 
 ---
 

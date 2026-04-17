@@ -36,7 +36,7 @@
         * [5.3.1 首次使用](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.1-myStudioFirstUse.md)
         * [5.3.2 myBlockly](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.2-myBlockly.md)
         * [5.3.3 快速移动](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.3-quickmove.md)
-        * [5.3.4 固件与应用](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.4-resource.md)
+        * [5.3.4 资源链接](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.4-resource.md)
         * [5.3.5 设置](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.5-setting.md)
         * [5.3.6 modbus](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.6-modbus.md)
         * [5.3.7 常见问题](3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.7-Q&A.md)
@@ -84,7 +84,8 @@
     * [10.7 模块化吸盘](4-SupportAndService/10-Accessories/10.7-ModuleSuctionCup.md)
     * [10.8 摄像头法兰](4-SupportAndService/10-Accessories/10.8-CameraModulePro.md)
     * [10.9 笔夹](4-SupportAndService/10-Accessories/10.9-PenHolderPro.md)
+* [11 更新日志](4-SupportAndService/11-LogUpdate.md)
 
 ## 致谢
-* [11 致谢](5-Acknowledgments/11-Acknowledgements.md)
+* [12 致谢](5-Acknowledgments/12-Acknowledgements.md)
 
