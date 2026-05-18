@@ -81,7 +81,7 @@ MiniRobot是myCobot Pro 450机械臂的控制面板，提供了丰富的功能�
 
 | 错误编码 | 报错名称 | 错误描述 | 解决方案 |
 |---------|----------|----------|----------|
-| 1-01-1 ~ 1-01-6 | 超出软件限位 | 关节1-6超出软件限位 | **Python**:<br>方案A：使用`over_limit_return_zero`接口回零<br>方案B：使用`set_free_move_mode`接口切换至自由移动模式，放松异常关节，手动移动到限位内<br><br>**MiniRobot**:<br>方案A：切换至FreeMove模式，放松异常关节，手动移动到限位内<br>方案B：切换至JogMove模式，点动控制移动到限位内<br><br>**myStudio**:<br>登录myStudio → 点击右下角状态栏 → 点击"修复"按钮 |
+| 1-01-1 ~ 1-01-6 | 超出软件限位 | 关节1-6超出软件限位 | **Python**:<br>方案A：使用`over_limit_return_zero`接口回零<br>方案B：使用`set_free_move_mode`接口切换至自由移动模式，放松异常关节，手动移动到限位内<br><br>**MiniRobot**:<br>方案A：切换至FreeMove模式，放松异常关节，手动移动到限位内<br>方案B：切换至JogMove模式，点动控制移动到限位内<br><br>**myStudio**:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮 |
 | 1-32-0 | 坐标无解 | 该坐标无法抵达 | **使用Python**<br>方案A：使用`over_limit_return_zero`接口回零<br>方案B：使用`send_angles`离开当前位置<br><br>**使用MiniRobot**<br>方案A：当触发错误时，小屏幕会提示警告，可使用C按键的回退功能<br><br>**使用myStudio**<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br>尝试mystdio进行修复：[报警提示](../5.3-myStudioPro/README.md#报警提示)<br><br>**售后**<br>方案A：如以上方案都无法解决请联系售后 |
 | 1-33-0 | 直线运动无相邻解 | 直线运动因途经点无法抵达而终止 | 同上 |
 | 1-36-0 | 奇异位置无解 | 坐标运动经过奇异位置 | 同上 |
@@ -93,22 +93,22 @@ MiniRobot是myCobot Pro 450机械臂的控制面板，提供了丰富的功能�
 
 | 错误编码 | 报错名称 | 错误描述 | 解决方案 |
 |---------|----------|----------|----------|
-| 2-01-1 ~ 2-01-6 | CAN总线错误 | CAN总线错误，机器人停止运行 | **Python**:<br>使用`servo_restore`接口异常恢复<br><br>**myStudio**:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br>方案B：登录webapp → 右上角重新上下电<br><br>**其他**:<br>尝试整机重启<br><br>**售后**:<br>如以上方案都无法解决请联系售后 |
-| 2-02-1 ~ 2-02-6 | 短路 | 短路，机器人停止运行 | **Python**:<br>使用`servo_restore`接口异常恢复<br><br>**myStudio**:<br>登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**售后**:<br>如以上方案都无法解决请联系售后 |
-| 2-03-1 ~ 2-03-6 | 关节接收到无效数据 | 无效的设置数据 | **myStudio**:<br>登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**售后**:<br>如以上方案都无法解决请联系售后 |
-| 2-04-1 ~ 2-04-6 | 控制错误 | 控制错误 | **Python**:<br>使用`servo_restore`接口异常恢复<br><br>**myStudio**:<br>登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**其他**:<br>检测是否撞到硬件限位、关节放松手动转动是否正常<br><br>**售后**:<br>如以上方案都无法解决请联系售后 |
-| 2-05-1 ~ 2-05-6 | CAN通信错误 | CAN通信错误 | **Python**:<br>使用`servo_restore`接口异常恢复<br><br>**myStudio**:<br>登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**售后**:<br>如以上方案都无法解决请联系售后 |
-| 2-06-1 ~ 2-06-6 | 电机反馈错误 | 反馈错误 | **Python**:<br>使用`servo_restore`接口异常恢复<br><br>**myStudio**:<br>登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**售后**:<br>如以上方案都无法解决请联系售后 |
-| 2-07-1 ~ 2-07-6 | 正限位开关激活 | 正限位开关激活 | **myStudio**:<br>登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**售后**:<br>如以上方案都无法解决请联系售后 |
-| 2-08-1 ~ 2-08-6 | 负限位开关激活 | 负限位开关激活 | **myStudio**:<br>登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**售后**:<br>如以上方案都无法解决请联系售后 |
-| 2-09-1 ~ 2-09-6 | 过流 | 过流 | **Python**:<br>使用`servo_restore`接口异常恢复<br><br>**myStudio**:<br>登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**其他**:<br>检测是否撞到硬件限位、关节放松手动转动是否正常<br><br>**售后**:<br>如以上方案都无法解决请联系售后 |
-| 2-10-1 ~ 2-10-6 | I2t保护 | I2t保护 | **Python**:<br>使用`servo_restore`接口异常恢复<br><br>**myStudio**:<br>登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**其他**:<br>检测是否撞到硬件限位、关节放松手动转动是否正常<br><br>**售后**:<br>如以上方案都无法解决请联系售后 |
-| 2-11-1 ~ 2-11-6 | 过温 | 过温 | **Python**:<br>使用`servo_restore`接口异常恢复<br><br>**myStudio**:<br>登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**售后**:<br>如以上方案都无法解决请联系售后 |
-| 2-12-1 ~ 2-12-6 | 驱动板过温 | 驱动板过温 | **Python**:<br>使用`servo_restore`接口异常恢复<br><br>**myStudio**:<br>登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**售后**:<br>如以上方案都无法解决请联系售后 |
-| 2-13-1 ~ 2-13-6 | 过压 | 过压 | **Python**:<br>使用`servo_restore`接口异常恢复<br><br>**myStudio**:<br>登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**售后**:<br>如以上方案都无法解决请联系售后 |
-| 2-14-1 ~ 2-14-6 | 欠压 | 欠压 | **Python**:<br>使用`servo_restore`接口异常恢复<br><br>**myStudio**:<br>登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**售后**:<br>如以上方案都无法解决请联系售后 |
-| 2-15-1 ~ 2-15-6 | 命令错误 | 命令错误 | **myStudio**:<br>登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**售后**:<br>如以上方案都无法解决请联系售后 |
-| 2-16-1 ~ 2-16-6 | 启用处于非活动状态 | 启用处于非活动状态 | **myStudio**:<br>登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**售后**:<br>如以上方案都无法解决请联系售后 |
+| 2-01-1 ~ 2-01-6 | CAN总线错误 | CAN总线错误，机器人停止运行 | **Python**:<br>方案A：使用`servo_restore`接口异常恢复<br><br>**myStudio**:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br>方案B：登录webapp → 右上角重新上下电<br><br>**其他**:<br>方案A：尝试整机重启<br><br>**售后**:<br>方案A：如以上方案都无法解决请联系售后 |
+| 2-02-1 ~ 2-02-6 | 短路 | 短路，机器人停止运行 | **Python**:<br>方案A：使用`servo_restore`接口异常恢复<br><br>**myStudio**:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**售后**:<br>方案A：如以上方案都无法解决请联系售后 |
+| 2-03-1 ~ 2-03-6 | 关节接收到无效数据 | 无效的设置数据 | **myStudio**:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**售后**:<br>方案A：如以上方案都无法解决请联系售后 |
+| 2-04-1 ~ 2-04-6 | 控制错误 | 控制错误 | **Python**:<br>方案A：使用`servo_restore`接口异常恢复<br><br>**myStudio**:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**其他**:<br>方案A：检测是否撞到硬件限位、关节放松手动转动是否正常<br><br>**售后**:<br>方案A：如以上方案都无法解决请联系售后 |
+| 2-05-1 ~ 2-05-6 | CAN通信错误 | CAN通信错误 | **Python**:<br>方案A：使用`servo_restore`接口异常恢复<br><br>**myStudio**:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**售后**:<br>方案A：如以上方案都无法解决请联系售后 |
+| 2-06-1 ~ 2-06-6 | 电机反馈错误 | 反馈错误 | **Python**:<br>方案A：使用`servo_restore`接口异常恢复<br><br>**myStudio**:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**售后**:<br>方案A：如以上方案都无法解决请联系售后 |
+| 2-07-1 ~ 2-07-6 | 正限位开关激活 | 正限位开关激活 | **myStudio**:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**售后**:<br>方案A：如以上方案都无法解决请联系售后 |
+| 2-08-1 ~ 2-08-6 | 负限位开关激活 | 负限位开关激活 | **myStudio**:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**售后**:<br>方案A：如以上方案都无法解决请联系售后 |
+| 2-09-1 ~ 2-09-6 | 过流 | 过流 | **Python**:<br>方案A：使用`servo_restore`接口异常恢复<br><br>**myStudio**:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**其他**:<br>方案A：检测是否撞到硬件限位、关节放松手动转动是否正常<br><br>**售后**:<br>方案A：如以上方案都无法解决请联系售后 |
+| 2-10-1 ~ 2-10-6 | I2t保护 | I2t保护 | **Python**:<br>方案A：使用`servo_restore`接口异常恢复<br><br>**myStudio**:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**其他**:<br>方案A：检测是否撞到硬件限位、关节放松手动转动是否正常<br><br>**售后**:<br>方案A：如以上方案都无法解决请联系售后 |
+| 2-11-1 ~ 2-11-6 | 过温 | 过温 | **Python**:<br>方案A：使用`servo_restore`接口异常恢复<br><br>**myStudio**:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**售后**:<br>方案A：如以上方案都无法解决请联系售后 |
+| 2-12-1 ~ 2-12-6 | 驱动板过温 | 驱动板过温 | **Python**:<br>方案A：使用`servo_restore`接口异常恢复<br><br>**myStudio**:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**售后**:<br>方案A：如以上方案都无法解决请联系售后 |
+| 2-13-1 ~ 2-13-6 | 过压 | 过压 | **Python**:<br>方案A：使用`servo_restore`接口异常恢复<br><br>**myStudio**:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**售后**:<br>方案A：如以上方案都无法解决请联系售后 |
+| 2-14-1 ~ 2-14-6 | 欠压 | 欠压 | **Python**:<br>方案A：使用`servo_restore`接口异常恢复<br><br>**myStudio**:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**售后**:<br>方案A：如以上方案都无法解决请联系售后 |
+| 2-15-1 ~ 2-15-6 | 命令错误 | 命令错误 | **myStudio**:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**售后**:<br>方案A：如以上方案都无法解决请联系售后 |
+| 2-16-1 ~ 2-16-6 | 启用处于非活动状态 | 启用处于非活动状态 | **myStudio**:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br>**售后**:<br>方案A：如以上方案都无法解决请联系售后 |
 
 ### 软件错误
 
@@ -123,55 +123,55 @@ MiniRobot是myCobot Pro 450机械臂的控制面板，提供了丰富的功能�
     <td style="border: 1px solid #ddd; padding: 8px;">3-01-1 ~ 3-01-6</td>
     <td style="border: 1px solid #ddd; padding: 8px;">CAN初始化异常</td>
     <td style="border: 1px solid #ddd; padding: 8px;">CAN初始化异常。表现：机器无法使能、控制等。</td>
-    <td style="border: 1px solid #ddd; padding: 8px;"><strong>其他（优先）</strong>:<br>1. 查看供电是否正常<br>2. 急停是否拍下<br><br><strong>myStudio</strong>:<br>登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br><strong>售后</strong>:<br>如以上方案都无法解决请联系售后</td>
+    <td style="border: 1px solid #ddd; padding: 8px;"><strong>其他（优先）</strong>:<br>方案A：查看供电是否正常<br>方案B：急停是否拍下<br><br><strong>myStudio</strong>:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br><strong>售后</strong>:<br>方案A：如以上方案都无法解决请联系售后</td>
   </tr>
   <tr>
     <td style="border: 1px solid #ddd; padding: 8px;">3-02-1 ~ 3-02-6</td>
     <td style="border: 1px solid #ddd; padding: 8px;">电机初始化异常</td>
     <td style="border: 1px solid #ddd; padding: 8px;">电机初始化异常。表现：机器无法正常反馈关节信息、控制等。</td>
-    <td style="border: 1px solid #ddd; padding: 8px;"><strong>其他（优先）</strong>:<br>1. 查看供电是否正常<br>2. 急停是否拍下<br><br><strong>myStudio</strong>:<br>登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br><strong>售后</strong>:<br>如以上方案都无法解决请联系售后</td>
+    <td style="border: 1px solid #ddd; padding: 8px;"><strong>其他（优先）</strong>:<br>方案A：查看供电是否正常<br>方案B：急停是否拍下<br><br><strong>myStudio</strong>:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br><strong>售后</strong>:<br>方案A：如以上方案都无法解决请联系售后</td>
   </tr>
   <tr>
     <td style="border: 1px solid #ddd; padding: 8px;">3-03-1 ~ 3-03-6</td>
     <td style="border: 1px solid #ddd; padding: 8px;">电机发送异常</td>
     <td style="border: 1px solid #ddd; padding: 8px;">电机发送异常。表现：机器位置反馈等异常。</td>
-    <td style="border: 1px solid #ddd; padding: 8px;"><strong>Python</strong>:<br>使用`servo_restore`接口异常恢复<br><br><strong>myStudio</strong>:<br>登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br><strong>售后</strong>:<br>如以上方案都无法解决请联系售后</td>
+    <td style="border: 1px solid #ddd; padding: 8px;"><strong>Python</strong>:<br>方案A：使用`servo_restore`接口异常恢复<br><br><strong>myStudio</strong>:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br><strong>售后</strong>:<br>方案A：如以上方案都无法解决请联系售后</td>
   </tr>
   <tr>
     <td style="border: 1px solid #ddd; padding: 8px;">3-04-1 ~ 3-04-6</td>
     <td style="border: 1px solid #ddd; padding: 8px;">电机接收异常</td>
     <td style="border: 1px solid #ddd; padding: 8px;">电机接收异常。表现：机器位置反馈等异常。</td>
-    <td style="border: 1px solid #ddd; padding: 8px;"><strong>Python</strong>:<br>使用`servo_restore`接口异常恢复<br><br><strong>myStudio</strong>:<br>登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br><strong>售后</strong>:<br>如以上方案都无法解决请联系售后</td>
+    <td style="border: 1px solid #ddd; padding: 8px;"><strong>Python</strong>:<br>方案A：使用`servo_restore`接口异常恢复<br><br><strong>myStudio</strong>:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br><strong>售后</strong>:<br>方案A：如以上方案都无法解决请联系售后</td>
   </tr>
   <tr>
     <td style="border: 1px solid #ddd; padding: 8px;">3-05-1 ~ 3-05-6</td>
     <td style="border: 1px solid #ddd; padding: 8px;">位置超差</td>
     <td style="border: 1px solid #ddd; padding: 8px;">位置超差。表现：机器掉使能，无法运动控制。</td>
-    <td style="border: 1px solid #ddd; padding: 8px;"><strong>Python</strong>:<br>使用`servo_restore`接口异常恢复<br><br><strong>myStudio</strong>:<br>登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br><strong>售后</strong>:<br>如以上方案都无法解决请联系售后</td>
+    <td style="border: 1px solid #ddd; padding: 8px;"><strong>Python</strong>:<br>方案A：使用`servo_restore`接口异常恢复<br><br><strong>myStudio</strong>:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br><strong>售后</strong>:<br>方案A：如以上方案都无法解决请联系售后</td>
   </tr>
   <tr>
     <td style="border: 1px solid #ddd; padding: 8px;">3-06-1 ~ 3-06-6</td>
     <td style="border: 1px solid #ddd; padding: 8px;">末端发送异常</td>
     <td style="border: 1px solid #ddd; padding: 8px;">末端发送异常。表现：末端接口反馈异常。</td>
-    <td style="border: 1px solid #ddd; padding: 8px;"><strong>Python</strong>:<br>使用`servo_restore`接口异常恢复<br><br><strong>myStudio</strong>:<br>登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br><strong>售后</strong>:<br>如以上方案都无法解决请联系售后</td>
+    <td style="border: 1px solid #ddd; padding: 8px;"><strong>Python</strong>:<br>方案A：使用`servo_restore`接口异常恢复<br><br><strong>myStudio</strong>:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br><strong>售后</strong>:<br>方案A：如以上方案都无法解决请联系售后</td>
   </tr>
   <tr>
     <td style="border: 1px solid #ddd; padding: 8px;">3-07-1 ~ 3-07-6</td>
     <td style="border: 1px solid #ddd; padding: 8px;">末端接收异常</td>
     <td style="border: 1px solid #ddd; padding: 8px;">末端接收异常。表现：末端接口反馈异常。不影响机器运动，影响末端功能（如LED、夹爪）。</td>
-    <td style="border: 1px solid #ddd; padding: 8px;"><strong>Python</strong>:<br>使用`servo_restore`接口异常恢复<br><br><strong>myStudio</strong>:<br>登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br><strong>售后</strong>:<br>如以上方案都无法解决请联系售后</td>
+    <td style="border: 1px solid #ddd; padding: 8px;"><strong>Python</strong>:<br>方案A：使用`servo_restore`接口异常恢复<br><br><strong>myStudio</strong>:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br><strong>售后</strong>:<br>方案A：如以上方案都无法解决请联系售后</td>
   </tr>
   <tr>
     <td style="border: 1px solid #ddd; padding: 8px;">3-08-1 ~ 3-08-6</td>
     <td style="border: 1px solid #ddd; padding: 8px;">电机编码器报错</td>
     <td style="border: 1px solid #ddd; padding: 8px;">电机编码器报错，编码器报错时不可运动，需要清除编码器报错。旧版电机驱动板无报错（即使报了编码器错误，软件无法反馈异常）。区分新旧：板子上带电池的为新驱动板或联系售后。</td>
-    <td style="border: 1px solid #ddd; padding: 8px;"><strong>myStudio</strong>:<br>登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br><strong>售后</strong>:<br>如以上方案都无法解决请联系售后</td>
+    <td style="border: 1px solid #ddd; padding: 8px;"><strong>myStudio</strong>:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br><strong>售后</strong>:<br>方案A：如以上方案都无法解决请联系售后</td>
   </tr>
   <tr>
     <td style="border: 1px solid #ddd; padding: 8px;">3-09-1 ~ 3-09-6</td>
     <td style="border: 1px solid #ddd; padding: 8px;">掉使能反馈</td>
     <td style="border: 1px solid #ddd; padding: 8px;">掉使能会反馈，运动前机器必须是使能状态。</td>
-    <td style="border: 1px solid #ddd; padding: 8px;"><strong>myStudio</strong>:<br>登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br><strong>售后</strong>:<br>如以上方案都无法解决请联系售后</td>
+    <td style="border: 1px solid #ddd; padding: 8px;"><strong>myStudio</strong>:<br>方案A：登录myStudio → 点击右下角状态栏 → 点击"修复"按钮<br><br><strong>售后</strong>:<br>方案A：如以上方案都无法解决请联系售后</td>
   </tr>
 </table>
 
