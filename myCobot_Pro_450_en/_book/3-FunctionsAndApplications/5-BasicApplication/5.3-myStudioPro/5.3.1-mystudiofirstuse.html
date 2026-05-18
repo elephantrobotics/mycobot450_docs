@@ -485,12 +485,25 @@
             
         </li>
     
-        <li class="chapter " data-level="4.1.2.8" data-path="../5.2-minirobot/5.2.8-Q&A.html">
+        <li class="chapter " data-level="4.1.2.8" data-path="../5.2-minirobot/5.2.8-settings.html">
             
-                <a href="../5.2-minirobot/5.2.8-Q&A.html">
+                <a href="../5.2-minirobot/5.2.8-settings.html">
             
                     
-                    5.2.8 Q&A
+                    5.2.8 Settings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.9" data-path="../5.2-minirobot/5.2.9-Q&A.html">
+            
+                <a href="../5.2-minirobot/5.2.9-Q&A.html">
+            
+                    
+                    5.2.9 Q&A
             
                 </a>
             
@@ -561,7 +574,7 @@
                 <a href="5.3.4-resource.html">
             
                     
-                    5.3.4 Firmware and Applications
+                    5.3.4 Resource Link
             
                 </a>
             
@@ -1293,8 +1306,8 @@
     
 					<section class="normal markdown-section">
 						
-						<h1 id="mystudiofirstuse">MyStudioFirstUse</h1>
-<h2 id="supported-operating-systems-for-mystudio-pro">Supported Operating Systems for myStudio Pro</h2>
+						<h1 id="first-use">First Use</h1>
+<h2 id="supported-operating-systems-for-mystudio-pro">Supported Operating Systems for myStudio Pro:</h2>
 <ul>
 <li><p>Windows</p>
 </li>
@@ -1303,7 +1316,7 @@
 <li><p>Linux arm64</p>
 </li>
 </ul>
-<h2 id="supported-modern-browsers-for-mystudio-pro">Supported Modern Browsers for myStudio Pro</h2>
+<h2 id="supported-modern-browsers-for-mystudio-pro">Supported Modern Browsers for myStudio Pro:</h2>
 <ul>
 <li><p>Chrome</p>
 </li>
@@ -1325,66 +1338,60 @@
 </blockquote>
 <h3 id="static-ip-configuration">Static IP Configuration</h3>
 <ul>
-<li>First, you need a working network cable. Connect one end of the cable to the network port on your machine&apos;s dock and the other end to the network port on your PC.</li>
-</ul>
-<p><img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/link.png"></p>
-<ul>
-<li><p>After connecting the network cable, you need to manually configure a static IP address for your machine for subsequent SSH connections. The configuration steps are as follows:</p>
+<li><p>First, you need a working network cable. Connect one end of the cable to the network port on your computer&apos;s dock, and the other end to the network port on your PC.</p>
+<p>  <img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/link.png"></p>
+</li>
+<li><p>After connecting the network cable, you need to manually configure the machine&apos;s <code>static IP</code> for subsequent <code>SSH connection</code>. The configuration steps are as follows:</p>
 </li>
 <li><p>Open Control Panel, select <code>Network and Internet</code>, and then click <code>View network status and tasks</code>.</p>
+<p>  <img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/control.png"></p>
 </li>
-</ul>
-<p><img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/control.png"></p>
-<ul>
-<li>This will take you to the <code>Network and Sharing Center</code> panel. Select <code>Change adapter settings</code> in the left-hand menu and then click to open the <code>Network Connections</code> panel.</li>
-</ul>
-<p><img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/internet.png"></p>
-<ul>
-<li>Select <code>Ethernet</code> and right-click to open the <code>Properties</code> panel. Then, left-click to select <code>Internet Protocol Version 4 (TCP/IPv4)</code>, and finally click the Properties button at the bottom.</li>
-</ul>
-<p><img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/internet1.png"></p>
-<ul>
-<li>In the Properties panel, click <code>Use the following IP address (S)</code>, configure a static IP address <code>192.168.0.x</code>, and a subnet mask <code>255.255.255.0</code>.</li>
-</ul>
-<p><img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/internet2.png"></p>
-<ul>
+<li><p>Now you are in the <code>Network and Sharing Center</code> panel. Select <code>Change adapter settings</code> in the left menu bar and click to open the <code>Network Connections</code> panel.</p>
+<p>  <img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/internet.png"></p>
+</li>
+<li><p>Select <code>Ethernet</code> and right-click to open the <code>Properties</code> panel. Then, left-click to select <code>Internet Protocol Version 4 (TCP/IPv4)</code>, and finally click the Properties button at the bottom.</p>
+<p>  <img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/internet1.png"></p>
+</li>
+<li><p>In the Properties panel, click <code>Use the following IP address (S)</code>, configure a static IP address <code>192.168.0.x</code>, and a subnet mask <code>255.255.255.0</code>.</p>
+<p>  <img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/internet2.png"></p>
+</li>
 <li><p>Finally, click OK to close the corresponding configuration panel.</p>
 </li>
 <li><p>To verify successful static IP configuration, press <code>Win+R</code> to open the Run window, then type <code>cmd</code> to open the Windows Command Prompt. Type <code>ping 192.168.0.232</code> and press Enter. If the following output is displayed, the static IP configuration is successful and the network cable connection is normal.</p>
+<p>  <img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/ping.png"></p>
 </li>
 </ul>
-<p><img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/ping.png"></p>
 <h3 id="starting-the-server-program">Starting the Server Program</h3>
 <blockquote>
-<p>Note: The system has already been configured to enable the auto-start service. The following steps are instructions for manual startup.</p>
+<p>Note: The system has already configured to enable automatic startup. The following steps are for manual startup instructions. - You can log in to the machine system via SSH to operate and control it. This chapter uses the MobaXterm graphical tool as an example.</p>
 </blockquote>
 <ul>
-<li><p>You can log in to the machine system via <code>ssh</code> for operation and control. This chapter uses the <code>MobaXterm</code> graphical tool as an example.</p>
+<li><p>Open the application, click &quot;Session&quot; in the upper left corner to bring up the panel, select &quot;SSH&quot; connection, enter the corresponding &quot;Remote host,&quot; and click &quot;Confirm.&quot;</p>
+<p>  <img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/session.png"></p>
 </li>
-<li><p>Open the application, click the <code>Session</code> button in the top left corner to bring up the panel, select <code>SSH</code> to connect, enter the corresponding <code>Remote host</code>, and click &quot;Confirm&quot;.</p>
+<li><p>After a successful connection, the panel will ask you to enter your &quot;username&quot; and &quot;password&quot; (both are &quot;root&quot; by default) and press Enter to log in to the system.</p>
+<p>  <img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/session1.png"></p>
+</li>
+<li><p>The MyCobot Pro 450 server program is located by default in the following path: <code>/root/MyCobot450/bin</code>. Then, use the command to view the files in the current directory to check if the corresponding executable file exists. The executable file name is usually <code>MyCobotPro</code>.</p>
+</li>
+<li><p>The MyCobot Pro 450 server program is located by default in the following path: <code>/root/MyCobot450/bin</code>. Use the command to view the files in the current directory to check if the corresponding <code>executable file</code> exists. The executable file name is usually <code>MyCobotPro</code>.</p>
+<pre><code class="lang-bash">  <span class="hljs-built_in">cd</span> /root/MyCobot450/bin
+</code></pre>
+<p>  <img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/session2.png"></p>
+<pre><code class="lang-bash">  ls
+</code></pre>
+</li>
+<li><p>Executing the server file, if the terminal does not report any error messages and outputs the following information, then the file has run successfully.</p>
+<pre><code class="lang-bash">  ./MyCobotPro
+</code></pre>
+<p>  <img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/mycobotpro.png"></p>
+</li>
+<li><p>Executing the robot control service script. If the terminal outputs the following information without errors, the file has run successfully.</p>
+<pre><code class="lang-bash">  /opt/webapp/api/launcher.sh
+</code></pre>
+<p>  <img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/backend-startup.png"></p>
 </li>
 </ul>
-<p><img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/session.png"></p>
-<ul>
-<li>After a successful connection, the panel will ask you to enter your <code>username</code> and <code>password</code> (both are <code>root</code> by default) and press Enter to log in to the system.</li>
-</ul>
-<p><img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/session2.png"></p>
-<ul>
-<li>The MyCobot Pro 450 server program is located by default in the following path: <code>/root/MyCobot450/bin</code>. Use the command to view the files in the current directory to check if the corresponding <code>executable file</code> exists. The executable file name is usually <code>MyCobotPro</code>.</li>
-</ul>
-<p><img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/session2.png"></p>
-<pre><code class="lang-bash">ls
-</code></pre>
-<ul>
-<li>Executing the server file. If the terminal outputs the following information without any error messages, the file has run successfully.</li>
-</ul>
-<pre><code class="lang-bash">./MyCobotPro
-</code></pre>
-<p><img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/mycobotpro.png"></p>
-<p>If the robot control service script is executed and the terminal does not report an error and outputs the following information, the file runs successfully.</p>
-<pre><code class="lang-bash">/opt/webapp/api/launcher.sh
-</code></pre>
-<p><img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/backend-startup.png"></p>
 <p>Of course, you can also log in and operate using the <code>cmd</code> panel. The specific steps are as follows (taking Windows as an example):</p>
 <p>Use <code>win + r</code> to open the <code>cmd</code> panel and enter the following command.</p>
 <ul>
@@ -1395,45 +1402,44 @@
 </ul>
 <p>Then enter the login password <code>root</code></p>
 <p><img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/cmd.png"></p>
-<p>Next, follow the steps above to run the server program.</p>
+<p>Next, follow the steps above to run the server program. By default, the server file and robot control services start automatically on boot.</p>
 <h3 id="software-configuration">Software Configuration</h3>
 <blockquote>
-<p>Before using myStudio Pro, ensure that a browser, such as Chrome / Edge / Safari or other modern browsers, is installed on your computer.</p>
+<p>Before using myStudio Pro, please ensure that a browser, such as Chrome / Edge / Safari or other modern browsers, is installed on your computer.</p>
 </blockquote>
 <h3 id="accessing-mystudio-pro">Accessing myStudio Pro</h3>
 <blockquote>
-<p>myStudio Pro is a web application and does not require installation. It can be used in a browser via IP address.</p>
+<p>myStudio Pro is a web application that does not require installation and can be used in a browser via IP address.</p>
 </blockquote>
 <ul>
-<li>In the <code>ssh</code> connection terminal, enter <code>ifconfig</code> to view, configure, and manage network interface parameters, and confirm the <code>IP</code>.</li>
-</ul>
-<pre><code class="lang-bash">ifconfig
+<li><p>In the SSH terminal, type <code>ifconfig</code> to view, configure, and manage network interface parameters, and confirm the <code>IP</code>.</p>
+<pre><code class="lang-bash">
+  ifconfig
 </code></pre>
-<p><img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/ifconfig.png"></p>
-<ul>
-<li>Then enter the <code>IP</code> and port number (default deployment to port 8000) into the browser&apos;s <code>URL</code> address. Note: the <code>http</code> protocol must be included. The complete address is as follows:</li>
-</ul>
-<pre><code class="lang-bash">http://&lt;robotic arm system IP&gt;:&lt;port number&gt;
+<p>  <img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/ifconfig.png"></p>
+</li>
+<li><p>Then enter the <code>IP</code> and port number (default deployment to port 8000) into the browser&apos;s <code>URL</code> address. Note: You need to include the <code>http</code> protocol. The complete address is as follows:</p>
+<pre><code class="lang-bash">
+  http://&lt;robotic arm system IP&gt;:&lt;port number&gt;
 </code></pre>
-<ul>
+</li>
 <li><blockquote>
-<p>Note: If you access myStudio Pro via the LAN1 network port, the system will perform an automatic login operation. After the login is completed, you will automatically enter the main page</p>
+<p>Note: If you are using the LAN1 network port to access myStudio Pro, the system will automatically log in. After logging in, you will automatically enter the main page.</p>
 </blockquote>
 </li>
 <li><blockquote>
-<p>When you access myStudio Pro using the LAN2 or WLAN network port, you need to log in first. The default username and password are <code>admin</code> and <code>123</code>. When the browser loads the login page, enter the default password and click the &apos;Login&apos; button to perform the login operation.</p>
+<p>When you are using the LAN2 or WLAN network port to access myStudio Pro, you need to log in first. The default username and password are <code>admin</code> and <code>123</code> respectively. When the browser loads the login page, enter the default password and click the <code>login</code> button to log in.</p>
 </blockquote>
 </li>
 <li><blockquote>
-<p><a href="5.3.5-setting.html#8-account-settings">How to modify the default login account?</a></p>
+<p><a href="5.3.5-setting.html#8-Account%20Settings">How to change the default login account?</a></p>
 </blockquote>
+<p>  <img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/login.png"></p>
+</li>
+<li><p>When the browser renders the page, it means that myStudio Pro has been successfully accessed.</p>
+<p>  <img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/login-success.png"></p>
 </li>
 </ul>
-<p><img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/login.png"></p>
-<ul>
-<li>When the browser renders the page, it means that myStudio Pro has been successfully accessed.</li>
-</ul>
-<p><img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5.myBlockly/preparations/login-success.png"></p>
 <p><a href="./">&#x2190; Previous Chapter</a> | <a href="5.3.2-myBlockly.html">Next Chapter &#x2192;</a></p>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
 						
@@ -1477,7 +1483,7 @@
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"5.3.1 MyStudioFirstUse","level":"4.1.3.1","depth":3,"next":{"title":"5.3.2 MyBlockly","level":"4.1.3.2","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.2-myBlockly.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.2-myBlockly.md","articles":[]},"previous":{"title":"5.3 MyStudio Pro","level":"4.1.3","depth":2,"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/README.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/README.md","articles":[{"title":"5.3.1 MyStudioFirstUse","level":"4.1.3.1","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.1-mystudiofirstuse.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.1-mystudiofirstuse.md","articles":[]},{"title":"5.3.2 MyBlockly","level":"4.1.3.2","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.2-myBlockly.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.2-myBlockly.md","articles":[]},{"title":"5.3.3 QuickMove","level":"4.1.3.3","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.3-quickmove.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.3-quickmove.md","articles":[]},{"title":"5.3.4 Firmware and Applications","level":"4.1.3.4","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.4-resource.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.4-resource.md","articles":[]},{"title":"5.3.5 Setting","level":"4.1.3.5","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.5-setting.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.5-setting.md","articles":[]},{"title":"5.3.6 Modbus","level":"4.1.3.6","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.6-modbus.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.6-modbus.md","articles":[]},{"title":"5.3.7 Q&A","level":"4.1.3.7","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.7-Q&A.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.7-Q&A.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"/sidebar.css"}},"file":{"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.1-mystudiofirstuse.md","mtime":"2025-12-17T06:26:52.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-03-09T02:46:42.295Z"},"basePath":"../../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"5.3.1 MyStudioFirstUse","level":"4.1.3.1","depth":3,"next":{"title":"5.3.2 MyBlockly","level":"4.1.3.2","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.2-myBlockly.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.2-myBlockly.md","articles":[]},"previous":{"title":"5.3 MyStudio Pro","level":"4.1.3","depth":2,"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/README.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/README.md","articles":[{"title":"5.3.1 MyStudioFirstUse","level":"4.1.3.1","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.1-mystudiofirstuse.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.1-mystudiofirstuse.md","articles":[]},{"title":"5.3.2 MyBlockly","level":"4.1.3.2","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.2-myBlockly.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.2-myBlockly.md","articles":[]},{"title":"5.3.3 QuickMove","level":"4.1.3.3","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.3-quickmove.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.3-quickmove.md","articles":[]},{"title":"5.3.4 Resource Link","level":"4.1.3.4","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.4-resource.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.4-resource.md","articles":[]},{"title":"5.3.5 Setting","level":"4.1.3.5","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.5-setting.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.5-setting.md","articles":[]},{"title":"5.3.6 Modbus","level":"4.1.3.6","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.6-modbus.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.6-modbus.md","articles":[]},{"title":"5.3.7 Q&A","level":"4.1.3.7","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.7-Q&A.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.7-Q&A.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"/sidebar.css"}},"file":{"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.1-mystudiofirstuse.md","mtime":"2026-03-10T10:48:48.091Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-03-16T03:45:29.791Z"},"basePath":"../../..","book":{"language":""}});
 		});
 	</script>
 </div>
