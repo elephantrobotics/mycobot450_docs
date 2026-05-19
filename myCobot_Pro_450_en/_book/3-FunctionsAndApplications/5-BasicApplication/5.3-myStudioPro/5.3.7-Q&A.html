@@ -561,7 +561,7 @@
                 <a href="5.3.4-resource.html">
             
                     
-                    5.3.4 Firmware and Applications
+                    5.3.4 Resource Link
             
                 </a>
             
@@ -936,9 +936,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2.4" data-path="../../6.developmentGuide/6.4-Cplus/README1.html">
+        <li class="chapter " data-level="4.2.4" data-path="../../6.developmentGuide/6.4-Cplus/">
             
-                <a href="../../6.developmentGuide/6.4-Cplus/README1.html">
+                <a href="../../6.developmentGuide/6.4-Cplus/">
             
                     
                     6.4 C++
@@ -947,14 +947,124 @@
             
 
             
-        </li>
+            <ul class="articles">
+                
     
-        <li class="chapter " data-level="4.2.5" data-path="../../6.developmentGuide/6.5-CommunicationProtocolPackage/6.5-communication.html">
+        <li class="chapter " data-level="4.2.4.1" data-path="../../6.developmentGuide/6.4-Cplus/6.4.1-download.html">
             
-                <a href="../../6.developmentGuide/6.5-CommunicationProtocolPackage/6.5-communication.html">
+                <a href="../../6.developmentGuide/6.4-Cplus/6.4.1-download.html">
             
                     
-                    6.5 SerialCommunicationProtocol
+                    6.4.1 EnvironmentSetup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4.2" data-path="../../6.developmentGuide/6.4-Cplus/6.4.2-build.html">
+            
+                <a href="../../6.developmentGuide/6.4-Cplus/6.4.2-build.html">
+            
+                    
+                    6.4.2 CompileAndRun
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4.3" data-path="../../6.developmentGuide/6.4-Cplus/6.4.3-angle.html">
+            
+                <a href="../../6.developmentGuide/6.4-Cplus/6.4.3-angle.html">
+            
+                    
+                    6.4.3 JointControl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4.4" data-path="../../6.developmentGuide/6.4-Cplus/6.4.4-coord.html">
+            
+                <a href="../../6.developmentGuide/6.4-Cplus/6.4.4-coord.html">
+            
+                    
+                    6.4.4 CoordinateControl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4.5" data-path="../../6.developmentGuide/6.4-Cplus/6.4.5-io.html">
+            
+                <a href="../../6.developmentGuide/6.4-Cplus/6.4.5-io.html">
+            
+                    
+                    6.4.5 IOControl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4.6" data-path="../../6.developmentGuide/6.4-Cplus/6.4.6-gripper.html">
+            
+                <a href="../../6.developmentGuide/6.4-Cplus/6.4.6-gripper.html">
+            
+                    
+                    6.4.6 GripperControl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4.7" data-path="../../6.developmentGuide/6.4-Cplus/6.4.7-API.html">
+            
+                <a href="../../6.developmentGuide/6.4-Cplus/6.4.7-API.html">
+            
+                    
+                    6.4.7 APIDescription
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4.8" data-path="../../6.developmentGuide/6.4-Cplus/6.4.8-example.html">
+            
+                <a href="../../6.developmentGuide/6.4-Cplus/6.4.8-example.html">
+            
+                    
+                    6.4.8 BasicFunctionCases
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.5" data-path="../../6.developmentGuide/6.6-isaacsim/">
+            
+                <a href="../../6.developmentGuide/6.6-isaacsim/">
+            
+                    
+                    6.6 Isaac Sim
             
                 </a>
             
@@ -1298,16 +1408,20 @@
 <p><strong>Q1: &#x200B;&#x200B;When running myBlockly, the error message <code>ModuleNotFoundError: No module named &apos;pymycobot&apos;</code> appears.</strong></p>
 <p>A: This is because the pymycobot library was not installed when setting up the Python environment. To install the pymycobot library, open a terminal (Win key + R key), type <code>pip install pymycobot --upgrade --user</code> and press Enter. You should then see &quot;pymycobot installed successfully&quot;.</p>
 <p><img width="800" align="center" src="../../../resources/3-FunctionsAndApplications/5-BasicApplication/5.2/5.2.1/img/Q&amp;A/Q&amp;A.jpg" style="zoom: 50%;"></p>
-<p><strong>Q2: The robotic arm is not responding because the <code>sleep</code> method module was not added?</strong> <strong>
-</strong>A:** The program for operating the robotic arm takes a certain amount of time to complete. Therefore, after completing one action, a <code>sleep</code> module needs to be connected to allow the robotic arm sufficient time before performing the next action (the required time depends on the specific situation and machine; the default setting for the robotic arm is a minimum sleep time of 0.5 seconds when running myBlockly). Otherwise, the robotic arm will not be able to perform the desired actions.</p>
-<p><strong>Q3:</strong> SSH connection failure</p>
+<p><strong>Q2: The robotic arm is not responding because the <code>sleep</code> method module was not added?</strong></p>
+<p><strong>A:</strong> The program for operating the robotic arm takes a certain amount of time to complete. Therefore, after completing one action, a <code>sleep</code> module needs to be connected to allow the robotic arm sufficient time before performing the next action (the required time depends on the specific situation and machine; the default setting for the robotic arm is a minimum sleep time of 0.5 seconds when running myBlockly). Otherwise, the robotic arm will not be able to perform the desired actions.</p>
+<p><strong>Q3: SSH connection failure</strong></p>
 <p><strong>A:</strong> This is generally caused by a poor network cable connection. Try unplugging and replugging the network cable from the PC. When the control panel detects the connection (usually as Ethernet), open the Windows command prompt and use the <code>ping</code> command to check. If normal output is available, try connecting via SSH. If the above steps do not solve the problem, try restarting the machine.</p>
-<p><strong>Q4:</strong> Why does the browser remain in the loading stage or fail to access the IP address? **</p>
-<p>A: Please ensure your PC and robotic arm are on the same local area network (you can ping the robotic arm&apos;s IP address from your PC). Try using a different browser (Chrome/Edge recommended) and refresh the cache (Ctrl + F5).</p>
-<p><strong>Q5:</strong> Why can&apos;t I control the gripper using blocks in myBlockly programming?</p>
-<p>A: Please check the F100 force control gripper control method. The myCobotPro 450 gripper requires the <code>modbus</code> control method. Please configure the F100 force control gripper correctly and try again.</p>
-<p><strong>Q6:</strong> Why does the firmware download on the General Firmware page fail?</p>
-<p>A: The General Firmware page requires the robotic arm to be connected to the internet. Note that this refers to the robotic arm itself, not the myStudio Pro device. Firmware cannot be downloaded without an internet connection.</p>
+<p><strong>Q4: Why does the browser remain in the loading stage or fail to access the IP address?</strong></p>
+<p><strong>A:</strong> Please ensure your PC and robotic arm are on the same local area network (you can ping the robotic arm&apos;s IP address from your PC). Try using a different browser (Chrome/Edge recommended) and refresh the cache (Ctrl + F5).</p>
+<p><strong>Q5: Why can&apos;t I control the gripper using blocks in myBlockly programming?</strong></p>
+<p><strong>A:</strong> Please check the F100 force control gripper control method. The myCobotPro 450 gripper requires the <code>modbus</code> control method. Please configure the F100 force control gripper correctly and try again.</p>
+<p><strong>Q6: When checking for updates and attempting to download the driver, it shows that the download failed and the file couldn&apos;t be successfully downloaded?</strong></p>
+<p><strong>A:</strong> Before using the &quot;Update Check&quot; function, make sure your robotic arm is connected to the internet. Please note: What is required here is that the robotic arm itself is connected to the network, not the device accessing myStudio Pro. Without internet connection, the software driver cannot be downloaded properly. Additionally, network quality will also affect the function usage. A slower network connection may result in the failure of driver download. To ensure the normal operation of the function, please check the network status in advance.</p>
+<p><strong>Q7: After the preview on the Dynamics page is completed and the calibration button is clicked, if the calibration fails during the process?</strong></p>
+<p><strong>A:</strong> Please ensure that no collision occurs to the equipment during the preview process. If you confirm that there is no error, proceed to re-calibrate. If the problem persists, please contact the after-sales service for a solution.</p>
+<p><strong>Q8: Did the software upgrade fail during the upgrade process?</strong></p>
+<p><strong>A:</strong> Please ensure that the robotic arm is powered on properly during the upgrade process. Then try to upgrade again. If the upgrade fails in all cases, please contact the after-sales service for a solution.</p>
 <hr>
 <p><a href="5.3.6-modbus.html">&#x2190; Previous Chapter</a> | <a href="5.5-blockly/5.5.1-blocklyFirstUse.md">Next Chapter &#x2192;</a></p>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
@@ -1352,7 +1466,7 @@
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"5.3.7 Q&A","level":"4.1.3.7","depth":3,"next":{"title":"5.4 SystemUpdate","level":"4.1.4","depth":2,"path":"3-FunctionsAndApplications/5-BasicApplication/5.4-system_flash.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.4-system_flash.md","articles":[]},"previous":{"title":"5.3.6 Modbus","level":"4.1.3.6","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.6-modbus.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.6-modbus.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"/sidebar.css"}},"file":{"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.7-Q&A.md","mtime":"2025-12-17T06:26:52.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-03-12T07:21:56.495Z"},"basePath":"../../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"5.3.7 Q&A","level":"4.1.3.7","depth":3,"next":{"title":"5.4 SystemUpdate","level":"4.1.4","depth":2,"path":"3-FunctionsAndApplications/5-BasicApplication/5.4-system_flash.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.4-system_flash.md","articles":[]},"previous":{"title":"5.3.6 Modbus","level":"4.1.3.6","depth":3,"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.6-modbus.md","ref":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.6-modbus.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"/sidebar.css"}},"file":{"path":"3-FunctionsAndApplications/5-BasicApplication/5.3-myStudioPro/5.3.7-Q&A.md","mtime":"2026-05-19T06:29:18.836Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-05-19T10:42:25.889Z"},"basePath":"../../..","book":{"language":""}});
 		});
 	</script>
 </div>
