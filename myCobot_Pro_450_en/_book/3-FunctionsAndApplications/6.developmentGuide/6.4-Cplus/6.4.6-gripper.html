@@ -1072,7 +1072,20 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2.5" data-path="../6.6-isaacsim/">
+        <li class="chapter " data-level="4.2.5" data-path="../6.5-CommunicationProtocolPackage/6.5-communication.html">
+            
+                <a href="../6.5-CommunicationProtocolPackage/6.5-communication.html">
+            
+                    
+                    6.5 SerialCommunicationProtocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.6" data-path="../6.6-isaacsim/">
             
                 <a href="../6.6-isaacsim/">
             
@@ -1416,131 +1429,10 @@
     
 					<section class="normal markdown-section">
 						
-						<h1 id="gripper-control">Gripper control</h1>
-<p>Gripper installation:<br></p>
-<ul>
-<li>Adaptive gripper Insert the gripper into the pins on the atom, see the following figure for details:<br>
-<img src="../../../resources/3-FunctionsAndApplications/6.developmentGuide/C%2B%2B/GrippingJaw/8-6-001.png" alt="pic"></li>
-<li>The electric gripper is plugged into the interface on the top, see the picture below:<br>
-Note: <strong>myCobot 280-m5 does not have an electric gripper, only myCobot 320-m5 has an electric gripper</strong>.<br>
-<img src="../../../resources/3-FunctionsAndApplications/6.developmentGuide/C%2B%2B/GrippingJaw/8-6-002.png" alt="pic"><h2 id="1-adaptive-gripper-control">1 Adaptive gripper control</h2>
-Supported devices: myCobot280, 320 &amp;&amp; myPalletizer 260<br>
-<strong>SetGriper(int open)</strong><br>
-Return value: None<br>
-Parameter description: Gripper switch status (0--off, 1--on)<br>
-Case: Due to delay, the first control of the gripper may not be successful, it is recommended to send it twice<br></li>
-</ul>
-<pre><code class="lang-c++"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">2</span>; i++) {&lt;br&gt;
-    mycobot::MyCobot::I().SetGriper(<span class="hljs-number">1</span>);&lt;br&gt;
-    mycobot::MyCobot::I().SleepSecond(<span class="hljs-number">3</span>);&lt;br&gt;
-    mycobot::MyCobot::I().SetGriper(<span class="hljs-number">0</span>);&lt;br&gt;
-    mycobot::MyCobot::I().SleepSecond(<span class="hljs-number">3</span>);&lt;br&gt;
-}&lt;br&gt;
-</code></pre>
-<h2 id="electric-gripper-control">Electric gripper control</h2>
-<p>Supported devices: myCobot320<br>
-<strong>SetElectricGriper(int open)</strong><br>
-Return value: None<br>
-Parameter description: Gripper switch status (0--off, 1--on)<br>
-Case: Due to delay, the first control of the gripper may not be successful, it is recommended to send it twice<br></p>
-<pre><code class="lang-c++"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">2</span>; i++) {&lt;br&gt;
-    mycobot::MyCobot::I().SetElectricGriper(<span class="hljs-number">1</span>);&lt;br&gt;
-    mycobot::MyCobot::I().SleepSecond(<span class="hljs-number">1</span>);&lt;br&gt;
-    mycobot::MyCobot::I().SetElectricGriper(<span class="hljs-number">0</span>);&lt;br&gt;
-    mycobot::MyCobot::I().SleepSecond(<span class="hljs-number">1</span>);&lt;br&gt;
-}
-</code></pre>
-<h2 id="complete-use-case">Complete use case</h2>
-<pre><code class="lang-c++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span>* argv[])</span>
-<span class="hljs-keyword">try</span> </span>{
-<span class="hljs-function">QCoreApplication <span class="hljs-title">a</span><span class="hljs-params">(argc, argv)</span></span>;
-<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>::chrono_literals;
-<span class="hljs-keyword">if</span> (!mycobot::MyCobot::I().IsControllerConnected()) {
-    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cerr</span> &lt;&lt; <span class="hljs-string">&quot;Robot is not connected\n&quot;</span>;
-    <span class="hljs-built_in">exit</span>(EXIT_FAILURE);
-}
-<span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Robot is connected\n&quot;</span>;
-mycobot::MyCobot::I().PowerOn();
-
-mycobot::MyCobot::I().SleepSecond(<span class="hljs-number">1</span>);<span class="hljs-comment">//You need to wait for 1S to complete the previous action.</span>
-
-<span class="hljs-comment">//Set io output, 2, 5, 26 are m5 output pins</span>
-mycobot::MyCobot::I().SetBasicOut(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>);
-mycobot::MyCobot::I().SleepSecond(<span class="hljs-number">1</span>);
-mycobot::MyCobot::I().SetBasicOut(<span class="hljs-number">5</span>, <span class="hljs-number">1</span>);
-mycobot::MyCobot::I().SleepSecond(<span class="hljs-number">1</span>);
-mycobot::MyCobot::I().SetBasicOut(<span class="hljs-number">26</span>, <span class="hljs-number">1</span>);
-mycobot::MyCobot::I().SleepSecond(<span class="hljs-number">1</span>);
-
-<span class="hljs-comment">//M5 input pins 35 and 36 will be delayed for the first time</span>
-<span class="hljs-comment">/*for (int i = 0; i &lt; 2; i++) {
-    std::cout &lt;&lt; &quot;35= &quot; &lt;&lt; mycobot::MyCobot::I().GetBasicIn(35) &lt;&lt; std::endl;
-    mycobot::MyCobot::I().SleepSecond(1);
-    std::cout &lt;&lt; &quot;36= &quot; &lt;&lt; mycobot::MyCobot::I().GetBasicIn(36) &lt;&lt; std::endl;
-    mycobot::MyCobot::I().SleepSecond(1);
-}*/</span>
-
-<span class="hljs-comment">//atom output pin 23 33</span>
-<span class="hljs-comment">/*mycobot::MyCobot::I().SetDigitalOut(23, 1);
-mycobot::MyCobot::I().SleepSecond(1);
-mycobot::MyCobot::I().SetDigitalOut(33, 1);
-mycobot::MyCobot::I().SleepSecond(1);*/</span>
-
-<span class="hljs-comment">//Atom input pin 22 19 There will be a delay for the first time</span>
-<span class="hljs-comment">/*for (int i = 0; i &lt; 2; i++) {
-    std::cout &lt;&lt; &quot;22= &quot; &lt;&lt; mycobot::MyCobot::I().GetDigitalIn(22) &lt;&lt; std::endl;
-    mycobot::MyCobot::I().SleepSecond(1);
-    std::cout &lt;&lt; &quot;19= &quot; &lt;&lt; mycobot::MyCobot::I().GetDigitalIn(19) &lt;&lt; std::endl;
-    mycobot::MyCobot::I().SleepSecond(1);
-}*/</span>
-
-<span class="hljs-comment">//Adaptive gripper 1--open 0--close Sent twice due to delay in the first time</span>
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">2</span>; i++) {
-    mycobot::MyCobot::I().SetGriper(<span class="hljs-number">1</span>);
-    mycobot::MyCobot::I().SleepSecond(<span class="hljs-number">3</span>);
-    mycobot::MyCobot::I().SetGriper(<span class="hljs-number">0</span>);
-    mycobot::MyCobot::I().SleepSecond(<span class="hljs-number">3</span>);
-}
-
-<span class="hljs-comment">//Electric Gripper 1-On 0-Off Sent twice due to delay in first time</span>
-<span class="hljs-comment">/*for (int i = 0; i &lt; 2; i++) {
-    mycobot::MyCobot::I().SetElectricGriper(1);
-    mycobot::MyCobot::I().SleepSecond(1);
-    mycobot::MyCobot::I().SetElectricGriper(0);
-    mycobot::MyCobot::I().SleepSecond(1);
-}*/</span>
-<span class="hljs-comment">/*mycobot::MyCobot::I().StopRobot();
-std::cout &lt;&lt; &quot;Robot is moving: &quot; &lt;&lt; mycobot::MyCobot::I().IsMoving() &lt;&lt; &quot;\n&quot;;
-mycobot::Angles angles = mycobot::MyCobot::I().GetAngles();
-std::this_thread::sleep_for(200ms);
-mycobot::Coords coords = mycobot::MyCobot::I().GetCoords();
-angles = mycobot::MyCobot::I().GetAngles();
-std::cout &lt;&lt; &quot;[&quot; &lt;&lt; angles[mycobot::J1] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J2] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J3] &lt;&lt; &quot;, &quot;
-    &lt;&lt; angles[mycobot::J4] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J5] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J6] &lt;&lt; &quot;]&quot;;
-mycobot::Angles goal_angles = { 1, 0, 0, 0, 0, 0 };
-mycobot::MyCobot::I().WriteAngles(goal_angles,180);
-while (!mycobot::MyCobot::I().IsInPosition(goal_angles, false)) {
-    angles = mycobot::MyCobot::I().GetAngles();
-    std::cout &lt;&lt; &quot;[&quot; &lt;&lt; angles[mycobot::J1] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J2] &lt;&lt; &quot;, &quot;
-        &lt;&lt; angles[mycobot::J3] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J4] &lt;&lt; &quot;, &quot;
-        &lt;&lt; angles[mycobot::J5] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J6] &lt;&lt; &quot;]&quot; &lt;&lt; std::flush;
-    std::this_thread::sleep_for(200ms);
-}
-
-//mycobot::MyCobot::I().JogAngle(mycobot::Joint::J1, 1, 5);
-std::this_thread::sleep_for(5000ms);
-mycobot::MyCobot::I().StopRobot();*/</span>
-
-<span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;
-<span class="hljs-built_in">exit</span>(EXIT_SUCCESS);
-} <span class="hljs-keyword">catch</span> (<span class="hljs-built_in">std</span>::error_code&amp;) {
-<span class="hljs-built_in">std</span>::<span class="hljs-built_in">cerr</span> &lt;&lt; <span class="hljs-string">&quot;System error. Exiting.\n&quot;</span>;
-<span class="hljs-built_in">exit</span>(EXIT_FAILURE);
-} <span class="hljs-keyword">catch</span> (...) {
-<span class="hljs-built_in">std</span>::<span class="hljs-built_in">cerr</span> &lt;&lt; <span class="hljs-string">&quot;Unknown exception thrown. Exiting.\n&quot;</span>;
-<span class="hljs-built_in">exit</span>(EXIT_FAILURE);
-}
-</code></pre>
+						<h1 id="gripper-control">Gripper Control</h1>
+<p>Editing...</p>
+<hr>
+<p><a href="6.4.5-io.html">&#x2190; Previous</a> | <a href="6.4.7-API.html">Next &#x2192;</a></p>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
 						
 					</section>
@@ -1583,7 +1475,7 @@ mycobot::MyCobot::I().StopRobot();*/</span>
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"6.4.6 GripperControl","level":"4.2.4.6","depth":3,"next":{"title":"6.4.7 APIDescription","level":"4.2.4.7","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.7-API.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.7-API.md","articles":[]},"previous":{"title":"6.4.5 IOControl","level":"4.2.4.5","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.5-io.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.5-io.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"/sidebar.css"}},"file":{"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.6-gripper.md","mtime":"2026-05-20T02:43:07.247Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-05-20T03:48:51.204Z"},"basePath":"../../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"6.4.6 GripperControl","level":"4.2.4.6","depth":3,"next":{"title":"6.4.7 APIDescription","level":"4.2.4.7","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.7-API.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.7-API.md","articles":[]},"previous":{"title":"6.4.5 IOControl","level":"4.2.4.5","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.5-io.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.5-io.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"/sidebar.css"}},"file":{"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.6-gripper.md","mtime":"2026-05-22T15:01:01.993Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-05-22T15:03:36.886Z"},"basePath":"../../..","book":{"language":""}});
 		});
 	</script>
 </div>

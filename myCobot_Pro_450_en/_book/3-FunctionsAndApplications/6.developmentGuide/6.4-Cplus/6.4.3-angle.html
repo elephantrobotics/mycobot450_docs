@@ -1072,7 +1072,20 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2.5" data-path="../6.6-isaacsim/">
+        <li class="chapter " data-level="4.2.5" data-path="../6.5-CommunicationProtocolPackage/6.5-communication.html">
+            
+                <a href="../6.5-CommunicationProtocolPackage/6.5-communication.html">
+            
+                    
+                    6.5 SerialCommunicationProtocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.6" data-path="../6.6-isaacsim/">
             
                 <a href="../6.6-isaacsim/">
             
@@ -1416,72 +1429,181 @@
     
 					<section class="normal markdown-section">
 						
-						<h1 id="joint-control">Joint control</h1>
-<p>For serial multi-joint robots, joint control is the control of the variables of each joint of the robot arm. The goal is to make each joint of the robot arm reach the target position at a certain speed. <br></p>
-<h2 id="single-joint-control">Single joint control</h2>
-<h3 id="send-single-joint-angle">Send single joint angle<br></h3>
-<p><strong>WriteAngle(Joint joint, double value, int speed = DefaultSpeed)</strong><br>
-Return value: None<br>
-Parameter description: Parameter 1: Joint number (1-6) Parameter 2: Angle (<strong>-170&#xB0;- 170&#xB0;</strong>) Parameter 3: Speed &#x200B;&#x200B;(<strong>0-100</strong>), default is <strong>30</strong><br>
-Example:<br>
-<code>mycobot::MyCobot::I().WriteAngle(mycobot::Joint::J1, 10, 30);</code></p>
-<h2 id="multi-joint-control">Multi-joint control</h2>
-<h3 id="get-all-joint-angles">Get all joint angles<br></h3>
-<p><strong>GetAngles()</strong><br>
-Return value: Angles type<br>
-Parameter description: None<br>
-Example:<br>
-<code>mycobot::Angles angles= mycobot::MyCobot::I().GetAngles();</code></p>
-<h3 id="send-all-joint-angles">Send all joint angles<br></h3>
-<p><strong>WriteAngles(const Angles&amp; angles, int speed = DefaultSpeed)</strong><br>
-Return value: None<br>
-Parameter description: Parameter 1: All angles (std::array<double, joints="">, angle range <strong>-170&#xB0;- 170&#xB0;</strong>) Parameter 2: Speed &#x200B;&#x200B;(<strong>0-100</strong>), default is 30<br>
-Example:<br></double,></p>
-<p><code>mycobot::Angles goal_angles = { 5, 5, 5, 5, 5, 5 };&lt;br&gt;</code>
-<code>mycobot::MyCobot::I().WriteAngles(goal_angles, 30);&lt;br&gt;</code></p>
-<h2 id="complete-use-case">Complete use case</h2>
-<pre><code>int main(int argc, char* argv[])
-try {
-    QCoreApplication a(argc, argv);
-    using namespace std::chrono_literals;
-    if (!mycobot::MyCobot::I().IsControllerConnected()) {
-        std::cerr &lt;&lt; &quot;Robot is not connected\n&quot;;
-        exit(EXIT_FAILURE);
-    }
-    std::cout &lt;&lt; &quot;Robot is connected\n&quot;;
-    mycobot::MyCobot::I().PowerOn();
-    mycobot::MyCobot::I().StopRobot();
-    std::cout &lt;&lt; &quot;Robot is moving: &quot; &lt;&lt; mycobot::MyCobot::I().IsMoving() &lt;&lt; &quot;\n&quot;;
-    mycobot::Angles angles = mycobot::MyCobot::I().GetAngles();
-    std::this_thread::sleep_for(200ms);
-    mycobot::Coords coords = mycobot::MyCobot::I().GetCoords();
-    angles = mycobot::MyCobot::I().GetAngles();
-    std::cout &lt;&lt; &quot;[&quot; &lt;&lt; angles[mycobot::J1] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J2] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J3] &lt;&lt; &quot;, &quot;
-        &lt;&lt; angles[mycobot::J4] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J5] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J6] &lt;&lt; &quot;]&quot;;
-    mycobot::Angles goal_angles = { 5, 5, 5, 5, 5, 5 };
-    mycobot::MyCobot::I().WriteAngles(goal_angles);
-    while (!mycobot::MyCobot::I().IsInPosition(goal_angles, false)) {
-        angles = mycobot::MyCobot::I().GetAngles();
-        std::cout &lt;&lt; &quot;[&quot; &lt;&lt; angles[mycobot::J1] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J2] &lt;&lt; &quot;, &quot;
-            &lt;&lt; angles[mycobot::J3] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J4] &lt;&lt; &quot;, &quot;
-            &lt;&lt; angles[mycobot::J5] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J6] &lt;&lt; &quot;]&quot; &lt;&lt; std::flush;
-        std::this_thread::sleep_for(200ms);
+						<h1 id="joint-control-robotarm">Joint Control (RobotArm)</h1>
+<p><strong>Joint control</strong> for a robotic arm means sending target angles to each joint or reading current angles, and moving under a given speed constraint until reaching the target. This document is based on <strong><code>RobotArm</code></strong> (<code>include/RobotArm.hpp</code>), for <strong>MyCobotPro450</strong>, with <strong>Linux</strong> + <strong>TCP</strong> communication (see <a href="6.4.1-download.html">Environment Setup</a> and <a href="6.4.2-build.html">Build</a>).</p>
+<p>All interfaces below follow the same format: <strong>Function</strong>, <strong>Return Value</strong>, <strong>Parameter Description</strong>, and <strong>Range</strong>. For the full API index, see <a href="6.4.7-API.html">API Reference</a>.</p>
+<hr>
+<h2 id="joint-angle-ranges-&#xB0;">Joint Angle Ranges (&#xB0;)</h2>
+<table>
+<thead>
+<tr>
+<th>Joint id</th>
+<th>Angle range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>-162 ~ 162</td>
+</tr>
+<tr>
+<td>2</td>
+<td>-125 ~ 125</td>
+</tr>
+<tr>
+<td>3</td>
+<td>-154 ~ 154</td>
+</tr>
+<tr>
+<td>4</td>
+<td>-162 ~ 162</td>
+</tr>
+<tr>
+<td>5</td>
+<td>-162 ~ 162</td>
+</tr>
+<tr>
+<td>6</td>
+<td>-165 ~ 165</td>
+</tr>
+</tbody>
+</table>
+<p>Speed <strong><code>sp</code> / <code>speed</code></strong>: <strong>1 ~ 100</strong> (same throughout this document).</p>
+<hr>
+<h2 id="single-joint">Single Joint</h2>
+<h3 id="int-sendangleuint8t-joint-float-angle-uint8t-sp"><code>int sendAngle(uint8_t joint, float angle, uint8_t sp)</code></h3>
+<ul>
+<li><strong>Function</strong>: Sends a target angle to the specified joint.</li>
+<li><strong>Return Value</strong>: Usually <strong><code>1</code></strong> when communication and command succeed; usually <strong><code>-1</code></strong> on failure (controller behavior prevails).</li>
+<li><strong>Parameter Description</strong>: <code>joint</code> joint index; <code>angle</code> target angle (&#xB0;); <code>sp</code> speed level.</li>
+<li><strong>Range</strong>: <code>joint</code>: <strong>1 ~ 6</strong>; <code>angle</code>: <strong>see table above</strong>; <code>sp</code>: <strong>1 ~ 100</strong>.</li>
+</ul>
+<hr>
+<h2 id="multiple-joints">Multiple Joints</h2>
+<h3 id="float-getangleuint8t-joint"><code>float getAngle(uint8_t joint)</code></h3>
+<ul>
+<li><strong>Function</strong>: Reads the current angle of one joint.</li>
+<li><strong>Return Value</strong>: Floating-point angle (&#xB0;); may return sentinel values on abnormal conditions (per integration behavior).</li>
+<li><strong>Parameter Description</strong>: <code>joint</code>.</li>
+<li><strong>Range</strong>: <code>joint</code>: <strong>1 ~ 6</strong>.</li>
+</ul>
+<h3 id="angles-getangles"><code>Angles getAngles()</code></h3>
+<ul>
+<li><strong>Function</strong>: Reads current angles of all six joints at once.</li>
+<li><strong>Return Value</strong>: <code>Angles</code> (<code>std::array&lt;float, 6&gt;</code>), indices <strong>0 ~ 5</strong> correspond to <strong>J1 ~ J6</strong>.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h3 id="int-sendanglesangles-angles-uint8t-sp"><code>int sendAngles(Angles angles, uint8_t sp)</code></h3>
+<ul>
+<li><strong>Function</strong>: Sends target angles for all six joints in one command.</li>
+<li><strong>Return Value</strong>: Usually <strong><code>1</code></strong> on success, <strong><code>-1</code></strong> on failure.</li>
+<li><strong>Parameter Description</strong>: <code>angles</code> six target angles; <code>sp</code> speed level.</li>
+<li><strong>Range</strong>: Each element follows the corresponding joint range in the table above; <code>sp</code>: <strong>1 ~ 100</strong>.</li>
+</ul>
+<h3 id="float-getjointminangleuint8t-joint--float-getjointmaxangleuint8t-joint"><code>float getJointMinAngle(uint8_t joint)</code> / <code>float getJointMaxAngle(uint8_t joint)</code></h3>
+<ul>
+<li><strong>Function</strong>: Reads software joint limits (min/max angle).</li>
+<li><strong>Return Value</strong>: Floating-point value (&#xB0;).</li>
+<li><strong>Parameter Description</strong>: <code>joint</code>.</li>
+<li><strong>Range</strong>: <code>joint</code>: <strong>1 ~ 6</strong>.</li>
+</ul>
+<hr>
+<h2 id="jog-and-auxiliary">JOG and Auxiliary</h2>
+<h3 id="int-jogangleuint8t-joint-uint8t-direction-uint8t-speed"><code>int jogAngle(uint8_t joint, uint8_t direction, uint8_t speed)</code></h3>
+<ul>
+<li><strong>Function</strong>: Continuously rotates the specified joint in one direction until a limit is reached or <code>stop()</code> is called.</li>
+<li><strong>Return Value</strong>: Usually <strong><code>1</code></strong> on success, <strong><code>-1</code></strong> on failure.</li>
+<li><strong>Parameter Description</strong>: <code>joint</code>; <code>direction</code>; <code>speed</code>.</li>
+<li><strong>Range</strong>: <code>joint</code>: <strong>1 ~ 6</strong>; <code>direction</code>: <strong>0</strong> negative, <strong>1</strong> positive; <code>speed</code>: <strong>1 ~ 100</strong>.</li>
+</ul>
+<h3 id="int-setfreemovemodebool-state--int-getfreemovemode"><code>int setFreeMoveMode(bool state)</code> / <code>int getFreeMoveMode()</code></h3>
+<ul>
+<li><strong>Function</strong>: Enables/disables free-move mode (for manual guiding), or queries current status.</li>
+<li><strong>Return Value</strong>: Set function usually returns <strong><code>1</code></strong> on success; query returns <strong><code>0</code></strong> off, <strong><code>1</code></strong> on, <strong><code>-1</code></strong> on failure.</li>
+<li><strong>Parameter Description</strong>: <code>state</code>, <code>false</code>/<code>true</code>.</li>
+<li><strong>Range</strong>: Boolean mapping to <strong>0 / 1</strong>.</li>
+</ul>
+<h3 id="int-setmotorenableduint8t-joint-bool-state--int-servorestoreuint8t-joint"><code>int setMotorEnabled(uint8_t joint, bool state)</code> / <code>int servoRestore(uint8_t joint)</code></h3>
+<ul>
+<li><strong>Function</strong>: Enables/disables one joint motor, or clears joint abnormality (restore command).</li>
+<li><strong>Return Value</strong>: Usually <strong><code>1</code></strong> on success, <strong><code>-1</code></strong> on failure.</li>
+<li><strong>Parameter Description</strong>: <code>joint</code>; <code>setMotorEnabled</code> also requires <code>state</code> (<code>false</code> disable torque, <code>true</code> enable torque).</li>
+<li><strong>Range</strong>: <code>joint</code>: <strong>1 ~ 6</strong> or <strong>254</strong> (all joints).</li>
+</ul>
+<hr>
+<h2 id="in-position-and-closed-loop-used-with-joint-commands">In-Position and Closed-Loop (Used with Joint Commands)</h2>
+<h3 id="int-isinpositionangles-anglecoords-bool-mode"><code>int isInPosition(Angles angle_coords, bool mode)</code></h3>
+<ul>
+<li><strong>Function</strong>: Checks whether the robot has reached the given 6-axis target.</li>
+<li><strong>Return Value</strong>: <strong><code>1</code></strong> reached; <strong><code>0</code></strong> not reached; <strong><code>-1</code></strong> abnormal or no valid response.</li>
+<li><strong>Parameter Description</strong>: <code>angle_coords</code> six target values; <code>mode</code> data type flag.</li>
+<li><strong>Range</strong>: For <strong>joint-angle</strong> checks, use <strong><code>mode == false</code></strong>; angles follow the joint-angle table in this chapter.</li>
+</ul>
+<h3 id="void-setwaitarrivalbool-enable--bool-getwaitarrival-const--bool-waitposarrivedint-timeoutms--30000"><code>void setWaitArrival(bool enable)</code> / <code>bool getWaitArrival() const</code> / <code>bool waitPosArrived(int timeout_ms = 30000)</code></h3>
+<ul>
+<li><strong>Function</strong>: Sets whether motion commands wait for arrival before returning; queries this switch; or blocks until arrival feedback.</li>
+<li><strong>Return Value</strong>: <code>setWaitArrival</code> has no return value; <code>getWaitArrival</code> returns <code>bool</code>; <code>waitPosArrived</code> is <strong><code>true</code></strong> when arrived and <strong><code>false</code></strong> on timeout.</li>
+<li><strong>Parameter Description</strong>: <code>enable</code>; <code>timeout_ms</code> timeout (ms).</li>
+<li><strong>Range</strong>: <code>timeout_ms</code> <strong>&gt; 0</strong>, default <strong>30000</strong>.</li>
+</ul>
+<hr>
+<h2 id="drag-teaching">Drag Teaching</h2>
+<h3 id="int-dragteachsave--int-dragteachpause--int-dragteachexecute--int-dragteachclean"><code>int dragTeachSave()</code> / <code>int dragTeachPause()</code> / <code>int dragTeachExecute()</code> / <code>int dragTeachClean()</code></h3>
+<ul>
+<li><strong>Function</strong>: Start drag trajectory recording; pause recording; execute the recorded trajectory once; clear sampled points.</li>
+<li><strong>Return Value</strong>: Usually <strong><code>1</code></strong> on success, <strong><code>-1</code></strong> on failure.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: Recommended single recording duration <strong>&#x2264; 120 s</strong>.</li>
+</ul>
+<hr>
+<h2 id="example-excerpt">Example (Excerpt)</h2>
+<p>The following example assumes TCP connectivity to the robot-side service is already available. It only demonstrates joint-related calls. Add error handling and thread-safety logic according to your project requirements.</p>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;RobotArm.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;config.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;thread&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;chrono&gt;</span></span>
+
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>::chrono_literals;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+    Param p;
+    p.ip_serial = <span class="hljs-string">&quot;192.168.0.232&quot;</span>;
+    p.port_baud = <span class="hljs-number">4500</span>;
+
+    <span class="hljs-function">RobotArm <span class="hljs-title">arm</span><span class="hljs-params">(TCP_COMM, p)</span></span>;
+
+    <span class="hljs-keyword">if</span> (arm.powerOn() != <span class="hljs-number">1</span>) {
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cerr</span> &lt;&lt; <span class="hljs-string">&quot;powerOn failed\n&quot;</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
     }
 
-    mycobot::MyCobot::I().JogAngle(mycobot::Joint::J1, 1, 5);
-    std::this_thread::sleep_for(5000ms);
-    mycobot::MyCobot::I().StopRobot();
+    Angles cur = arm.getAngles();
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;J1=&quot;</span> &lt;&lt; cur[<span class="hljs-number">0</span>] &lt;&lt; <span class="hljs-string">&quot; ...\n&quot;</span>;
 
-    std::cout &lt;&lt; &quot;\n&quot;;
-    exit(EXIT_SUCCESS);
-} catch (std::error_code&amp;) {
-    std::cerr &lt;&lt; &quot;System error. Exiting.\n&quot;;
-    exit(EXIT_FAILURE);
-} catch (...) {
-    std::cerr &lt;&lt; &quot;Unknown exception thrown. Exiting.\n&quot;;
-    exit(EXIT_FAILURE);
+    Angles goal = {<span class="hljs-number">5.f</span>, <span class="hljs-number">5.f</span>, <span class="hljs-number">5.f</span>, <span class="hljs-number">-5.</span>f, <span class="hljs-number">5.f</span>, <span class="hljs-number">5.f</span>};
+    <span class="hljs-keyword">if</span> (arm.sendAngles(goal, <span class="hljs-number">30</span>) != <span class="hljs-number">1</span>) {
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cerr</span> &lt;&lt; <span class="hljs-string">&quot;sendAngles failed\n&quot;</span>;
+    }
+
+    <span class="hljs-keyword">while</span> (arm.isInPosition(goal, <span class="hljs-literal">false</span>) != <span class="hljs-number">1</span>) {
+        cur = arm.getAngles();
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;J1=&quot;</span> &lt;&lt; cur[<span class="hljs-number">0</span>] &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;
+        <span class="hljs-built_in">std</span>::this_thread::sleep_for(<span class="hljs-number">200</span>ms);
+    }
+
+    arm.jogAngle(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">30</span>);
+    <span class="hljs-built_in">std</span>::this_thread::sleep_for(<span class="hljs-number">2</span>s);
+    arm.stop();
+
+    arm.powerOff();
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
 }
-</code></pre> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+</code></pre>
+<hr>
+<p><a href="6.4.2-build.html">&#x2190; Previous</a> | <a href="6.4.4-coord.html">Next &#x2192;</a></p>
+ <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
 						
 					</section>
 					
@@ -1523,7 +1645,7 @@ try {
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"6.4.3 JointControl","level":"4.2.4.3","depth":3,"next":{"title":"6.4.4 CoordinateControl","level":"4.2.4.4","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.4-coord.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.4-coord.md","articles":[]},"previous":{"title":"6.4.2 CompileAndRun","level":"4.2.4.2","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.2-build.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.2-build.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"/sidebar.css"}},"file":{"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.3-angle.md","mtime":"2026-05-20T02:43:07.242Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-05-20T03:48:51.204Z"},"basePath":"../../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"6.4.3 JointControl","level":"4.2.4.3","depth":3,"next":{"title":"6.4.4 CoordinateControl","level":"4.2.4.4","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.4-coord.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.4-coord.md","articles":[]},"previous":{"title":"6.4.2 CompileAndRun","level":"4.2.4.2","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.2-build.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.2-build.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"/sidebar.css"}},"file":{"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.3-angle.md","mtime":"2026-05-22T14:49:01.142Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-05-22T15:03:36.886Z"},"basePath":"../../..","book":{"language":""}});
 		});
 	</script>
 </div>

@@ -1072,7 +1072,20 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2.5" data-path="../6.6-isaacsim/">
+        <li class="chapter " data-level="4.2.5" data-path="../6.5-CommunicationProtocolPackage/6.5-communication.html">
+            
+                <a href="../6.5-CommunicationProtocolPackage/6.5-communication.html">
+            
+                    
+                    6.5 SerialCommunicationProtocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.6" data-path="../6.6-isaacsim/">
             
                 <a href="../6.6-isaacsim/">
             
@@ -1416,99 +1429,152 @@
     
 					<section class="normal markdown-section">
 						
-						<h1 id="coordinate-control">Coordinate control</h1>
-<p>Coordinate control allows the robotic arm to move to a specified point in a designated posture. It is divided into x, y, z, rx, ry, and rz. X, Y, and Z represent the position of the robotic arm head in space (this coordinate system is a Cartesian coordinate system), while rx, ry, and rz represent the posture of the robotic arm head at that point (this coordinate system is an Euler coordinate system).<br></p>
-<h2 id="single-parameter-control">Single parameter control</h2>
-<h3 id="send-single-parameter-coordinates">Send single-parameter coordinates<br></h3>
-<p><strong>WriteCoord(Axis axis, double value, int speed = DefaultSpeed)</strong><br>
-Return value: None<br>
-Parameter Description: Parameter 1: Coordinate number (Axis enumeration type, int: 1-6 (X-RZ)), Parameter 2: Coordinates (<strong>X, Y, Z</strong> value range <strong>-300-300.00</strong> unit mm <strong>RX, RY, RZ</strong>, value range <strong>-180-180</strong>), Parameter 3: Speed &#x200B;&#x200B;(<strong>0-100</strong>), default is <strong>30</strong><br>
-Example&#xFF1A;<br>
-<code>mycobot::MyCobot::I().WriteCoord(mycobot::Axis::X, 10, 30);</code></p>
-<h2 id="multi-parameter-control">Multi-parameter control</h2>
-<h3 id="get-all-coordinates">Get all coordinates<br></h3>
-<p><strong>GetCoords()</strong><br>
-Return value: Coords type<br> 
-Parameter description: None<br>
-Example&#xFF1A;<br>
-<code>mycobot::Coords coords = mycobot::MyCobot::I().GetCoords();</code></p>
-<h3 id="send-all-coordinates">Send all coordinates<br></h3>
-<p><strong>WriteCoords(const Coords&amp; coords, int speed = DefaultSpeed)</strong><br>
-Return value: None<br>
-Parameter Description: Parameter 1: Coordinates (<strong>X, Y, Z</strong> value range <strong>-300-300.00</strong> unit mm <strong>RX, RY, RZ</strong> value range <strong>-180-180</strong>)<br> 
-Parameter 2: Speed &#x200B;&#x200B;(<strong>0-100</strong>), default is 30<br>
-Example&#xFF1A;<br></p>
-<pre><code>mycobot::Coords goal_coords = { 5, 5, 5, 5, 5, 5 };
-mycobot::MyCobot::I().WriteCoords(goal_coords, 30);
-</code></pre><h2 id="complete-use-case">Complete use case</h2>
-<p>The following code snippet is the main entry point for the control program that controls the MyCobot robotic arm. In this program, the first step is to check if the controller is connected to the robotic arm. If the connection is successful, the program powers on the robotic arm and stops its current movement. Next, it acquires and outputs the current angle and coordinates of the robotic arm and attempts to move all joints to the specified target angle. The program continuously outputs the current angle information until the target angle is achieved. Finally, the program adjusts the angle of a specific joint and stops the robotic arm&apos;s movement after adjustment. If an error occurs during the process, the program catches the exception and exits.</p>
-<pre><code>int main(int argc, char* argv[])
-try {
-    QCoreApplication a(argc, argv); //Create a QCoreApplication object to support the Qt event loop.
+						<h1 id="coordinate-control-robotarm">Coordinate Control (RobotArm)</h1>
+<p><strong>Coordinate control</strong> means specifying the end-effector pose in the base coordinate system as <strong>[x, y, z, rx, ry, rz]</strong>: where <strong>x, y, z</strong> are positions (mm), and <strong>rx, ry, rz</strong> are orientations (&#xB0;, Euler-angle semantics follow the controller implementation). This document is based on <strong><code>RobotArm</code></strong> (<code>include/RobotArm.hpp</code>), for <strong>MyCobotPro450</strong>, with <strong>Linux</strong> + <strong>TCP</strong> communication (see <a href="6.4.1-download.html">Environment Setup</a> and <a href="6.4.2-build.html">Build</a>).</p>
+<p>All interfaces below follow the same format: <strong>Function</strong>, <strong>Return Value</strong>, <strong>Parameter Description</strong>, and <strong>Range</strong>. For the full API index, see <a href="6.4.7-API.html">API Reference</a>.</p>
+<hr>
+<h2 id="coordinate-component-ranges-mycobotpro450">Coordinate Component Ranges (MyCobotPro450)</h2>
+<table>
+<thead>
+<tr>
+<th>Axis id</th>
+<th>Component</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>x (mm)</td>
+<td>-474 ~ 474</td>
+</tr>
+<tr>
+<td>2</td>
+<td>y (mm)</td>
+<td>-474 ~ 474</td>
+</tr>
+<tr>
+<td>3</td>
+<td>z (mm)</td>
+<td>-180 ~ 677</td>
+</tr>
+<tr>
+<td>4</td>
+<td>rx (&#xB0;)</td>
+<td>-180 ~ 180</td>
+</tr>
+<tr>
+<td>5</td>
+<td>ry (&#xB0;)</td>
+<td>-180 ~ 180</td>
+</tr>
+<tr>
+<td>6</td>
+<td>rz (&#xB0;)</td>
+<td>-180 ~ 180</td>
+</tr>
+</tbody>
+</table>
+<p>Speed <strong><code>sp</code> / <code>speed</code></strong>: <strong>1 ~ 100</strong> (same throughout this document).</p>
+<hr>
+<h2 id="single-axis">Single Axis</h2>
+<h3 id="int-sendcoorduint8t-axis-float-coord-uint8t-sp"><code>int sendCoord(uint8_t axis, float coord, uint8_t sp)</code></h3>
+<ul>
+<li><strong>Function</strong>: Sends a target coordinate/orientation value for one axis.</li>
+<li><strong>Return Value</strong>: Usually <strong><code>1</code></strong> on success, <strong><code>-1</code></strong> on failure.</li>
+<li><strong>Parameter Description</strong>: <code>axis</code> is <strong>1~6</strong> (mapping to x, y, z, rx, ry, rz); <code>coord</code> is the target value; <code>sp</code> is speed level.</li>
+<li><strong>Range</strong>: <code>axis</code>: <strong>1 ~ 6</strong>; <code>coord</code>: <strong>see table above</strong>; <code>sp</code>: <strong>1 ~ 100</strong>.</li>
+</ul>
+<hr>
+<h2 id="six-axes">Six Axes</h2>
+<h3 id="coords-getcoords"><code>Coords getCoords()</code></h3>
+<ul>
+<li><strong>Function</strong>: Reads the current 6D pose <strong>[x, y, z, rx, ry, rz]</strong>.</li>
+<li><strong>Return Value</strong>: <code>Coords</code> (<code>std::array&lt;float, 6&gt;</code>), index <strong>0 ~ 5</strong> maps to <strong>axis 1 ~ 6</strong>.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h3 id="int-sendcoordscoords-coords-uint8t-sp"><code>int SendCoords(Coords coords, uint8_t sp)</code></h3>
+<ul>
+<li><strong>Function</strong>: Sends the full 6D pose in one command.</li>
+<li><strong>Return Value</strong>: Usually <strong><code>1</code></strong> on success, <strong><code>-1</code></strong> on failure.</li>
+<li><strong>Parameter Description</strong>: <code>coords</code> six components; <code>sp</code> speed level.</li>
+<li><strong>Range</strong>: Each component follows the axis ranges in the table above; <code>sp</code>: <strong>1 ~ 100</strong>.</li>
+</ul>
+<hr>
+<h2 id="coordinate-jog">Coordinate JOG</h2>
+<h3 id="int-jogcoorduint8t-axis-uint8t-direction-uint8t-speed"><code>int jogCoord(uint8_t axis, uint8_t direction, uint8_t speed)</code></h3>
+<ul>
+<li><strong>Function</strong>: Continuously moves along a specified coordinate axis in one direction until a limit is reached or <code>stop()</code> is called.</li>
+<li><strong>Return Value</strong>: Usually <strong><code>1</code></strong> on success, <strong><code>-1</code></strong> on failure.</li>
+<li><strong>Parameter Description</strong>: <code>axis</code>; <code>direction</code>; <code>speed</code>.</li>
+<li><strong>Range</strong>: <code>axis</code>: <strong>1 ~ 6</strong>; <code>direction</code>: <strong>0</strong> negative, <strong>1</strong> positive; <code>speed</code>: <strong>1 ~ 100</strong>.</li>
+</ul>
+<hr>
+<h2 id="in-position-check-coordinate-target">In-Position Check (Coordinate Target)</h2>
+<h3 id="int-isinpositionangles-anglecoords-bool-mode"><code>int isInPosition(Angles angle_coords, bool mode)</code></h3>
+<ul>
+<li><strong>Function</strong>: Checks whether the end-effector has reached a given 6D target. For coordinate mode, set the second argument to <strong><code>true</code></strong> (the underlying type is still <code>std::array&lt;float, 6&gt;</code> for both <code>Angles</code>/<code>Coords</code>).</li>
+<li><strong>Return Value</strong>: <strong><code>1</code></strong> reached; <strong><code>0</code></strong> not reached; <strong><code>-1</code></strong> abnormal or no valid response.</li>
+<li><strong>Parameter Description</strong>: <code>angle_coords</code> six target values (here representing <strong>x, y, z, rx, ry, rz</strong>); <code>mode</code>.</li>
+<li><strong>Range</strong>: For <strong>coordinate</strong> checks, use <strong><code>mode == true</code></strong>; component ranges are shown in this chapter&apos;s coordinate table.</li>
+</ul>
+<hr>
+<h2 id="motion-stop-used-with-jog-etc">Motion Stop (Used with JOG, etc.)</h2>
+<h3 id="int-stop"><code>int stop()</code></h3>
+<ul>
+<li><strong>Function</strong>: Stops the current motion.</li>
+<li><strong>Return Value</strong>: Usually <strong><code>1</code></strong> on success, <strong><code>-1</code></strong> on failure.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<hr>
+<h2 id="example-excerpt">Example (Excerpt)</h2>
+<p>The example below demonstrates reading coordinates, sending a 6D pose, checking in-position status in coordinate mode, coordinate JOG, and stop. Ensure target points are within the robot workspace and the path is safe.</p>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;RobotArm.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;config.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;thread&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;chrono&gt;</span></span>
 
-    using namespace std::chrono_literals; // Introduce literals for time processing (e.g., 200ms).
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>::chrono_literals;
 
-    // Check if the robotic arm controller is connected.
-    if (!mycobot::MyCobot::I().IsControllerConnected()) {
-        std::cerr &lt;&lt; &quot;Robot is not connected\n&quot;; // If the connection fails, an error message will be output.
-        exit(EXIT_FAILURE); // Exit the program and return to the failure status.
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+    Param p;
+    p.ip_serial = <span class="hljs-string">&quot;192.168.0.232&quot;</span>;
+    p.port_baud = <span class="hljs-number">4500</span>;
+
+    <span class="hljs-function">RobotArm <span class="hljs-title">arm</span><span class="hljs-params">(TCP_COMM, p)</span></span>;
+
+    <span class="hljs-keyword">if</span> (arm.powerOn() != <span class="hljs-number">1</span>) {
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cerr</span> &lt;&lt; <span class="hljs-string">&quot;powerOn failed\n&quot;</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
     }
 
-    std::cout &lt;&lt; &quot;Robot is connected\n&quot;; // Output a message indicating a successful connection.
+    Coords cur = arm.getCoords();
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;x=&quot;</span> &lt;&lt; cur[<span class="hljs-number">0</span>] &lt;&lt; <span class="hljs-string">&quot; y=&quot;</span> &lt;&lt; cur[<span class="hljs-number">1</span>] &lt;&lt; <span class="hljs-string">&quot; z=&quot;</span> &lt;&lt; cur[<span class="hljs-number">2</span>] &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;
 
-    mycobot::MyCobot::I().PowerOn(); // Power on and start the robotic arm
-    mycobot::MyCobot::I().StopRobot(); // Stop all movements of the robotic arm
-
-    // Check if the robotic arm is moving and output its status.
-    std::cout &lt;&lt; &quot;Robot is moving: &quot; &lt;&lt; mycobot::MyCobot::I().IsMoving() &lt;&lt; &quot;\n&quot;;
-
-    // Get the current angles of each joint of the robotic arm
-    mycobot::Angles angles = mycobot::MyCobot::I().GetAngles();
-    std::this_thread::sleep_for(200ms); // Delay 200 milliseconds
-
-    // Get the current position coordinates of the robotic arm&apos;s end effector
-    mycobot::Coords coords = mycobot::MyCobot::I().GetCoords();
-
-    // Obtain the angles of each joint again.
-    angles = mycobot::MyCobot::I().GetAngles();
-
-    // Output the angles of each joint
-    std::cout &lt;&lt; &quot;[&quot; &lt;&lt; angles[mycobot::J1] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J2] &lt;&lt; &quot;, &quot; 
-              &lt;&lt; angles[mycobot::J3] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J4] &lt;&lt; &quot;, &quot; 
-              &lt;&lt; angles[mycobot::J5] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J6] &lt;&lt; &quot;]&quot;;
-
-    // Define a target angle array, where all joints move to 5 degrees.
-    mycobot::Angles goal_angles = { 5, 5, 5, 5, 5, 5 };
-    mycobot::MyCobot::I().WriteAngles(goal_angles); // Move the robotic arm to the target angle.
-
-    // Waiting for the robotic arm to move to the target position
-    while (!mycobot::MyCobot::I().IsInPosition(goal_angles, false)) {
-        angles = mycobot::MyCobot::I().GetAngles(); //Get the current angle
-        std::cout &lt;&lt; &quot;[&quot; &lt;&lt; angles[mycobot::J1] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J2] &lt;&lt; &quot;, &quot;
-                  &lt;&lt; angles[mycobot::J3] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J4] &lt;&lt; &quot;, &quot;
-                  &lt;&lt; angles[mycobot::J5] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J6] &lt;&lt; &quot;]&quot; &lt;&lt; std::flush;
-        std::this_thread::sleep_for(200ms); // Each loop is delayed by 200 milliseconds.
+    Coords goal = {<span class="hljs-number">200.f</span>, <span class="hljs-number">100.f</span>, <span class="hljs-number">250.f</span>, <span class="hljs-number">0.f</span>, <span class="hljs-number">0.f</span>, <span class="hljs-number">0.f</span>}; <span class="hljs-comment">// Set target based on current real robot pose</span>
+    <span class="hljs-keyword">if</span> (arm.SendCoords(goal, <span class="hljs-number">30</span>) != <span class="hljs-number">1</span>) {
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cerr</span> &lt;&lt; <span class="hljs-string">&quot;SendCoords failed\n&quot;</span>;
     }
 
-    // Adjust the angle of joint J1 by 1 degree, at a speed of 5.
-    mycobot::MyCobot::I().JogAngle(mycobot::Joint::J1, 1, 5);
-    std::this_thread::sleep_for(5000ms); // Delay 5 seconds
+    <span class="hljs-keyword">while</span> (arm.isInPosition(goal, <span class="hljs-literal">true</span>) != <span class="hljs-number">1</span>) {
+        cur = arm.getCoords();
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;x=&quot;</span> &lt;&lt; cur[<span class="hljs-number">0</span>] &lt;&lt; <span class="hljs-string">&quot; ...\n&quot;</span>;
+        <span class="hljs-built_in">std</span>::this_thread::sleep_for(<span class="hljs-number">200</span>ms);
+    }
 
-    mycobot::MyCobot::I().StopRobot(); // Stop all movements of the robotic arm
+    arm.jogCoord(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">30</span>);
+    <span class="hljs-built_in">std</span>::this_thread::sleep_for(<span class="hljs-number">2</span>s);
+    arm.stop();
 
-    std::cout &lt;&lt; &quot;\n&quot;; // Output a newline character
-    exit(EXIT_SUCCESS); // Exit the program normally
-
-} catch (std::error_code&amp;) {
-    // Catch std::error_code exceptions and output the error message.
-    std::cerr &lt;&lt; &quot;System error. Exiting.\n&quot;;
-    exit(EXIT_FAILURE); // Abnormal exit program
-} catch (...) {
-    // Catch all other exceptions and output error messages.
-    std::cerr &lt;&lt; &quot;Unknown exception thrown. Exiting.\n&quot;;
-    exit(EXIT_FAILURE); // Abnormal exit program
+    arm.powerOff();
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
 }
-</code></pre><hr>
+</code></pre>
+<hr>
+<p><a href="6.4.3-angle.html">&#x2190; Previous</a> | <a href="6.4.5-io.html">Next &#x2192;</a></p>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
 						
 					</section>
@@ -1551,7 +1617,7 @@ try {
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"6.4.4 CoordinateControl","level":"4.2.4.4","depth":3,"next":{"title":"6.4.5 IOControl","level":"4.2.4.5","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.5-io.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.5-io.md","articles":[]},"previous":{"title":"6.4.3 JointControl","level":"4.2.4.3","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.3-angle.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.3-angle.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"/sidebar.css"}},"file":{"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.4-coord.md","mtime":"2026-05-20T02:43:07.243Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-05-20T03:48:51.204Z"},"basePath":"../../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"6.4.4 CoordinateControl","level":"4.2.4.4","depth":3,"next":{"title":"6.4.5 IOControl","level":"4.2.4.5","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.5-io.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.5-io.md","articles":[]},"previous":{"title":"6.4.3 JointControl","level":"4.2.4.3","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.3-angle.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.3-angle.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"/sidebar.css"}},"file":{"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.4-coord.md","mtime":"2026-05-22T14:49:01.142Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-05-22T15:03:36.886Z"},"basePath":"../../..","book":{"language":""}});
 		});
 	</script>
 </div>

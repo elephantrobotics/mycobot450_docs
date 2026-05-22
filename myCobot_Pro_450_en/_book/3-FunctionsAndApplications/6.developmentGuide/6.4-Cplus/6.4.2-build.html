@@ -1072,7 +1072,20 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2.5" data-path="../6.6-isaacsim/">
+        <li class="chapter " data-level="4.2.5" data-path="../6.5-CommunicationProtocolPackage/6.5-communication.html">
+            
+                <a href="../6.5-CommunicationProtocolPackage/6.5-communication.html">
+            
+                    
+                    6.5 SerialCommunicationProtocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.6" data-path="../6.6-isaacsim/">
             
                 <a href="../6.6-isaacsim/">
             
@@ -1416,64 +1429,70 @@
     
 					<section class="normal markdown-section">
 						
-						<h1 id="compile-and-run-mycobotcpp">Compile and run myCobotCpp</h1>
-<h2 id="download">Download</h2>
-<h3 id="source-code-download">Source code download</h3>
-<p>Download <a href="https://github.com/elephantrobotics/myCobotCpp/" target="_blank">MycobotCpp</a> from github. <br></p>
-<h3 id="dynamic-library-download">Dynamic library download</h3>
-<p><a href="https://github.com/elephantrobotics/myCobotCpp/tags" target="_blank">Dependency library download</a> (Download the latest version, pay attention to select <strong>Windows</strong> or <strong>Linux</strong>, the suffix .zip is the library required for Windows, and .tar.gz is the library required for Linux)<br></p>
-<h2 id="run-under-windows">Run under Windows</h2>
-<h3 id="compile">Compile</h3>
-<p>Open MycobotCpp in vs2019, select x64-Release to compile (next to the startup item, if not, click the drop-down box--&#x300B;Manage Configuration to add it), and also select release in the configuration of cmake settings, and finally click Generate. Note: Be sure to select x64-Release for compilation, as shown in the figure below: <br>
-<img src="../../../resources/3-FunctionsAndApplications/6.developmentGuide/C%2B%2B/compile/8-2-2.1-001.gif" alt="pic"></p>
-<h3 id="run">Run</h3>
+						<h1 id="robotdriver-build-and-run-linux">RobotDriver Build and Run (Linux)</h1>
+<p>This document describes how to obtain source code, build with CMake, and run <strong>RobotDriver</strong> on <strong>Linux</strong>. When integrating with <strong>MyCobotPro450</strong>, ensure the robot-side network service is properly ready in your actual environment (such as TCP IP and port).</p>
+<hr>
+<h2 id="get-source-code">Get Source Code</h2>
+<p>Official organization repository (GitHub): <strong><a href="https://github.com/elephantrobotics/RobotDriver" target="_blank">https://github.com/elephantrobotics/RobotDriver</a></strong></p>
+<pre><code class="lang-bash">git <span class="hljs-built_in">clone</span> https://github.com/elephantrobotics/RobotDriver.git
+<span class="hljs-built_in">cd</span> RobotDriver
+</code></pre>
+<p>If the repository name/path under the organization differs, use the actually published <strong>RobotDriver</strong> repo listed on <a href="https://github.com/elephantrobotics/" target="_blank">Elephant Robotics &#xB7; GitHub</a>.</p>
+<hr>
+<h2 id="method-1-one-click-build-scripts-recommended">Method 1: One-Click Build Scripts (Recommended)</h2>
+<p>Two Bash scripts are provided at repository root. They clean/recreate <strong><code>build/</code></strong>, then reconfigure and build, producing <strong><code>build/RobotDriver</code></strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Script</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>build_on_linux_no_realtime.sh</code></td>
+<td><code>ROBOT_USE_RT_THREADS=OFF</code>. Normal users can usually run the generated executable directly, with <strong>no</strong> real-time scheduling permissions required.</td>
+</tr>
+<tr>
+<td><code>build_on_linux_realtime.sh</code></td>
+<td>Real-time threads enabled by default (<code>ROBOT_USE_RT_THREADS=ON</code>). Runtime often requires <strong>root</strong> or capabilities such as <strong>CAP_SYS_NICE / rtprio</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p>For first-time use, grant execute permissions and run (from repository root):</p>
+<pre><code class="lang-bash">chmod +x build_on_linux_no_realtime.sh build_on_linux_realtime.sh
+./build_on_linux_no_realtime.sh
+</code></pre>
+<p>Run example after successful build:</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">cd</span> build
+./RobotDriver
+</code></pre>
+<p>Connection parameters (for example, IP/port) should follow in-program configuration or CLI help.</p>
+<hr>
+<h2 id="method-2-manual-cmake">Method 2: Manual CMake</h2>
+<p>Run in the repository <strong>root</strong> (same directory as <code>CMakeLists.txt</code>):</p>
+<pre><code class="lang-bash">mkdir -p build
+<span class="hljs-built_in">cd</span> build
+cmake ..
+cmake --build .
+</code></pre>
+<p>Optional: disable real-time threads (same behavior as <code>build_on_linux_no_realtime.sh</code>):</p>
+<pre><code class="lang-bash">cmake .. -DROBOT_USE_RT_THREADS=OFF
+cmake --build .
+</code></pre>
+<p>Optional: Release build:</p>
+<pre><code class="lang-bash">cmake .. -DCMAKE_BUILD_TYPE=Release
+cmake --build .
+</code></pre>
+<p>After compilation, the executable is located at <strong><code>build/RobotDriver</code></strong> by default (same as script output path).</p>
+<hr>
+<h2 id="notes">Notes</h2>
 <ul>
-<li>Add library files: add .lib to myCobotCpp/lib, and add .lib and .dll to the same directory as myCobotCppExample.exe, such as out/build/x64-Release/bin (.lib and .dll are in the myCobotCpp-0.0.3-windows-msvc-x86_64.zip compressed package) <br></li>
-<li>Run: Select Startup (next to the green play button, that is, next to the Run button), pull down and select myCobotCppEXample.exe (bin\myCobotCppExample.exe), and click Run, as shown in the figure below: <br>
-<img src="../../../resources/3-FunctionsAndApplications/6.developmentGuide/C%2B%2B/compile/8-2-2.1-002.gif" alt="pic"><h3 id="common-problems-and-solutions-">Common problems and solutions: <br></h3>
-Runtime error: <br></li>
-<li>If myCobotCpp.dll is missing, put the myCobotCpp.dll previously placed in the lib directory into the directory where mycobotcppexample.exe is located <br></li>
-<li>If QT5Core.dll is missing, open qt command (search QT in the menu bar), select msvc 2017 64-bit, and execute windeployqt --release to the directory where myCobotCppExample.exe is located (such as: windeployqt --release D:\vs2019\myCobotCpp\out\build\x64-Release\bin&#xFF09; If the vs installation path is not found after executing the command here, please check the settings of vs environment variables<br></li>
-<li>After executing the above steps, if the qt5serialport.dll file is missing, copy this file in the qt installation directory (path such as: D:\qt5.12.10\5.12.10\msvc2017_64\bin) to the directory where myCobotCppExample.exe is located</li>
+<li>Project requires <strong>CMake &#x2265; 3.16</strong> and <strong>C++17</strong>. See <a href="6.4.1-download.html">previous chapter: environment setup</a>.</li>
+<li><strong>Linux only</strong> is supported. Windows / macOS build workflow is not delivered for this project.</li>
 </ul>
-<h2 id="run-under-linux">Run under Linux</h2>
-<h3 id="compile-and-build">Compile and build</h3>
-<ul>
-<li>mkdir build &amp;&amp; cd build<br></li>
-<li>cmake ..<br></li>
-<li>cmake --build .<br><h3 id="run">Run</h3>
-</li>
-<li>Copy all .so files to the lib directory<br></li>
-<li>Run the command line: ./bin/myCobotCppExample (here it is run in the build directory)</li>
-</ul>
-<h2 id="run-on-ubuntu2004">Run on Ubuntu20.04</h2>
-<h3 id="compile">Compile</h3>
-<ul>
-<li>mkdir build &amp;&amp; cd build<br></li>
-<li>cmake ..<br></li>
-<li>cmake --build .<br><h3 id="run">Run</h3>
-</li>
-<li>Copy all .so files to the lib directory (note that you should unzip them after downloading. Do not unzip them in Windows and then copy them to Ubuntu. Unzip them directly in Ubuntu, such as: tar -xvf and then drag the files directly to the terminal)<br></li>
-<li>Soft link libQt5SerialPort.so.5 (in the QT installation directory, such as: /home/&quot;username&quot;/Qt5.12.10/5.12.10/gcc_64/lib) to mycobotcpp/build/bin (do not copy directly). The command is as follows (note that you should choose your path): ln -s /home/&quot;Username&quot;/Qt5.12.10/5.12.10/gcc_64/lib/libQt5SerialPort.so.5 /home/&quot;Username&quot;/myCobotCpp/build/bin/libQt5SerialPort.so.5<br></li>
-</ul>
-<h3 id="common-problems-and-solutions">Common Problems and Solutions</h3>
-<ul>
-<li><p>Error during compilation:<br>
-Cannot find QTDIR. Solution: Check whether QTDIR is configured correctly, you can check it in the command line output: echo $QTDIR<br></p>
-</li>
-<li><p>Error during runtime:<br>
-Serial port problem: Cannot open the serial port. Solution: Modify the serial port permissions of the robot arm, you cannot directly chmod..., so you have to re-set the permissions every time you restart. Modify the file directly:<br></p>
-</li>
-<li><p>cd /etc/udev/rules.d<br></p>
-</li>
-<li>sudo gedit 20-usb-serial.rules<br></li>
-<li>Add to the file: KERNEL==&quot;ttyUSB*&quot; MODE=&quot;0777&quot;<br></li>
-<li>File not found problem: such as being unable to open or find libQt5SerialPort.so.5. Solution: Check the above step 2</li>
-</ul>
-<h2 id="note">Note</h2>
-<p>If you do not use cmake to compile, such as using it directly in MFC, configure it as shown below:<br>
-<img src="../../../resources/3-FunctionsAndApplications/6.developmentGuide/C%2B%2B/compile/8-2-4.3-001.png" alt="pic"></p>
-<p><img src="../../../resources/3-FunctionsAndApplications/6.developmentGuide/C%2B%2B/compile/8-2-4.3-002.png" alt="pic"></p>
+<hr>
+<p><a href="6.4.1-download.html">&#x2190; Previous</a> | <a href="6.4.3-angle.html">Next &#x2192;</a></p>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
 						
 					</section>
@@ -1516,7 +1535,7 @@ Serial port problem: Cannot open the serial port. Solution: Modify the serial po
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"6.4.2 CompileAndRun","level":"4.2.4.2","depth":3,"next":{"title":"6.4.3 JointControl","level":"4.2.4.3","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.3-angle.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.3-angle.md","articles":[]},"previous":{"title":"6.4.1 EnvironmentSetup","level":"4.2.4.1","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.1-download.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.1-download.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"/sidebar.css"}},"file":{"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.2-build.md","mtime":"2026-05-20T02:43:07.242Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-05-20T03:48:51.204Z"},"basePath":"../../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"6.4.2 CompileAndRun","level":"4.2.4.2","depth":3,"next":{"title":"6.4.3 JointControl","level":"4.2.4.3","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.3-angle.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.3-angle.md","articles":[]},"previous":{"title":"6.4.1 EnvironmentSetup","level":"4.2.4.1","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.1-download.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.1-download.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"/sidebar.css"}},"file":{"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.2-build.md","mtime":"2026-05-22T14:49:01.141Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-05-22T15:03:36.886Z"},"basePath":"../../..","book":{"language":""}});
 		});
 	</script>
 </div>
