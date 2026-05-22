@@ -1,6 +1,6 @@
-# C++
+# C++（RobotDriver / MyCobotPro450）
 
-**使用c++语言，您可以通过我们公司开发的c++动态库，进行自由开发（坐标控制、角度控制、io控制、夹爪控制等），控制我们公司已经研发出来的部分机器人。**<br>
+**使用 C++ 与本公司 RobotDriver 工程**（`RobotArm` 等），可在 **Linux** 下进行二次开发，完成关节控制、坐标控制及与主控的 TCP 通信等。适用于 **MyCobotPro450**；夹爪、底部/末端 IO 等能力以 Python 或其它客户端为准时，请参阅对应说明。
 
 ![pic](../../../resources/3-FunctionsAndApplications/6.developmentGuide/Cplus/Cplus.jpg)
 
@@ -12,53 +12,38 @@ C++不仅拥有计算机高效运行的实用性特征，同时还致力于提�
 
 **适用设备：**
 
-- myCobot 280
-  - myCobot 280 M5
-  - myCobot 280 for Arduino <br>
-  
-- myCobot 320
-  - myCobot 320 M5 <br>
-
-- myCobot Pro 450
-
-
+- MyCobotPro450
 
 ## 编程开发
 
-### 部分集成开发环境（IDE)
+### 推荐环境（与本工程一致）
 
-**Visual Studio (Visual C++)**<br>
-**Dev C++**<br>
-**C++ Builder**
+**Ubuntu 20.04 LTS（64 位）**、**CMake ≥ 3.16**、**gcc/g++ 9.x**、**C++17**。详见 [环境搭建](./6.4.1-download.md)。
 
 ### 编译器
 
-**Ultimate++**<br>
-**Digital Mars**<br>
-**C-Free**<br>
-**MinGW**
+**GCC**、**Clang** 等支持 **C++17** 的工具链均可（以 [环境搭建](./6.4.1-download.md) 推荐版本为准）。
 
-## C++开发使用引导
+## C++ 开发使用引导（RobotDriver）
 
-您可以根据以下指引来使用 C++对我们的机械臂进行开发
+您可按以下顺序阅读 **6.4.x** 文档，使用 **RobotDriver** 对 **MyCobotPro450** 进行开发：
 
-1.[环境搭建](8.1-download.md)
+1. [环境搭建](./6.4.1-download.md)
 
-2.[编译运行](8.2-build.md)
+2. [编译运行](./6.4.2-build.md)
 
-3.[关节控制](8.3-angle.md)
+3. [关节控制](./6.4.3-angle.md)
 
-4.[坐标控制](8.4-coord.md)
+4. [坐标控制](./6.4.4-coord.md)
 
-5.[IO控制](8.5-io.md)
+5. [IO 控制](./6.4.5-io.md)
 
-6.[夹爪控制](8.6-gripper.md)
+6. [夹爪控制](./6.4.6-gripper.md)
 
-7.[api说明](8.7-API.md)
+7. [API 说明](./6.4.7-API.md)
 
-8.[使用案例](8.8-example.md)
-
+8. [使用案例](./6.4.8-example.md)
 
 ---
 
-[← 上一章](../6.2-ROS2/6.2.4-Moveit2/README.md) | [下一章 →](./6.3.1-download.md)
+[← 上一章](../6.2-ROS2/6.2.4-Moveit2/README.md) | [下一章 →](./6.4.1-download.md)

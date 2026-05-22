@@ -1,10 +1,11 @@
 # Robot Parameters
 
-> In the first chapter, we discussed the selling points of the product and its design concept, providing you with a panoramic perspective of the high-level understanding of the product. Now, let's move on to the second chapter - Robot Parameters. This chapter will be the key to your understanding of the product's technical details. A detailed understanding of these technical parameters will not only help you fully realize the advancement and practicality of our products, but also ensure that you can use these technologies more effectively to meet your specific needs.
+> In the first chapter, we discussed the selling points of the product and its design concept, providing you with a panoramic perspective of the high-level understanding of the product. Now, let's move on to the second chapter - Robot Parameters. This chapter will be the key to your understanding of the product's technical details. A detailed understanding of these technical parameters will not only help you fully realize the advancement and practicality of our products, but also ensure that you can use these technologies more effectively to meet your specific needs.<br>
+> Important Note: The specific parameters of the robotic arm may vary depending on the version purchased. Please refer to the product specifications of the actual delivered version for the final specifications!!!
 
 ## 1. Robot Specifications
 
-<img src = ../../resources/1-ProductInformation/2.ProductParameter/main.png
+<img src="../../resources/1-ProductInformation/2.ProductParameter/main.png"
 width = "1200" align = "center">
 
 | Index | Parameters |
@@ -35,23 +36,23 @@ width = "550" align = "center">
 
 | Joints | Range |
 | :--------: | :----------:|
-| J1        | -169 ~ +169     |
-| J2        | -131 ~ +131      |
-| J3  | -159 ~ +159                   |
-| J4        | -167 ~ +167 |
-| J5   | -168 ~ +168                   |
-| J6   | -168 ~ +168         |
+| J1 | -165 ~ 165 |
+| J2 | -117 ~ 117 |
+| J3 | -157 ~ 157 |
+| J4 | -165 ~ 165 |
+| J5 | -165 ~ 165 |
+| J6 | -168 ~ 168 |
 
 **Software joint range of motion**
 
 | Joints | Range |
 | :--------: | :----------:|
-| 1 | -162 ~ 162 |
-  | 2 | -125 ~ 125 |
-  | 3 | -154 ~ 154 |
-  | 4 | -162 ~ 162 |
-  | 5 | -162 ~ 162 |
-  | 6 | -165 ~ 165 |
+| J1 | -162 ~ 162 |
+| J2 | -125 ~ 125 |
+| J3 | -154 ~ 154 |
+| J4 | -162 ~ 162 |
+| J5 | -162 ~ 162 |
+| J6 | -165 ~ 165 |
   
 ### 2.3 Hole Installation
 - The robot base is mounted with flanges. The base is compatible with both LEGO technology and M4 screw installation.
@@ -74,8 +75,8 @@ width = "550" align = "center">
 
   - ① RJ45：Dual network ports, used for connecting the device to the Internet or other network devices.
   - ② USB3：High-speed USB interface for connecting to computers or peripheral devices.
-  - ③ RS485：Industrial serial communication, connecting PLC, sensors, etc.
-  - ④ CAN：CAN bus communication, connecting drives, I/O modules, etc.
+  - ③ RS485: Industrial serial communication, used to connect PLCs, sensors, etc. Wiring sequence (from left to right): GND、485_B、485_A
+  - ④ CAN: CAN bus communication, used to connect drivers. Wiring sequence (from left to right): CAN_GND、 CAN_L、 CAN_H
   - ⑤  Function IO: digital signal input/output.
   - ⑥ Power switch: Press and hold to turn on the power, press and hold again to turn off the power.
   - ⑦ DC24V power supply: Connect the power adapter.  
@@ -124,9 +125,15 @@ The definitions of the various tool I/O ports are shown in the table below. Note
 
 ## 4. Cartesian Coordinate Parameters
 
-<img src = ../../resources/1-ProductInformation/2.ProductParameter/坐标.png
-width = "550" align = "center">
+<img src="../../resources/1-ProductInformation/2.ProductParameter/坐标.png"
+width = "400" align = "center">
 
+* The definitions of each coordinate system are shown in the table below:
+
+| Coordinate System | Definition |
+| :--- | :--- |
+| **End Coordinate System** | - Origin: The intersection of the end flange surface and the J6 rotation axis. <br> - X-axis: When the robotic arm is in the joint zero position, facing the base switch, horizontally to the right. <br> - Y-axis: When the robotic arm is in the joint zero position, facing the base switch, vertically downward. <br> - Z-axis: When the robotic arm is in the joint zero position, facing the base switch, horizontally forward. |
+| **Base Coordinate System** | - Origin: The intersection of the base bottom surface and the J1 rotation axis. <br> - X-axis: Facing the base switch, horizontally forward. <br> - Y-axis: Facing the base switch, horizontally to the left. <br> - Z-axis: Vertically upward. |
 
 ---
 

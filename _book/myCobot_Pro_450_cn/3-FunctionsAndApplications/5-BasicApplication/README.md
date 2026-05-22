@@ -14,4 +14,7 @@
 - [5.4 系统更新说明](./5.4-SystemUpdate.md)<br>
 本部分详细介绍了为 Pro450 机械臂烧录/更新系统镜像的完整流程。核心操作是通过 PC 端的专用工具（RKDevTool）将新的系统镜像文件写入设备主控。
 
+- [5.5 零位校准](./5.5-set_joint_zero.md)<br>
+本部分介绍了使用Python API接口对机械臂关节进行零位校准。适用于烧录系统镜像之后以及关节零位出现偏差时。
+
 [← 上一章](../../2-BasicSettings/4-FirstInstallAndUse/4.3-PowerOnDetectionGuide.md) | [下一章 →](./5.1-SystemInstructions)

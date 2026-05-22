@@ -1072,7 +1072,20 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2.5" data-path="../6.6-isaacsim/">
+        <li class="chapter " data-level="4.2.5" data-path="../6.5-CommunicationProtocolPackage/6.5-communication.html">
+            
+                <a href="../6.5-CommunicationProtocolPackage/6.5-communication.html">
+            
+                    
+                    6.5 SerialCommunicationProtocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.6" data-path="../6.6-isaacsim/">
             
                 <a href="../6.6-isaacsim/">
             
@@ -1416,152 +1429,437 @@
     
 					<section class="normal markdown-section">
 						
-						<h1 id="mycobot-api">myCobot API</h1>
-<p>Please import our API library before using the following function interfaces, otherwise it will not run successfully. For downloading and importing the library, please refer to MycobotCpp compilation and running chapter<br></p>
-<p>Instantiate MyCobot</p>
-<p>1.1 <strong>I();</strong><br>
-Function: Instantiate MyCobot<br>
-Return value: MyCobot type, singleton instance of myCobot object<br>
-Parameter description: None<br>
-<strong>Note: When calling the following API, you do not need to instantiate separately, just call this API</strong><br></p>
-<h2 id="overall-status-of-the-robot-overall-status">Overall status of the robot Overall Status</h2>
-<p>2.1 <strong>PowerOn();</strong><br>
-Function: Power on the robot arm<br>
-Return value: None<br>
-Parameter description: None<br>
-<strong>Note: After the robot arm is powered on, you cannot move the robot arm manually</strong><br></p>
-<p>2.2 <strong>PowerOff();</strong><br>
-Function: Power off the robot arm<br>
-Return value: None<br>
-Parameter description: None<br>
-<strong>Note: After the robot arm is powered on, if you want to move the robot arm manually, you can call this API</strong><br></p>
-<p>2.3 <strong>SetFreeMoveMode(bool free_move = true);</strong><br>
-Function: Set free movement mode<br>
-Return value: None<br>
-Parameter description: Turn on or off free movement, true--turn on free movement, false--turn off free movement<br>
-Note: <strong>After free movement is turned on, you can move the robot manually, and the light on the atom will turn yellow, and it will turn green when it is turned off</strong><br></p>
-<p>2.4 <strong>IsFreeMoveMode()</strong><br>
-Function: Check whether it is in free movement mode<br>
-Return value: bool type, true-free movement is turned on, false-free movement is not turned on<br>
-Parameter description: None<br></p>
-<p>2.5 <strong>IsControllerConnected();</strong><br>
-Function: Check whether the system is normal<br>
-Return value: None<br>
-Parameter description: bool type, return <strong>false will not be able to control the robot</strong><br></p>
-<h2 id="input-program-control-mode-mdi-mode-and-robot-control-manual-data-input">Input program control mode MDI Mode and Robot Control (Manual Data Input)</h2>
-<p>3.1 <strong>IsInPosition(const Coords&amp; coords, bool is_linear = true);</strong><br>
-Function: Check whether the robot arm has reached the specified point (angle or coordinate)<br>
-Return value: bool type, return false--not reached the specified point, return true--reached the specified point<br>
-Parameter description: Parameter 1: all angles or coordinates Parameter 2: 0 or 1 (<strong>coordinate is 1 (true), angle is 0 (false))</strong><br></p>
-<p>3.2 <strong>IsMoving();</strong><br>
-Function: Check whether the robot arm is moving<br>
-Return value: bool type, true--moving, false--not moving<br>
-Parameter description: None<br></p>
-<p>3.3 <strong>WriteAngle(Joint joint, double value, int speed = DefaultSpeed)</strong><br>
-Function: Send single joint angle<br>
-Return value: None<br>
-Parameter description: Parameter 1: joint number (1-6) Parameter 2: angle (<strong>-170&#xB0;- 170&#xB0;</strong>) Parameter 3: speed (<strong>0-100</strong>), default is <strong>30</strong><br></p>
-<p>3.4 <strong>GetAngles()</strong><br>
-Function: Get all joint angles<br>
-Return value: Angles type<br>
-Parameter description: None<br></p>
-<p>3.5 <strong>WriteAngles(const Angles&amp; angles, int speed = DefaultSpeed)</strong><br>
-Function: Send all joint angles<br>
-Return value: None<br>
-Parameter description: Parameter 1: All angles (std::array<double, joints="">, angle range <strong>-170&#xB0;- 170&#xB0;</strong>) Parameter 2: Speed &#x200B;&#x200B;(<strong>0-100</strong>), default is 30<br></double,></p>
-<p>3.6 <strong>WriteCoord(Axis axis, double value, int speed = DefaultSpeed)</strong><br>
-Function: Send single parameter coordinates<br>
-Return value: None<br>
-Parameter description: Parameter 1: Coordinate number (Axis enumeration type, int: 1-6 (X-RZ)), Parameter 2: Coordinate (<strong>X, Y, Z</strong> value range <strong>-300-300.00</strong> unit mm <strong>RX, RY, RZ</strong>, value range <strong>-180-180</strong>), Parameter 3: Speed &#x200B;&#x200B;(<strong>0-100</strong>), default is <strong>30</strong><br></p>
-<p>3.7 <strong>GetCoords()</strong><br>
-Function: Get all coordinates<br>
-Return value: Coords type<br>
-Parameter description: None<br></p>
-<p>3.8 <strong>WriteCoords(const Coords&amp; coords, int speed = DefaultSpeed)</strong><br>
-Function: Send all coordinates<br>
-Return value: None<br>
-Parameter description: Parameter 1: Coordinates (<strong>X, Y, Z</strong> value range <strong>-300-300.00</strong> unit mm <strong>RX, RY, RZ</strong>, value range <strong>-180-180</strong>), Parameter 2: Speed &#x200B;&#x200B;(<strong>0-100</strong>), default is 30<br></p>
-<p>3.9 <strong>StopRobot()</strong><br>
-Function: Stop the robot arm
-When the robot arm is moving, you can call this API to stop the robot arm from moving<br>
-Return value: None<br>
-Parameter description: None<br></p>
-<h2 id="running-auxiliary-information-running-status-and-settings">Running auxiliary information Running Status and Settings</h2>
-<p>4.1 <strong>GetSpeed()</strong><br>
-Function: Get the speed of the robot arm movement<br>
-Return value: int type, robot arm movement speed (<strong>0-100</strong>)<br>
-Parameter description: None<br></p>
-<p>4.2 <strong>SetSpeed(int percentage)</strong><br>
-Function: Set the speed of the robot arm movement<br>
-Return value: None<br>
-Parameter description: Robot arm movement speed (<strong>0-100</strong>)<br></p>
-<p>4.3 <strong>GetJointMin(Joint joint)</strong><br>
-Function: Read the minimum angle of the joint<br>
-Return value: double type, minimum angle (the minimum angle that the joint can run to)<br>
-Parameter description: Joint number (1-6)<br></p>
-<p>4.4 <strong>GetJointMax(Joint joint);</strong><br>
-Function: Read the maximum angle of the joint<br>
-Return value: double type, maximum angle (the maximum angle that the joint can run to)<br>
-Parameter description: Joint number (1-6)<br></p>
-<p>4.5 <strong>SleepSecond(unsigned time)</strong><br>
-Function: Wait
-Return value: None<br>
-Parameter description: The time unit is <strong>seconds</strong><br></p>
-<h2 id="jog-operation-and-operation-jog-mode-and-operation">JOG operation and operation JOG mode and operation</h2>
-<p>5.1 <strong>JogCoord(Axis axis, int direction, int speed = DefaultSpeed)</strong><br>
-Function: Make the robot arm move in the direction of the coordinate axis<br>
-Return value: None<br>
-Parameter description: Parameter 1: Coordinate number (<strong>1-6, x y z rx ry rz</strong>), parameter 2: direction (<strong>1--positive direction, 0--negative direction</strong>), parameter 3: speed (<strong>default is 30, range: 0-100</strong>)<br>
-Note: <strong>This API will make the robot arm move in the positive and negative directions of the coordinate axis all the time, and will stop moving after reaching the limit or calling JogStop in the middle</strong><br></p>
-<p>5.2 <strong>JogAngle(Joint joint, int direction, int speed = DefaultSpeed)</strong><br>
-Function: Make a joint move until Jogstop or reach the limit<br>
-Return value: None<br>
-Parameter description: Parameter 1: joint number (<strong>1-6</strong>), parameter 2: direction (<strong>1--positive direction, 0--negative direction</strong>), parameter 3: speed (<strong>default is 30, range: 0-100</strong>)<br>
-Note: <strong>This API will make the robot arm joint move in the positive and negative directions all the time, and will stop moving after reaching the limit or calling JogStop in the middle</strong><br></p>
-<p>5.3 <strong>JogCoordAbsolute(Axis axis, double value, int speed = DefaultSpeed)</strong><br>
-Function: Move a coordinate axis to a given coordinate<br>
-Return value: None<br>
-Parameter description: Parameter 1: Coordinate number (<strong>1-6, x y z rx ry rz</strong>), Parameter 2: Coordinate (X, Y, Z value range -300-300.00 unit mm RX, RY, RZ, value range <strong>-180-180</strong>), Parameter 3: Speed &#x200B;&#x200B;(<strong>Default 30, range: 0-100</strong>)<br></p>
-<p>5.4 <strong>JogAngleAbsolute(Joint joint, double value, int speed = DefaultSpeed)</strong><br>
-Function: Make a joint move to a given angle<br>
-Return value: None<br>
-Parameter description: Parameter 1: Joint number (<strong>1-6</strong>), Parameter 2: Angle (<strong>Range: -170-170</strong>), Parameter 3: Speed &#x200B;&#x200B;(<strong>Default 30, Range 0-100</strong>)<br></p>
-<p>5.5 <strong>JogCoordIncrement(Axis axis, double increment, int speed = DefaultSpeed)</strong><br>
-Function: Make a coordinate move to the set coordinate increment<br>
-Return value: None<br>
-Parameter description: Parameter 1: Coordinate number (<strong>1-6, x y z rx ry rz</strong>), parameter 2: coordinate increment value, parameter 3: speed (<strong>default 30, range: 0-100</strong>)<br>
-Note: <strong>The robot performs stepping motion: for example, the current x-axis coordinate is 100, the increment value is 50, and after the motion, the x-axis coordinate will be 150</strong><br></p>
-<p>5.6 <strong>JogAngleIncrement(Joint joint, double increment, int speed = DefaultSpeed)</strong><br>
-Function: Make a joint move with a set angle increment<br>
-Return value: None<br>
-Parameter description: Parameter 1: joint number (<strong>1-6</strong>), parameter 2: joint increment value, speed (<strong>default 30, range: 0-100</strong>)<br>
-Note: <strong>The robot performs stepping motion: for example, the current joint 1 coordinate is -100, the increment value is 50, and after the motion, the joint 1 will be 50</strong><br></p>
-<h2 id="atom-terminal-io-control-atom-io-control">Atom terminal IO control Atom IO Control</h2>
-<p>6.1 <strong>SetDigitalOut(int pin_number, int pin_signal)</strong><br>
-Function: Set output io high and low levels<br>
-Return value: None<br>
-Parameter description: Parameter 1: Pin number (atom output pin number), Parameter 2: Status (0--low level, 1--high level)<br></p>
-<p>6.2 <strong>GetDigitalIn(int pin_number)</strong><br>
-Function: Get input io status<br>
-Return value: Pin status (0--low level, 1--high level)<br>
-Parameter description: Pin number (atom input pin number)<br></p>
-<p>6.3 <strong>SetGriper(int open)</strong><br>
-Function: Control adaptive gripper<br>
-Return value: None<br>
-Parameter description: Gripper switch status (0--off, 1--on)<br></p>
-<p>6.4 <strong>SetElectricGriper(int open)</strong><br>
-Function: Control electric gripper<br>
-Return value: None<br>
-Parameter description: Gripper switch status (0--off, 1--on)<br></p>
-<h2 id="base-m5stack-basicio-control-m5stack-basic-io-control">Base M5Stack-basicIO Control M5Stack-basic IO Control</h2>
-<p>7.1 <strong>SetBasicOut(int pin_number, int pin_signal)</strong><br>
-Function: Set output io high and low levels<br>
-Return value: None<br>
-Parameter description: Parameter 1: Pin number (basic output pin number), Parameter 2: Status (0--low level, 1--high level)<br></p>
-<p>7.2 <strong>GetBasicIn(int pin_number)</strong><br>
-Function: Get input io status<br>
-Return value: Pin status (0--low level, 1--high level)<br>
-Parameter description: Pin number (basic input pin number)<br></p>
+						<h1 id="robotdriver-c-api-reference">RobotDriver C++ API Reference</h1>
+<p>This document describes the public interfaces of the <strong><code>RobotArm</code> class</strong> (<code>include/RobotArm.hpp</code>). Signatures and types follow the header file; <code>Angles</code> and <code>Coords</code> are <code>std::array&lt;float, 6&gt;</code>, and <code>Param</code> contains <code>ip_serial</code> and <code>port_baud</code> (see <code>include/config.hpp</code>).</p>
+<p><strong>Note</strong>: <code>RobotArm</code> currently does not encapsulate extended capabilities such as gripper or tool/base IO.</p>
+<p>Each API item below is documented with <strong>Function</strong>, <strong>Return Value</strong>, <strong>Parameter Description</strong>, and <strong>Range</strong>. The listed ranges apply to <strong>MyCobotPro450</strong>.</p>
+<hr>
+<h2 id="quick-connection-and-types">Quick Connection and Types</h2>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;RobotArm.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;config.hpp&quot;</span></span>
+
+Param p;
+p.ip_serial = <span class="hljs-string">&quot;192.168.0.232&quot;</span>;
+p.port_baud = <span class="hljs-number">4500</span>;
+<span class="hljs-function">RobotArm <span class="hljs-title">arm</span><span class="hljs-params">(TCP_COMM, p)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Range / Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TCP_COMM</code></td>
+<td><code>1</code>, Socket (TCP)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>General convention</strong>: for most <code>int</code> APIs, <strong><code>1</code></strong> usually means command success or valid response received under normal communication, and <strong><code>-1</code></strong> usually means communication failure or invalid/missing response. Actual behavior follows controller firmware.</p>
+<hr>
+<h2 id="construction-and-destruction">Construction and Destruction</h2>
+<h3 id="robotarmuint8t-mode-param-params"><code>RobotArm(uint8_t mode, Param params)</code></h3>
+<ul>
+<li><strong>Function</strong>: Constructs an instance; internally creates <code>Protocol</code> and starts communication (<code>begin()</code>).</li>
+<li><strong>Return Value</strong>: None.</li>
+<li><strong>Parameter Description</strong>: <code>mode</code> is communication type; <code>params</code> contains address/port or serial parameters.</li>
+<li><strong>Range</strong>: <code>mode</code> &#x2208; {<code>TCP_COMM</code> (1), <code>SERIAL_COMM</code> (2)}; for TCP, <code>port_baud</code> is the port (for example <strong>4500</strong>) and <code>ip_serial</code> is a reachable IP. Serial communication is not supported at present.</li>
+</ul>
+<h3 id="robotarm"><code>~RobotArm()</code></h3>
+<ul>
+<li><strong>Function</strong>: Destructor; releases protocol and communication resources.</li>
+<li><strong>Return Value</strong>: None.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<hr>
+<h2 id="system-configuration-power-and-version-information">System Configuration, Power, and Version Information</h2>
+<h3 id="int-poweron"><code>int powerOn()</code></h3>
+<ul>
+<li><strong>Function</strong>: Powers on the robotic arm.</li>
+<li><strong>Return Value</strong>: <code>1</code> success; <code>0</code> failure; <code>-1</code> no communication (subject to controller behavior).</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h3 id="int-poweroff"><code>int powerOff()</code></h3>
+<ul>
+<li><strong>Function</strong>: Powers off the robotic arm.</li>
+<li><strong>Return Value</strong>: <code>1</code> command accepted; <code>-1</code> no communication.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h3 id="int-ispoweron"><code>int isPowerOn()</code></h3>
+<ul>
+<li><strong>Function</strong>: Checks power state.</li>
+<li><strong>Return Value</strong>: <code>1</code> powered on; <code>0</code> not powered on; <code>2</code> power-on failure state; <code>-1</code> no communication.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h3 id="vectorint-isinitcalibration"><code>vector&lt;int&gt; isInitCalibration()</code></h3>
+<ul>
+<li><strong>Function</strong>: Queries zero-position / calibration related status.</li>
+<li><strong>Return Value</strong>: Integer vector; length and semantics depend on the controller.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h3 id="string-getlibversion"><code>string getLibVersion()</code></h3>
+<ul>
+<li><strong>Function</strong>: Reads library version string.</li>
+<li><strong>Return Value</strong>: Version string (for example, matching <code>LIB_VERSION</code>).</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h3 id="string-getsystemversion"><code>string getSystemVersion()</code></h3>
+<ul>
+<li><strong>Function</strong>: Reads main controller/system version.</li>
+<li><strong>Return Value</strong>: Version string.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h3 id="int-getmodifyversion"><code>int getModifyVersion()</code></h3>
+<ul>
+<li><strong>Function</strong>: Reads main controller patch version.</li>
+<li><strong>Return Value</strong>: Integer patch version.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h3 id="string-getrobottype"><code>string getRobotType()</code></h3>
+<ul>
+<li><strong>Function</strong>: Reads robot model type string.</li>
+<li><strong>Return Value</strong>: For example <strong>4503</strong>, depending on controller return.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h3 id="string-getatomversion"><code>string getAtomVersion()</code></h3>
+<ul>
+<li><strong>Function</strong>: Reads end-effector firmware version.</li>
+<li><strong>Return Value</strong>: Version string.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h3 id="int-gettoolmodifyversion"><code>int getToolModifyVersion()</code></h3>
+<ul>
+<li><strong>Function</strong>: Reads end-effector patch version.</li>
+<li><strong>Return Value</strong>: Integer.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<hr>
+<h2 id="control-mode-and-refresh-mode">Control Mode and Refresh Mode</h2>
+<h3 id="int-getfreshmode"><code>int getFreshMode()</code></h3>
+<ul>
+<li><strong>Function</strong>: Gets refresh/queue motion mode.</li>
+<li><strong>Return Value</strong>: <code>0</code> interpolation/queue order; <code>1</code> refresh mode (latest command first); may return <code>-1</code> on failure.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h3 id="int-setfreshmodebool-mode"><code>int setFreshMode(bool mode)</code></h3>
+<ul>
+<li><strong>Function</strong>: Sets position motion mode.</li>
+<li><strong>Return Value</strong>: <code>int</code>, usually <code>1</code> on success, <code>-1</code> on failure.</li>
+<li><strong>Parameter Description</strong>: <code>mode</code>: <code>false</code>&#x2192;<strong>0</strong> (interpolation), <code>true</code>&#x2192;<strong>1</strong> (refresh).</li>
+<li><strong>Range</strong>: Boolean mapped to <strong>0 / 1</strong>.</li>
+</ul>
+<h3 id="int-getcontrolmode"><code>int getControlMode()</code></h3>
+<ul>
+<li><strong>Function</strong>: Gets control mode (position/torque).</li>
+<li><strong>Return Value</strong>: <code>0</code> position mode; <code>1</code> torque mode; <code>-1</code> on failure.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h3 id="int-setcontrolmodebool-mode"><code>int setControlMode(bool mode)</code></h3>
+<ul>
+<li><strong>Function</strong>: Sets control mode.</li>
+<li><strong>Return Value</strong>: <code>int</code>, usually <code>1</code> on success, <code>-1</code> on failure.</li>
+<li><strong>Parameter Description</strong>: <code>mode</code>: <code>false</code>&#x2192;position (<strong>0</strong>), <code>true</code>&#x2192;torque (<strong>1</strong>).</li>
+<li><strong>Range</strong>: Boolean mapped to <strong>0 / 1</strong>.</li>
+</ul>
+<hr>
+<h2 id="joint-control">Joint Control</h2>
+<h3 id="int-sendangleuint8t-joint-float-angle-uint8t-sp"><code>int sendAngle(uint8_t joint, float angle, uint8_t sp)</code></h3>
+<ul>
+<li><strong>Function</strong>: Sends target angle for a single joint.</li>
+<li><strong>Return Value</strong>: <code>int</code>, usually <code>1</code> on success, <code>-1</code> on failure.</li>
+<li><strong>Parameter Description</strong>: <code>joint</code> joint index; <code>angle</code> target angle (&#xB0;); <code>sp</code> speed level.</li>
+<li><strong>Range</strong>: <code>joint</code>: <strong>1 ~ 6</strong>; <code>angle</code> (&#xB0;): J1 <strong>-162~162</strong>, J2 <strong>-125~125</strong>, J3 <strong>-154~154</strong>, J4 <strong>-162~162</strong>, J5 <strong>-162~162</strong>, J6 <strong>-165~165</strong>; <code>sp</code>: <strong>1 ~ 100</strong>.</li>
+</ul>
+<h3 id="int-sendanglesangles-angles-uint8t-sp"><code>int sendAngles(Angles angles, uint8_t sp)</code></h3>
+<ul>
+<li><strong>Function</strong>: Sends target angles for all six joints in one command.</li>
+<li><strong>Return Value</strong>: <code>int</code>, usually <code>1</code> on success, <code>-1</code> on failure.</li>
+<li><strong>Parameter Description</strong>: <code>angles</code> length 6; <code>sp</code> speed level.</li>
+<li><strong>Range</strong>: Each element uses the same joint-specific range as <code>sendAngle</code>; <code>sp</code>: <strong>1 ~ 100</strong>.</li>
+</ul>
+<h3 id="float-getangleuint8t-joint"><code>float getAngle(uint8_t joint)</code></h3>
+<ul>
+<li><strong>Function</strong>: Reads current angle of one joint.</li>
+<li><strong>Return Value</strong>: Floating angle (&#xB0;); may return sentinel value when invalid/failed (depends on integration behavior).</li>
+<li><strong>Parameter Description</strong>: <code>joint</code> joint index.</li>
+<li><strong>Range</strong>: <code>joint</code>: <strong>1 ~ 6</strong>.</li>
+</ul>
+<h3 id="angles-getangles"><code>Angles getAngles()</code></h3>
+<ul>
+<li><strong>Function</strong>: Reads all six current joint angles.</li>
+<li><strong>Return Value</strong>: <code>Angles</code>, six floating-point values.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h3 id="float-getjointminangleuint8t-joint"><code>float getJointMinAngle(uint8_t joint)</code></h3>
+<ul>
+<li><strong>Function</strong>: Reads software minimum angle limit of a joint.</li>
+<li><strong>Return Value</strong>: Float (&#xB0;).</li>
+<li><strong>Parameter Description</strong>: <code>joint</code>.</li>
+<li><strong>Range</strong>: <code>joint</code>: <strong>1 ~ 6</strong>.</li>
+</ul>
+<h3 id="float-getjointmaxangleuint8t-joint"><code>float getJointMaxAngle(uint8_t joint)</code></h3>
+<ul>
+<li><strong>Function</strong>: Reads software maximum angle limit of a joint.</li>
+<li><strong>Return Value</strong>: Float (&#xB0;).</li>
+<li><strong>Parameter Description</strong>: <code>joint</code>.</li>
+<li><strong>Range</strong>: <code>joint</code>: <strong>1 ~ 6</strong>.</li>
+</ul>
+<h3 id="int-jogangleuint8t-joint-uint8t-direction-uint8t-speed"><code>int jogAngle(uint8_t joint, uint8_t direction, uint8_t speed)</code></h3>
+<ul>
+<li><strong>Function</strong>: Continuous joint JOG until limit is reached or <code>stop()</code> is called.</li>
+<li><strong>Return Value</strong>: <code>int</code>, usually <code>1</code> on success, <code>-1</code> on failure.</li>
+<li><strong>Parameter Description</strong>: <code>joint</code>; <code>direction</code>; <code>speed</code>.</li>
+<li><strong>Range</strong>: <code>joint</code>: <strong>1 ~ 6</strong>; <code>direction</code>: <strong>0</strong> negative, <strong>1</strong> positive; <code>speed</code>: <strong>1 ~ 100</strong>.</li>
+</ul>
+<h3 id="int-setfreemovemodebool-state"><code>int setFreeMoveMode(bool state)</code></h3>
+<ul>
+<li><strong>Function</strong>: Sets free-move mode (manual guiding, etc.).</li>
+<li><strong>Return Value</strong>: <code>int</code>, usually <code>1</code> on success, <code>-1</code> on failure.</li>
+<li><strong>Parameter Description</strong>: <code>state</code>, <code>false</code> off, <code>true</code> on.</li>
+<li><strong>Range</strong>: Mapped to <strong>0 / 1</strong>.</li>
+</ul>
+<h3 id="int-getfreemovemode"><code>int getFreeMoveMode()</code></h3>
+<ul>
+<li><strong>Function</strong>: Gets free-move mode state.</li>
+<li><strong>Return Value</strong>: <code>0</code> off; <code>1</code> on; <code>-1</code> no communication.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h3 id="int-setmotorenableduint8t-joint-bool-state"><code>int setMotorEnabled(uint8_t joint, bool state)</code></h3>
+<ul>
+<li><strong>Function</strong>: Enables/disables torque for one joint motor.</li>
+<li><strong>Return Value</strong>: <code>int</code>, usually <code>1</code> on success, <code>-1</code> on failure.</li>
+<li><strong>Parameter Description</strong>: <code>joint</code>; <code>state</code> (<code>false</code> disable torque, <code>true</code> enable torque).</li>
+<li><strong>Range</strong>: <code>joint</code>: <strong>1 ~ 6</strong> or <strong>254</strong> (all joints).</li>
+</ul>
+<h3 id="int-servorestoreuint8t-joint"><code>int servoRestore(uint8_t joint)</code></h3>
+<ul>
+<li><strong>Function</strong>: Clears joint abnormality / restore command.</li>
+<li><strong>Return Value</strong>: <code>int</code>, usually <code>1</code> on success, <code>-1</code> on failure.</li>
+<li><strong>Parameter Description</strong>: <code>joint</code>.</li>
+<li><strong>Range</strong>: <code>joint</code>: <strong>1 ~ 6</strong> or <strong>254</strong> (all joints).</li>
+</ul>
+<h3 id="void-setwaitarrivalbool-enable"><code>void setWaitArrival(bool enable)</code></h3>
+<ul>
+<li><strong>Function</strong>: Sets whether motion commands wait for arrival before returning (closed-loop/open-loop); default is not closed-loop.</li>
+<li><strong>Return Value</strong>: None.</li>
+<li><strong>Parameter Description</strong>: <code>enable</code>, <code>true</code> closed-loop wait, <code>false</code> open-loop immediate return.</li>
+<li><strong>Range</strong>: Boolean.</li>
+</ul>
+<h3 id="bool-getwaitarrival-const"><code>bool getWaitArrival() const</code></h3>
+<ul>
+<li><strong>Function</strong>: Queries whether wait-arrival is enabled.</li>
+<li><strong>Return Value</strong>: <code>true</code> / <code>false</code>.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h3 id="bool-waitposarrivedint-timeoutms--30000"><code>bool waitPosArrived(int timeout_ms = 30000)</code></h3>
+<ul>
+<li><strong>Function</strong>: Blocks until <code>POS_ARRIVED</code>-type arrival feedback is received.</li>
+<li><strong>Return Value</strong>: <code>true</code> if arrived, <code>false</code> on timeout.</li>
+<li><strong>Parameter Description</strong>: <code>timeout_ms</code> timeout.</li>
+<li><strong>Range</strong>: <code>timeout_ms</code> <strong>&gt; 0</strong> (ms), default <strong>30000</strong>.</li>
+</ul>
+<h3 id="drag-teaching">Drag Teaching</h3>
+<h4 id="int-dragteachsave"><code>int dragTeachSave()</code></h4>
+<ul>
+<li><strong>Function</strong>: Starts drag-teach trajectory recording.</li>
+<li><strong>Return Value</strong>: <code>int</code>, usually <code>1</code> on success, <code>-1</code> on failure.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: Single recording duration <strong>&#x2264; 120 s</strong>.</li>
+</ul>
+<h4 id="int-dragteachpause"><code>int dragTeachPause()</code></h4>
+<ul>
+<li><strong>Function</strong>: Pauses drag-teach recording.</li>
+<li><strong>Return Value</strong>: <code>int</code>, usually <code>1</code> on success, <code>-1</code> on failure.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h4 id="int-dragteachexecute"><code>int dragTeachExecute()</code></h4>
+<ul>
+<li><strong>Function</strong>: Executes recorded trajectory once.</li>
+<li><strong>Return Value</strong>: <code>int</code>, usually <code>1</code> on success, <code>-1</code> on failure.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h4 id="int-dragteachclean"><code>int dragTeachClean()</code></h4>
+<ul>
+<li><strong>Function</strong>: Clears recorded drag-teach sample points.</li>
+<li><strong>Return Value</strong>: <code>int</code>, usually <code>1</code> on success, <code>-1</code> on failure.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<hr>
+<h2 id="coordinate-control">Coordinate Control</h2>
+<h3 id="int-sendcoorduint8t-axis-float-coord-uint8t-sp"><code>int sendCoord(uint8_t axis, float coord, uint8_t sp)</code></h3>
+<ul>
+<li><strong>Function</strong>: Sends a single coordinate/pose component.</li>
+<li><strong>Return Value</strong>: <code>int</code>, usually <code>1</code> on success, <code>-1</code> on failure.</li>
+<li><strong>Parameter Description</strong>: <code>axis</code> 1~6 maps to x,y,z,rx,ry,rz; <code>coord</code> value; <code>sp</code> speed level.</li>
+<li><strong>Range</strong>: <code>axis</code>: <strong>1 ~ 6</strong>; x,y (mm) <strong>-474 ~ 474</strong>; z (mm) <strong>-180 ~ 677</strong>; rx,ry,rz (&#xB0;) <strong>-180 ~ 180</strong>; <code>sp</code>: <strong>1 ~ 100</strong>.</li>
+</ul>
+<h3 id="int-sendcoordscoords-coords-uint8t-sp"><code>int SendCoords(Coords coords, uint8_t sp)</code></h3>
+<ul>
+<li><strong>Function</strong>: Sends full 6D pose <code>[x,y,z,rx,ry,rz]</code>.</li>
+<li><strong>Return Value</strong>: <code>int</code>, usually <code>1</code> on success, <code>-1</code> on failure.</li>
+<li><strong>Parameter Description</strong>: <code>coords</code> length 6; <code>sp</code> speed level.</li>
+<li><strong>Range</strong>: Each component follows the corresponding <code>sendCoord</code> axis range; <code>sp</code>: <strong>1 ~ 100</strong>.</li>
+</ul>
+<h3 id="coords-getcoords"><code>Coords getCoords()</code></h3>
+<ul>
+<li><strong>Function</strong>: Reads current coordinates/pose.</li>
+<li><strong>Return Value</strong>: <code>Coords</code>, six floating-point values.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h3 id="int-jogcoorduint8t-axis-uint8t-direction-uint8t-speed"><code>int jogCoord(uint8_t axis, uint8_t direction, uint8_t speed)</code></h3>
+<ul>
+<li><strong>Function</strong>: Continuous coordinate-axis JOG.</li>
+<li><strong>Return Value</strong>: <code>int</code>, usually <code>1</code> on success, <code>-1</code> on failure.</li>
+<li><strong>Parameter Description</strong>: <code>axis</code>; <code>direction</code>; <code>speed</code>.</li>
+<li><strong>Range</strong>: <code>axis</code>: <strong>1 ~ 6</strong>; <code>direction</code>: <strong>0</strong> negative, <strong>1</strong> positive; <code>speed</code>: <strong>1 ~ 100</strong>.</li>
+</ul>
+<hr>
+<h2 id="motion-control-shared-by-joint-and-coordinate">Motion Control (Shared by Joint and Coordinate)</h2>
+<h3 id="int-stop"><code>int stop()</code></h3>
+<ul>
+<li><strong>Function</strong>: Stops current motion.</li>
+<li><strong>Return Value</strong>: <code>int</code>, usually <code>1</code> on success, <code>-1</code> on failure.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h3 id="int-pause"><code>int pause()</code></h3>
+<ul>
+<li><strong>Function</strong>: Pauses motion commands.</li>
+<li><strong>Return Value</strong>: <code>int</code>, e.g. <code>1</code> paused, <code>0</code> not stopped, <code>-1</code> error (controller-specific).</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h3 id="int-resume"><code>int resume()</code></h3>
+<ul>
+<li><strong>Function</strong>: Resumes motion.</li>
+<li><strong>Return Value</strong>: <code>int</code>, usually <code>1</code> on success, <code>-1</code> on failure.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h3 id="int-ispaused"><code>int isPaused()</code></h3>
+<ul>
+<li><strong>Function</strong>: Checks pause state.</li>
+<li><strong>Return Value</strong>: <code>1</code> paused; <code>0</code> not paused; <code>-1</code> error.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h3 id="int-ismoving"><code>int isMoving()</code></h3>
+<ul>
+<li><strong>Function</strong>: Checks whether robot is moving.</li>
+<li><strong>Return Value</strong>: <code>1</code> moving; <code>0</code> static; <code>-1</code> error.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h3 id="int-isinpositionangles-anglecoords-bool-mode"><code>int isInPosition(Angles angle_coords, bool mode)</code></h3>
+<ul>
+<li><strong>Function</strong>: Checks whether current state reached a target (angles or coordinates).</li>
+<li><strong>Return Value</strong>: <code>1</code> reached; <code>0</code> not reached; <code>-1</code> abnormal or no valid response.</li>
+<li><strong>Parameter Description</strong>: <code>angle_coords</code> six target values; <code>mode</code> data type flag.</li>
+<li><strong>Range</strong>: <code>mode</code>: <strong><code>false</code></strong> means <strong>joint angles</strong> (&#xB0;); <strong><code>true</code></strong> means <strong>coordinates</strong> (mm/&#xB0;, same axis definition as <code>sendCoord</code>). Component ranges follow the corresponding joint/coordinate tables.</li>
+</ul>
+<hr>
+<h2 id="robot-exception-handling-and-status">Robot Exception Handling and Status</h2>
+<h3 id="int-geterrorinformation"><code>int getErrorInformation()</code></h3>
+<ul>
+<li><strong>Function</strong>: Reads motion/system error code.</li>
+<li><strong>Return Value</strong>: <code>0</code> no error; <code>1~6</code> joint over-limit; <code>32</code> coordinate no-solution (near reach limit); <code>33</code> no adjacent solution in linear motion; <code>34</code> speed fusion error; <code>35</code> no adjacent solution in null-space motion; <code>36</code> singularity no-solution; <code>81~86</code> collision-related for J1~J6 (recover using <code>resume</code>, etc.); others depend on firmware.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h3 id="int-clearerrorinfomation"><code>int clearErrorInfomation()</code></h3>
+<ul>
+<li><strong>Function</strong>: Clears clearable error information (method spelling follows header file).</li>
+<li><strong>Return Value</strong>: <code>int</code>, usually <code>1</code> on success, <code>-1</code> on failure.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h3 id="vectorint-getrobotstatus"><code>vector&lt;int&gt; getRobotStatus()</code></h3>
+<ul>
+<li><strong>Function</strong>: Reads robot status.</li>
+<li><strong>Return Value</strong>: When length is typically <strong>20</strong>, items are: 1) collision flag; 2) moving flag; 3~8) J1~J6 over-limit flags; 9~14) J1~J6 motor hardware error flags; 15~20) J1~J6 software communication error flags (<strong>0</strong> usually normal, non-zero abnormal). Length may vary by firmware.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<h3 id="robotstatus-getrobotstatusdetail"><code>RobotStatus getRobotStatusDetail()</code></h3>
+<ul>
+<li><strong>Function</strong>: Reads structured status (collision, moving, limits, joint status words, communication status words, etc.).</li>
+<li><strong>Return Value</strong>: <code>RobotStatus</code> struct (see <code>RobotArm.hpp</code>).</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: Fields are <strong>0/1</strong> flags or status words, depending on protocol.</li>
+</ul>
+<h3 id="vectorint-getmotorsrunerr"><code>vector&lt;int&gt; getMotorsRunErr()</code></h3>
+<ul>
+<li><strong>Function</strong>: Reads motor errors during motion.</li>
+<li><strong>Return Value</strong>: List of length <strong>6</strong>, all <strong>0</strong> usually means normal.</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<hr>
+<h2 id="speed--acceleration-parameters">Speed / Acceleration Parameters</h2>
+<h3 id="int-getmaxspeeduint8t-mode"><code>int getMaxSpeed(uint8_t mode)</code></h3>
+<ul>
+<li><strong>Function</strong>: Reads max speed parameter.</li>
+<li><strong>Return Value</strong>: Current max speed setting; <code>-1</code> on failure.</li>
+<li><strong>Parameter Description</strong>: <code>mode</code>: <strong>0</strong> joint angular speed, <strong>1</strong> coordinate linear speed.</li>
+<li><strong>Range</strong>: <code>mode</code> &#x2208; {<strong>0</strong>, <strong>1</strong>}; physical ranges: angular speed <strong>1 ~ 150</strong> (&#xB0;/s), coordinate speed <strong>1 ~ 200</strong> (mm/s).</li>
+</ul>
+<h3 id="int-setmaxspeeduint8t-mode-uint16t-maxspeed"><code>int setMaxSpeed(uint8_t mode, uint16_t max_speed)</code></h3>
+<ul>
+<li><strong>Function</strong>: Sets max speed.</li>
+<li><strong>Return Value</strong>: <code>int</code>, usually <code>1</code> on success, <code>-1</code> on failure.</li>
+<li><strong>Parameter Description</strong>: <code>mode</code> same as <code>getMaxSpeed</code>; <code>max_speed</code> target value.</li>
+<li><strong>Range</strong>: <code>mode</code>: <strong>0 / 1</strong>; <code>max_speed</code>: angular <strong>1~150</strong> (&#xB0;/s), coordinate <strong>1~200</strong> (mm/s).</li>
+</ul>
+<h3 id="int-getmaxaccuint8t-mode"><code>int getMaxAcc(uint8_t mode)</code></h3>
+<ul>
+<li><strong>Function</strong>: Reads max acceleration parameter.</li>
+<li><strong>Return Value</strong>: Current max acceleration; <code>-1</code> on failure.</li>
+<li><strong>Parameter Description</strong>: <code>mode</code>: <strong>0</strong> joint angular acceleration, <strong>1</strong> coordinate acceleration.</li>
+<li><strong>Range</strong>: <code>mode</code> &#x2208; {<strong>0</strong>, <strong>1</strong>}; angular acceleration <strong>1 ~ 150</strong> (&#xB0;/s&#xB2;), coordinate acceleration <strong>1 ~ 400</strong> (mm/s&#xB2;).</li>
+</ul>
+<h3 id="int-setmaxaccuint8t-mode-uint16t-maxacc"><code>int setMaxAcc(uint8_t mode, uint16_t max_acc)</code></h3>
+<ul>
+<li><strong>Function</strong>: Sets max acceleration.</li>
+<li><strong>Return Value</strong>: <code>int</code>, usually <code>1</code> on success, <code>-1</code> on failure.</li>
+<li><strong>Parameter Description</strong>: <code>mode</code> same as <code>getMaxAcc</code>; <code>max_acc</code> target value.</li>
+<li><strong>Range</strong>: <code>mode</code>: <strong>0 / 1</strong>; <code>max_acc</code>: angular <strong>1~150</strong> (&#xB0;/s&#xB2;), coordinate <strong>1~400</strong> (mm/s&#xB2;).</li>
+</ul>
+<hr>
+<h2 id="encoders">Encoders</h2>
+<h3 id="vectorint-getservoencoders"><code>vector&lt;int&gt; getServoEncoders()</code></h3>
+<ul>
+<li><strong>Function</strong>: Reads six-joint servo encoder values.</li>
+<li><strong>Return Value</strong>: Integer vector of length <strong>6</strong> (controller parsing semantics apply).</li>
+<li><strong>Parameter Description</strong>: None.</li>
+<li><strong>Range</strong>: None.</li>
+</ul>
+<hr>
+<h2 id="debug">Debug</h2>
+<p>Define <strong><code>ROBOT_ARM_DEBUG</code></strong> during compilation to enable internal RobotArm debug logs (see header comments).</p>
+<hr>
+<p><a href="6.4.6-gripper.html">&#x2190; Previous</a> | <a href="6.4.8-example.html">Next &#x2192;</a></p>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
 						
 					</section>
@@ -1604,7 +1902,7 @@ Parameter description: Pin number (basic input pin number)<br></p>
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"6.4.7 APIDescription","level":"4.2.4.7","depth":3,"next":{"title":"6.4.8 BasicFunctionCases","level":"4.2.4.8","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.8-example.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.8-example.md","articles":[]},"previous":{"title":"6.4.6 GripperControl","level":"4.2.4.6","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.6-gripper.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.6-gripper.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"/sidebar.css"}},"file":{"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.7-API.md","mtime":"2026-05-20T02:43:07.250Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-05-20T03:48:51.204Z"},"basePath":"../../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"6.4.7 APIDescription","level":"4.2.4.7","depth":3,"next":{"title":"6.4.8 BasicFunctionCases","level":"4.2.4.8","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.8-example.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.8-example.md","articles":[]},"previous":{"title":"6.4.6 GripperControl","level":"4.2.4.6","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.6-gripper.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.6-gripper.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"/sidebar.css"}},"file":{"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.7-API.md","mtime":"2026-05-22T14:49:01.143Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-05-22T15:30:59.887Z"},"basePath":"../../..","book":{"language":""}});
 		});
 	</script>
 </div>

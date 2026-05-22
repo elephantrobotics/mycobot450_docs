@@ -73,6 +73,7 @@
         * [6.4.6 GripperControl](3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.6-gripper.md)
         * [6.4.7 APIDescription](3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.7-API.md)
         * [6.4.8 BasicFunctionCases](3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.8-example.md)
+    * [6.5 SerialCommunicationProtocol](3-FunctionsAndApplications/6.developmentGuide/6.5-CommunicationProtocolPackage/6.5-communication.md)
     * [6.6 Isaac Sim](3-FunctionsAndApplications/6.developmentGuide/6.6-isaacsim/README.md)
 * [7. SuccessfulCases](3-FunctionsAndApplications/7.SuccessfulCase/README.md)
 * [ 8. SupportingResources](3-FunctionsAndApplications/8.SupportingResources/README.md)

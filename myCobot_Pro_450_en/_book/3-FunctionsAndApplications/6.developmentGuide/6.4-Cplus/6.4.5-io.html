@@ -1072,7 +1072,20 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2.5" data-path="../6.6-isaacsim/">
+        <li class="chapter " data-level="4.2.5" data-path="../6.5-CommunicationProtocolPackage/6.5-communication.html">
+            
+                <a href="../6.5-CommunicationProtocolPackage/6.5-communication.html">
+            
+                    
+                    6.5 SerialCommunicationProtocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.6" data-path="../6.6-isaacsim/">
             
                 <a href="../6.6-isaacsim/">
             
@@ -1416,147 +1429,11 @@
     
 					<section class="normal markdown-section">
 						
-						<h1 id="io-control">IO control</h1>
-<p>There are pins on the M5Stack-basic at the bottom of the robot and the Atom at the end. You can use io control to set the high and low levels of the pins and control tools such as pumps. For the input and output pin numbers of each robot type, please see the following description table:<br></p>
-<p>Description table of the input and output pins of the bottom M5Stack-basic:<br></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Robot model</th>
-<th style="text-align:center">Input pin number</th>
-<th style="text-align:center">Output pin number</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">myCobot 280-M5</td>
-<td style="text-align:center">35, 36</td>
-<td style="text-align:center">2, 5, 26</td>
-</tr>
-<tr>
-<td style="text-align:center">myCobot 320-M5</td>
-<td style="text-align:center">35, 36</td>
-<td style="text-align:center">5, 15</td>
-</tr>
-</tbody>
-</table>
-<p>Terminal Atom input and output pin description table:<br></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Robot model</th>
-<th style="text-align:center">Input pin number</th>
-<th style="text-align:center">Output pin number</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">myCobot 280-M5</td>
-<td style="text-align:center">19, 22</td>
-<td style="text-align:center">23, 33</td>
-</tr>
-<tr>
-<td style="text-align:center">myCobot 320-M5</td>
-<td style="text-align:center">None</td>
-<td style="text-align:center">None</td>
-</tr>
-</tbody>
-</table>
-<h2 id="basic-io-control-m5">basic io control (m5)</h2>
-<h3 id="set-the-output-io-high-and-low-levels">Set the output io high and low levels</h3>
-<p><strong>SetBasicOut(int pin_number, int pin_signal)</strong><br>
-Return value: None<br>
-Parameter description: Parameter 1: Pin number (basic output pin number), Parameter 2: Status (0--low level, 1--high level)<br>
-Example:<br>
-    <code>mycobot::MyCobot::I().SetBasicOut(2, 1);</code></p>
-<h3 id="get-input-io-status">Get input io status</h3>
-<p><strong>GetBasicIn(int pin_number)</strong><br>
-Return value: pin status (0--low level, 1--high level)<br>
-Parameter description: pin number (basic input pin number)<br>
-Example: Set output pin 2 to high level<br>
-    <code>mycobot::MyCobot::I().GetBasicIn(35);</code></p>
-<h2 id="atom-io-control">Atom io control</h2>
-<p>Note: <strong>320m5 does not have atom io, so this module API is not needed</strong><br></p>
-<h3 id="set-the-output-io-high-and-low-levels">Set the output io high and low levels</h3>
-<p><strong>SetDigitalOut(int pin_number, int pin_signal)</strong><br>
-Return value: None<br>
-Parameter description: Parameter 1: pin number (atom output pin number), parameter 2: state (0--low level, 1--high level)<br>
-Case:<br>
-    <code>mycobot::MyCobot::I().SetDigitalOut(23, 1);</code></p>
-<h3 id="get-input-io-status">Get input io status</h3>
-<p><strong>GetDigitalIn(int pin_number)</strong><br>
-Return value: pin status (0--low level, 1--high level)<br>
-Parameter description: pin number (atom input pin number)<br>
-Example:<br>
-    <code>mycobot::MyCobot::I().GetDigitalIn(19);</code> </p>
-<h2 id="complete-use-case">Complete use case</h2>
-<pre><code>int main(int argc, char* argv[])
-try {
-QCoreApplication a(argc, argv); // Create a QCoreApplication object to support the Qt event loop
-
-using namespace std::chrono_literals; // Introduce time unit literals (such as 200ms)
-
-// Check if the robot controller is connected
-if (!mycobot::MyCobot::I().IsControllerConnected()) {
-std::cerr &lt;&lt; &quot;Robot is not connected\n&quot;; // If not connected, output error message
-exit(EXIT_FAILURE); // Exit the program and return failure status
-}
-
-std::cout &lt;&lt; &quot;Robot is connected\n&quot;; // Output successful connection information
-
-mycobot::MyCobot::I().PowerOn(); // Power on and start the robot
-mycobot::MyCobot::I().StopRobot(); // Stop all actions of the robot
-
-// Check if the robot is moving and output the status
-std::cout &lt;&lt; &quot;Robot is moving: &quot; &lt;&lt; mycobot::MyCobot::I().IsMoving() &lt;&lt; &quot;\n&quot;;
-
-// Get the angles of each joint of the current robot
-mycobot::Angles angles = mycobot::MyCobot::I().GetAngles();
-std::this_thread::sleep_for(200ms); // Delay 200 milliseconds
-
-// Get the position coordinates of the end of the current robot
-mycobot::Coords coords = mycobot::MyCobot::I().GetCoords();
-
-// Get the angles of each joint again
-angles = mycobot::MyCobot::I().GetAngles();
-
-// Output the angles of each joint
-std::cout &lt;&lt; &quot;[&quot; &lt;&lt; angles[mycobot::J1] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J2] &lt;&lt; &quot;, &quot;
-&lt;&lt; angles[mycobot::J3] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J4] &lt;&lt; &quot;, &quot;
-&lt;&lt; angles[mycobot::J5] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J6] &lt;&lt; &quot;]&quot;;
-
-// Define a target angle array, all joints move to 5 degrees
-mycobot::Angles goal_angles = { 5, 5, 5, 5, 5, 5 };
-mycobot::MyCobot::I().WriteAngles(goal_angles); // Move the robot to the target angle
-
-// Wait for the robot to move to the target position
-while (!mycobot::MyCobot::I().IsInPosition(goal_angles, false)) {
-angles = mycobot::MyCobot::I().GetAngles(); // Get the current angle
-std::cout &lt;&lt; &quot;[&quot; &lt;&lt; angles[mycobot::J1] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J2] &lt;&lt; &quot;, &quot;
-&lt;&lt; angles[mycobot::J3] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J4] &lt;&lt; &quot;, &quot;
-&lt;&lt; angles[mycobot::J5] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J6] &lt;&lt; &quot;]&quot; &lt;&lt; std::flush;
-std::this_thread::sleep_for(200ms); // Delay 200 milliseconds per loop
-}
-
-// Adjust the J1 joint angle in 1 degree increments and a speed of 5
-mycobot::MyCobot::I().JogAngle(mycobot::Joint::J1, 1, 5);
-std::this_thread::sleep_for(5000ms); // Delay 5 seconds
-
-mycobot::MyCobot::I().StopRobot(); // Stop all robot movements
-
-std::cout &lt;&lt; &quot;\n&quot;; // Output a newline character
-exit(EXIT_SUCCESS); // Normal exit
-
-} catch (std::error_code&amp;) {
-// Capture std::error_code exception and output error message
-std::cerr &lt;&lt; &quot;System error. Exiting.\n&quot;;
-exit(EXIT_FAILURE); // Abnormal exit
-} catch (...) {
-// Capture all other exceptions and output error message
-std::cerr &lt;&lt; &quot;Unknown exception thrown. Exiting.\n&quot;;
-exit(EXIT_FAILURE); // Abnormal exit
-}
-</code></pre> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+						<h1 id="io-control">IO Control</h1>
+<p>Editing...</p>
+<hr>
+<p><a href="6.4.4-coord.html">&#x2190; Previous</a> | <a href="6.4.6-gripper.html">Next &#x2192;</a></p>
+ <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
 						
 					</section>
 					
@@ -1598,7 +1475,7 @@ exit(EXIT_FAILURE); // Abnormal exit
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"6.4.5 IOControl","level":"4.2.4.5","depth":3,"next":{"title":"6.4.6 GripperControl","level":"4.2.4.6","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.6-gripper.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.6-gripper.md","articles":[]},"previous":{"title":"6.4.4 CoordinateControl","level":"4.2.4.4","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.4-coord.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.4-coord.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"/sidebar.css"}},"file":{"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.5-io.md","mtime":"2026-05-20T02:43:07.245Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-05-20T03:48:51.204Z"},"basePath":"../../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"6.4.5 IOControl","level":"4.2.4.5","depth":3,"next":{"title":"6.4.6 GripperControl","level":"4.2.4.6","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.6-gripper.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.6-gripper.md","articles":[]},"previous":{"title":"6.4.4 CoordinateControl","level":"4.2.4.4","depth":3,"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.4-coord.md","ref":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.4-coord.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"Input Keywords to Search","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com/en","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"/sidebar.css"}},"file":{"path":"3-FunctionsAndApplications/6.developmentGuide/6.4-Cplus/6.4.5-io.md","mtime":"2026-05-22T15:00:53.228Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-05-22T15:30:59.887Z"},"basePath":"../../..","book":{"language":""}});
 		});
 	</script>
 </div>

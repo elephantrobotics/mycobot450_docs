@@ -73,7 +73,7 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="6.4.5-io.html" />
+    <link rel="next" href="6.4.5-IO.html" />
     
     
     <link rel="prev" href="6.4.3-angle.html" />
@@ -981,7 +981,7 @@
                 <a href="6.4.2-build.html">
             
                     
-                    6.4.2 编译运行
+                    6.4.2 编译与运行
             
                 </a>
             
@@ -1015,9 +1015,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2.4.5" data-path="6.4.5-io.html">
+        <li class="chapter " data-level="4.2.4.5" data-path="6.4.5-IO.html">
             
-                <a href="6.4.5-io.html">
+                <a href="6.4.5-IO.html">
             
                     
                     6.4.5 IO控制
@@ -1059,7 +1059,7 @@
                 <a href="6.4.8-example.html">
             
                     
-                    6.4.8 基本功能案例
+                    6.4.8 案例说明
             
                 </a>
             
@@ -1429,100 +1429,152 @@
     
 					<section class="normal markdown-section">
 						
-						<h1 id="&#x5750;&#x6807;&#x63A7;&#x5236;">&#x5750;&#x6807;&#x63A7;&#x5236;</h1>
-<p>&#x5750;&#x6807;&#x63A7;&#x5236;&#x662F;&#x8BA9;&#x673A;&#x68B0;&#x81C2;&#x4EE5;&#x6307;&#x5B9A;&#x59FF;&#x6001;&#x79FB;&#x52A8;&#x5230;&#x6307;&#x5B9A;&#x70B9;&#xFF0C;&#x5206;&#x4E3A;x&#xFF0C;y&#xFF0C;z&#xFF0C;rx&#xFF0C;ry&#xFF0C;rz&#x3002;X&#xFF0C;Y&#xFF0C;Z &#x8868;&#x793A;&#x7684;&#x662F;&#x673A;&#x68B0;&#x81C2;&#x5934;&#x90E8;&#x5728;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#xFF08;&#x8BE5;&#x5750;&#x6807;&#x7CFB;&#x4E3A;&#x76F4;&#x89D2;&#x5750;&#x6807;&#x7CFB;&#xFF09;&#xFF0C;rx&#xFF0C;ry&#xFF0C;rz&#x8868;&#x793A;&#x7684;&#x662F;&#x673A;&#x68B0;&#x81C2;&#x5934;&#x90E8;&#x5728;&#x8BE5;&#x70B9;&#x7684;&#x59FF;&#x6001;&#xFF08;&#x8BE5;&#x5750;&#x6807;&#x7CFB;&#x4E3A;&#x6B27;&#x62C9;&#x5750;&#x6807;&#xFF09;&#x3002;<br></p>
-<h2 id="&#x5355;&#x53C2;&#x6570;&#x63A7;&#x5236;">&#x5355;&#x53C2;&#x6570;&#x63A7;&#x5236;</h2>
-<h3 id="&#x53D1;&#x9001;&#x5355;&#x53C2;&#x6570;&#x5750;&#x6807;">&#x53D1;&#x9001;&#x5355;&#x53C2;&#x6570;&#x5750;&#x6807;<br></h3>
-<p><strong>WriteCoord(Axis axis, double value, int speed = DefaultSpeed)</strong><br>
-&#x8FD4;&#x56DE;&#x503C;&#xFF1A;&#x65E0;<br>
-&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;&#x53C2;&#x6570;1&#xFF1A;&#x5750;&#x6807;&#x53F7;&#xFF08;Axis&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#xFF0C;int&#xFF1A;1-6&#xFF08;X-RZ&#xFF09;&#xFF09;&#xFF0C;&#x53C2;&#x6570;2&#xFF1A;&#x5750;&#x6807;&#xFF08;<strong>X&#x3001;Y&#x3001;Z</strong>&#x53D6;&#x503C;&#x8303;&#x56F4; <strong>-300-300.00</strong> &#x5355;&#x4F4D; mm  <strong>RX&#x3001;RY&#x3001;RZ</strong>,&#x53D6;&#x503C;&#x8303;&#x56F4;<strong>-180-180</strong>&#xFF09;&#xFF0C;&#x53C2;&#x6570;3&#xFF1A;&#x901F;&#x5EA6;(<strong>0-100</strong>)&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;<strong>30</strong><br>
-&#x793A;&#x4F8B;&#xFF1A;<br>
-<code>mycobot::MyCobot::I().WriteCoord(mycobot::Axis::X, 10, 30);</code></p>
-<h2 id="&#x591A;&#x53C2;&#x6570;&#x63A7;&#x5236;">&#x591A;&#x53C2;&#x6570;&#x63A7;&#x5236;</h2>
-<h3 id="&#x83B7;&#x53D6;&#x5168;&#x90E8;&#x5750;&#x6807;">&#x83B7;&#x53D6;&#x5168;&#x90E8;&#x5750;&#x6807;<br></h3>
-<p><strong>GetCoords()</strong><br>
-&#x8FD4;&#x56DE;&#x503C;&#xFF1A;Coords&#x7C7B;&#x578B;<br> 
-&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;&#x65E0;<br>
-&#x793A;&#x4F8B;&#xFF1A;<br>
-<code>mycobot::Coords coords = mycobot::MyCobot::I().GetCoords();</code></p>
-<h3 id="&#x53D1;&#x9001;&#x5168;&#x90E8;&#x5750;&#x6807;">&#x53D1;&#x9001;&#x5168;&#x90E8;&#x5750;&#x6807;<br></h3>
-<p><strong>WriteCoords(const Coords&amp; coords, int speed = DefaultSpeed)</strong><br>
-&#x8FD4;&#x56DE;&#x503C;&#xFF1A;&#x65E0;<br>
-&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;&#x53C2;&#x6570;1&#xFF1A;&#x5750;&#x6807;&#xFF08;<strong>X&#x3001;Y&#x3001;Z</strong>&#x53D6;&#x503C;&#x8303;&#x56F4; <strong>-300-300.00</strong> &#x5355;&#x4F4D; mm  <strong>RX&#x3001;RY&#x3001;RZ</strong>,&#x53D6;&#x503C;&#x8303;&#x56F4;<strong>-180-180</strong>&#xFF09;<br> 
-&#x53C2;&#x6570;2&#xFF1A;&#x901F;&#x5EA6;(<strong>0-100</strong>)&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;30<br>
-&#x793A;&#x4F8B;&#xFF1A;<br></p>
-<pre><code>mycobot::Coords goal_coords = { 5, 5, 5, 5, 5, 5 };
-mycobot::MyCobot::I().WriteCoords(goal_coords, 30);
-</code></pre><h2 id="&#x5B8C;&#x6574;&#x4F7F;&#x7528;&#x6848;&#x4F8B;">&#x5B8C;&#x6574;&#x4F7F;&#x7528;&#x6848;&#x4F8B;</h2>
-<p>&#x4E0B;&#x9762;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x662F;&#x4E00;&#x4E2A;&#x63A7;&#x5236; MyCobot &#x673A;&#x68B0;&#x81C2;&#x7684;&#x63A7;&#x5236;&#x7A0B;&#x5E8F;&#x7684;&#x4E3B;&#x8981;&#x5165;&#x53E3;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x7A0B;&#x5E8F;&#x9996;&#x5148;&#x68C0;&#x67E5;&#x63A7;&#x5236;&#x5668;&#x662F;&#x5426;&#x8FDE;&#x63A5;&#x5230;&#x673A;&#x68B0;&#x81C2;&#x3002;&#x5982;&#x679C;&#x8FDE;&#x63A5;&#x6210;&#x529F;&#xFF0C;&#x7A0B;&#x5E8F;&#x4F1A;&#x5C06;&#x673A;&#x68B0;&#x81C2;&#x4E0A;&#x7535;&#x5E76;&#x505C;&#x6B62;&#x5F53;&#x524D;&#x7684;&#x52A8;&#x4F5C;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x5B83;&#x4F1A;&#x83B7;&#x53D6;&#x5E76;&#x8F93;&#x51FA;&#x673A;&#x68B0;&#x81C2;&#x7684;&#x5F53;&#x524D;&#x89D2;&#x5EA6;&#x548C;&#x5750;&#x6807;&#xFF0C;&#x5E76;&#x5C1D;&#x8BD5;&#x5C06;&#x6240;&#x6709;&#x5173;&#x8282;&#x79FB;&#x52A8;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x76EE;&#x6807;&#x89D2;&#x5EA6;&#x3002;&#x7A0B;&#x5E8F;&#x5728;&#x76EE;&#x6807;&#x89D2;&#x5EA6;&#x5C31;&#x4F4D;&#x524D;&#xFF0C;&#x4F1A;&#x6301;&#x7EED;&#x8F93;&#x51FA;&#x5F53;&#x524D;&#x7684;&#x89D2;&#x5EA6;&#x4FE1;&#x606F;&#x3002;&#x6700;&#x540E;&#xFF0C;&#x7A0B;&#x5E8F;&#x5BF9;&#x67D0;&#x4E2A;&#x5173;&#x8282;&#x8FDB;&#x884C;&#x89D2;&#x5EA6;&#x8C03;&#x6574;&#xFF0C;&#x5E76;&#x5728;&#x8C03;&#x6574;&#x540E;&#x505C;&#x6B62;&#x673A;&#x68B0;&#x81C2;&#x7684;&#x52A8;&#x4F5C;&#x3002;&#x5982;&#x679C;&#x8FC7;&#x7A0B;&#x4E2D;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#xFF0C;&#x7A0B;&#x5E8F;&#x4F1A;&#x6355;&#x83B7;&#x5F02;&#x5E38;&#x5E76;&#x9000;&#x51FA;&#x3002;</p>
-<pre><code>int main(int argc, char* argv[])
-try {
-    QCoreApplication a(argc, argv); // &#x521B;&#x5EFA;&#x4E00;&#x4E2A; QCoreApplication &#x5BF9;&#x8C61;&#x4EE5;&#x652F;&#x6301; Qt &#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;
+						<h1 id="&#x5750;&#x6807;&#x63A7;&#x5236;&#xFF08;robotarm&#xFF09;">&#x5750;&#x6807;&#x63A7;&#x5236;&#xFF08;RobotArm&#xFF09;</h1>
+<p><strong>&#x5750;&#x6807;&#x63A7;&#x5236;</strong>&#x6307;&#x5728;&#x57FA;&#x5750;&#x6807;&#x7CFB;&#x4E0B;&#x6307;&#x5B9A;&#x672B;&#x7AEF;&#x4F4D;&#x59FF; <strong>[x, y, z, rx, ry, rz]</strong>&#xFF1A;&#x5176;&#x4E2D; <strong>x&#x3001;y&#x3001;z</strong> &#x4E3A;&#x4F4D;&#x7F6E;&#xFF08;mm&#xFF09;&#xFF0C;<strong>rx&#x3001;ry&#x3001;rz</strong> &#x4E3A;&#x59FF;&#x6001;&#xFF08;&#xB0;&#xFF0C;&#x6B27;&#x62C9;&#x89D2;&#x8BED;&#x4E49;&#x4EE5;&#x4E0B;&#x4F4D;&#x673A;&#x4E3A;&#x51C6;&#xFF09;&#x3002;&#x672C;&#x6587;&#x6863;&#x57FA;&#x4E8E; <strong><code>RobotArm</code></strong>&#xFF08;<code>include/RobotArm.hpp</code>&#xFF09;&#xFF0C;&#x9002;&#x7528;&#x4E8E; <strong>MyCobotPro450</strong>&#xFF1B;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x4E3A; <strong>Linux</strong>&#xFF0C;&#x901A;&#x4FE1;&#x4E3A; <strong>TCP</strong>&#xFF08;&#x89C1; <a href="6.4.1-download.html">&#x73AF;&#x5883;&#x642D;&#x5EFA;</a>&#x3001;<a href="6.4.2-build.html">&#x7F16;&#x8BD1;</a>&#xFF09;&#x3002;</p>
+<p>&#x4E0B;&#x6587;&#x63A5;&#x53E3;&#x5747;&#x6309; <strong>&#x529F;&#x80FD;</strong>&#x3001;<strong>&#x8FD4;&#x56DE;&#x503C;</strong>&#x3001;<strong>&#x53C2;&#x6570;&#x8BF4;&#x660E;</strong>&#x3001;<strong>&#x53D6;&#x503C;&#x8303;&#x56F4;</strong> &#x5217;&#x51FA;&#x3002;&#x5B8C;&#x6574; API &#x7D22;&#x5F15;&#x89C1; <a href="6.4.7-API.html">API &#x8BF4;&#x660E;</a>&#x3002;</p>
+<hr>
+<h2 id="&#x5750;&#x6807;&#x5206;&#x91CF;&#x53D6;&#x503C;&#xFF08;mycobotpro450&#xFF09;">&#x5750;&#x6807;&#x5206;&#x91CF;&#x53D6;&#x503C;&#xFF08;MyCobotPro450&#xFF09;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x8F74; id</th>
+<th>&#x5206;&#x91CF;</th>
+<th>&#x8303;&#x56F4;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>x&#xFF08;mm&#xFF09;</td>
+<td>-474 ~ 474</td>
+</tr>
+<tr>
+<td>2</td>
+<td>y&#xFF08;mm&#xFF09;</td>
+<td>-474 ~ 474</td>
+</tr>
+<tr>
+<td>3</td>
+<td>z&#xFF08;mm&#xFF09;</td>
+<td>-180 ~ 677</td>
+</tr>
+<tr>
+<td>4</td>
+<td>rx&#xFF08;&#xB0;&#xFF09;</td>
+<td>-180 ~ 180</td>
+</tr>
+<tr>
+<td>5</td>
+<td>ry&#xFF08;&#xB0;&#xFF09;</td>
+<td>-180 ~ 180</td>
+</tr>
+<tr>
+<td>6</td>
+<td>rz&#xFF08;&#xB0;&#xFF09;</td>
+<td>-180 ~ 180</td>
+</tr>
+</tbody>
+</table>
+<p>&#x901F;&#x5EA6;&#x6863; <strong><code>sp</code> / <code>speed</code></strong>&#xFF1A;<strong>1 ~ 100</strong>&#xFF08;&#x5168;&#x7BC7;&#x540C;&#xFF09;&#x3002;</p>
+<hr>
+<h2 id="&#x5355;&#x8F74;">&#x5355;&#x8F74;</h2>
+<h3 id="int-sendcoorduint8t-axis-float-coord-uint8t-sp"><code>int sendCoord(uint8_t axis, float coord, uint8_t sp)</code></h3>
+<ul>
+<li><strong>&#x529F;&#x80FD;</strong>&#xFF1A;&#x4E0B;&#x53D1;&#x5355;&#x8F74;&#x76EE;&#x6807;&#x5750;&#x6807;&#x6216;&#x59FF;&#x6001;&#x5206;&#x91CF;&#x3002;</li>
+<li><strong>&#x8FD4;&#x56DE;&#x503C;</strong>&#xFF1A;&#x6210;&#x529F;&#x591A;&#x4E3A; <strong><code>1</code></strong>&#xFF0C;&#x5931;&#x8D25; <strong><code>-1</code></strong>&#x3002;</li>
+<li><strong>&#x53C2;&#x6570;&#x8BF4;&#x660E;</strong>&#xFF1A;<code>axis</code> &#x4E3A; <strong>1~6</strong>&#xFF08;&#x5BF9;&#x5E94; x,y,z,rx,ry,rz&#xFF09;&#xFF1B;<code>coord</code> &#x4E3A;&#x76EE;&#x6807;&#x503C;&#xFF1B;<code>sp</code> &#x4E3A;&#x901F;&#x5EA6;&#x6863;&#x3002;</li>
+<li><strong>&#x53D6;&#x503C;&#x8303;&#x56F4;</strong>&#xFF1A;<code>axis</code>&#xFF1A;<strong>1 ~ 6</strong>&#xFF1B;<code>coord</code>&#xFF1A;<strong>&#x89C1;&#x4E0A;&#x8868;</strong>&#xFF1B;<code>sp</code>&#xFF1A;<strong>1 ~ 100</strong>&#x3002;</li>
+</ul>
+<hr>
+<h2 id="&#x516D;&#x8F74;">&#x516D;&#x8F74;</h2>
+<h3 id="coords-getcoords"><code>Coords getCoords()</code></h3>
+<ul>
+<li><strong>&#x529F;&#x80FD;</strong>&#xFF1A;&#x8BFB;&#x53D6;&#x5F53;&#x524D;&#x516D;&#x4F4D;&#x59FF; <strong>[x,y,z,rx,ry,rz]</strong>&#x3002;</li>
+<li><strong>&#x8FD4;&#x56DE;&#x503C;</strong>&#xFF1A;<code>Coords</code>&#xFF08;<code>std::array&lt;float, 6&gt;</code>&#xFF09;&#xFF0C;&#x4E0B;&#x6807; <strong>0 ~ 5</strong> &#x5BF9;&#x5E94; <strong>&#x8F74; 1 ~ 6</strong>&#x3002;</li>
+<li><strong>&#x53C2;&#x6570;&#x8BF4;&#x660E;</strong>&#xFF1A;&#x65E0;&#x3002;</li>
+<li><strong>&#x53D6;&#x503C;&#x8303;&#x56F4;</strong>&#xFF1A;&#x65E0;&#x3002;</li>
+</ul>
+<h3 id="int-sendcoordscoords-coords-uint8t-sp"><code>int SendCoords(Coords coords, uint8_t sp)</code></h3>
+<ul>
+<li><strong>&#x529F;&#x80FD;</strong>&#xFF1A;&#x4E00;&#x6B21;&#x6027;&#x4E0B;&#x53D1;&#x5B8C;&#x6574;&#x516D;&#x4F4D;&#x59FF;&#x3002;</li>
+<li><strong>&#x8FD4;&#x56DE;&#x503C;</strong>&#xFF1A;&#x6210;&#x529F;&#x591A;&#x4E3A; <strong><code>1</code></strong>&#xFF0C;&#x5931;&#x8D25; <strong><code>-1</code></strong>&#x3002;</li>
+<li><strong>&#x53C2;&#x6570;&#x8BF4;&#x660E;</strong>&#xFF1A;<code>coords</code> &#x516D;&#x4E2A;&#x5206;&#x91CF;&#xFF1B;<code>sp</code> &#x901F;&#x5EA6;&#x6863;&#x3002;</li>
+<li><strong>&#x53D6;&#x503C;&#x8303;&#x56F4;</strong>&#xFF1A;&#x5404;&#x5206;&#x91CF; <strong>&#x6309;&#x8F74; 1~6 &#x89C1;&#x4E0A;&#x8868;</strong>&#xFF1B;<code>sp</code>&#xFF1A;<strong>1 ~ 100</strong>&#x3002;</li>
+</ul>
+<hr>
+<h2 id="&#x5750;&#x6807;-jog">&#x5750;&#x6807; JOG</h2>
+<h3 id="int-jogcoorduint8t-axis-uint8t-direction-uint8t-speed"><code>int jogCoord(uint8_t axis, uint8_t direction, uint8_t speed)</code></h3>
+<ul>
+<li><strong>&#x529F;&#x80FD;</strong>&#xFF1A;&#x6307;&#x5B9A;&#x5750;&#x6807;&#x8F74;&#x6CBF;&#x67D0;&#x65B9;&#x5411;&#x8FDE;&#x7EED;&#x8FD0;&#x52A8;&#xFF0C;&#x76F4;&#x81F3;&#x9650;&#x4F4D;&#x6216;&#x8C03;&#x7528; <code>stop()</code> &#x7B49;&#x505C;&#x6B62;&#x3002;</li>
+<li><strong>&#x8FD4;&#x56DE;&#x503C;</strong>&#xFF1A;&#x6210;&#x529F;&#x591A;&#x4E3A; <strong><code>1</code></strong>&#xFF0C;&#x5931;&#x8D25; <strong><code>-1</code></strong>&#x3002;</li>
+<li><strong>&#x53C2;&#x6570;&#x8BF4;&#x660E;</strong>&#xFF1A;<code>axis</code>&#xFF1B;<code>direction</code>&#xFF1B;<code>speed</code>&#x3002;</li>
+<li><strong>&#x53D6;&#x503C;&#x8303;&#x56F4;</strong>&#xFF1A;<code>axis</code>&#xFF1A;<strong>1 ~ 6</strong>&#xFF1B;<code>direction</code>&#xFF1A;<strong>0</strong> &#x8D1F;&#x5411;&#x3001;<strong>1</strong> &#x6B63;&#x5411;&#xFF1B;<code>speed</code>&#xFF1A;<strong>1 ~ 100</strong>&#x3002;</li>
+</ul>
+<hr>
+<h2 id="&#x5230;&#x4F4D;&#x5224;&#x65AD;&#xFF08;&#x5750;&#x6807;&#x76EE;&#x6807;&#xFF09;">&#x5230;&#x4F4D;&#x5224;&#x65AD;&#xFF08;&#x5750;&#x6807;&#x76EE;&#x6807;&#xFF09;</h2>
+<h3 id="int-isinpositionangles-anglecoords-bool-mode"><code>int isInPosition(Angles angle_coords, bool mode)</code></h3>
+<ul>
+<li><strong>&#x529F;&#x80FD;</strong>&#xFF1A;&#x5224;&#x65AD;&#x5F53;&#x524D;&#x672B;&#x7AEF;&#x662F;&#x5426;&#x5230;&#x8FBE;&#x7ED9;&#x5B9A;&#x7684;&#x516D;&#x7EF4;&#x76EE;&#x6807;&#xFF1B;&#x7528;&#x4E8E;&#x5750;&#x6807;&#x65F6;&#x7B2C;&#x4E8C;&#x53C2;&#x6570;&#x53D6; <strong><code>true</code></strong>&#xFF08;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x4ECD;&#x4E3A; <code>Angles</code>/<code>Coords</code> &#x540C;&#x4E00;&#x5E95;&#x5C42; <code>std::array&lt;float,6&gt;</code>&#xFF09;&#x3002;</li>
+<li><strong>&#x8FD4;&#x56DE;&#x503C;</strong>&#xFF1A;<strong><code>1</code></strong> &#x5230;&#x4F4D;&#xFF1B;<strong><code>0</code></strong> &#x672A;&#x5230;&#x4F4D;&#xFF1B;<strong><code>-1</code></strong> &#x5F02;&#x5E38;&#x6216;&#x65E0;&#x6709;&#x6548;&#x5E94;&#x7B54;&#x3002;</li>
+<li><strong>&#x53C2;&#x6570;&#x8BF4;&#x660E;</strong>&#xFF1A;<code>angle_coords</code> &#x516D;&#x4E2A;&#x76EE;&#x6807;&#x91CF;&#xFF08;&#x6B64;&#x5904;&#x8868;&#x793A; <strong>x,y,z,rx,ry,rz</strong>&#xFF09;&#xFF1B;<code>mode</code>&#x3002;</li>
+<li><strong>&#x53D6;&#x503C;&#x8303;&#x56F4;</strong>&#xFF1A;&#x5224;&#x65AD;<strong>&#x5750;&#x6807;</strong>&#x65F6; <strong><code>mode == true</code></strong>&#xFF1B;&#x5404;&#x5206;&#x91CF; <strong>&#x89C1;&#x672C;&#x8282;&#x5750;&#x6807;&#x8868;</strong>&#x3002;</li>
+</ul>
+<hr>
+<h2 id="&#x8FD0;&#x52A8;&#x505C;&#x6B62;&#xFF08;&#x4E0E;-jog-&#x7B49;&#x914D;&#x5408;&#xFF09;">&#x8FD0;&#x52A8;&#x505C;&#x6B62;&#xFF08;&#x4E0E; JOG &#x7B49;&#x914D;&#x5408;&#xFF09;</h2>
+<h3 id="int-stop"><code>int stop()</code></h3>
+<ul>
+<li><strong>&#x529F;&#x80FD;</strong>&#xFF1A;&#x505C;&#x6B62;&#x5F53;&#x524D;&#x8FD0;&#x52A8;&#x3002;</li>
+<li><strong>&#x8FD4;&#x56DE;&#x503C;</strong>&#xFF1A;&#x6210;&#x529F;&#x591A;&#x4E3A; <strong><code>1</code></strong>&#xFF0C;&#x5931;&#x8D25; <strong><code>-1</code></strong>&#x3002;</li>
+<li><strong>&#x53C2;&#x6570;&#x8BF4;&#x660E;</strong>&#xFF1A;&#x65E0;&#x3002;</li>
+<li><strong>&#x53D6;&#x503C;&#x8303;&#x56F4;</strong>&#xFF1A;&#x65E0;&#x3002;</li>
+</ul>
+<hr>
+<h2 id="&#x793A;&#x4F8B;&#xFF08;&#x8282;&#x9009;&#xFF09;">&#x793A;&#x4F8B;&#xFF08;&#x8282;&#x9009;&#xFF09;</h2>
+<p>&#x4EE5;&#x4E0B;&#x793A;&#x4F8B;&#x6F14;&#x793A;&#x8BFB;&#x53D6;&#x5750;&#x6807;&#x3001;&#x4E0B;&#x53D1;&#x516D;&#x4F4D;&#x59FF;&#x3001;&#x6309;&#x5750;&#x6807;&#x5224;&#x65AD;&#x662F;&#x5426;&#x5230;&#x4F4D;&#x3001;&#x5750;&#x6807; JOG &#x4E0E;&#x505C;&#x6B62;,&#x8BF7;&#x4FDD;&#x8BC1;&#x76EE;&#x6807;&#x70B9;&#x5728;&#x673A;&#x5668;&#x4EBA;&#x5DE5;&#x4F5C;&#x7A7A;&#x95F4;&#x5185;&#x4E14;&#x8DEF;&#x5F84;&#x5B89;&#x5168;&#x3002;</p>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;RobotArm.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;config.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;thread&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;chrono&gt;</span></span>
 
-    using namespace std::chrono_literals; // &#x5F15;&#x5165;&#x7528;&#x4E8E;&#x65F6;&#x95F4;&#x5904;&#x7406;&#x7684;&#x5B57;&#x9762;&#x91CF;&#xFF08;&#x5982; 200ms&#xFF09;
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>::chrono_literals;
 
-    // &#x68C0;&#x67E5;&#x673A;&#x68B0;&#x81C2;&#x63A7;&#x5236;&#x5668;&#x662F;&#x5426;&#x8FDE;&#x63A5;
-    if (!mycobot::MyCobot::I().IsControllerConnected()) {
-        std::cerr &lt;&lt; &quot;Robot is not connected\n&quot;; // &#x5982;&#x679C;&#x672A;&#x8FDE;&#x63A5;&#xFF0C;&#x8F93;&#x51FA;&#x9519;&#x8BEF;&#x4FE1;&#x606F;
-        exit(EXIT_FAILURE); // &#x9000;&#x51FA;&#x7A0B;&#x5E8F;&#xFF0C;&#x8FD4;&#x56DE;&#x5931;&#x8D25;&#x72B6;&#x6001;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+    Param p;
+    p.ip_serial = <span class="hljs-string">&quot;192.168.0.232&quot;</span>;
+    p.port_baud = <span class="hljs-number">4500</span>;
+
+    <span class="hljs-function">RobotArm <span class="hljs-title">arm</span><span class="hljs-params">(TCP_COMM, p)</span></span>;
+
+    <span class="hljs-keyword">if</span> (arm.powerOn() != <span class="hljs-number">1</span>) {
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cerr</span> &lt;&lt; <span class="hljs-string">&quot;powerOn failed\n&quot;</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
     }
 
-    std::cout &lt;&lt; &quot;Robot is connected\n&quot;; // &#x8F93;&#x51FA;&#x8FDE;&#x63A5;&#x6210;&#x529F;&#x7684;&#x4FE1;&#x606F;
+    Coords cur = arm.getCoords();
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;x=&quot;</span> &lt;&lt; cur[<span class="hljs-number">0</span>] &lt;&lt; <span class="hljs-string">&quot; y=&quot;</span> &lt;&lt; cur[<span class="hljs-number">1</span>] &lt;&lt; <span class="hljs-string">&quot; z=&quot;</span> &lt;&lt; cur[<span class="hljs-number">2</span>] &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;
 
-    mycobot::MyCobot::I().PowerOn(); // &#x4E0A;&#x7535;&#xFF0C;&#x542F;&#x52A8;&#x673A;&#x68B0;&#x81C2;
-    mycobot::MyCobot::I().StopRobot(); // &#x505C;&#x6B62;&#x673A;&#x68B0;&#x81C2;&#x7684;&#x6240;&#x6709;&#x52A8;&#x4F5C;
-
-    // &#x68C0;&#x67E5;&#x673A;&#x68B0;&#x81C2;&#x662F;&#x5426;&#x6B63;&#x5728;&#x79FB;&#x52A8;&#xFF0C;&#x5E76;&#x8F93;&#x51FA;&#x72B6;&#x6001;
-    std::cout &lt;&lt; &quot;Robot is moving: &quot; &lt;&lt; mycobot::MyCobot::I().IsMoving() &lt;&lt; &quot;\n&quot;;
-
-    // &#x83B7;&#x53D6;&#x5F53;&#x524D;&#x673A;&#x68B0;&#x81C2;&#x5404;&#x5173;&#x8282;&#x7684;&#x89D2;&#x5EA6;
-    mycobot::Angles angles = mycobot::MyCobot::I().GetAngles();
-    std::this_thread::sleep_for(200ms); // &#x5EF6;&#x8FDF; 200 &#x6BEB;&#x79D2;
-
-    // &#x83B7;&#x53D6;&#x5F53;&#x524D;&#x673A;&#x68B0;&#x81C2;&#x672B;&#x7AEF;&#x7684;&#x4F4D;&#x7F6E;&#x5750;&#x6807;
-    mycobot::Coords coords = mycobot::MyCobot::I().GetCoords();
-
-    // &#x518D;&#x6B21;&#x83B7;&#x53D6;&#x5404;&#x5173;&#x8282;&#x7684;&#x89D2;&#x5EA6;
-    angles = mycobot::MyCobot::I().GetAngles();
-
-    // &#x8F93;&#x51FA;&#x5404;&#x5173;&#x8282;&#x7684;&#x89D2;&#x5EA6;
-    std::cout &lt;&lt; &quot;[&quot; &lt;&lt; angles[mycobot::J1] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J2] &lt;&lt; &quot;, &quot; 
-              &lt;&lt; angles[mycobot::J3] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J4] &lt;&lt; &quot;, &quot; 
-              &lt;&lt; angles[mycobot::J5] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J6] &lt;&lt; &quot;]&quot;;
-
-    // &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x89D2;&#x5EA6;&#x6570;&#x7EC4;&#xFF0C;&#x6240;&#x6709;&#x5173;&#x8282;&#x79FB;&#x52A8;&#x5230; 5 &#x5EA6;
-    mycobot::Angles goal_angles = { 5, 5, 5, 5, 5, 5 };
-    mycobot::MyCobot::I().WriteAngles(goal_angles); // &#x5C06;&#x673A;&#x68B0;&#x81C2;&#x79FB;&#x52A8;&#x5230;&#x76EE;&#x6807;&#x89D2;&#x5EA6;
-
-    // &#x7B49;&#x5F85;&#x673A;&#x68B0;&#x81C2;&#x79FB;&#x52A8;&#x5230;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;
-    while (!mycobot::MyCobot::I().IsInPosition(goal_angles, false)) {
-        angles = mycobot::MyCobot::I().GetAngles(); // &#x83B7;&#x53D6;&#x5F53;&#x524D;&#x89D2;&#x5EA6;
-        std::cout &lt;&lt; &quot;[&quot; &lt;&lt; angles[mycobot::J1] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J2] &lt;&lt; &quot;, &quot;
-                  &lt;&lt; angles[mycobot::J3] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J4] &lt;&lt; &quot;, &quot;
-                  &lt;&lt; angles[mycobot::J5] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J6] &lt;&lt; &quot;]&quot; &lt;&lt; std::flush;
-        std::this_thread::sleep_for(200ms); // &#x6BCF;&#x6B21;&#x5FAA;&#x73AF;&#x5EF6;&#x8FDF; 200 &#x6BEB;&#x79D2;
+    Coords goal = {<span class="hljs-number">200.f</span>, <span class="hljs-number">100.f</span>, <span class="hljs-number">250.f</span>, <span class="hljs-number">0.f</span>, <span class="hljs-number">0.f</span>, <span class="hljs-number">0.f</span>}; <span class="hljs-comment">//&#x6839;&#x636E;&#x5F53;&#x524D;&#x673A;&#x5668;&#x5B9E;&#x9645;&#x59FF;&#x6001;&#x7ED9;&#x5750;&#x6807;&#x70B9;&#x4F4D;</span>
+    <span class="hljs-keyword">if</span> (arm.SendCoords(goal, <span class="hljs-number">30</span>) != <span class="hljs-number">1</span>) {
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cerr</span> &lt;&lt; <span class="hljs-string">&quot;SendCoords failed\n&quot;</span>;
     }
 
-    // &#x8C03;&#x6574; J1 &#x5173;&#x8282;&#x89D2;&#x5EA6;&#xFF0C;&#x589E;&#x91CF;&#x4E3A; 1 &#x5EA6;&#xFF0C;&#x901F;&#x5EA6;&#x4E3A; 5
-    mycobot::MyCobot::I().JogAngle(mycobot::Joint::J1, 1, 5);
-    std::this_thread::sleep_for(5000ms); // &#x5EF6;&#x8FDF; 5 &#x79D2;
+    <span class="hljs-keyword">while</span> (arm.isInPosition(goal, <span class="hljs-literal">true</span>) != <span class="hljs-number">1</span>) {
+        cur = arm.getCoords();
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;x=&quot;</span> &lt;&lt; cur[<span class="hljs-number">0</span>] &lt;&lt; <span class="hljs-string">&quot; ...\n&quot;</span>;
+        <span class="hljs-built_in">std</span>::this_thread::sleep_for(<span class="hljs-number">200</span>ms);
+    }
 
-    mycobot::MyCobot::I().StopRobot(); // &#x505C;&#x6B62;&#x673A;&#x68B0;&#x81C2;&#x7684;&#x6240;&#x6709;&#x52A8;&#x4F5C;
+    arm.jogCoord(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">30</span>);
+    <span class="hljs-built_in">std</span>::this_thread::sleep_for(<span class="hljs-number">2</span>s);
+    arm.stop();
 
-    std::cout &lt;&lt; &quot;\n&quot;; // &#x8F93;&#x51FA;&#x4E00;&#x4E2A;&#x6362;&#x884C;&#x7B26;
-    exit(EXIT_SUCCESS); // &#x6B63;&#x5E38;&#x9000;&#x51FA;&#x7A0B;&#x5E8F;
-
-} catch (std::error_code&amp;) {
-    // &#x6355;&#x83B7; std::error_code &#x5F02;&#x5E38;&#xFF0C;&#x5E76;&#x8F93;&#x51FA;&#x9519;&#x8BEF;&#x4FE1;&#x606F;
-    std::cerr &lt;&lt; &quot;System error. Exiting.\n&quot;;
-    exit(EXIT_FAILURE); // &#x5F02;&#x5E38;&#x9000;&#x51FA;&#x7A0B;&#x5E8F;
-} catch (...) {
-    // &#x6355;&#x83B7;&#x6240;&#x6709;&#x5176;&#x4ED6;&#x5F02;&#x5E38;&#xFF0C;&#x5E76;&#x8F93;&#x51FA;&#x9519;&#x8BEF;&#x4FE1;&#x606F;
-    std::cerr &lt;&lt; &quot;Unknown exception thrown. Exiting.\n&quot;;
-    exit(EXIT_FAILURE); // &#x5F02;&#x5E38;&#x9000;&#x51FA;&#x7A0B;&#x5E8F;
+    arm.powerOff();
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
 }
-</code></pre><hr>
-<p><a href="6.3.3-angle.md">&#x2190; &#x4E0A;&#x4E00;&#x7AE0;</a> | <a href="6.3.5-io.md">&#x4E0B;&#x4E00;&#x7AE0; &#x2192;</a></p>
+</code></pre>
+<hr>
+<p><a href="6.4.3-angle.html">&#x2190; &#x4E0A;&#x4E00;&#x7AE0;</a> | <a href="6.4.5-io.md">&#x4E0B;&#x4E00;&#x7AE0; &#x2192;</a></p>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
 						
 					</section>
@@ -1555,7 +1607,7 @@ try {
 		</a>
 		
 		
-		<a href="6.4.5-io.html" class="navigation navigation-next " aria-label="Next page: 6.4.5 IO控制">
+		<a href="6.4.5-IO.html" class="navigation navigation-next " aria-label="Next page: 6.4.5 IO控制">
 			<i class="fa fa-angle-right"></i>
 		</a>
 		
@@ -1565,7 +1617,7 @@ try {
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"6.4.4 坐标控制","level":"4.2.4.4","depth":3,"next":{"title":"6.4.5 IO控制","level":"4.2.4.5","depth":3,"path":"3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.5-io.md","ref":"3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.5-io.md","articles":[]},"previous":{"title":"6.4.3 关节控制","level":"4.2.4.3","depth":3,"path":"3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.3-angle.md","ref":"3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.3-angle.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"输入关键字搜索","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"/sidebar.css"}},"file":{"path":"3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.4-coord.md","mtime":"2026-05-20T02:42:47.494Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-05-20T03:40:23.280Z"},"basePath":"../../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"6.4.4 坐标控制","level":"4.2.4.4","depth":3,"next":{"title":"6.4.5 IO控制","level":"4.2.4.5","depth":3,"path":"3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.5-IO.md","ref":"3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.5-IO.md","articles":[]},"previous":{"title":"6.4.3 关节控制","level":"4.2.4.3","depth":3,"path":"3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.3-angle.md","ref":"3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.3-angle.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"输入关键字搜索","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"/sidebar.css"}},"file":{"path":"3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.4-coord.md","mtime":"2026-05-22T14:48:43.444Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-05-22T15:27:33.568Z"},"basePath":"../../..","book":{"language":""}});
 		});
 	</script>
 </div>

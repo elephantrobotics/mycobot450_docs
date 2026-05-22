@@ -76,7 +76,7 @@
     <link rel="next" href="6.4.7-API.html" />
     
     
-    <link rel="prev" href="6.4.5-io.html" />
+    <link rel="prev" href="6.4.5-IO.html" />
     
 
     </head>
@@ -981,7 +981,7 @@
                 <a href="6.4.2-build.html">
             
                     
-                    6.4.2 编译运行
+                    6.4.2 编译与运行
             
                 </a>
             
@@ -1015,9 +1015,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2.4.5" data-path="6.4.5-io.html">
+        <li class="chapter " data-level="4.2.4.5" data-path="6.4.5-IO.html">
             
-                <a href="6.4.5-io.html">
+                <a href="6.4.5-IO.html">
             
                     
                     6.4.5 IO控制
@@ -1059,7 +1059,7 @@
                 <a href="6.4.8-example.html">
             
                     
-                    6.4.8 基本功能案例
+                    6.4.8 案例说明
             
                 </a>
             
@@ -1430,119 +1430,9 @@
 					<section class="normal markdown-section">
 						
 						<h1 id="&#x5939;&#x722A;&#x63A7;&#x5236;">&#x5939;&#x722A;&#x63A7;&#x5236;</h1>
-<p>&#x5939;&#x722A;&#x5B89;&#x88C5;&#xFF1A;<br></p>
-<ul>
-<li>&#x81EA;&#x9002;&#x5E94;&#x5939;&#x722A;&#x5C06;&#x5939;&#x722A;&#x63D2;&#x5728;atom&#x4E0A;&#x9762;&#x7684;&#x5F15;&#x811A;&#x4E0A;&#xFF0C;&#x5177;&#x4F53;&#x770B;&#x4E0B;&#x56FE;&#xFF1A;<br>
-<img src="../../../resources/3-FunctionsAndApplications/6.developmentGuide/Cplus/GrippingJaw/8-6-001.png" alt="pic"></li>
-<li>&#x7535;&#x52A8;&#x5939;&#x722A;&#x63D2;&#x5728;&#x9876;&#x7AEF;&#x4E0A;&#x7684;&#x63A5;&#x53E3;&#x5904;&#xFF0C;&#x5177;&#x4F53;&#x770B;&#x4E0B;&#x56FE;&#xFF1A;<br>
-&#x6CE8;&#x610F;&#xFF1A;<strong>myCobot 280-m5&#x65E0;&#x7535;&#x52A8;&#x5939;&#x722A;&#xFF0C;&#x53EA;&#x6709;myCobot 320-m5&#x6709;&#x7535;&#x52A8;&#x5939;&#x722A;</strong>&#x3002;<br>
-<img src="../../../resources/3-FunctionsAndApplications/6.developmentGuide/Cplus/GrippingJaw/8-6-002.png" alt="pic"><h2 id="&#x81EA;&#x9002;&#x5E94;&#x5939;&#x722A;&#x63A7;&#x5236;">&#x81EA;&#x9002;&#x5E94;&#x5939;&#x722A;&#x63A7;&#x5236;</h2>
-&#x652F;&#x6301;&#x8BBE;&#x5907;&#xFF1A;<strong>myCobot280</strong>&#x3001;320&amp;&amp;myPalletizer 260<br>
-<strong>SetGriper(int open)</strong><br>
-&#x8FD4;&#x56DE;&#x503C;&#xFF1A;&#x65E0;<br>
-&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;&#x5939;&#x722A;&#x5F00;&#x5173;&#x72B6;&#x6001;&#xFF08;0--&#x5173;&#xFF0C;1--&#x5F00;&#xFF09;<br>
-&#x6848;&#x4F8B;&#xFF1A;&#x7531;&#x4E8E;&#x5EF6;&#x8FDF;&#xFF0C;&#x7B2C;&#x4E00;&#x6B21;&#x63A7;&#x5236;&#x5939;&#x722A;&#xFF0C;&#x53EF;&#x80FD;&#x4E0D;&#x6210;&#x529F;&#xFF0C;&#x5EFA;&#x8BAE;&#x53D1;&#x9001;&#x4E24;&#x6B21;<br></li>
-</ul>
-<pre><code class="lang-c++"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">2</span>; i++) {&lt;br&gt;
-    mycobot::MyCobot::I().SetGriper(<span class="hljs-number">1</span>);&lt;br&gt;
-    mycobot::MyCobot::I().SleepSecond(<span class="hljs-number">3</span>);&lt;br&gt;
-    mycobot::MyCobot::I().SetGriper(<span class="hljs-number">0</span>);&lt;br&gt;
-    mycobot::MyCobot::I().SleepSecond(<span class="hljs-number">3</span>);&lt;br&gt;
-}&lt;br&gt;
-</code></pre>
-<h2 id="&#x5B8C;&#x6574;&#x4F7F;&#x7528;&#x6848;&#x4F8B;">&#x5B8C;&#x6574;&#x4F7F;&#x7528;&#x6848;&#x4F8B;</h2>
-<pre><code class="lang-c++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span>* argv[])</span>
-<span class="hljs-keyword">try</span> </span>{
-<span class="hljs-function">QCoreApplication <span class="hljs-title">a</span><span class="hljs-params">(argc, argv)</span></span>;
-<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>::chrono_literals;
-<span class="hljs-keyword">if</span> (!mycobot::MyCobot::I().IsControllerConnected()) {
-    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cerr</span> &lt;&lt; <span class="hljs-string">&quot;Robot is not connected\n&quot;</span>;
-    <span class="hljs-built_in">exit</span>(EXIT_FAILURE);
-}
-<span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Robot is connected\n&quot;</span>;
-mycobot::MyCobot::I().PowerOn();
-
-mycobot::MyCobot::I().SleepSecond(<span class="hljs-number">1</span>);<span class="hljs-comment">//&#x9700;&#x8981;&#x7B49;&#x5F85;1S&#xFF0C;&#x8BA9;&#x524D;&#x9762;&#x7684;&#x52A8;&#x4F5C;&#x505A;&#x5B8C;</span>
-
-<span class="hljs-comment">//&#x8BBE;&#x7F6E;io&#x8F93;&#x51FA;&#xFF0C;2&#x3001;5&#x3001;26&#x4E3A;m5&#x8F93;&#x51FA;&#x5F15;&#x811A;</span>
-mycobot::MyCobot::I().SetBasicOut(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>);
-mycobot::MyCobot::I().SleepSecond(<span class="hljs-number">1</span>);
-mycobot::MyCobot::I().SetBasicOut(<span class="hljs-number">5</span>, <span class="hljs-number">1</span>);
-mycobot::MyCobot::I().SleepSecond(<span class="hljs-number">1</span>);
-mycobot::MyCobot::I().SetBasicOut(<span class="hljs-number">26</span>, <span class="hljs-number">1</span>);
-mycobot::MyCobot::I().SleepSecond(<span class="hljs-number">1</span>);
-
-<span class="hljs-comment">//m5&#x8F93;&#x5165;&#x5F15;&#x811A; 35&#x3001;36 &#x7B2C;&#x4E00;&#x6B21;&#x4F1A;&#x51FA;&#x73B0;&#x5EF6;&#x8FDF;</span>
-<span class="hljs-comment">/*for (int i = 0; i &lt; 2; i++) {
-    std::cout &lt;&lt; &quot;35= &quot; &lt;&lt; mycobot::MyCobot::I().GetBasicIn(35) &lt;&lt; std::endl;
-    mycobot::MyCobot::I().SleepSecond(1);
-    std::cout &lt;&lt; &quot;36= &quot; &lt;&lt; mycobot::MyCobot::I().GetBasicIn(36) &lt;&lt; std::endl;
-    mycobot::MyCobot::I().SleepSecond(1);
-}*/</span>
-
-<span class="hljs-comment">//atom&#x8F93;&#x51FA;&#x5F15;&#x811A; 23 33</span>
-<span class="hljs-comment">/*mycobot::MyCobot::I().SetDigitalOut(23, 1);
-mycobot::MyCobot::I().SleepSecond(1);
-mycobot::MyCobot::I().SetDigitalOut(33, 1);
-mycobot::MyCobot::I().SleepSecond(1);*/</span>
-
-<span class="hljs-comment">//atom&#x8F93;&#x5165;&#x5F15;&#x811A;22 19 &#x7B2C;&#x4E00;&#x6B21;&#x4F1A;&#x51FA;&#x73B0;&#x5EF6;&#x8FDF;</span>
-<span class="hljs-comment">/*for (int i = 0; i &lt; 2; i++) {
-    std::cout &lt;&lt; &quot;22= &quot; &lt;&lt; mycobot::MyCobot::I().GetDigitalIn(22) &lt;&lt; std::endl;
-    mycobot::MyCobot::I().SleepSecond(1);
-    std::cout &lt;&lt; &quot;19= &quot; &lt;&lt; mycobot::MyCobot::I().GetDigitalIn(19) &lt;&lt; std::endl;
-    mycobot::MyCobot::I().SleepSecond(1);
-}*/</span>
-
-<span class="hljs-comment">//&#x81EA;&#x9002;&#x5E94;&#x5939;&#x722A; 1--open 0--close &#x7531;&#x4E8E;&#x7B2C;&#x4E00;&#x6B21;&#x6709;&#x5EF6;&#x8FDF;&#xFF0C;&#x53D1;&#x9001;&#x4E24;&#x6B21;</span>
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">2</span>; i++) {
-    mycobot::MyCobot::I().SetGriper(<span class="hljs-number">1</span>);
-    mycobot::MyCobot::I().SleepSecond(<span class="hljs-number">3</span>);
-    mycobot::MyCobot::I().SetGriper(<span class="hljs-number">0</span>);
-    mycobot::MyCobot::I().SleepSecond(<span class="hljs-number">3</span>);
-}
-
-<span class="hljs-comment">//&#x7535;&#x52A8;&#x5939;&#x722A; 1-&#x5F00; 0-&#x5173;  &#x7531;&#x4E8E;&#x7B2C;&#x4E00;&#x6B21;&#x6709;&#x5EF6;&#x8FDF;&#xFF0C;&#x53D1;&#x9001;&#x4E24;&#x6B21;</span>
-<span class="hljs-comment">/*for (int i = 0; i &lt; 2; i++) {
-    mycobot::MyCobot::I().SetElectricGriper(1);
-    mycobot::MyCobot::I().SleepSecond(1);
-    mycobot::MyCobot::I().SetElectricGriper(0);
-    mycobot::MyCobot::I().SleepSecond(1);
-}*/</span>
-<span class="hljs-comment">/*mycobot::MyCobot::I().StopRobot();
-std::cout &lt;&lt; &quot;Robot is moving: &quot; &lt;&lt; mycobot::MyCobot::I().IsMoving() &lt;&lt; &quot;\n&quot;;
-mycobot::Angles angles = mycobot::MyCobot::I().GetAngles();
-std::this_thread::sleep_for(200ms);
-mycobot::Coords coords = mycobot::MyCobot::I().GetCoords();
-angles = mycobot::MyCobot::I().GetAngles();
-std::cout &lt;&lt; &quot;[&quot; &lt;&lt; angles[mycobot::J1] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J2] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J3] &lt;&lt; &quot;, &quot;
-    &lt;&lt; angles[mycobot::J4] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J5] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J6] &lt;&lt; &quot;]&quot;;
-mycobot::Angles goal_angles = { 1, 0, 0, 0, 0, 0 };
-mycobot::MyCobot::I().WriteAngles(goal_angles,180);
-while (!mycobot::MyCobot::I().IsInPosition(goal_angles, false)) {
-    angles = mycobot::MyCobot::I().GetAngles();
-    std::cout &lt;&lt; &quot;[&quot; &lt;&lt; angles[mycobot::J1] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J2] &lt;&lt; &quot;, &quot;
-        &lt;&lt; angles[mycobot::J3] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J4] &lt;&lt; &quot;, &quot;
-        &lt;&lt; angles[mycobot::J5] &lt;&lt; &quot;, &quot; &lt;&lt; angles[mycobot::J6] &lt;&lt; &quot;]&quot; &lt;&lt; std::flush;
-    std::this_thread::sleep_for(200ms);
-}
-
-//mycobot::MyCobot::I().JogAngle(mycobot::Joint::J1, 1, 5);
-std::this_thread::sleep_for(5000ms);
-mycobot::MyCobot::I().StopRobot();*/</span>
-
-<span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;
-<span class="hljs-built_in">exit</span>(EXIT_SUCCESS);
-} <span class="hljs-keyword">catch</span> (<span class="hljs-built_in">std</span>::error_code&amp;) {
-<span class="hljs-built_in">std</span>::<span class="hljs-built_in">cerr</span> &lt;&lt; <span class="hljs-string">&quot;System error. Exiting.\n&quot;</span>;
-<span class="hljs-built_in">exit</span>(EXIT_FAILURE);
-} <span class="hljs-keyword">catch</span> (...) {
-<span class="hljs-built_in">std</span>::<span class="hljs-built_in">cerr</span> &lt;&lt; <span class="hljs-string">&quot;Unknown exception thrown. Exiting.\n&quot;</span>;
-<span class="hljs-built_in">exit</span>(EXIT_FAILURE);
-}
-</code></pre>
+<p>&#x6B63;&#x5728;&#x7F16;&#x5199;&#x4E2D;</p>
 <hr>
-<p><a href="6.3.5-io.md">&#x2190; &#x4E0A;&#x4E00;&#x7AE0;</a> | <a href="6.3.7-API.md">&#x4E0B;&#x4E00;&#x7AE0; &#x2192;</a></p>
+<p><a href="6.4.5-io.md">&#x2190; &#x4E0A;&#x4E00;&#x7AE0;</a> | <a href="6.4.7-API.html">&#x4E0B;&#x4E00;&#x7AE0; &#x2192;</a></p>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
 						
 					</section>
@@ -1570,7 +1460,7 @@ mycobot::MyCobot::I().StopRobot();*/</span>
 
 		
 		
-		<a href="6.4.5-io.html" class="navigation navigation-prev " aria-label="Previous page: 6.4.5 IO控制">
+		<a href="6.4.5-IO.html" class="navigation navigation-prev " aria-label="Previous page: 6.4.5 IO控制">
 			<i class="fa fa-angle-left"></i>
 		</a>
 		
@@ -1585,7 +1475,7 @@ mycobot::MyCobot::I().StopRobot();*/</span>
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"6.4.6 夹爪控制","level":"4.2.4.6","depth":3,"next":{"title":"6.4.7 API说明","level":"4.2.4.7","depth":3,"path":"3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.7-API.md","ref":"3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.7-API.md","articles":[]},"previous":{"title":"6.4.5 IO控制","level":"4.2.4.5","depth":3,"path":"3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.5-io.md","ref":"3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.5-io.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"输入关键字搜索","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"/sidebar.css"}},"file":{"path":"3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.6-gripper.md","mtime":"2026-05-20T02:42:47.497Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-05-20T03:40:23.280Z"},"basePath":"../../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"6.4.6 夹爪控制","level":"4.2.4.6","depth":3,"next":{"title":"6.4.7 API说明","level":"4.2.4.7","depth":3,"path":"3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.7-API.md","ref":"3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.7-API.md","articles":[]},"previous":{"title":"6.4.5 IO控制","level":"4.2.4.5","depth":3,"path":"3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.5-IO.md","ref":"3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.5-IO.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"showHome":false,"showNavigator":false}},"plugins":["chapter-fold","expandable-chapters","back-to-top-button","password-z","-lunr","-search","search-pro","theme-fexa","splitter","-sharing","klipse","livereload"],"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"password-z":{},"theme-fexa":{"search-placeholder":"输入关键字搜索","logo":"/photo/logo.png","logoLink":"https://www.elephantrobotics.com","favicon":"./favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"klipse":{"myConfigKey":"it's the default value"},"password":{},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"/sidebar.css"}},"file":{"path":"3-FunctionsAndApplications/6-SoftwareDevelopment/6.4-Cplus/6.4.6-gripper.md","mtime":"2026-05-22T14:54:14.646Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-05-22T15:27:33.568Z"},"basePath":"../../..","book":{"language":""}});
 		});
 	</script>
 </div>
