@@ -58,13 +58,14 @@ def open_gripper():
 def close_gripper():
     pro450.set_digital_output(1, 1)  # 设置引脚1为高电平
     pro450.set_digital_output(2, 0)  # 设置引脚2为低电平
-    time.sleep(0.05)
+    time.sleep(1)
 
 # 夹爪重复开合两次
 for i in range(2):
     open_gripper()
     time.sleep(3)
     close_gripper()
+    time.sleep(0.5)
 ```
 
 ---
