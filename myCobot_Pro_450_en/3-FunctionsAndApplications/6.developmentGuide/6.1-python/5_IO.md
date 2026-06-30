@@ -59,13 +59,14 @@ def open_gripper():
 def close_gripper():
     pro450.set_digital_output(1, 1) # Set pin 1 to a high level
     pro450.set_digital_output(2, 0) # Set pin 2 to a low level
-    time.sleep(0.05)
+    time.sleep(1)
 
 # Repeat the gripper opening and closing twice
 for i in range(2):
     open_gripper()
     time.sleep(3)
     close_gripper()
+    time.sleep(0.5)
 ```
 ---
 
