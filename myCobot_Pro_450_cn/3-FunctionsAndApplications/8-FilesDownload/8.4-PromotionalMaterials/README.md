@@ -3,7 +3,7 @@
 
 |      机器      |                           产品画册                           |
 | :------------: | :----------------------------------------------------------: |
-| myCobot Pro 450 | [下载](https://download-elephantrobotics.oss-cn-shenzhen.aliyuncs.com/Product_software/myCobot/brochure/myCobot280M5-brochure-2023031.pdf) |
+| myCobot Pro 450 | [下载](https://download.elephantrobotics.com/software/MyCobot%20Pro%20450/mycobot%20pro%20450%E8%AF%B4%E6%98%8E%E4%B9%A6-%E6%80%BB.pdf) |
 
 
 
