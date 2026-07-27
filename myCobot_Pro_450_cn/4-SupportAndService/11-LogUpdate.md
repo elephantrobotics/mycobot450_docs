@@ -2,6 +2,7 @@
 
 | 更新日期 | 更新内容 |
 | --- | --- |
+| 2026-7-27 | **新增：**<br> •  新增了myStudio Pro中的myBlockly章节-自由移动功能<br>  •  新增了myStudio Pro中的快速移动章节-夹爪控制功能|
 | 2026-7-3 | **优化：**<br> •  优化了myStudio Pro中的设置章节-测试模块测试内容说明<br>  •  优化了myStudio Pro中的myBlockly轨迹代码文本描述<br> •  优化了myStudio Pro中的设置章节-网络配置图片|
 | 2026-5-20 | **新增：**<br> •  新增了基于C++开发使用章节<br> •  新增了MiniRobot的settings功能<br>**优化：**<br> •  优化了“MiniRobot介绍”中的错误码<br> •  优化了“MiniRobot”中的首次使用里面互斥页面，新增一个settings以及对应的图文提示<br> •  优化了“MiniRobot介绍”中BlocklyRunner标注默认循环播放<br> •  优化了“MiniRobot介绍”中的文件保存说明中myStudio Pro的生产/测试文件夹的详细介绍可跳转至5.3.2 myBlockly的文件管理|
 | 2026-3-10 | **新增：**<br> •  新增了更新日志章节<br> •  新增了myStudio Pro中的MODBUS、Dynamics章节<br>**优化：**<br> • 优化了“产品特性”中的笛卡尔坐标系 <br> • 优化了“常见问题解决”中的坐标系 <br> • 优化了“产品标准清单”中的产品列表图及对照表 <br> • 优化了myStudio Pro中的"检查更新"内容|

@@ -2,6 +2,7 @@
 
 | Update Date | Update Content |
 | --- | --- |
+| 2026-7-27 | **New Features:**<br> • Added the myBlockly section with free movement feature in myStudio Pro<br> • Added the Quick Movement section with gripper control feature in myStudio Pro|
 | 2026-7-3 | **Optimizations:**<br> • Optimized the settings section in myStudio Pro - Test module test content description<br> • Optimized the myBlockly trajectory code text description in myStudio Pro <br> •  Optimized the settings section in myStudio Pro - Network Configuration Images|
 | 2026-05-20 | **New Features:**<br> • Added a section on C++ development and usage<br> • Added a settings section for MiniRobot<br>**Optimizations:**<br> • Optimized error codes in "MiniRobot Introduction"<br> • Optimized the mutex page in "First Use" of MiniRobot, added a settings and corresponding graphic prompts<br> • Optimized BlocklyRunner labeled default loop playback in "MiniRobot Introduction"<br> • Optimized file saving instructions in "MiniRobot Introduction" with a link to 5.3.2 myBlockly file management for myStudio Pro production/test folders|
 | 2026-03-10 | **New Features:**<br> • Added a changelog section<br>• Added the MODBUS and Dynamics sections to myStudio Pro<br>**Optimizations:**<br> • Optimized the Cartesian coordinate system in "Product Features"<br> • Optimized the coordinate system in "Frequently Asked Questions"<br> • Optimized the product list diagram and comparison table in "Product Standards List"<br>• Optimized the "Check for Updates" feature in myStudio Pro|
