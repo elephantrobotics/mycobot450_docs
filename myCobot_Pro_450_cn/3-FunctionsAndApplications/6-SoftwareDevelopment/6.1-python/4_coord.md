@@ -10,7 +10,8 @@
 
 - **软件与环境**  
   - 已安装 Python 3.6 及以上版本  
-  - 已安装 `pymycobot` 库（通过 `pip install pymycobot` 终端命令安装）  
+  - 已安装 `pymycobot` 库，版本需大于等于 4.0.8（可通过 `pip install -U pymycobot` 安装或升级）  
+  - 主控固件版本需大于等于 1.4  
   - 确保 MyCobot Pro 450 已正确接通电源，并处于待机状态  
   - **注意**：Pro 450 服务端会在设备上电后自动启动，无需手动操作  
 
