@@ -10,7 +10,8 @@ Before using the sample functions, please ensure that the following hardware and
 
 - **Software and Environment**
   - Python 3.6 or later installed
-  - The `pymycobot` library installed (using the `pip install pymycobot` terminal command)
+  - The `pymycobot` library must be installed, with a version of 4.0.8 or higher (you can install or upgrade it using `pip install -U pymycobot`).
+  - The main controller firmware version must be 1.4 or higher.
   - Ensure that the MyCobot Pro 450 is properly powered on and in standby mode.
   - **Note**: The Pro 450 server automatically starts upon powering on; no manual operation is required.
 
